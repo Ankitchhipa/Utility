@@ -69,7 +69,7 @@ android {
 
             buildConfigField 'String', 'AD_UNIT_ID_BANNER_AD', TEST_AD_UNIT_ID_BANNER_AD
 
-            buildConfigField 'String', "PRIVACY_POLICY_URL", '"https://mobibuz.com/privacy-policy"'
+            buildConfigField 'String', "PRIVACY_POLICY_URL", '"https://ankitchhipa.github.io/Utility/commonRes/src/main/assets/privacy_policy.html"'
             buildConfigField 'String', "TERMS_OF_USE_URL", '"https://mobibuz.com/terms-of-use"'
             buildConfigField 'String', "HELP_URL", '"https://mobibuz.com/contact-us"'
             buildConfigField 'String', "APPLICATION_ID", '"com.utilify.boost.cleaner"'
@@ -88,7 +88,7 @@ android {
 
             buildConfigField 'String', 'AD_UNIT_ID_BANNER_AD', LIVE_AD_UNIT_ID_BANNER_AD
 
-            buildConfigField 'String', "PRIVACY_POLICY_URL", '"https://mobibuz.com/privacy-policy"'
+            buildConfigField 'String', "PRIVACY_POLICY_URL", '"https://ankitchhipa.github.io/Utility/commonRes/src/main/assets/privacy_policy.html"'
             buildConfigField 'String', "TERMS_OF_USE_URL", '"https://mobibuz.com/terms-of-use"'
             buildConfigField 'String', "HELP_URL", '"https://mobibuz.com/contact-us"'
             buildConfigField 'String', "APPLICATION_ID", '"com.utilify.boost.cleaner"'
