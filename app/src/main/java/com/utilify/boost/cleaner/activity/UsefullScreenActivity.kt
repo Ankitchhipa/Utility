@@ -89,9 +89,9 @@ class UsefullScreenActivity : AppCompatActivity() {
     }
 
     private fun openWebViewActivity(title: String?, url: String?) {
-        /*val intent = Intent(this, WebViewActivity::class.java)
+        val intent = Intent(this, com.cam.scanner.scantopdf.android.activities.WebViewActivity::class.java)
         intent.putExtra("title", title)
         intent.putExtra("url", url)
-        startActivity(intent)*/
+        startActivity(intent)
     }
 }

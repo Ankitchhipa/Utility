@@ -25,9 +25,13 @@ import com.cam.scanner.scantopdf.android.util.Constants;
 
 public class WebViewActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private static final String LOCAL_PRIVACY_POLICY_ASSET = "file:///android_asset/privacy_policy.html";
+    private static final String EXTRA_TITLE_FALLBACK = "title";
+    private static final String EXTRA_URL_FALLBACK = "url";
     private WebView webView;
     private Context context;
     private String url;
+    private String title;
     private ImageView iv_back_toolbar;
     private TextView tv_toolbar;
     private View progress_lay;
@@ -44,18 +48,41 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
         initObjects();
         getIntentUrl();
         if (!TextUtils.isEmpty(url)) {
-            loadWebView(url);
-            setToolbarText(url);
+            String resolvedUrl = resolveDisplayUrl(url);
+            loadWebView(resolvedUrl);
+            setToolbarText(resolvedUrl);
         }
 
     }
 
     private void setToolbarText(String url) {
-        switch (url) {
-            case Constants.URLs.PRIVACY_POLICY:
-                tv_toolbar.setText(getString(R.string.privacy_policy));
-                break;
+        if (!TextUtils.isEmpty(title)) {
+            tv_toolbar.setText(title);
+            return;
         }
+
+        if (shouldLoadLocalPrivacyPolicy(url)) {
+            tv_toolbar.setText(getString(R.string.privacy_policy));
+        }
+    }
+
+    private String resolveDisplayUrl(String sourceUrl) {
+        if (shouldLoadLocalPrivacyPolicy(sourceUrl)) {
+            return LOCAL_PRIVACY_POLICY_ASSET;
+        }
+        return sourceUrl;
+    }
+
+    private boolean shouldLoadLocalPrivacyPolicy(String sourceUrl) {
+        if (LOCAL_PRIVACY_POLICY_ASSET.equals(sourceUrl)) {
+            return true;
+        }
+
+        if (!TextUtils.isEmpty(title) && getString(R.string.privacy_policy).contentEquals(title)) {
+            return true;
+        }
+
+        return !TextUtils.isEmpty(sourceUrl) && sourceUrl.toLowerCase().contains("privacy");
     }
 
     private void setClickListeners() {
@@ -64,14 +91,28 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void getIntentUrl() {
-        if (getIntent() != null && getIntent().hasExtra(Constants.PutExtraConstants.URL)) {
+        if (getIntent() == null) {
+            return;
+        }
+
+        title = getIntent().getStringExtra(EXTRA_TITLE_FALLBACK);
+
+        if (getIntent().hasExtra(Constants.PutExtraConstants.URL)) {
             url = getIntent().getStringExtra(Constants.PutExtraConstants.URL);
+        } else if (getIntent().hasExtra(EXTRA_URL_FALLBACK)) {
+            url = getIntent().getStringExtra(EXTRA_URL_FALLBACK);
         }
     }
 
     private void loadWebView(String url) {
         progress_lay.setVisibility(View.VISIBLE);
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setDomStorageEnabled(true);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setBuiltInZoomControls(false);
+        webView.getSettings().setDisplayZoomControls(false);
+        webView.setBackgroundColor(getResources().getColor(android.R.color.transparent));
         webView.setWebViewClient(new MyWebViewClient(progress_lay));
         webView.loadUrl(url);
     }

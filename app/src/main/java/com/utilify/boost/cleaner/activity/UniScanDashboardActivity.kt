@@ -4,7 +4,6 @@ import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
@@ -23,6 +22,7 @@ import com.advanced.phone.junk.cache.cleaner.booster.antimalware.AdvancedPhoneCl
 import com.advanced.phone.junk.cache.cleaner.booster.antimalware.HomeActivity
 import com.advanced.phone.junk.cache.cleaner.booster.antimalware.tracking.CountryCode
 import com.advanced.phone.junk.cache.cleaner.booster.antimalware.utility.SharedPrefUtil
+import com.cam.scanner.scantopdf.android.activities.WebViewActivity
 import com.cam.scanner.scantopdf.android.util.PrefManager
 import com.itl.commonres.appinterface.OnAdDismissInterface
 import com.itl.commonres.utils.AdsPlacementsEnum
@@ -169,9 +169,10 @@ class UniScanDashboardActivity : AppCompatActivity(), PermissionInterface, OnAdD
                             true
                         }
                         R.id.menu_privacy -> {
-                            // Handle Privacy Policy (usually a URL)
-                            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://your-privacy-policy-link.com"))
-                            startActivity(browserIntent)
+                            val intent = Intent(this@UniScanDashboardActivity, WebViewActivity::class.java)
+                            intent.putExtra("title", getString(R.string.privacy_policy))
+                            intent.putExtra("url", Constants.privacyPolicyUrl)
+                            startActivity(intent)
                             true
                         }
                         R.id.menu_setting -> {
