@@ -1,0 +1,15 @@
+.DS_Store
+*.jks
+local.properties
+
+.gradle/
+.gradle-build/
+build/
+**/build/
+
+*.iml
+.idea/workspace.xml
+.idea/caches/
+.idea/libraries/
+
+app/src/test/java/com/smart/docscanner/ExampleUnitTest.kt

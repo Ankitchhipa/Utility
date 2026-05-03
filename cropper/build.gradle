@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+// https://docs.gradle.org/current/userguide/publishing_maven.html
+// http://www.flexlabs.org/2013/06/using-local-aar-android-library-packages-in-gradle-builds
+apply plugin: 'maven-publish'
+apply plugin: 'org.jetbrains.kotlin.android'
+
+android {
+
+    compileSdkVersion 36
+    defaultConfig {
+        minSdkVersion 29
+        targetSdkVersion 36
+        //vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    lintOptions {
+        abortOnError false
+    }
+    namespace = 'com.cam.cropper'
+}
+
+dependencies {
+    implementation("androidx.appcompat:appcompat:1.7.1")
+    implementation "androidx.exifinterface:exifinterface:1.4.1"
+    implementation project(':commonRes')
+}
+

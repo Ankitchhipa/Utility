@@ -1,0 +1,310 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.devtools.ksp'
+}
+
+android {
+    /*aaptOptions {
+        noCompress "tflite"
+        noCompress "lite"
+    }*/
+
+    compileSdkVersion 36
+    defaultConfig {
+        minSdkVersion 29
+        targetSdkVersion 36
+    }
+    buildTypes {
+        debug {
+            resValue 'string', 'banner_ad_id', '"ca-app-pub-3940256099942544/6300978111"'
+
+            buildConfigField 'String', "APP_OPEN_AD_ID", '"ca-app-pub-3940256099942544/9257395921"'
+            buildConfigField 'String', "APPLICATION_ID", '"com.utilify.boost.cleaner"'
+            buildConfigField 'String', "APPLICATION_NAME", '"Utilify"'
+            buildConfigField 'String', "MODULE_NAME", '"ScanHub"'
+
+            buildConfigField 'String', "INTERSTITIAL_SPLASH", '"ca-app-pub-3940256099942544/1033173712"'
+            buildConfigField 'String', "INTERSTITIAL_OCR", '"ca-app-pub-3940256099942544/1033173712"'
+            buildConfigField 'String', "INTERSTITIAL_PDF", '"ca-app-pub-3940256099942544/1033173712"'
+
+            buildConfigField 'String', "NATIVE_DOC", '"ca-app-pub-3940256099942544/2247696110"'
+            buildConfigField 'String', "NATIVE_OCR", '"ca-app-pub-3940256099942544/2247696110"'
+            buildConfigField 'String', "NATIVE_QR", '"ca-app-pub-3940256099942544/2247696110"'
+            buildConfigField 'String', "NATIVE_SETTINGS", '"ca-app-pub-3940256099942544/2247696110"'
+            buildConfigField 'String', "NATIVE_EXIT", '"ca-app-pub-3940256099942544/2247696110"'
+            buildConfigField 'String', "NATIVE_THUMBNAIL", '"ca-app-pub-3940256099942544/2247696110"'
+
+            buildConfigField 'String', "BANNER_AD_ID", '"ca-app-pub-3940256099942544/6300978111"'
+            buildConfigField 'String', "REWARD_AD_ID", '"ca-app-pub-3940256099942544/5224354917"'
+
+            buildConfigField 'String', "AD_UNIT_ID_PDF_ICON_INTERSTITIAL_AD", '"ca-app-pub-3940256099942544/1033173712"'
+            buildConfigField 'String', "AD_UNIT_ID_DOC_SCREEN_PDF_ICON_INTERSTITIAL_AD", '"ca-app-pub-3940256099942544/1033173712"'
+            buildConfigField 'String', "AD_UNIT_ID_DOC_SCREEN_EMPTY_LIST_NATIVE_AD", '"ca-app-pub-3940256099942544/2247696110"'
+            buildConfigField 'String', "AD_UNIT_ID_DOC_SCREEN_NATIVE_AD", '"ca-app-pub-3940256099942544/2247696110"'
+            buildConfigField 'String', "AD_UNIT_ID_OCR_RESULT_NATIVE_AD", '"ca-app-pub-3940256099942544/2247696110"'
+            buildConfigField 'String', "AD_UNIT_ID_OCR_LIST_SCREEN_NATIVE_AD", '"ca-app-pub-3940256099942544/2247696110"'
+            buildConfigField 'String', "AD_UNIT_ID_OCR_EMPTY_LIST_SCREEN_NATIVE_AD", '"ca-app-pub-3940256099942544/2247696110"'
+            buildConfigField 'String', "AD_UNIT_ID_NEW_DOC_IMAGE_EDIT_SCREEN_ADAPTIVE_AD", '"ca-app-pub-3940256099942544/9214589741"'
+            buildConfigField 'String', "AD_UNIT_ID_QR_RESULT_SCREEN_ADAPTIVE_AD", '"ca-app-pub-3940256099942544/9214589741"'
+            buildConfigField 'String', "AD_UNIT_ID_DOC_BLACK_SCREEN_NATIVE_AD", '"ca-app-pub-3940256099942544/2247696110"'
+
+
+//            buildConfigField "String", "URL_BASE", '"http://192.168.1.19/wcfFlashScanner/Service1.svc/"'
+            buildConfigField "String", "URL_BASE", '"http://srv.theflashscan.com/Service1.svc/"'
+        }
+        release{
+            resValue 'string', 'banner_ad_id', '"ca-app-pub-4777648072886747/6457691628"'
+
+            buildConfigField 'String', "APP_OPEN_AD_ID", '"ca-app-pub-3940256099942544/3419835294"'
+            buildConfigField 'String', "APPLICATION_ID", '"com.utilify.boost.cleaner"'
+            buildConfigField 'String', "APPLICATION_NAME", '"Utilify"'
+            buildConfigField 'String', "MODULE_NAME", '"ScanHub"'
+
+            buildConfigField 'String', "INTERSTITIAL_SPLASH", '"ca-app-pub-4777648072886747/3911419337"'
+            buildConfigField 'String', "INTERSTITIAL_OCR", '"ca-app-pub-4777648072886747/3911419337"'
+            buildConfigField 'String', "INTERSTITIAL_PDF", '"ca-app-pub-4777648072886747/3911419337"'
+
+            buildConfigField 'String', "NATIVE_DOC", '"ca-app-pub-4777648072886747/5191613936"'
+            buildConfigField 'String', "NATIVE_OCR", '"ca-app-pub-4777648072886747/5191613936"'
+            buildConfigField 'String', "NATIVE_QR", '"ca-app-pub-4777648072886747/5191613936"'
+            buildConfigField 'String', "NATIVE_SETTINGS", '"ca-app-pub-4777648072886747/5191613936"'
+            buildConfigField 'String', "NATIVE_EXIT", '"ca-app-pub-4777648072886747/5191613936"'
+            buildConfigField 'String', "NATIVE_THUMBNAIL", '"ca-app-pub-4777648072886747/5191613936"'
+
+            buildConfigField 'String', "BANNER_AD_ID", '"ca-app-pub-4777648072886747/6457691628"'
+            buildConfigField 'String', "REWARD_AD_ID", '"ca-app-pub-4777648072886747/9130858940"'
+
+//            buildConfigField "String", "URL_BASE", '"http://192.168.1.19/wcfFlashScanner/Service1.svc/"'
+            buildConfigField "String", "URL_BASE", '"http://srv.theflashscan.com/Service1.svc/"'
+            //interstitial
+            buildConfigField 'String', "AD_UNIT_ID_PDF_ICON_INTERSTITIAL_AD", '"ca-app-pub-4777648072886747/4710488936"'
+            buildConfigField 'String', "AD_UNIT_ID_DOC_SCREEN_PDF_ICON_INTERSTITIAL_AD", '"ca-app-pub-4777648072886747/4710488936"'
+            //native
+            buildConfigField 'String', "AD_UNIT_ID_DOC_SCREEN_EMPTY_LIST_NATIVE_AD", '"ca-app-pub-4777648072886747/9485407117"'
+            buildConfigField 'String', "AD_UNIT_ID_DOC_SCREEN_NATIVE_AD", '"ca-app-pub-4777648072886747/9485407117"'
+            buildConfigField 'String', "AD_UNIT_ID_DOC_BLACK_SCREEN_NATIVE_AD", '"ca-app-pub-4777648072886747/9485407117"'
+            buildConfigField 'String', "AD_UNIT_ID_OCR_RESULT_NATIVE_AD", '"ca-app-pub-4777648072886747/2084325596"'
+            buildConfigField 'String', "AD_UNIT_ID_OCR_LIST_SCREEN_NATIVE_AD", '"ca-app-pub-4777648072886747/1895821001"'
+            buildConfigField 'String', "AD_UNIT_ID_OCR_EMPTY_LIST_SCREEN_NATIVE_AD", '"ca-app-pub-4777648072886747/1895821001"'
+            //adaptive
+            buildConfigField 'String', "AD_UNIT_ID_NEW_DOC_IMAGE_EDIT_SCREEN_ADAPTIVE_AD", '"ca-app-pub-4777648072886747/9771243925"'
+            buildConfigField 'String', "AD_UNIT_ID_QR_RESULT_SCREEN_ADAPTIVE_AD", '"ca-app-pub-4777648072886747/9771243925"'
+
+        }
+    }
+    //aaptOptions.cruncherEnabled = false
+    /*aaptOptions {
+        noCompress "tflite"
+        noCompress "lite"
+    }*/
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_17
+    }
+    configurations {
+        configureEach {
+            exclude group: "com.google.android.gms", module: "play-services-measurement-impl"
+            exclude group: "com.google.android.gms", module: "play-services-measurement"
+//            exclude group: 'com.google.guava', module: 'listenablefuture'
+            resolutionStrategy {
+                force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10'
+            }
+        }
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+   /* packagingOptions {
+        exclude 'com/itextpdf/io/font/cmap_info.txt'
+        exclude 'com/itextpdf/io/font/cmap/*'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+    }*/
+    lintOptions {
+        checkReleaseBuilds false
+    }
+    buildFeatures {
+        buildConfig = true
+        viewBinding = true
+    }
+    dataBinding {
+        enabled = true
+    }
+    namespace = 'com.cam.scanner.scantopdf.android'
+}
+
+dependencies {
+    //implementation project(':opencv')
+    implementation 'androidx.camera:camera-core:1.5.0'
+    implementation 'androidx.camera:camera-lifecycle:1.5.0'
+    implementation 'androidx.camera:camera-camera2:1.5.0'
+    implementation 'androidx.camera:camera-view:1.5.0'
+    def kotlinCoroutineVersion = '1.8.1'
+    def retrofit2_version = '2.11.0'
+    def moshiVersion = '1.15.1'
+    def okhttp3_version = '5.0.0-alpha.14'
+    def google_material_version = "1.12.0"
+    def glide_lib_version="4.12.0"
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "androidx.appcompat:appcompat:1.7.1"
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
+
+    implementation "androidx.multidex:multidex:2.0.1"
+    implementation 'androidx.work:work-runtime:2.10.4'
+    implementation 'androidx.work:work-runtime-ktx:2.10.4'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.9.3'
+    implementation "androidx.core:core-ktx:1.17.0"
+
+    implementation 'com.google.android.gms:play-services-ads-lite:23.3.0'
+    /*implementation 'androidx.credentials:credentials:1.5.0-alpha05'
+    implementation 'androidx.credentials:credentials-play-services-auth:1.5.0-alpha05'
+    implementation 'com.google.android.libraries.identity.googleid:googleid:1.1.1'*/
+    //implementation 'info.androidhive:imagefilters:1.0.7'
+    //implementation 'com.github.hgayan7:FilterLibrary:0.1.0'
+//    implementation project(path: ':scanlibrary')
+
+    // ocr dependency
+    /*implementation 'com.google.android.gms:play-services-vision:19.0.0'*/
+
+    // bar code/ qr code dependency
+    /*implementation 'me.dm7.barcodescanner:zbar:1.8.4'*/
+    implementation 'com.hhl:gridpagersnaphelper:1.0.0'
+
+    implementation 'androidx.recyclerview:recyclerview:1.4.0'
+    implementation "com.github.bumptech.glide:glide:5.0.5"
+    implementation "com.google.android.material:material:1.13.0"
+
+    //implementation 'com.itextpdf:itextg:5.5.10'
+    implementation 'com.madgag.spongycastle:core:1.58.0.0'
+
+    // firebase Sdk
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    implementation platform('com.google.firebase:firebase-bom:34.2.0')
+    implementation ('com.google.firebase:firebase-messaging:25.0.0'){
+        exclude group: 'com.google.firebase', module: 'firebase-iid'
+    }
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-config'
+    implementation("com.google.firebase:firebase-iid:21.1.0")
+
+    implementation 'com.google.firebase:firebase-ml-vision:24.0.3'
+    //implementation 'com.google.firebase:firebase-ml-vision-barcode-model:16.1.1'
+    implementation("com.google.mlkit:barcode-scanning:17.3.0")
+    /*implementation 'com.google.android.gms:play-services-vision:20.0.0'*/
+
+    implementation 'com.github.yalantis:ucrop:2.2.4'
+
+    //google ads
+    implementation 'com.google.android.gms:play-services-ads:23.3.0'
+
+    implementation 'com.android.billingclient:billing:3.0.2'
+
+    implementation 'com.android.installreferrer:installreferrer:2.2'
+
+    implementation 'androidx.palette:palette:1.0.0'
+
+    // image picker library
+    implementation 'com.zhihu.android:matisse:0.5.3-beta3'
+
+    // image cropping library
+    /*api 'com.theartofdev.edmodo:android-image-cropper:2.8.0'*/
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    //For cropping
+//    implementation 'com.github.pqpo:SmartCropper:v2.1.3'
+    //implementation project(':smartcropperlib')
+    // For developers using the Android Support Library
+    implementation 'pub.devrel:easypermissions:3.0.0'
+    // implementation project(path: ':java')  // for opencv module
+
+    implementation 'androidx.exifinterface:exifinterface:1.4.1'
+
+//    implementation 'com.pixelnetica.sdk:scanning-release:2.3.7'
+
+    implementation 'id.zelory:compressor:3.0.1'
+    // pdf viewer library
+    //implementation 'com.github.barteksc:android-pdf-viewer:1.6.0'
+    implementation 'com.github.zacharee:AndroidPdfViewer:4.0.1'
+    implementation 'io.legere:pdfiumandroid:1.0.33'
+
+    implementation 'com.davemorrissey.labs:subsampling-scale-image-view-androidx:3.10.0'
+    implementation 'com.google.code.gson:gson:2.13.2'
+
+
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    // api 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+    api project(':cropper')
+
+    implementation 'com.intuit.sdp:sdp-android:1.1.1'
+    implementation 'com.intuit.ssp:ssp-android:1.1.1'
+
+    //Moshi
+    implementation "com.squareup.moshi:moshi-kotlin:1.15.2"
+    ksp("com.squareup.moshi:moshi-kotlin-codegen:1.15.2")
+
+    //Retrofit2
+    implementation "com.squareup.retrofit2:retrofit:3.0.0"
+    implementation "com.squareup.retrofit2:converter-moshi:2.11.0"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
+    implementation "com.squareup.retrofit2:converter-gson:3.0.0"
+    implementation "com.squareup.retrofit2:converter-scalars:3.0.0"
+
+    //Okhttp3
+    implementation "com.squareup.okhttp3:okhttp:5.1.0"
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.1.0'
+
+    //Kotlin Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2"
+
+    implementation "androidx.viewpager2:viewpager2:1.1.0"
+    // pdf creation
+    implementation 'com.github.librepdf:openpdf:3.0.0'
+    implementation 'ro.andob.androidawt:androidawt:1.0.4'
+    implementation 'org.bouncycastle:bcprov-jdk15on:1.70'
+
+    implementation 'com.google.android.gms:play-services-auth:21.3.0'
+    implementation 'com.google.http-client:google-http-client-gson:1.26.0'
+    implementation('com.google.api-client:google-api-client-android:1.26.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+
+    implementation ('com.google.apis:google-api-services-drive:v3-rev136-1.25.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+
+    // https://mvnrepository.com/artifact/com.google.android.gms/play-services-drive
+    implementation group: 'com.google.android.gms', name: 'play-services-drive', version: '17.0.0'
+
+    //implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.4"
+
+    implementation project(':commonRes')
+    implementation project(':cropper')
+
+    implementation("org.opencv:opencv:4.12.0")
+
+    implementation "androidx.sqlite:sqlite:2.6.1" // Or the latest version
+    implementation "androidx.sqlite:sqlite-framework:2.6.1" // Or the latest version
+
+}

@@ -1,0 +1,130 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.devtools.ksp'
+    id 'com.google.dagger.hilt.android'
+}
+
+//Test ADMob IDs
+def TEST_AD_UNIT_ID_NATIVE_AD_HOME = '\"ca-app-pub-3940256099942544/2247696110\"'
+def TEST_AD_UNIT_ID_NATIVE_AD_EXIT = '\"ca-app-pub-3940256099942544/2247696110\"'
+def TEST_AD_UNIT_ID_NATIVE_AD_SCAN_QR = '\"ca-app-pub-3940256099942544/2247696110\"'
+def TEST_AD_UNIT_ID_NATIVE_AD_TRANSFER = '\"ca-app-pub-3940256099942544/2247696110\"'
+def TEST_AD_UNIT_ID_INTERSTITIAL_AD = '\"ca-app-pub-3940256099942544/1033173712\"'
+def TEST_AD_UNIT_ID_APP_OPEN_AD = '\"ca-app-pub-3940256099942544/9257395921\"'
+def TEST_AD_UNIT_ID_REWARDED_AD = '\"ca-app-pub-3940256099942544/5224354917\"'
+def TEST_AD_UNIT_ID_BANNER_AD = '\"ca-app-pub-3940256099942544/6300978111\"'
+
+//Live ADMob IDs
+def LIVE_AD_UNIT_ID_NATIVE_AD_HOME = '\"ca-app-pub-4777648072886747/5191613936\"'/*'\"ca-app-pub-4777648072886747/1891075322\"'*/
+def LIVE_AD_UNIT_ID_NATIVE_AD_EXIT = '\"ca-app-pub-4777648072886747/5191613936\"'/*'\"ca-app-pub-4777648072886747/5638748643\"'*/
+def LIVE_AD_UNIT_ID_NATIVE_AD_SCAN_QR = '\"ca-app-pub-4777648072886747/5191613936\"'/*'\"ca-app-pub-4777648072886747/4404901481\"'*/
+def LIVE_AD_UNIT_ID_NATIVE_AD_TRANSFER = '\"ca-app-pub-4777648072886747/5191613936\"'/*'\"ca-app-pub-4777648072886747/8535718181\"'*/
+def LIVE_AD_UNIT_ID_INTERSTITIAL_AD = '\"ca-app-pub-4777648072886747/3911419337\"'/*'\"ca-app-pub-4777648072886747/6292698228\"'*/
+def LIVE_AD_UNIT_ID_APP_OPEN_AD = '\"ca-app-pub-3940256099942544/3419835294\"'/*'\"ca-app-pub-4777648072886747/2189801688\"'*/
+def LIVE_AD_UNIT_ID_REWARDED_AD = '\"ca-app-pub-4777648072886747/9130858940\"'
+def LIVE_AD_UNIT_ID_BANNER_AD = '\"ca-app-pub-4777648072886747/6457691628\"'
+
+android {
+    namespace 'com.itl.commonres'
+    compileSdk 36
+
+    defaultConfig {
+        minSdk 29
+        targetSdk 36
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+        buildConfig true
+    }
+    buildTypes {
+        debug {
+            buildConfigField 'String', 'AD_UNIT_ID_NATIVE_AD_HOME', TEST_AD_UNIT_ID_NATIVE_AD_HOME
+            buildConfigField 'String', 'AD_UNIT_ID_NATIVE_AD_EXIT', TEST_AD_UNIT_ID_NATIVE_AD_EXIT
+
+            buildConfigField 'String', 'AD_UNIT_ID_NATIVE_AD_SCAN_QR', TEST_AD_UNIT_ID_NATIVE_AD_SCAN_QR
+            buildConfigField 'String', 'AD_UNIT_ID_NATIVE_AD_TRANSFER', TEST_AD_UNIT_ID_NATIVE_AD_TRANSFER
+
+            buildConfigField 'String', 'AD_UNIT_ID_INTERSTITIAL_AD', TEST_AD_UNIT_ID_INTERSTITIAL_AD
+            buildConfigField 'String', 'AD_UNIT_ID_APP_OPEN_AD', TEST_AD_UNIT_ID_APP_OPEN_AD
+
+            buildConfigField 'String', 'AD_UNIT_ID_REWARDED_AD', TEST_AD_UNIT_ID_REWARDED_AD
+
+            buildConfigField 'String', 'AD_UNIT_ID_BANNER_AD', TEST_AD_UNIT_ID_BANNER_AD
+
+            buildConfigField 'String', "PRIVACY_POLICY_URL", '"https://mobibuz.com/privacy-policy"'
+            buildConfigField 'String', "TERMS_OF_USE_URL", '"https://mobibuz.com/terms-of-use"'
+            buildConfigField 'String', "HELP_URL", '"https://mobibuz.com/contact-us"'
+            buildConfigField 'String', "APPLICATION_ID", '"com.utilify.boost.cleaner"'
+        }
+        release {
+            buildConfigField 'String', 'AD_UNIT_ID_NATIVE_AD_HOME', LIVE_AD_UNIT_ID_NATIVE_AD_HOME
+            buildConfigField 'String', 'AD_UNIT_ID_NATIVE_AD_EXIT', LIVE_AD_UNIT_ID_NATIVE_AD_EXIT
+
+            buildConfigField 'String', 'AD_UNIT_ID_NATIVE_AD_SCAN_QR', LIVE_AD_UNIT_ID_NATIVE_AD_SCAN_QR
+            buildConfigField 'String', 'AD_UNIT_ID_NATIVE_AD_TRANSFER', LIVE_AD_UNIT_ID_NATIVE_AD_TRANSFER
+
+            buildConfigField 'String', 'AD_UNIT_ID_INTERSTITIAL_AD', LIVE_AD_UNIT_ID_INTERSTITIAL_AD
+            buildConfigField 'String', 'AD_UNIT_ID_APP_OPEN_AD', LIVE_AD_UNIT_ID_APP_OPEN_AD
+
+            buildConfigField 'String', 'AD_UNIT_ID_REWARDED_AD', LIVE_AD_UNIT_ID_REWARDED_AD
+
+            buildConfigField 'String', 'AD_UNIT_ID_BANNER_AD', LIVE_AD_UNIT_ID_BANNER_AD
+
+            buildConfigField 'String', "PRIVACY_POLICY_URL", '"https://mobibuz.com/privacy-policy"'
+            buildConfigField 'String', "TERMS_OF_USE_URL", '"https://mobibuz.com/terms-of-use"'
+            buildConfigField 'String', "HELP_URL", '"https://mobibuz.com/contact-us"'
+            buildConfigField 'String', "APPLICATION_ID", '"com.utilify.boost.cleaner"'
+        }
+    }
+}
+
+dependencies {
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.activity
+    implementation libs.androidx.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+
+    implementation 'com.intuit.sdp:sdp-android:1.1.1'
+    implementation 'com.intuit.ssp:ssp-android:1.1.1'
+
+    implementation platform('com.google.firebase:firebase-bom:34.2.0')
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-crashlytics")
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-database")
+    implementation("com.google.firebase:firebase-messaging")
+    implementation("com.google.firebase:firebase-config")
+
+    //Add the dependency for the Google Mobile Ads SDK
+    implementation("com.google.android.gms:play-services-ads:23.3.0")
+    //Add app set id sdk
+    implementation("com.google.android.gms:play-services-appset:16.1.0")
+    implementation 'com.google.dagger:hilt-android:2.57.1'
+    ksp('com.google.dagger:hilt-compiler:2.57.1')
+
+    implementation "com.android.billingclient:billing-ktx:8.0.0"
+
+}

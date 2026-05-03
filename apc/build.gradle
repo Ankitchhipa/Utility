@@ -1,0 +1,274 @@
+apply plugin: 'com.android.library'
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'com.google.devtools.ksp'
+//apply plugin: 'org.jetbrains.kotlin.kapt'
+//apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 36
+    defaultConfig {
+        minSdkVersion 29
+        targetSdkVersion 36
+    }
+    /*dexOptions {
+        javaMaxHeapSize "4g"
+    }*/
+    buildFeatures {
+        buildConfig = true
+        viewBinding = true
+        aidl = true
+    }
+    /*configurations { implementation.exclude group: 'org.jetbrains', module: 'annotations' }*/
+
+    configurations {
+        cleanedAnnotations
+        implementation.exclude group: 'com.intellij', module: 'annotations'
+    }
+
+    lintOptions {
+        disable 'MissingTranslation'
+        abortOnError false
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_17
+    }
+    /*buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }*/
+    buildTypes {
+        debug {
+            buildConfigField "String", "API_KEY", "\"7878787878787878\""
+            buildConfigField 'int', "VERSION_CODE", '10'
+            buildConfigField 'String', "VERSION_NAME", '"1.0.0"'
+            buildConfigField 'String', "APPLICATION_ID", '"com.utilify.boost.cleaner"'
+            buildConfigField 'String', "APPLICATION_NAME", '"Utilify"'
+            buildConfigField 'String', "MODULE_NAME", '"BoostX"'
+
+/*
+            resValue "string", "fb_full_Ad", "1403565836498719_1403577096497593"
+            resValue "string", "fb_banner_Ad", "1403565836498719_1403577659830870"
+            resValue "string", "fb_medium_rect_Ad", "1403565836498719_1403577976497505"
+            resValue "string", "fb_native_banner_ad", "1403565836498719_1428658563989446"
+
+            resValue "string", "account_id", "ca-app-pub-3940256099942544~3347511713"
+            // App Open Ad Unit
+            resValue "string", "app_open", "ca-app-pub-3940256099942544/9257395921"
+            //NATIVE AD UNITS
+            resValue "string", "native_home", "ca-app-pub-3940256099942544/2247696110"
+            resValue "string", "native_scan", "ca-app-pub-3940256099942544/2247696110"
+            resValue "string", "native_scan_result", "ca-app-pub-3940256099942544/2247696110"
+            resValue "string", "native_result", "ca-app-pub-3940256099942544/2247696110"
+            resValue "string", "native_list", "ca-app-pub-3940256099942544/2247696110"
+            resValue "string", "native_scan_cancel", "ca-app-pub-3940256099942544/2247696110"
+            //Rewarded Ad Unit
+            resValue "string", "rewarded_clean", "ca-app-pub-3940256099942544/5224354917"
+
+            //Interstitial Ad Units
+            resValue "string", "full_scan_cancel", "ca-app-pub-3940256099942544/1033173712"
+            resValue "string", "full_e", "ca-app-pub-3940256099942544/1033173712"
+            resValue "string", "full_o", "ca-app-pub-3940256099942544/1033173712"
+
+            //Banner
+            resValue "string", "banner", "ca-app-pub-3940256099942544/6300978111"
+            //resValue "string", "native_small", "ca-app-pub-3940256099942544/2247696110"
+*/
+
+            //rewarded
+            buildConfigField "String", "AD_UNIT_ID_JUNK_CLEAN_REWARDED_AD", '"ca-app-pub-3940256099942544/5224354917"'
+            buildConfigField "String", "AD_UNIT_ID_DUPLICATES_CLEAN_REWARDED_AD", '"ca-app-pub-3940256099942544/5224354917"'
+            buildConfigField "String", "AD_UNIT_ID_SOCIAL_CLEAN_REWARDED_AD", '"ca-app-pub-3940256099942544/5224354917"'
+            buildConfigField "String", "AD_UNIT_ID_ANTIMALWARE_CLEAN_REWARDED_AD", '"ca-app-pub-3940256099942544/5224354917"'
+            //banner
+            buildConfigField "String", "AD_UNIT_ID_DUPLICATES_SCREEN_BANNER_AD", '"ca-app-pub-3940256099942544/6300978111"'
+            buildConfigField "String", "AD_UNIT_ID_SOCIAL_SCREEN_BANNER_AD", '"ca-app-pub-3940256099942544/6300978111"'
+            buildConfigField "String", "AD_UNIT_ID_FILE_MANAGER_BANNER_AD", '"ca-app-pub-3940256099942544/6300978111"'
+            buildConfigField "String", "AD_UNIT_ID_INFO_BANNER_AD", '"ca-app-pub-3940256099942544/6300978111"'
+            buildConfigField "String", "AD_UNIT_ID_SPACE_SAVER_BANNER_AD", '"ca-app-pub-3940256099942544/6300978111"'
+            buildConfigField "String", "AD_UNIT_ID_RESULT_SCREEN_AD", '"ca-app-pub-3940256099942544/6300978111"'
+            //interstitial
+            buildConfigField "String", "AD_UNIT_ID_BACKUP_BTN_INTERSTITIAL_AD", '"ca-app-pub-3940256099942544/1033173712"'
+
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release{
+            buildConfigField "String", "API_KEY", "\"7878787878787878\""
+            buildConfigField 'int', "VERSION_CODE", '10'
+            buildConfigField 'String', "VERSION_NAME", '"1.0.0"'
+            buildConfigField 'String', "APPLICATION_ID", '"com.utilify.boost.cleaner"'
+            buildConfigField 'String', "APPLICATION_NAME", '"Utilify"'
+            buildConfigField 'String', "MODULE_NAME", '"BoostX"'
+
+/*
+            resValue "string", "fb_full_Ad", "1403565836498719_1403577096497593"
+            resValue "string", "fb_banner_Ad", "1403565836498719_1403577659830870"
+            resValue "string", "fb_medium_rect_Ad", "1403565836498719_1403577976497505"
+            resValue "string", "fb_native_banner_ad", "1403565836498719_1428658563989446"
+
+            resValue "string", "account_id", "ca-app-pub-3940256099942544~3347511713"
+            // App Open Ad Unit
+            resValue "string", "app_open", "ca-app-pub-3940256099942544/3419835294"
+            //NATIVE AD UNITS
+            resValue "string", "native_home", "ca-app-pub-4777648072886747/5191613936"
+            resValue "string", "native_scan", "ca-app-pub-4777648072886747/5191613936"
+            resValue "string", "native_scan_result", "ca-app-pub-4777648072886747/5191613936"
+            resValue "string", "native_result", "ca-app-pub-4777648072886747/5191613936"
+            resValue "string", "native_list", "ca-app-pub-4777648072886747/5191613936"
+            resValue "string", "native_scan_cancel", "ca-app-pub-4777648072886747/5191613936"
+            //Rewarded Ad Unit
+            resValue "string", "rewarded_clean", "ca-app-pub-4777648072886747/9130858940"
+
+            //Interstitial Ad Units
+            resValue "string", "full_scan_cancel", "ca-app-pub-4777648072886747/3911419337"
+            resValue "string", "full_e", "ca-app-pub-4777648072886747/3911419337"
+            resValue "string", "full_o", "ca-app-pub-4777648072886747/3911419337"
+            //Rewarded Ad Unit
+            resValue "string", "rewarded_clean", "ca-app-pub-4777648072886747/9130858940"
+
+            //Banner
+            resValue "string", "banner", "ca-app-pub-4777648072886747/6457691628"
+            //resValue "string", "native_small", "ca-app-pub-3940256099942544/2247696110"
+*/
+
+            //rewarded
+            buildConfigField "String", "AD_UNIT_ID_JUNK_CLEAN_REWARDED_AD", '"ca-app-pub-4777648072886747/8458162250"'
+            buildConfigField "String", "AD_UNIT_ID_DUPLICATES_CLEAN_REWARDED_AD", '"ca-app-pub-4777648072886747/6859243776"'
+            buildConfigField "String", "AD_UNIT_ID_SOCIAL_CLEAN_REWARDED_AD", '"ca-app-pub-4777648072886747/7987388962"'
+            buildConfigField "String", "AD_UNIT_ID_ANTIMALWARE_CLEAN_REWARDED_AD", '"ca-app-pub-4777648072886747/5546162102"'
+            //banner
+            buildConfigField "String", "AD_UNIT_ID_DUPLICATES_SCREEN_BANNER_AD", '"ca-app-pub-4777648072886747/6060095592"'
+            buildConfigField "String", "AD_UNIT_ID_SOCIAL_SCREEN_BANNER_AD", '"ca-app-pub-4777648072886747/8789334743"'
+            buildConfigField "String", "AD_UNIT_ID_FILE_MANAGER_BANNER_AD", '"ca-app-pub-4777648072886747/6060095592"'
+            buildConfigField "String", "AD_UNIT_ID_INFO_BANNER_AD", '"ca-app-pub-4777648072886747/6060095592"'
+            buildConfigField "String", "AD_UNIT_ID_SPACE_SAVER_BANNER_AD", '"ca-app-pub-4777648072886747/6060095592"'
+            buildConfigField "String", "AD_UNIT_ID_RESULT_SCREEN_AD", '"ca-app-pub-4777648072886747/1278618188"'
+            //interstitial
+            buildConfigField "String", "AD_UNIT_ID_BACKUP_BTN_INTERSTITIAL_AD", '"ca-app-pub-4777648072886747/7373177260"'
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    /*packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+    }*/
+    namespace = "com.advanced.phone.junk.cache.cleaner.booster.antimalware"
+}
+
+
+dependencies {
+    //implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.13.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    //TODO removed by shubham- done
+//    implementation 'com.thefinestartist:finestwebview:1.2.7'
+    implementation files('libs/org.apache.commons.io.jar')
+    implementation files('libs/eventbus-3.1.1.jar')
+    implementation files('libs/finestwebview-1.2.7-sources')
+    implementation 'com.android.installreferrer:installreferrer:2.2'
+    /*implementation 'com.appnext.sdk:native-ads:2.+'
+            implementation 'com.android.support.constraint:constraint-layout:1.0.2'*/
+    //TODO removed by shubham
+    //implementation 'com.jmedeisis:draglinearlayout:1.1.0'
+    implementation 'commons-codec:commons-codec:1.19.0'
+
+    //TODO removed by shubham
+//    implementation 'com.github.jakob-grabner:Circle-Progress-View:v1.4'
+    //TODO removed by shubham
+//    implementation 'com.gelitenight.waveview:waveview:1.0.0'
+
+    //TODO removed by shubham
+//    implementation 'com.wang.avi:library:2.1.3'  // progress bar
+    implementation 'com.github.christophesmet:android_maskable_layout:v1.3.1'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'        // GameBoostAnim
+    //TODO removed by shubham
+    //implementation 'com.jackandphantom.android:circularprogressbar:1.2.0'  // GameBoostAnim
+    //TODO removed by shubham
+//    implementation 'com.github.silvestrpredko:dot-progress-bar:1.1'  // GameBoostAnim
+    //TODO removed by shubham
+//    implementation 'com.github.glomadrian:Grav:1.1'
+    implementation 'com.github.bumptech.glide:glide:5.0.5'
+    ksp "com.github.bumptech.glide:ksp:5.0.5"
+
+    implementation platform('com.google.firebase:firebase-bom:34.2.0')
+
+    implementation "com.google.firebase:firebase-config"
+    implementation "com.google.firebase:firebase-analytics"
+    implementation "com.google.firebase:firebase-crashlytics"
+    //implementation "com.google.firebase:firebase-core"
+    implementation "com.google.firebase:firebase-messaging"
+
+
+    implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
+
+    // google Ad mediation network dependencies
+    implementation 'com.google.android.gms:play-services-ads:23.5.0'
+    implementation 'com.facebook.android:audience-network-sdk:6.20.0'
+ //   implementation 'com.google.ads.mediation:mopub:5.15.0.1'
+ //  implementation 'com.google.ads.mediation:inmobi:9.1.1.0'
+
+
+
+    implementation 'com.google.code.gson:gson:2.13.2'
+    implementation('com.squareup.retrofit2:retrofit:3.0.0') {
+        // exclude Retrofit’s OkHttp dependency module and define your own module import
+        exclude module: 'okhttp'
+    }
+    implementation 'com.squareup.retrofit2:converter-gson:3.0.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.1.0'
+    //TODO removed by shubham
+//    implementation 'com.takwolf.android:lock9view:0.0.2'
+    implementation files('libs/org.apache.commons.io.jar')
+    //TODO removed by shubham
+//    implementation 'com.kofigyan.stateprogressbar:stateprogressbar:0.0.6'
+    //TODO removed by shubham
+//    implementation 'com.andrognito.pinlockview:pinlockview:2.1.0'
+    implementation 'com.android.billingclient:billing:7.1.0'
+    implementation 'androidx.biometric:biometric:1.1.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'com.intuit.sdp:sdp-android:1.1.1'
+
+    def lifecycle_version = "2.2.0"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+
+    implementation project(':commonRes')
+}
+
+/*repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    mavenCentral()
+}*/
+/*configurations {
+    cleanedAnnotations
+
+    compile.exclude group: 'org.jetbrains' , module:'annotations'
+}*/

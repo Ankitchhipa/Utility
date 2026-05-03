@@ -1,0 +1,39 @@
+/*pluginManagement {
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}*/
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        /*maven {
+            url "http://maven.andob.info/repository/open_source"
+            allowInsecureProtocol = true
+        }*/
+        maven { url "https://andob.io/repository/open_source"
+            allowInsecureProtocol = true}
+        maven { url "https://repo.grails.org/grails/core/" }
+        maven {
+            url 'https://maven.fabric.io/public'
+        }
+        mavenLocal()
+    }
+}
+
+rootProject.name = "Toolkit"
+include ':app'
+include ':cropper'
+include ':flashscan'
+include ':apc'
+include ':commonRes'
