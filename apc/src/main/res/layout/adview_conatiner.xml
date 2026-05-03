@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_ad"
+        android:layout_width="match_parent"
+        android:paddingLeft="@dimen/margin_8"
+        android:layout_height="0dp"
+        android:background="@color/grayseperator"
+        android:textSize="@dimen/font_10"
+        android:textColor="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/ad_view_banner_container"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_height="@dimen/_75sdp">
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/margin_btm"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1" />
+</LinearLayout>

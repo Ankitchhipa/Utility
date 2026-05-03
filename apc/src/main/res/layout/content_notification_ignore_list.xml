@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.advanced.phone.junk.cache.cleaner.booster.antimalware.notificationmanager.NotificationIgnoreList"
+    tools:showIn="@layout/activity_notification_ignore_list">
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/on_off_notification"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/sidebar_header_color"
+        android:paddingStart="@dimen/margin_16"
+        android:paddingEnd="@dimen/margin_14"
+        android:textSize="@dimen/font_15"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/txt_color" />
+
+    <TextView
+        android:id="@+id/deactivate_txt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/str_notification_deactivate"
+        android:textColor="@color/txt_color"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:id="@+id/adcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <include layout="@layout/btm_ads" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/adcontainer"
+        android:layout_below="@id/on_off_notification"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/divider_shadow"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/margin_16"
+            android:text="@string/str_affected_apps"
+            android:visibility="gone"
+            android:textColor="@color/txt_color"
+            android:textStyle="bold" />
+
+        <ListView
+            android:id="@+id/listview_ignore"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white" />
+    </LinearLayout>
+
+</RelativeLayout>

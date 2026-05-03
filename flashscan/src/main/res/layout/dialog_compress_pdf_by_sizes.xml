@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/pop_up_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/file_compression"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/enter_pdf_name"
+                android:textColor="#606672"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/et_pdf_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:inputType="text"
+                android:maxLength="50"
+                android:maxLines="2"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"/>
+
+           <!-- <EditText
+                android:id="@+id/et_pdf_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cursorVisible="true"
+                android:inputType="text"
+                android:maxLength="50"
+                android:maxLines="2"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:drawableRight="@drawable/ic_rename_sky_blue"/>-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Set Quality"
+                android:textColor="#606672"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="5dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="4">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2">
+                        <RadioButton
+                            android:id="@+id/rb_low"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:button="@drawable/pdf_size_radio_selector"/>
+                        <View
+                            android:layout_width="wrap_content"
+                            android:layout_height="1dp"
+                            android:background="@color/colorPrimary"
+                            android:layout_toEndOf="@+id/rb_low"
+                            android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2">
+                    <RadioButton
+                        android:id="@+id/rb_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:button="@drawable/pdf_size_radio_selector"/>
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_toEndOf="@+id/rb_medium"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2">
+                    <RadioButton
+                        android:id="@+id/rb_regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:button="@drawable/pdf_size_radio_selector"/>
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_toEndOf="@+id/rb_regular"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".4">
+                    <RadioButton
+                        android:id="@+id/rb_max"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:button="@drawable/pdf_size_radio_selector"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/tv_low"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:layout_below="@+id/rb_low"
+                    android:paddingStart="5dp"
+                    android:text="Low"
+                    android:textColor="@color/pdf_size_radio_unchecked"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:id="@+id/tv_medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:layout_below="@+id/rb_medium"
+                    android:text="Medium"
+                    android:textColor="@color/pdf_size_radio_unchecked"
+                    android:textSize="12dp"/>
+                <TextView
+                    android:id="@+id/tv_regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:layout_below="@+id/rb_regular"
+                    android:text="Regular"
+                    android:textColor="@color/pdf_size_radio_checked"
+                    android:textSize="12dp"/>
+                <TextView
+                    android:id="@+id/tv_max"
+                    android:layout_width="0dp"
+                    android:layout_weight=".4"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rb_max"
+                    android:text="Max"
+                    android:textColor="@color/pdf_size_radio_unchecked"
+                    android:textSize="12dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/divider" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_16sdp">
+            <TextView
+                android:id="@+id/tv_compress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Compress"
+                android:textColor="#2089E4"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/tv_compress"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:text="Cancel"
+                android:textColor="#0A0A0A"
+                android:textSize="16sp" />
+        </RelativeLayout>
+       <!-- <Button
+            android:id="@+id/btn_done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/button_bg"
+            android:text="@string/save_pdf"
+            android:textAllCaps="false"
+            android:textColor="@color/sky_blue"
+            android:textSize="14sp" />-->
+    </LinearLayout>
+</RelativeLayout>

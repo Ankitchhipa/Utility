@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context="com.advanced.phone.junk.cache.cleaner.booster.antimalware.AllSettings">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_notisetting"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:layout_marginRight="@dimen/margin_8"
+            android:background="@drawable/divider_shadow"
+            android:drawableStart="@drawable/noti_seti"
+            android:drawableLeft="@drawable/noti_seti"
+            android:drawablePadding="@dimen/margin_16"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/margin_15"
+            android:paddingLeft="@dimen/margin_15"
+            android:paddingTop="@dimen/margin_8"
+            android:paddingBottom="@dimen/margin_8"
+            android:text="@string/str_title_activity_setting"
+            android:textColor="@color/txt_color"
+            android:visibility="gone"/>
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/margin_10"-->
+        <!--android:background="@drawable/divider_shadow" />-->
+
+        <TextView
+            android:id="@+id/tv_alertsetting"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_marginStart="@dimen/margin_15"
+            android:layout_marginLeft="@dimen/margin_15"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:layout_marginRight="@dimen/margin_8"
+            android:drawableStart="@drawable/aler_setting"
+            android:drawableLeft="@drawable/aler_setting"
+            android:drawablePadding="@dimen/margin_16"
+            android:gravity="center_vertical"
+            android:paddingTop="@dimen/margin_8"
+            android:paddingBottom="@dimen/margin_8"
+            android:text="@string/str_alert_screen"
+            android:textColor="@color/txt_color"
+            android:visibility="gone" />
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/margin_10"-->
+        <!--android:background="@drawable/divider_shadow"-->
+        <!--android:visibility="gone" />-->
+
+        <TextView
+            android:id="@+id/tv_ignoresetting"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:layout_marginRight="@dimen/margin_8"
+            android:background="@drawable/divider_shadow"
+            android:drawableStart="@drawable/ignor"
+            android:drawableLeft="@drawable/ignor"
+            android:drawablePadding="@dimen/margin_16"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/margin_15"
+            android:paddingLeft="@dimen/margin_15"
+            android:paddingTop="@dimen/margin_8"
+            android:paddingBottom="@dimen/margin_8"
+            android:text="@string/str_ignorefilter"
+            android:textColor="@color/txt_color" />
+
+        <TextView
+            android:id="@+id/tv_restore_purchase"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:layout_marginRight="@dimen/margin_8"
+            android:background="@drawable/divider_shadow"
+            android:drawableStart="@drawable/restore_purchase"
+            android:drawableLeft="@drawable/restore_purchase"
+            android:drawablePadding="@dimen/margin_16"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/margin_15"
+            android:paddingLeft="@dimen/margin_15"
+            android:paddingTop="@dimen/margin_8"
+            android:paddingBottom="@dimen/margin_8"
+            android:text="@string/str_restore_purchase"
+            android:textColor="@color/txt_color" />
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/margin_10"-->
+        <!--android:background="@drawable/divider_shadow" />-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <include layout="@layout/btm_adss" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_6"
+        android:layout_above="@id/ad_view_banner_container"
+        android:background="@color/grayseperator"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ad_view_banner_container"
+        android:background="@color/grayseperator"
+        android:paddingLeft="@dimen/margin_8"
+        android:text="@string/remove_ads"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_9"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ad_view_banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_75sdp"
+        android:layout_above="@id/margin_btm"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/margin_btm"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

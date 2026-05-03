@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grey_white_bg_gradient"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="We value your feedback, please share your thoughts to help us enhance your experience."
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/feedbacktitle_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_11sdp"
+        android:background="@drawable/round_corner_shape"
+        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890@._-"
+        android:elevation="@dimen/_4sdp"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="@string/str_email_id"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:outlineAmbientShadowColor="@color/blue_shadow"
+        android:outlineSpotShadowColor="@color/blue_shadow"
+        android:padding="12dp"
+        android:textColor="#757575"
+        android:textSize="14sp" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/feedbacktype_sppiner"
+        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_11sdp"
+        android:background="@drawable/round_corner_shape"
+        android:elevation="@dimen/_4sdp"
+        android:fontFamily="@font/roboto_regular"
+        android:minHeight="48dp"
+        android:outlineAmbientShadowColor="@color/blue_shadow"
+        android:outlineSpotShadowColor="@color/blue_shadow"
+        android:spinnerMode="dropdown" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edt_messgae"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_11sdp"
+        android:background="@drawable/round_corner_shape"
+        android:elevation="@dimen/_4sdp"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="top"
+        android:hint="Feedback"
+        android:inputType="textMultiLine"
+        android:minHeight="120dp"
+        android:outlineAmbientShadowColor="@color/blue_shadow"
+        android:outlineSpotShadowColor="@color/blue_shadow"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/chk_subscribe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:fontFamily="@font/roboto_regular"
+        android:includeFontPadding="false"
+        android:text="Subscribe now to get latest tech scoops"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:buttonTint="@color/checkbox_selector" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@drawable/feedback_submit_btn_bg"
+            android:backgroundTint="@color/dark_blue"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</LinearLayout>

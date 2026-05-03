@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawer_bg"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_15sdp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:src="@drawable/ic_app_round_logo" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:includeFontPadding="false"
+                android:text="mobibuz"
+                android:textColor="@color/toolbar_color"
+                android:textSize="@dimen/_12ssp"
+                app:fontFamily="@font/myriad_pro_regular" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/pro_version"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                app:fontFamily="@font/roboto_medium" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:lineSpacingExtra="@dimen/_1sdp"
+                android:text="@string/clean_and_manage_apps"
+                android:textColor="@color/grey_200"
+                android:textSize="@dimen/_11ssp"
+                app:fontFamily="@font/roboto_regular" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_upgrade_pro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/yellow_round_corner_rect"
+                android:paddingHorizontal="@dimen/_30sdp"
+                android:paddingVertical="@dimen/_6sdp"
+                android:text="@string/upgrade_pro"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp"
+                app:fontFamily="@font/roboto_medium" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginBottom="@dimen/_7sdp"
+        android:background="@color/toolbar_color" />
+
+    <include
+        android:id="@+id/drawer_center"
+        layout="@layout/drawer_center"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@color/blue_grey_100"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/drawer_bottom"
+        layout="@layout/drawer_bottom" />
+
+</LinearLayout>

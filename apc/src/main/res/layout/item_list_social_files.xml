@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/actionBarSize"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="horizontal">
+    <!--#f5f5f5-->
+
+    <ImageView
+        android:id="@+id/junklistitemimage"
+        android:layout_width="?android:attr/actionBarSize"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_marginsmall"
+        android:src="@drawable/my_files"
+        android:layout_marginStart="@dimen/activity_horizontal_marginsmall" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/junklistitemapp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:gravity="center_vertical"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:paddingLeft="2dp"
+            android:singleLine="true"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="@dimen/font_15"
+            android:paddingStart="2dp" />
+
+        <TextView
+            android:id="@+id/junklistitemsize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="@dimen/font_15" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/listiteminfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_horizontal_marginsmall"
+        android:src="@drawable/info"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/checkcontainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_marginsmall"
+        android:padding="@dimen/activity_horizontal_marginbig">
+
+        <CheckBox
+            android:id="@+id/junklistitemcheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/custom_checkbox" />
+    </LinearLayout>
+</LinearLayout>

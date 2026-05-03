@@ -1,0 +1,910 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sidebar_header_color"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/main_toolbar_apc" />
+
+    <RelativeLayout
+        android:id="@+id/ad_view_banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:visibility="visible"
+        android:background="@drawable/ad_background">
+
+        <include layout="@layout/adaptive_banner_ad_layout" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linear_bottom_tab"
+        android:layout_below="@id/ad_view_banner_container">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/up_rel_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sidebar_header_color"
+                android:paddingBottom="@dimen/margin_16">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/model" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/str_model"
+                            android:textColor="@color/list_item_sub_header_color"
+                            android:textSize="@dimen/_10ssp"
+                            app:fontFamily="@font/roboto_regular" />
+
+                        <TextView
+                            android:id="@+id/model_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLength="11"
+                            android:text="MI Max"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/_15ssp"
+                            app:fontFamily="@font/roboto_bold" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.4"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/up_time" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/str_battery_capicty"
+                            android:textColor="@color/list_item_sub_header_color"
+                            android:textSize="@dimen/_10ssp"
+                            app:fontFamily="@font/roboto_regular" />
+
+                        <TextView
+                            android:id="@+id/uptime_sys"
+                            android:layout_width="@dimen/margin_100"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/_15ssp"
+                            app:fontFamily="@font/roboto_bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/android" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/android"
+                            android:textColor="@color/list_item_sub_header_color"
+                            android:textSize="@dimen/_10ssp"
+                            app:fontFamily="@font/roboto_regular" />
+
+                        <TextView
+                            android:id="@+id/version_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7.0 N"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/_15ssp"
+                            app:fontFamily="@font/roboto_bold" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/down_ll_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:orientation="vertical">
+
+                    <!--<androidx.cardview.widget.CardView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_margin="@dimen/margin_8"-->
+                    <!--app:cardBackgroundColor="@android:color/white"-->
+                    <!--app:cardElevation="4dp">-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingLeft="@dimen/margin_16"
+                            android:paddingTop="@dimen/margin_16"
+                            android:paddingRight="@dimen/margin_16"
+                            android:paddingBottom="@dimen/margin_32">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_network"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_12ssp"
+                                app:fontFamily="@font/roboto_medium" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="15dp">
+
+                                <ImageView
+                                    android:id="@+id/iv_wifi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:visibility="gone" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@+id/iv_wifi"
+                                    android:layout_toRightOf="@+id/iv_wifi"
+                                    android:text="@string/str_wifi"
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontFamily="@font/roboto_regular" />
+
+                                <TextView
+                                    android:id="@+id/tv_wifi_status"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:text=""
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontFamily="@font/roboto_regular" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="13dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/iv_bluetooth"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/bluetooth"
+                                    android:visibility="gone" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@+id/iv_bluetooth"
+                                    android:layout_toRightOf="@+id/iv_bluetooth"
+                                    android:text="@string/str_bluetooth"
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontFamily="@font/roboto_regular" />
+
+                                <TextView
+                                    android:id="@+id/tv_bluetooth_status"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:text=""
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontFamily="@font/roboto_regular" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="15dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/iv_mobile_data"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:visibility="gone" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@+id/iv_mobile_data"
+                                    android:layout_toRightOf="@+id/iv_mobile_data"
+                                    android:text="@string/str_location"
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontFamily="@font/roboto_regular" />
+
+                                <TextView
+                                    android:id="@+id/tv_gps_status"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:text=""
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontFamily="@font/roboto_regular" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:background="@drawable/divider_shadow" />
+                    </RelativeLayout>
+
+
+                    <!--</androidx.cardview.widget.CardView>-->
+
+                    <!--<androidx.cardview.widget.CardView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="@dimen/margin_8"-->
+                    <!--android:layout_marginRight="@dimen/margin_8"-->
+                    <!--app:cardBackgroundColor="@android:color/white"-->
+                    <!--app:cardElevation="4dp">-->
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingLeft="@dimen/margin_16"
+                            android:paddingTop="@dimen/margin_16"
+                            android:paddingRight="@dimen/margin_16"
+                            android:paddingBottom="@dimen/margin_32">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_memory"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_12ssp"
+                                app:fontFamily="@font/roboto_medium" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="@dimen/margin_15">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:visibility="gone" />
+
+                                <ProgressBar
+                                    android:id="@+id/progress_ram"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:progress="80"
+                                    android:progressDrawable="@drawable/progressbar_sys_info" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rel_used"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentLeft="true"
+                                    android:text="@string/str_memory_used"
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontFamily="@font/roboto_regular" />
+
+                                <TextView
+                                    android:id="@+id/used_ram"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:text="2.09 GB"
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontFamily="@font/roboto_regular" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rel_available"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentLeft="true"
+                                    android:text="@string/str_available"
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontFamily="@font/roboto_regular" />
+
+                                <TextView
+                                    android:id="@+id/avail_ram"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:text="695 MB"
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontFamily="@font/roboto_regular" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rel_tot"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentLeft="true"
+                                    android:text="@string/str_total"
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontFamily="@font/roboto_regular" />
+
+                                <TextView
+                                    android:id="@+id/tvtot_ram"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:text="695 MB"
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontFamily="@font/roboto_regular" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:background="@drawable/divider_shadow" />
+                    </RelativeLayout>
+                    <!--<ImageView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="@dimen/margin_15"-->
+                    <!--android:background="@drawable/divider_shadow" />-->
+                    <!--</androidx.cardview.widget.CardView>-->
+
+                    <!--<androidx.cardview.widget.CardView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_margin="@dimen/margin_8"-->
+                    <!--app:cardBackgroundColor="@android:color/white"-->
+                    <!--app:cardElevation="4dp">-->
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingLeft="@dimen/margin_16"
+                            android:paddingTop="@dimen/margin_16"
+                            android:paddingRight="@dimen/margin_16"
+                            android:paddingBottom="@dimen/margin_32">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_storage"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_12ssp"
+                                app:fontFamily="@font/roboto_medium" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="15dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:visibility="gone" />
+
+                                <ProgressBar
+                                    android:id="@+id/progress_storage"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:progress="80"
+                                    android:progressDrawable="@drawable/progressbar_sys_info_storage" />
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rel_used2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentLeft="true"
+                                    android:text="@string/str_used_space"
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontFamily="@font/roboto_regular" />
+
+                                <TextView
+                                    android:id="@+id/used_space"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:text="2.09 GB"
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontFamily="@font/roboto_regular" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rel_available2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/str_available"
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontFamily="@font/roboto_regular" />
+
+                                <TextView
+                                    android:id="@+id/avail_space"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:text="695 MB"
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontFamily="@font/roboto_regular" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rel_tot2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/str_total"
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontFamily="@font/roboto_regular" />
+
+                                <TextView
+                                    android:id="@+id/tot_space"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:text="695 MB"
+                                    android:textColor="@color/grey"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontFamily="@font/roboto_regular" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:background="@drawable/divider_shadow" />
+                    </RelativeLayout>
+
+                    <!--<ImageView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="@dimen/margin_15"-->
+                    <!--android:background="@drawable/divider_shadow" />-->
+                    <!--</androidx.cardview.widget.CardView>-->
+                    <!--<ImageView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="@dimen/margin_15"-->
+                    <!--android:background="@drawable/divider_shadow"/>-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_16">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/battery_info"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp"
+                            app:fontFamily="@font/roboto_medium" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="15dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:visibility="gone" />
+
+                            <ProgressBar
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:progress="80"
+                                android:progressDrawable="@drawable/progressbar_sys_info_storage" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/margin_7"
+                            android:layout_marginBottom="@dimen/margin_7"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_battery_health"
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_10ssp"
+                                app:fontFamily="@font/roboto_regular" />
+
+                            <TextView
+                                android:id="@+id/tv_battery_health"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:text=""
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_10ssp"
+                                app:fontFamily="@font/roboto_regular" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/margin_7"
+                            android:layout_marginBottom="@dimen/margin_7"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_battery_status"
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_10ssp"
+                                app:fontFamily="@font/roboto_regular" />
+
+                            <TextView
+                                android:id="@+id/tv_battery_status"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:text=""
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_10ssp"
+                                app:fontFamily="@font/roboto_regular" />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/seprator_color"
+                            android:visibility="gone" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/margin_7"
+                            android:layout_marginBottom="@dimen/margin_7"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_battery_voltage"
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_10ssp"
+                                app:fontFamily="@font/roboto_regular" />
+
+                            <TextView
+                                android:id="@+id/tv_battery_voltage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:text=""
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_10ssp"
+                                app:fontFamily="@font/roboto_regular" />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/seprator_color"
+                            android:visibility="gone" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/margin_7"
+                            android:layout_marginBottom="@dimen/margin_7"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_battery_temp"
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_10ssp"
+                                app:fontFamily="@font/roboto_regular" />
+
+                            <TextView
+                                android:id="@+id/tv_battery_temp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:text=""
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_10ssp"
+                                app:fontFamily="@font/roboto_regular" />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/seprator_color"
+                            android:visibility="gone" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/margin_7"
+                            android:layout_marginBottom="@dimen/margin_7"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_battery_type"
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_10ssp"
+                                app:fontFamily="@font/roboto_regular" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:text=""
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_10ssp"
+                                app:fontFamily="@font/roboto_regular" />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/seprator_color"
+                            android:visibility="gone" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/margin_7"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:text="@string/str_battery_status"
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_10ssp"
+                                app:fontFamily="@font/roboto_regular" />
+
+                            <TextView
+                                android:id="@+id/tv_battery_level"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:text=""
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_10ssp"
+                                app:fontFamily="@font/roboto_regular" />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/seprator_color"
+                            android:visibility="gone" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <!--<TextView
+            android:id="@+id/tv_ad"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_above="@id/ad_view_banner_container"
+            android:background="@color/grayseperator"
+            android:paddingLeft="@dimen/margin_8"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_10" />-->
+
+        <!--<LinearLayout
+            android:id="@+id/ad_view_banner_container"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_75sdp"
+            android:layout_above="@id/margin_btm"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+        </LinearLayout>-->
+
+        <View
+            android:id="@+id/margin_btm"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_bottom_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <include layout="@layout/layout_bottom_tab" />
+    </LinearLayout>
+</RelativeLayout>

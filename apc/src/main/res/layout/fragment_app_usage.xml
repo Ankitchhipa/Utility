@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!--<androidx.cardview.widget.CardView-->
+        <!--android:id="@+id/card_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:elevation="6dp"-->
+        <!--app:cardCornerRadius="@dimen/margin_3">-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/left_right_16"
+                android:layout_marginLeft="@dimen/left_right_16"
+                android:gravity="bottom"
+                android:paddingTop="@dimen/left_right_16"
+                android:paddingBottom="@dimen/margin_8"
+                android:text="@string/str_security_privacy"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/font_16"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+
+            <LinearLayout
+                android:id="@+id/cardview_privatebrowser"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/divider_shadow"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/left_right_16"
+                    android:layout_marginRight="@dimen/left_right_16"
+                    android:src="@drawable/sidebar_icon_2" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:paddingEnd="16dp"
+                    android:drawablePadding="@dimen/_5sdp"
+                    app:drawableEndCompat="@drawable/right_arrow"
+                    android:text="@string/str_private_browsing"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:fontFamily="@font/roboto_medium" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/nativeAdListCardview"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/divider_shadow"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/left_right_16"
+                    android:layout_marginRight="14dp"
+                    android:src="@drawable/ic_ad_icon_list" />
+
+               <!-- <TextView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="@dimen/left_right_16"
+                    android:layout_marginRight="@dimen/left_right_16"
+                    android:background="@drawable/circle_ad_blue"
+                    android:gravity="center"
+                    android:text="AD"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />-->
+
+                <FrameLayout
+                    android:id="@+id/customNativeAdInList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+            <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="8dp"-->
+            <!--android:background="@drawable/divider_shadow" />-->
+
+            <LinearLayout
+                android:id="@+id/cardview_scanning"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/divider_shadow"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/left_right_16"
+                    android:layout_marginRight="@dimen/left_right_16"
+                    android:src="@drawable/sidebar_icon_1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:paddingEnd="16dp"
+                    android:drawablePadding="@dimen/_5sdp"
+                    app:drawableEndCompat="@drawable/right_arrow"
+                    android:text="@string/str_anti_virus"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:fontFamily="@font/roboto_medium"  />
+
+            </LinearLayout>
+
+            <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="8dp"-->
+            <!--android:background="@drawable/divider_shadow" />-->
+
+            <LinearLayout
+                android:id="@+id/cardview_socialcleaner"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/divider_shadow"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/left_right_16"
+                    android:layout_marginRight="@dimen/left_right_16"
+                    android:src="@drawable/ic_btm_trubo_act" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:paddingEnd="16dp"
+                    android:drawablePadding="@dimen/_5sdp"
+                    app:drawableEndCompat="@drawable/right_arrow"
+                    android:text="@string/str_turbo_cleaner"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:fontFamily="@font/roboto_medium" />
+
+            </LinearLayout>
+
+            <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="8dp"-->
+            <!--android:background="@drawable/divider_shadow" />-->
+
+            <LinearLayout
+                android:id="@+id/cardview_notification"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/divider_shadow"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/left_right_16"
+                    android:layout_marginRight="@dimen/left_right_16"
+                    android:src="@drawable/sidebar_icon_3" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:paddingEnd="16dp"
+                    android:drawablePadding="@dimen/_5sdp"
+                    app:drawableEndCompat="@drawable/right_arrow"
+                    android:text="@string/str_noti_cleaner"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:fontFamily="@font/roboto_medium"  />
+
+            </LinearLayout>
+
+            <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="8dp"-->
+            <!--android:background="@drawable/divider_shadow" />-->
+
+            <LinearLayout
+                android:id="@+id/cardview_app_lock"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/divider_shadow">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/left_right_16"
+                    android:layout_marginRight="@dimen/left_right_16"
+                    android:src="@drawable/ic_lock" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:paddingEnd="16dp"
+                    android:drawablePadding="@dimen/_5sdp"
+                    app:drawableEndCompat="@drawable/right_arrow"
+                    android:text="@string/str_app_lock"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:fontFamily="@font/roboto_medium"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+        <!--</androidx.cardview.widget.CardView>-->
+    </ScrollView>
+
+  <!--  <include layout="@layout/small_banner_ad_layout" />-->
+
+    <!--<TextView
+        android:id="@+id/tv_ad"
+        android:layout_width="match_parent"
+        android:paddingLeft="@dimen/margin_8"
+        android:layout_height="0dp"
+        android:background="@color/grayseperator"
+        android:textSize="@dimen/font_10"
+        android:layout_above="@id/ad_view_banner_container"
+        android:textColor="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/ad_view_banner_container"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_height="@dimen/_60sdp">
+
+    </LinearLayout>-->
+
+</LinearLayout>

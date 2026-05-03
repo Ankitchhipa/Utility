@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="0"
+    android:toDegrees="360"
+    android:pivotX="50%"
+    android:pivotY="50%">
+    <shape
+        android:innerRadiusRatio="2.5"
+        android:shape="ring"
+        android:thickness="12dp"
+        android:useLevel="false"><!-- this line fixes the issue for lollipop api 21 -->
+
+        <gradient
+            android:endColor="#158fe5"
+            android:centerColor="@android:color/transparent"
+            android:startColor="@android:color/transparent"
+            android:type="sweep"
+            android:useLevel="false" />
+
+    </shape>
+</rotate>

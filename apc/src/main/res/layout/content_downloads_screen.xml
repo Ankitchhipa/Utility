@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/toolbar"
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.advanced.phone.junk.cache.cleaner.booster.antimalware.DownloadsScreen"
+    tools:showIn="@layout/activity_downloads_screen">
+
+    <LinearLayout
+        android:id="@+id/ad_view_banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55sdp"
+        android:layout_margin="@dimen/margin_8"
+        android:background="@drawable/ad_background"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/nativeSmallAdDownload"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_download"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btm_lays"
+        android:layout_below="@+id/ad_view_banner_container"
+        android:paddingHorizontal="@dimen/margin_8"
+        android:scrollbars="vertical" />
+
+    <LinearLayout
+        android:id="@+id/btm_lays"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/downloadclean_btn"
+            style="@style/BottomButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/str_delete"
+            app:fontFamily="@font/roboto_medium" />
+
+        <include layout="@layout/btm_ads" />
+
+        <include layout="@layout/btm_ads" />
+    </LinearLayout>
+
+    <!--  <TextView
+          android:id="@+id/tv_ad"
+          android:layout_width="match_parent"
+          android:paddingLeft="@dimen/margin_8"
+          android:layout_height="0dp"
+          android:background="@color/grayseperator"
+          android:textSize="@dimen/font_10"
+          android:textColor="@color/white" />
+
+
+      <View
+          android:id="@+id/margin_btm"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_alignParentBottom="true" />-->
+</RelativeLayout>

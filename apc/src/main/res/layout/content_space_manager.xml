@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.advanced.phone.junk.cache.cleaner.booster.antimalware.tools.SpaceManagerActivity"
+    tools:showIn="@layout/activity_space_manager">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_7sdp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:layout_weight="1"
+                    card_view:cardCornerRadius="3dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_images"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/margin_10"
+                            app:srcCompat="@drawable/images" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/images"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/font_16"
+                            app:fontFamily="@font/roboto_medium" />
+
+                        <TextView
+                            android:id="@+id/tv_images_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/font_14"
+                            android:visibility="gone"
+                            app:fontFamily="@font/roboto_regular" />
+
+                        <ProgressBar
+                            android:id="@+id/pbar_photos_count"
+                            android:layout_width="@dimen/margin_25"
+                            android:layout_height="@dimen/margin_25" />
+
+                        <TextView
+                            android:id="@+id/tv_images_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:background="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_2"
+                            android:text=""
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/font_14"
+                            android:visibility="invisible"
+                            app:fontFamily="@font/roboto_medium" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:layout_weight="1"
+                    card_view:cardCornerRadius="3dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_videos"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/margin_10"
+                            app:srcCompat="@drawable/videos" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/videos"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/font_16"
+                            app:fontFamily="@font/roboto_medium" />
+
+                        <TextView
+                            android:id="@+id/tv_videos_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/font_14"
+                            android:visibility="gone"
+                            app:fontFamily="@font/roboto_regular" />
+
+                        <ProgressBar
+                            android:id="@+id/pbar_videos_count"
+                            android:layout_width="@dimen/margin_25"
+                            android:layout_height="@dimen/margin_25" />
+
+                        <TextView
+                            android:id="@+id/tv_videos_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:background="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_2"
+                            android:text=""
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/font_14"
+                            android:visibility="invisible"
+                            app:fontFamily="@font/roboto_medium" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:layout_weight="1"
+                    card_view:cardCornerRadius="3dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_audios"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/margin_10"
+                            app:srcCompat="@drawable/audios" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:text="@string/audios"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/font_16"
+                            app:fontFamily="@font/roboto_medium" />
+
+                        <TextView
+                            android:id="@+id/tv_audios_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@string/font_family_regular"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/font_14"
+                            android:visibility="gone"
+                            app:fontFamily="@font/roboto_regular" />
+
+                        <ProgressBar
+                            android:id="@+id/pbar_audio_count"
+                            android:layout_width="@dimen/margin_25"
+                            android:layout_height="@dimen/margin_25" />
+
+                        <TextView
+                            android:id="@+id/tv_audios_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:background="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_2"
+                            android:text=""
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/font_14"
+                            android:visibility="invisible"
+                            app:fontFamily="@font/roboto_medium" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_marginRight="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:layout_weight="1"
+                    card_view:cardCornerRadius="3dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_documents"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/margin_10"
+                            app:srcCompat="@drawable/documeants" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@string/documents"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/font_16"
+                            app:fontFamily="@font/roboto_medium" />
+
+                        <TextView
+                            android:id="@+id/tv_documents_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@string/font_family_regular"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/font_14"
+                            android:visibility="gone"
+                            app:fontFamily="@font/roboto_regular" />
+
+                        <ProgressBar
+                            android:id="@+id/pbar_docs_count"
+                            android:layout_width="20dp"
+                            android:layout_height="@dimen/margin_25" />
+
+                        <TextView
+                            android:id="@+id/tv_documents_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:background="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_2"
+                            android:text=""
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/font_14"
+                            android:visibility="invisible"
+                            app:fontFamily="@font/roboto_medium" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_marginRight="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:layout_weight="1"
+                    card_view:cardCornerRadius="3dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_others"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/margin_10"
+                            app:srcCompat="@drawable/others" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="@string/str_myothers"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/font_16"
+                            app:fontFamily="@font/roboto_medium" />
+
+                        <TextView
+                            android:id="@+id/tv_others_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@string/font_family_regular"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/font_14"
+                            android:visibility="gone"
+                            app:fontFamily="@font/roboto_regular" />
+
+                        <ProgressBar
+                            android:id="@+id/pbar_others_count"
+                            android:layout_width="@dimen/margin_25"
+                            android:layout_height="@dimen/margin_25" />
+
+                        <TextView
+                            android:id="@+id/tv_others_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:background="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_2"
+                            android:text=""
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/font_14"
+                            android:visibility="invisible"
+                            app:fontFamily="@font/roboto_medium" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_marginRight="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:layout_weight="1"
+                    card_view:cardCornerRadius="3dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_downloads"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/margin_10"
+                            app:srcCompat="@drawable/downloads" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@string/str_download"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/font_16"
+                            app:fontFamily="@font/roboto_medium" />
+
+                        <TextView
+                            android:id="@+id/tv_downloads_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@string/font_family_regular"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/font_14"
+                            android:visibility="gone"
+                            app:fontFamily="@font/roboto_regular" />
+
+                        <ProgressBar
+                            android:id="@+id/pbar_downloads_count"
+                            android:layout_width="@dimen/margin_25"
+                            android:layout_height="@dimen/margin_25" />
+
+                        <TextView
+                            android:id="@+id/tv_downloads_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:background="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_2"
+                            android:text=""
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/font_14"
+                            android:visibility="invisible"
+                            app:fontFamily="@font/roboto_medium" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_marginRight="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:layout_weight="1"
+                    card_view:cardCornerRadius="3dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_duplicates"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/margin_10"
+                            app:srcCompat="@drawable/duplicates" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@string/str_duplicatse"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/font_16"
+                            app:fontFamily="@font/roboto_medium" />
+
+                        <TextView
+                            android:id="@+id/tv_duplicates_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@string/font_family_regular"
+                            android:text=""
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/font_14"
+                            android:visibility="gone"
+                            app:fontFamily="@font/roboto_regular" />
+
+                        <ProgressBar
+                            android:id="@+id/pbar_dup_count"
+                            android:layout_width="@dimen/margin_25"
+                            android:layout_height="@dimen/margin_25"
+                            android:visibility="invisible" />
+
+                        <TextView
+                            android:id="@+id/tv_duplicates_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_5"
+                            android:background="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_2"
+                            android:text="@string/str_scan"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/font_14"
+                            app:fontFamily="@font/roboto_medium" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_marginRight="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:layout_weight="1"
+                    card_view:cardCornerRadius="3dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_apk_files"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/margin_10"
+                            app:srcCompat="@drawable/apk_files" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@string/str_apk_files"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/font_16"
+                            app:fontFamily="@font/roboto_medium" />
+
+                        <TextView
+                            android:id="@+id/tv_apk_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@string/font_family_regular"
+                            android:text=""
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/font_14"
+                            android:visibility="gone"
+                            app:fontFamily="@font/roboto_regular" />
+
+                        <ProgressBar
+                            android:id="@+id/pbar_apk_count"
+                            android:layout_width="@dimen/margin_25"
+                            android:layout_height="@dimen/margin_25" />
+
+                        <TextView
+                            android:id="@+id/tv_apk_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:background="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_2"
+                            android:text=""
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/font_14"
+                            android:visibility="invisible"
+                            app:fontFamily="@font/roboto_medium" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_marginRight="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:layout_weight="1"
+                    card_view:cardCornerRadius="3dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_all_files"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/margin_10"
+                            app:srcCompat="@drawable/all_files" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="@string/all_files"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/font_16"
+                            app:fontFamily="@font/roboto_medium" />
+
+                        <TextView
+                            android:id="@+id/tv_all_files_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@string/font_family_regular"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/font_14"
+                            android:visibility="gone"
+                            app:fontFamily="@font/roboto_regular" />
+
+                        <ProgressBar
+                            android:id="@+id/pbar_all_count"
+                            android:layout_width="@dimen/margin_25"
+                            android:layout_height="@dimen/margin_25" />
+
+                        <TextView
+                            android:id="@+id/tv_all_files_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:background="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_2"
+                            android:text=""
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/font_14"
+                            android:visibility="invisible"
+                            app:fontFamily="@font/roboto_medium" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

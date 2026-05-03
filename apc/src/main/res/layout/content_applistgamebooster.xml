@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:showIn="@layout/activity_applistgamebooster">
+
+    <ListView
+        android:id="@+id/listcachedelte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ad_view_banner_container"
+        android:layout_alignParentTop="true"
+        android:cacheColorHint="#00000000"
+        android:clipToPadding="false"
+        android:dividerHeight="@dimen/margin_1"
+        android:footerDividersEnabled="false"
+        android:scrollbars="vertical" />
+
+    <TextView
+        android:id="@+id/emptytv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/str_nogames_added"
+        android:textColor="@color/txt_color"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/btm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_3" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_ad"
+        android:layout_width="match_parent"
+        android:paddingLeft="@dimen/margin_8"
+        android:layout_height="0dp"
+        android:background="@color/grayseperator"
+        android:textSize="@dimen/font_10"
+        android:layout_above="@id/ad_view_banner_container"
+        android:textColor="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/ad_view_banner_container"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/ad_background"
+        android:layout_margin="@dimen/margin_8"
+        android:layout_above="@id/margin_btm"
+        android:layout_alignParentBottom="true"
+        android:layout_height="@dimen/_55sdp">
+
+        <FrameLayout
+            android:id="@+id/nativeSmallAdGameAdd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/margin_btm"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

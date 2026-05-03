@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorAccent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/forgetPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_20"
+            android:background="@android:color/transparent"
+            android:drawableRight="@drawable/menu" />
+
+        <ImageView
+            android:id="@+id/lock_9_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/lock_9_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_5"
+            android:gravity="center"
+            android:text="@string/draw_pattern"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_20" />
+
+<!--        <com.takwolf.android.lock9.Lock9View-->
+<!--            android:id="@+id/lock_9_view"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            app:lineColor="@color/line_color_lock"-->
+<!--            app:lineWidth="@dimen/margin_4"-->
+<!--            app:nodeOnSrc="@drawable/lock_9_view_node_highlighted"-->
+<!--            app:nodeSrc="@drawable/lock_9_view_node_normal" />-->
+        <ImageView
+            android:id="@+id/finger_print_scan"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_40"
+            android:layout_margin="@dimen/margin_4"
+            android:src="@drawable/ic_finger_print_icon"
+            app:tint="@color/white"
+            />
+
+<!--        <com.takwolf.android.lock9.Lock9View-->
+<!--            android:id="@+id/lock_invisible_line"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:visibility="gone"-->
+<!--            app:lineColor="@android:color/transparent"-->
+<!--            app:lineWidth="@dimen/margin_4"-->
+<!--            app:nodeOnSrc="@drawable/lock_9_view_node_normal"-->
+<!--            app:nodeSrc="@drawable/lock_9_view_node_normal" />-->
+    </LinearLayout>
+</RelativeLayout>

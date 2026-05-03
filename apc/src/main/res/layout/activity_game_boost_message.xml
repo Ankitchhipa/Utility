@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".gameboost.GameMessageBoost">
+
+    <TextView
+        android:id="@+id/tv_gameName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Modern Combat"
+        android:textColor="@color/txt_color"
+        android:textSize="27sp"
+        android:visibility="gone" />
+
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shadow_bg"
+        android:visibility="visible">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:civ_border_color="#17204a" />
+
+        <!--<com.jackandphantom.circularprogressbar.CircleProgressbar
+            android:id="@+id/circularprogressbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />-->
+
+
+    </FrameLayout>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_blink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:rotation="350"
+        android:visibility="visible"
+        app:srcCompat="@drawable/ic_light"
+        app:tint="@color/colorPrimaryDark" />
+
+
+    <FrameLayout
+        android:id="@+id/left_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/frame"
+        android:visibility="visible" />
+
+    <FrameLayout
+        android:id="@+id/right_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/frame"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_boosting"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@+id/frame"
+        android:layout_centerHorizontal="true"
+        android:text="@string/game_boosting"
+        android:textColor="@color/txt_color"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:id="@+id/ad_view_banner_container"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="@dimen/_4sdp"
+        android:background="@drawable/ad_background"
+        android:layout_alignParentBottom="true"
+        android:layout_height="@dimen/_110sdp">
+
+        <FrameLayout
+            android:id="@+id/nativeLargeAdGameBoosting"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:paddingBottom="@dimen/activity_horizontal_marginbig">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/img1"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:src="@drawable/game_boosting_inner_ring" />-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/img2"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:src="@drawable/game_boosting_outer_ring" />-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/im"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerInParent="true" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/img2"-->
+    <!---->
+    <!--android:gravity="center"-->
+    <!--android:text="@string/str_boosting"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:textSize="@dimen/font_30" />-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="@dimen/margin_8"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_centerHorizontal="true" />-->
+
+    <!--</RelativeLayout>-->
+
+
+</RelativeLayout>

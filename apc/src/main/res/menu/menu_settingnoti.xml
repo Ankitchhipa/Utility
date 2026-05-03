@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.toolbar.MainActivity">
+
+    <item
+        android:id="@+id/action_reset"
+        android:icon="@drawable/settings_blue"
+        android:orderInCategory="100"
+        android:title="@string/str_action_reset"
+        app:showAsAction="always" />
+
+</menu>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".RealTimeActivity">
+
+    <LinearLayout
+        android:id="@+id/pbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:translationZ="@dimen/margin_2"
+        android:visibility="invisible">
+
+        <ProgressBar
+            android:id="@+id/pbar"
+            android:layout_width="@dimen/margin_60"
+            android:layout_height="@dimen/margin_60"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin_8"
+            android:translationZ="@dimen/margin_2"
+            android:visibility="visible" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin_15"
+            android:background="@color/grayseperator"
+            android:gravity="center"
+            android:padding="@dimen/margin_6"
+            android:text="@string/str_loading_settings"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_12"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/margin_70"
+            android:layout_height="@dimen/margin_70"
+            android:layout_gravity="center"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:src="@drawable/real_time_home" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/str_real_time_protection"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/font_20"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_20"
+            android:layout_marginRight="@dimen/margin_20"
+            android:gravity="center"
+            android:text="@string/str_real_time_desc"
+            android:textSize="@dimen/font_12" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_40"
+            android:layout_marginLeft="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginRight="@dimen/margin_8"
+            android:layout_marginBottom="@dimen/margin_4">
+
+            <com.advanced.phone.junk.cache.cleaner.booster.antimalware.utility.PanicAnimation xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/btn_ripplescan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"
+                app:rb_color="#5b94fc"
+                app:rb_duration="2000"
+                app:rb_radius="15dp"
+                app:rb_rippleAmount="1"
+                app:rb_scale="14" />
+
+            <Button
+                android:id="@+id/enable_scan_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:text="@string/str_enable_scan"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/font_18" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_40"
+            android:layout_marginLeft="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginRight="@dimen/margin_8"
+            android:layout_marginBottom="@dimen/margin_4">
+
+            <com.advanced.phone.junk.cache.cleaner.booster.antimalware.utility.PanicAnimation xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/btn_ripple"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"
+                app:rb_color="#5b94fc"
+                app:rb_duration="2000"
+                app:rb_radius="15dp"
+                app:rb_rippleAmount="1"
+                app:rb_scale="14" />
+
+            <Button
+                android:id="@+id/start_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:text="@string/str_enable"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/font_18" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/disable_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_40"
+            android:layout_marginLeft="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_4"
+            android:layout_marginRight="@dimen/margin_8"
+            android:layout_marginBottom="@dimen/margin_8"
+            android:background="@color/ad_border_color"
+            android:text="@string/str_notnow"
+            android:textAllCaps="true"
+            android:textColor="#9ba5bc"
+            android:textSize="@dimen/font_18" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:gravity="center"
+            android:text="@string/str_enable_realtime" />
+    </LinearLayout>
+</RelativeLayout>

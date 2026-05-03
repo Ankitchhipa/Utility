@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_uniscan_permission_dialog">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/image_preview"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14sdp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:padding="@dimen/_10sdp"
+        android:src="@drawable/ic_permission_close" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_show"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_280sdp"
+        android:layout_below="@+id/tv_preview"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@color/white"
+        android:scaleType="fitCenter" />
+
+</RelativeLayout>

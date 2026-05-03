@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="horizontal">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_rotate_left"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:drawableTop="@drawable/ic_rotate_left"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/rotate_left"
+        android:textColor="@color/sky_blue"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_rotate_right"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:drawableTop="@drawable/ic_rotate"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/rotate_right"
+        android:textColor="@color/sky_blue"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_select_all"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:drawableTop="@drawable/ic_fullscreen"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/select_all"
+        android:textColor="@color/sky_blue"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_crop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:drawableTop="@drawable/ic_crop"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/crop"
+        android:visibility="gone"
+        android:textColor="@color/sky_blue"
+        android:textSize="12sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_done"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:drawableTop="@drawable/ic_done_blue"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/str_next"
+        android:textColor="@color/sky_blue"
+        android:textSize="12sp" />
+
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mobibuz</string>
+    <string name="permission_storage_camera">This app needs permission of camera &amp; storage to access some features. Click on Settings to allow permission.</string>
+    <string name="permission_storage">This app needs permission of storage to access some features. Click on Settings to allow permission.</string>
+    <string name="permission_setting_camera">This app needs permission of camera to access some features. Click on Settings to allow permission.</string>
+    <string name="permission_setting_all_files">This app needs permission of All Files to access some features. Click on Settings to allow permission.</string>
+    <string name="permission_setting_notification">This app needs permission of Notifications to access some features. Click on Settings to allow permission.</string>
+    <string name="permission_setting_screen">You have denied some permissions. Kindly allow through "settings"</string>
+    <string name="go_to_settings">Go to settings</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="all_file_access_permission_title">Permission Required!</string>
+    <string name="all_file_access_permission_btn_text">Allow Access!</string>
+    <string name="all_file_access_permission_desc">Permission required to access your device\'s\nfiles to ensure you can scan, share &amp; boost\nperformance using %s.</string>
+
+    <string name="install_failed">Installation Failed!</string>
+    <string name="install_success">Installation Successful!</string>
+    <string name="str_ok">OK</string>
+
+    <string name="fetching_ad_plz_wait">Fetching ad please wait...</string>
+
+    <string name="share_content">Hey friends!\n\nI’ve been using this awesome free app called Mobibuz, and I’m totally in love with it! It helps me send files instantly, quickly scan document, turn images into text, and speed up my phone. It makes my life so much easier—give it a try and see the difference for yourself!\n\nDownload Mobibuz now and thank me later!\n\n%s</string>
+    <string name="not_now"><u>Not Now</u></string>
+
+    <string name="loading_ad">Loading Ad ...</string>
+</resources>

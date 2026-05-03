@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content_boost_animation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/tv_ad"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/layout_one"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="?actionBarSize"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/iv_back_socialapp"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:padding="@dimen/margin_16"-->
+            <!--android:src="@drawable/ic_back_white" />-->
+
+
+            <!--<TextView-->
+            <!--android:id="@+id/tv_title"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!---->
+            <!--android:text="@string/str_social_cleaning"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="@dimen/font_18" />-->
+            <!--</LinearLayout>-->
+            <include android:id="@+id/toolbar"
+                layout="@layout/main_toolbar_apc" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <RelativeLayout
+                    android:id="@+id/arclayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true">
+
+                    <!--<com.advanced.phone.junk.cache.cleaner.booster.antimalware.circleProgress.ArcProgress-->
+                    <!--android:id="@+id/arc_boost_junk"-->
+                    <!--android:layout_width="155dp"-->
+                    <!--android:layout_height="155dp"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--app:arc_bottom_text_size="2"-->
+                    <!--app:arc_progress="100"-->
+                    <!--app:arc_stroke_width="70"-->
+                    <!--app:arc_suffix_text_size="0"-->
+                    <!--app:arc_text_size="0"-->
+                    <!--app:uppertext="" />-->
+
+                    <!--<com.advanced.phone.junk.cache.cleaner.booster.antimalware.circleProgress.ArcProgress-->
+                    <!--android:id="@+id/arc_boost_junkouter"-->
+                    <!--android:layout_width="160dp"-->
+                    <!--android:layout_height="160dp"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--app:arc_angle="260"-->
+                    <!--app:arc_bottom_text_size="2"-->
+                    <!--app:arc_progress="0"-->
+                    <!--app:arc_stroke_width="120"-->
+                    <!--app:arc_suffix_text_padding="@dimen/margin_7"-->
+                    <!--app:arc_suffix_text_size="3"-->
+                    <!--app:arc_text_size="8"-->
+                    <!--app:arc_unfinished_color="@color/white"-->
+                    <!--app:dashed="true"-->
+                    <!--app:uppertext="" />-->
+
+                    <com.advanced.phone.junk.cache.cleaner.booster.antimalware.utility.PanicAnimation
+                        android:id="@+id/content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        app:rb_color="#eaf6ff"
+                        app:rb_duration="3000"
+                        app:rb_radius="20dp"
+                        app:rb_rippleAmount="5"
+                        app:rb_scale="6">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:id="@+id/rotate_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/margin_15"
+                                android:src="@drawable/scaning_icons" />
+
+                            <!--<RelativeLayout-->
+                            <!--android:id="@+id/circle_lays"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_centerInParent="true"-->
+                            <!--android:background="@drawable/circuler_bg_scan">-->
+
+                            <TextView
+                                android:id="@+id/boostsize"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="0"
+                                android:textColor="#0387e3"
+                                android:textSize="@dimen/font_40"
+                                app:fontFamily="@font/roboto_medium" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_toEndOf="@id/boostsize"
+                                android:layout_toRightOf="@id/boostsize"
+                                android:text=" %"
+                                android:textColor="#0387e3"
+                                android:textSize="@dimen/font_20"
+                                app:fontFamily="@font/roboto_medium" />
+                            <!--</RelativeLayout>-->
+                        </RelativeLayout>
+                    </com.advanced.phone.junk.cache.cleaner.booster.antimalware.utility.PanicAnimation>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/arclayout"
+                    android:layout_margin="@dimen/activity_horizontal_marginsmall"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/booststatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_5"
+                        android:gravity="center"
+                        android:text="@string/str_scannig"
+                        android:textColor="@color/text_color"
+                        app:fontFamily="@font/roboto_regular" />
+
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_24"
+                        android:layout_marginRight="@dimen/margin_24"
+                        android:indeterminate="false"
+                        android:progress="0" />
+
+                    <TextView
+                        android:id="@+id/current_media"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_5"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/font_16"
+                        app:fontFamily="@font/roboto_medium" />
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/boostsize"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!---->
+                    <!--android:gravity="center"-->
+                    <!--android:text=" "-->
+                    <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="@dimen/font_26"-->
+                    <!--android:visibility="gone" />-->
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical">
+
+                <include layout="@layout/btm_ads_scanning" />
+            </LinearLayout>
+
+            <include
+                layout="@layout/junk_bottom_sheet"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_two"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:background="@color/sidebar_header_color"
+            android:visibility="gone">
+
+            <include layout="@layout/backpress_ads_screen" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_ad"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@id/ad_view_banner_container"
+        android:background="@color/grayseperator"
+        android:paddingLeft="@dimen/margin_8"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_10" />
+
+    <LinearLayout
+        android:id="@+id/ad_view_banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_110sdp"
+        android:layout_above="@id/margin_btm"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/_4sdp"
+        android:background="@drawable/ad_background"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/nativeLargeSocialAnim"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/margin_btm"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

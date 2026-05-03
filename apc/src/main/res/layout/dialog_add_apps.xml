@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="@dimen/_300sdp"
+    android:background="#3C3C3C"
+    android:layout_height="@dimen/_400sdp">
+            <TextView
+                android:gravity="center_horizontal"
+                android:textColor="#FFFFFF"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/add_applications"
+                android:textStyle="bold"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/rv_apps"
+        android:padding="@dimen/_10sdp"
+        />
+    </LinearLayout>

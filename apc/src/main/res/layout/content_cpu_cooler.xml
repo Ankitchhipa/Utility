@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_cpu_cooler">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btm_linear">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:id="@+id/cpucollerfirst_middellayout"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/divider_shadow"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textview_count_cpucoolerfirst"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:text="8"
+                    android:textSize="@dimen/font_16"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textview_processservies2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/margin_5"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    android:text="CPU heating process"
+                    android:textSize="@dimen/font_16"
+                    android:textColor="@color/txt_color" />
+
+
+            </LinearLayout>
+
+            <!--<View-->
+            <!--android:id="@+id/divider_view"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/margin_10"-->
+            <!--android:layout_below="@+id/cpucollerfirst_middellayout"-->
+            <!--android:background="@drawable/divider_shadow" />-->
+
+            <ListView
+                android:id="@+id/listview_cpu_cooler_first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cpucollerfirst_middellayout"
+                android:background="@color/bg_default"
+                android:clipToPadding="false"
+                android:divider="@null"
+                android:dividerHeight="@dimen/margin_1"
+                android:scrollbars="none">
+
+            </ListView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/cpucollerfirst_middellayout"
+                android:layout_marginTop="@dimen/margin_8">
+
+                <TextView
+                    android:id="@+id/tv_cpucoller"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_25"
+                    android:layout_marginRight="@dimen/margin_25"
+                    android:drawableTop="@drawable/cpu_cooler_large"
+                    android:drawablePadding="@dimen/margin_20"
+
+                    android:gravity="center"
+                    android:text="@string/str_textempty"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/font_16"
+                    android:visibility="gone">
+
+                </TextView>
+            </LinearLayout>
+        </RelativeLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/btm_linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ad_view_banner_container"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/ad_background"
+                android:layout_margin="@dimen/margin_8"
+                android:layout_above="@id/btn_cpu_cooler_first"
+                android:layout_alignParentBottom="true"
+                android:layout_height="@dimen/_55sdp">
+
+                <FrameLayout
+                    android:id="@+id/nativeSmallAdCpuCooler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_cpu_cooler_first"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_40"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:background="@color/colorPrimaryDark"
+                android:text="@string/str_cool_down"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/font_18" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

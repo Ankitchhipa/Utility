@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name"><font color="#00B8FF">U</font>tilify</string>
+    <string name="pro_version">Pro Version</string>
+    <string name="clean_and_manage_apps">Clean and organise your apps with pro features and zero ads!</string>
+    <string name="upgrade_pro">Upgrade Pro</string>
+    <string name="apps">Apps</string>
+    <string name="photos">Photos</string>
+    <string name="audio">Audio</string>
+    <string name="videos">Videos</string>
+    <string name="storage">Storage</string>
+    <string name="refer_a_friend">Refer A Friend</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="about_us">About Us</string>
+    <string name="general">General</string>
+    <string name="terms_of_uses">Terms of Use</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="help_center">Help Center</string>
+    <string name="faq">FAQ</string>
+    <string name="feedback">Feedback</string>
+
+    <plurals name="error_over_count">
+        <item quantity="one">You can only select one media file</item>
+        <item quantity="many">You can only select up to %1$d media files</item>
+    </plurals>
+
+    <string name="app_sub_title">All Tools &amp; Utilities</string>
+    <string name="smartShare">ShareHub</string>
+    <string name="smartShare_desc">Send/Receive files – Fast &amp; Secure.</string>
+
+    <string name="scanHub">Quick Scan</string>
+    <string name="scanHub_decs">👉 Scan documents and save as clear PDFs 📄✨</string>
+
+    <string name="boostX">Phone Cleaner</string>
+    <string name="boostX_desc">👉 Free up space and speed up your phone 📱✨</string>
+
+    <string name="refer_friends">Refer to Friends &amp; Family</string>
+    <string name="refer_friends_desc">Refer Mobibuz to friends and family and earn rewards for each successful sign-up!</string>
+
+    <string name="many_task_content">One App, Many Solutions!</string>
+    <string name="fast_file_transfer">Fast File Transfer</string>
+    <string name="clean_speed_up">Clean &amp; Speed Up</string>
+    <string name="scan_documents">Scan Documents</string>
+    <string name="everything_you_need_all_in_one">Everything you need,\nright at your fingertips.</string>
+    <string name="storage_access">Storage Access</string>
+    <string name="allow_usage_data_access">Allow usage data access</string>
+    <string name="share_now"><u>Start Sharing</u></string>
+    <string name="scan_now"><u>Start Scanning</u></string>
+    <string name="run_boost"><u>Boost Speed</u></string>
+
+    <string name="anti_malware_database_version">TurboClean Database Version : %s</string>
+
+    <string name="t1_content">Share Files Seamlessly – Anytime, Anywhere</string>
+    <string name="t2_content">Auto-Detect &amp; Remove Duplicate Media</string>
+    <string name="t3_content">Clear Cache &amp; Junk Files to Free Space</string>
+    <string name="t4_content">All-in-One PDF Solution: Create, Edit, Sign &amp; Secure.</string>
+    <string name="t5_content">Quick Scan for Docs, QR &amp; Barcodes</string>
+    <string name="copyrights_msg">Design &amp; Developed by Ankit Chhipa</string>
+</resources>

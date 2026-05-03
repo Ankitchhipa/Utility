@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "367987052862",
+    "project_id": "utility-test-f92c7",
+    "storage_bucket": "utility-test-f92c7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367987052862:android:ece8064e325b2784d4dc6f",
+        "android_client_info": {
+          "package_name": "com.utilify.boost.cleaner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkyEcPZYad4nXihU3v_xe-D3zBvX5gY78"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

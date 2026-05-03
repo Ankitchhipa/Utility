@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_reward_ad"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <ExpandableListView
+            android:id="@+id/junk_exp_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:groupIndicator="@null"
+            android:scrollbars="none" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ad_view_banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55sdp"
+        android:layout_above="@+id/ll_reward_ad"
+        android:layout_margin="@dimen/_4sdp"
+        android:background="@drawable/ad_background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <FrameLayout
+            android:id="@+id/nativeSmallAdJunkDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_reward_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <!--       <Button
+                   android:id="@+id/junkclean_btn"
+                   android:layout_width="match_parent"
+                   android:layout_height="@dimen/margin_45"
+                   android:layout_marginLeft="@dimen/margin_8"
+                   android:layout_marginTop="@dimen/margin_8"
+                   android:layout_marginRight="@dimen/margin_8"
+                   android:layout_marginBottom="@dimen/margin_8"
+                   android:background="@color/colorPrimaryDark"
+                   android:text="@string/str_delete_junk"
+                   android:textColor="@android:color/white"
+                   android:textSize="@dimen/font_18" />-->
+        <LinearLayout
+            android:id="@+id/junkclean_btn"
+            style="@style/BottomButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_video"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:visibility="visible"
+                android:src="@drawable/ic_video_ad" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_watch_ad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:text="CLEAN JUNK"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_13ssp"
+                app:fontFamily="@font/roboto_medium" />
+        </LinearLayout>
+        <!--<Button
+            android:id="@+id/junkclean_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_45"
+            android:layout_marginLeft="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginRight="@dimen/margin_8"
+            android:layout_marginBottom="@dimen/margin_8"
+            android:background="@color/colorPrimaryDark"
+            android:text="WATCH ADS TO CLEAN JUNK"
+            android:drawableLeft="@drawable/video_player"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font_18" />
+-->
+        <include layout="@layout/btm_ads" />
+    </LinearLayout>
+</RelativeLayout>
+
+

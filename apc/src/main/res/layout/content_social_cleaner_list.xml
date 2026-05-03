@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/relative_top">
+
+        <TextView
+            android:id="@+id/tv_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/str_notfound_files"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv_empty"
+            android:layout_toEndOf="@+id/tv_empty"
+            android:layout_toRightOf="@+id/tv_empty"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <ExpandableListView
+                android:id="@+id/social_exp_lv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:animateLayoutChanges="true"
+                android:dividerHeight=".10dp"
+                android:groupIndicator="@null"
+                android:scrollbars="none" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/relative_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btncleannow"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_45"
+            android:layout_margin="@dimen/margin_8"
+            android:background="@drawable/round_btn_bg"
+            android:text="@string/str_clean"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font_18" />
+
+        <include layout="@layout/btm_ads" />
+    </LinearLayout>
+
+</RelativeLayout>

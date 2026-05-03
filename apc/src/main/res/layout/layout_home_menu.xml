@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/real_time_homelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_6"
+        android:layout_marginRight="@dimen/margin_6"
+        android:background="@drawable/btn_trans_round"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_realtime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginLeft="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_30"
+            android:layout_marginRight="@dimen/margin_30"
+            android:layout_weight="0.8"
+            android:text="@string/str_real_protection"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:clickable="false"
+            android:focusable="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:layout_marginRight="@dimen/margin_16"
+            android:text="@string/str_OFF"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <!--<androidx.cardview.widget.CardView-->
+    <!--android:id="@+id/card_view"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:elevation="@dimen/margin_8"-->
+    <!--android:visibility="visible"-->
+    <!--app:cardCornerRadius="3dp"-->
+    <!--app:cardElevation="@dimen/margin_10">-->
+
+    <LinearLayout
+        android:id="@+id/linear_bottom_layer"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/view_vertical_bg_gradient"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin_1"
+                android:background="@color/white">
+
+                <RelativeLayout
+                    android:id="@+id/rl_junk_cleaner"
+                    style="@style/hm_menu_bg_ripple"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="@dimen/margin_2">
+
+                    <TextView
+                        android:id="@+id/tv_junk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawableTop="@drawable/ic_junk_cleaner"
+                        android:drawablePadding="@dimen/margin_10"
+                        android:gravity="center"
+                        android:text="@string/str_junk_title"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/_9ssp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:transitionName="header" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/tv_junk"
+                        android:layout_alignEnd="@+id/tv_junk"
+                        android:layout_alignRight="@+id/tv_junk"
+                        android:layout_marginTop="-10dp"
+                        android:background="@drawable/btn_red_round"
+
+                        android:paddingLeft="@dimen/margin_6"
+                        android:paddingTop="@dimen/margin_4"
+                        android:paddingRight="@dimen/margin_6"
+                        android:paddingBottom="@dimen/margin_4"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_9"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/view_vertical_bg_gradient"
+                    android:rotation="180" />
+
+            </RelativeLayout>
+
+
+            <!-- <RelativeLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_marginLeft="@dimen/margin_1"
+                 android:layout_marginRight="@dimen/margin_1"
+                 android:layout_weight="1"
+                 android:background="@color/white"
+                 android:visibility="gone">
+
+                 <RelativeLayout
+                     android:id="@+id/rl_phone_boost"
+                     style="@style/hm_menu_bg_ripple"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:padding="@dimen/margin_2"
+
+                     android:clickable="true"
+                     android:focusable="true">
+
+                     <TextView
+                         android:id="@+id/tv_boost"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_centerInParent="true"
+                         android:drawableTop="@drawable/ic_phone_boost"
+                         android:drawablePadding="@dimen/margin_10"
+
+                         android:gravity="center"
+                         android:text="@string/str_phone_boost_small"
+                         android:textAllCaps="true"
+                         android:textColor="@color/text_color"
+                         android:textSize="@dimen/font_11" />
+                 </RelativeLayout>
+             </RelativeLayout>-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white">
+
+                <RelativeLayout
+                    android:id="@+id/rl_secure_browsing"
+                    style="@style/hm_menu_bg_ripple"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="@dimen/margin_2">
+
+                    <TextView
+                        android:id="@+id/tv_antivirus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawableTop="@drawable/ic_security"
+                        android:drawablePadding="@dimen/margin_10"
+                        android:gravity="center"
+                        android:text="@string/str_anti_virus"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/_9ssp"
+                        android:fontFamily="@font/roboto_regular" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/view_horizontal_bg_gradient" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <!-- <RelativeLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_weight="1"
+                 android:background="@color/white"
+                 android:visibility="gone">
+
+
+                 <RelativeLayout
+                     android:id="@+id/rl_battery_saver"
+                     style="@style/hm_menu_bg_ripple"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:clickable="true"
+                     android:focusable="true"
+                     android:padding="@dimen/margin_2">
+
+                     <TextView
+                         android:id="@+id/tv_battary"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_centerInParent="true"
+                         android:drawableTop="@drawable/ic_battery_saver"
+                         android:drawablePadding="@dimen/margin_10"
+
+                         android:gravity="center"
+                         android:text="@string/str_battery_saver"
+                         android:textAllCaps="true"
+                         android:textColor="@color/text_color"
+                         android:textSize="@dimen/font_11" />
+                 </RelativeLayout>
+             </RelativeLayout>-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/margin_1"
+                android:layout_weight="1"
+                android:background="@color/white">
+
+                <RelativeLayout
+                    android:id="@+id/rl_social_cleaner"
+                    style="@style/hm_menu_bg_ripple"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="@dimen/margin_2">
+
+                    <TextView
+                        android:id="@+id/tv_social"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawableTop="@drawable/social_cleaner"
+                        android:drawablePadding="@dimen/margin_10"
+                        android:gravity="center"
+                        android:text="@string/str_turbo_cleaner"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/_9ssp"
+                        android:fontFamily="@font/roboto_regular" />
+
+                    <ImageView
+                        android:id="@+id/arrow_blink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/arrow_lock"
+                        android:visibility="gone" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white">
+
+                <RelativeLayout
+                    android:id="@+id/rl_similar_photos"
+                    style="@style/hm_menu_bg_ripple"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="@dimen/margin_2">
+
+                    <TextView
+                        android:id="@+id/tv_duplicate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawableTop="@drawable/similar_photo"
+                        android:drawablePadding="@dimen/margin_10"
+                        android:gravity="center"
+                        android:text="@string/str_duplicate"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/_9ssp"
+                        android:fontFamily="@font/roboto_regular" />
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/appmanager_btn_hm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_1"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:id="@+id/rl_appmanager"
+                    style="@style/hm_menu_bg_ripple"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawableTop="@drawable/app_manager_icon_hm"
+                        android:drawablePadding="@dimen/margin_10"
+
+                        android:gravity="center"
+                        android:text="@string/str_app_manager"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/font_11" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+
+

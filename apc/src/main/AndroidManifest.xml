@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Include required permissions for Google Mobile Ads to run. -->
+   <!-- <uses-permission android:name="com.google.android.gms.permission.AD_ID" />-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />-->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+   <!-- <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--<uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <!--<uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission
+        android:name="android.permission.READ_PHONE_STATE"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true"
+        android:extractNativeLibs="true">
+
+       <!-- <activity
+            android:name=".launcher.BatterySaverLaunchActivity"
+            android:exported="false" />-->
+        <activity
+            android:name=".launcher.BatteryOptionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".launcher.SuperSavingActivity"
+            android:clearTaskOnLaunch="true"
+            android:screenOrientation="portrait"
+            android:stateNotNeeded="true"
+            android:exported="false">
+           <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>-->
+        </activity> <!-- Include the AdActivity configChanges and theme. -->
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name=".TestScreen"
+            android:label="@string/title_activity_test_screen"
+            android:exported="false"/>
+
+        <service
+            android:name=".antimware.CheckDBUpdatedService"
+            android:exported="false" />
+        <service android:name=".tracking.CountryCode" />
+        <!--<service
+            android:name="com.appsflyer.FirebaseMessagingServiceListener"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>-->
+        <!--<service
+            android:name=".push.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>--> <!-- Default Notification Icon -->
+        <!--<meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/notification_icon_bg" />-->
+
+       <!-- <service android:name=".backgroundservices.AppForegroundService" />-->
+
+        <!--<activity
+            android:name=".applock.SplashActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".applock.PasswordSetActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait"
+            tools:ignore="WrongManifestParent" />
+        <activity
+            android:name=".applock.PinSetActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".applock.PasswordActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".applock.PinActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".applock.PasswordRecoveryActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait"
+            android:singleUser="true" />
+        <activity
+            android:name=".applock.PasswordRecoverSetActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".applock.HomeActivityAppLock"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivitySwitchTheme" />
+        <activity
+            android:name=".applock.MailUserActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".applock.recievers.AppCheckServices"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity
+            android:name=".applock.BlockAppWindow"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoTitle.FullScreen" /> &lt;!&ndash; android:taskAffinity="com.pcvark.parentalcontrol.BlockAppWindow" &ndash;&gt;
+        <receiver
+            android:name=".applock.recievers.RestartServiceReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver android:name=".applock.recievers.UninstallReciever">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.QUERY_PACKAGE_RESTART" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".applock.recievers.NewAppInstalledReceiver">
+            <intent-filter android:priority="100">
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".applock.recievers.BootComplete"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_RESTARTED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".applock.recievers.ConnectivityReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".applock.recievers.AlarmReceiver" />
+        <receiver android:name=".applock.recievers.MySecretCodeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".applock.UnLockSettings"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".applock.SecuritySettings"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".applock.ChangePasswordActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".applock.SettingOverlayScreen"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/TransparentTheme" />-->
+        <activity
+            android:name=".purchase.PurchaseScreen"
+            android:label="@string/title_activity_purchase_screen"
+            android:screenOrientation="portrait"/>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" /> <!-- <receiver -->
+        <!-- android:name=".tracking.InsReciever" -->
+        <!-- android:enabled="true" -->
+        <!-- android:exported="true" -->
+        <!-- android:permission="android.permission.INSTALL_PACKAGES"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="com.android.vending.INSTALL_REFERRER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+        <!--<provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.advanced.phone.junk.cache.cleaner.booster.antimalware.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>--> <!-- TEST APP ID ca-app-pub-3940256099942544~3347511713 -->
+        <!-- APC APP ID ca-app-pub-3608227621156330~8457461711 -->
+        <!--<meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/account_id" />--> <!-- android:value="ca-app-pub-3608227621156330~8457461711" -->
+        <!-- test id:  android:value="ca-app-pub-3940256099942544~3347511713" -->
+        <activity
+            android:name=".Splash"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".RealTimeActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".HomeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+
+            android:name=".JunkScanActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".JunkDetailScreen"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <!--<activity
+            android:name=".batterymanager.BatterySaverActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:exported="false"/>-->
+        <activity
+            android:name=".JunkDeleteAnimationScreen"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+       <!-- <activity
+            android:name=".gameboost.GameAppListScreen"
+            android:screenOrientation="portrait"
+            android:exported="false"/>-->
+        <activity
+            android:name=".gameboost.GameMessageBoost"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+       <!-- <activity
+            android:name=".cooler.CoolerCPUScreen"
+            android:label="@string/str_cpu_cooler"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:exported="false"/>-->
+        <activity
+            android:name=".notificationmanager.NotificationCleanerActivity"
+            android:exported="false"
+            android:label="Notification Cleaner"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
+
+        <!--<service
+            android:name=".notificationmanager.NLService"
+            android:label="@string/str_app_name"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>-->
+
+        <activity
+            android:name=".notificationmanager.SettingOverlayScreen"
+            android:theme="@style/TransparentTheme"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".tools.PrivateBrowserActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"
+            android:exported="false"/>
+        <activity
+            android:name=".tools.DeviceDetailActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".tools.PrivateBrowser"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".CommonResultScreen"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".similerphotos.DuplicacyMidSettings"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".similerphotos.ImageViewerScreen"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".similerphotos.DuplicatesActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ApplicationManageActivity"
+            android:configChanges="orientation"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".utility.PopUpScreen"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <!--<activity
+            android:name="com.thefinestartist.finestwebview.FinestWebViewActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/FinestWebViewTheme.Light"
+            android:exported="false"/>-->
+        <activity
+            android:name=".tools.SpaceManagerActivity"
+            android:exported="false"
+            android:label="@string/str_large_files"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".tools.FilesGridScreen"
+            android:label="@string/str_large_files"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".utility.FilesListScreen"
+            android:label="@string/str_large_files"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+       <!-- <activity
+            android:name=".cooler.CoolerCPUAnimationScreen"
+            android:exported="false"
+            android:screenOrientation="portrait" />-->
+       <!-- <activity
+            android:name=".RamBoostAppsScreen"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:exported="false"/>-->
+        <activity
+            android:name=".tools.SocialCleanerListActivity"
+            android:label="@string/str_turbo_cleaner"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".FeedbackActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:exported="false"/>
+        <activity
+            android:name=".socialmedia.GridActivity"
+            android:label="@string/str_turbo_cleaner"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".tools.SettingScreen"
+            android:label="@string/str_action_settings"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".SocialAnimationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".antimware.AddAvIgnoreListActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".AboutUsScreen"
+            android:label="@string/str_title_activity_aboutus"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".ReferActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".notificationmanager.NotificationIgnoreList"
+            android:label="@string/str_title_activity_setting"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".batterymanager.BatteryBoostAnim"
+            android:clearTaskOnLaunch="true"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.advanced.phone.junk.cache.cleaner.booster.antimalware.battery_module.BatteryBoostAnim" /> <!-- <activity -->
+        <!-- android:name=".AnimatedBoostScreen" -->
+        <!-- android:clearTaskOnLaunch="true" -->
+        <!-- android:excludeFromRecents="true" -->
+        <!-- android:exported="true" -->
+        <!-- android:launchMode="singleTask" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:taskAffinity="com.advanced.phone.junk.cache.cleaner.booster.antimalware.AnimatedBoostScreen"> -->
+        <!-- <intent-filter android:priority="989"> -->
+        <!-- <action android:name="android.intent.action.PACKAGE_REPLACED" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+       <!-- <activity
+            android:name=".AnimatedBoostScreen"
+            android:exported="false"
+            android:label="@string/str_phone_boost_small"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />-->
+        <activity
+            android:name=".shortcutmodules.BrowserActivityShortcut"
+            android:clearTaskOnLaunch="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.advanced.phone.junk.cache.cleaner.booster.antimalware.BrowserActivityShortcut"
+            android:exported="false">
+            <intent-filter android:priority="888">
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+            </intent-filter>
+        </activity>
+        <!--<activity
+            android:name=".gameboost.GameBoostScreen"
+            android:screenOrientation="portrait"
+            android:exported="false"/>-->
+        <activity
+            android:name=".antimware.ResActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".antimware.AntiVirusLast"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".antimware.AVIgnorelist"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".utility.ChargingScreen"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/TransparentTheme"
+            android:exported="false"/>
+        <activity
+            android:name=".antimware.ScannigScreen"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+
+       <!-- <receiver
+            android:name=".broadcasts.PhoneRebootBroadcast"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcasts.PlugOutInBroadcast"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>-->
+
+        <service android:name=".utility.LockOverlayService" /> <!-- <service android:name=".backgroundservices.LoadAdService" /> -->
+        <!-- <service android:name=".alramsandservices.BatteryNotificationService" /> -->
+        <!-- <receiver -->
+        <!-- android:name=".receivers.ScreenReceiver" -->
+        <!-- android:enabled="true" -->
+        <!-- android:exported="false"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.SCREEN_ON" /> -->
+        <!-- <action android:name="android.intent.action.SCREEN_OFF" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+        <!-- APPPS FLYER INTIGRATION HERE -->
+        <!-- <receiver -->
+        <!-- android:name="com.appsflyer.MultipleInstallBroadcastReceiver" -->
+        <!-- android:exported="true"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="com.android.vending.INSTALL_REFERRER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+       <!-- <receiver
+            android:name=".broadcasts.GameInstalledBroadcast"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="game.app.installed" />
+            </intent-filter>
+        </receiver>-->
+
+       <!-- <service
+            android:name=".backgroundservices.InstalledAppDetails"
+            android:exported="false" />-->
+        <service android:name=".tracking.IPTracker"
+            android:exported="false"/>
+        <service
+            android:name=".backgroundservices.ApplicationCategoryFinder"
+            android:exported="false" />
+
+       <!-- <receiver
+            android:name=".broadcasts.PhotoCatureBroadcst"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="com.android.camera.NEW_PICTURE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </receiver>-->
+
+        <activity
+            android:name=".NotificationSettings"
+            android:label="@string/str_title_activity_setting"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".KeyguardDismissScreen"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:taskAffinity=".cleanup_charging_screen" /> <!-- <service -->
+       <!-- <service
+            android:name=".alramsandservices.NotificationService"
+            android:exported="false" />
+        <service android:name=".backgroundservices.CoolAndBoostService" />-->
+
+        <activity
+            android:name=".similerphotos.NoDuplicates"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".similerphotos.SmartSelection"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+
+        <service
+            android:name=".backgroundservices.RegionCode"
+            android:exported="false" /> <!-- <provider -->
+        <!-- android:name="com.facebook.FacebookContentProvider" -->
+        <!-- android:authorities="com.facebook.app.FacebookContentProvider102030" -->
+        <!-- android:exported="true" /> -->
+        <!-- <service android:name=".backgroundservices.UpdateDBService" /> -->
+        <service android:name=".backgroundservices.CheckStatusOfServices" /> <!-- <service android:name=".applock.recievers.AppCheckServices" /> -->
+        <!-- <receiver android:name=".appmanaApplicationFragmentViewment$AppFragmentUninstallReceiver"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="receivers.fragmentuninstall" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+        <!--<receiver
+            android:name=".broadcasts.StorageLowBroadcast"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+            </intent-filter>
+        </receiver>--> <!-- <receiver android:name=".broadcasts.InternetBroadcast"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+       <!-- <receiver android:name=".broadcasts.AppInstallUninstallBroadcast"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_FULLY_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>-->
+
+        <activity
+            android:name=".socialmedia.SocialScanResultActivity"
+            android:label="@string/str_title_activity_social_scan_result"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".socialmedia.SocialMediaFilesTabScreen"
+            android:exported="false"
+            android:label=""
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".apps.ApplicationManagerActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <!-- <receiver android:name=".broadcasts.BatteryLowBroadcast"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.BATTERY_LOW" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+        <activity
+            android:name=".similerphotos.DuplicateDivisionScreen"
+            android:label="@string/str_all_photos"
+            android:screenOrientation="portrait"
+            android:exported="false"/> <!-- <activity android:name=".TestActivity"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <activity
+            android:name=".JunkCleaningScreen"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".IgnoreListScreen"
+            android:label="@string/str_ignorefilter"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".DownloadsScreen"
+            android:label="@string/str_title_activity_downloads_screen"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity
+            android:name=".AllSettings"
+            android:screenOrientation="portrait" />
+        <activity android:name=".promo.AdScreen"
+            android:exported="false"/>
+
+        <activity
+            android:name=".antimware.AndroidDatabaseManager"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+
+        <service
+            android:name=".backgroundservices.OnClearFromRecentService"
+            android:stopWithTask="false"
+            android:exported="false"/>
+
+        <meta-data
+            android:name="applovin.sdk.key"
+            android:value="5nGyWkma5AHIKNNZFPHtXkOTrlZ5W3EUmaC-My_9taT0TMI7hZIBqWS0vDAPcdG40UrW1O2HfXHWsVgidbBiH4" />
+        <!--<meta-data
+            android:name="firebase_inapp_messaging_auto_data_collection_enabled"
+            android:value="false" />-->
+        <meta-data
+            android:name="applovin.sdk.verbose_logging"
+            android:value="true" />
+    </application>
+
+</manifest>

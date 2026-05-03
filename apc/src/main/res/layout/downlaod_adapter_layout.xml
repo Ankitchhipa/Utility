@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="@dimen/margin_4">
+
+    <ImageView
+        android:id="@+id/img_fileicon"
+        android:layout_width="@dimen/margin_35"
+        android:layout_height="@dimen/margin_35" />
+
+    <TextView
+        android:id="@+id/tvdownload_app_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_4"
+        android:layout_weight="1"
+        android:gravity="start"
+        android:paddingStart="@dimen/margin_8"
+        android:paddingTop="@dimen/margin_3"
+        android:paddingBottom="@dimen/margin_3"
+        android:text="@string/str_app_cache"
+        android:textColor="@color/txt_color"
+        app:fontFamily="@font/roboto_regular" />
+
+    <TextView
+        android:id="@+id/tvdownload_app_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_4"
+        android:layout_marginEnd="8dp"
+        android:gravity="end"
+        android:paddingTop="@dimen/margin_3"
+        android:paddingEnd="@dimen/margin_8"
+        android:paddingBottom="@dimen/margin_3"
+        android:text="1mb"
+        android:textColor="@color/txt_color"
+        app:fontFamily="@font/roboto_regular" />
+
+    <LinearLayout
+        android:id="@+id/check_down_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_8">
+
+        <CheckBox
+            android:id="@+id/check_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/custom_checkbox"
+            android:checked="false"
+            android:clickable="false"
+            android:focusable="false" />
+    </LinearLayout>
+</LinearLayout>

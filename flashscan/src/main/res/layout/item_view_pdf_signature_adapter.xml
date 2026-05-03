@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pushtouch="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relative_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:background="#80000000"/>
+
+
+    <com.cam.scanner.scantopdf.android.signature.SingleFingerView
+        android:id="@+id/iv_signature"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        pushtouch:centerInParent="true"
+        pushtouch:image_height="100dp"
+        pushtouch:image_width="150dp"
+        pushtouch:push_image="@drawable/ic_zoom_projection"
+        pushtouch:push_image_height="20dp"
+        pushtouch:push_image_width="20dp" />
+
+    <com.cam.scanner.scantopdf.android.signature.SingleFingerView2
+        android:id="@+id/iv_signature2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        pushtouch:centerInParent="true"
+        pushtouch:image_height="100dp"
+        pushtouch:image_width="150dp"
+        pushtouch:push_image="@drawable/ic_zoom_projection"
+        pushtouch:push_image_height="20dp"
+        pushtouch:push_image_width="20dp" />
+
+    <com.cam.scanner.scantopdf.android.signature.SingleFingerView3
+        android:id="@+id/iv_signature3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        pushtouch:centerInParent="true"
+        pushtouch:image_height="100dp"
+        pushtouch:image_width="150dp"
+        pushtouch:push_image="@drawable/ic_zoom_projection"
+        pushtouch:push_image_height="20dp"
+        pushtouch:push_image_width="20dp" />
+
+</RelativeLayout>

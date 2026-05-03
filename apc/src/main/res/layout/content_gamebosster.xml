@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?android:attr/actionBarSize"
+    android:background="@android:color/white"
+    tools:showIn="@layout/activity_gamebosster">
+
+    <LinearLayout
+        android:id="@+id/game_partitionlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="?android:attr/actionBarSize"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sidebar_header_color">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/margin_8">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/gameboost_ramrelese"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="12"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/gameboost_ramrelese_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/margin_2"
+                        android:layout_marginTop="@dimen/margin_5"
+                        android:gravity="top"
+                        android:text="%"
+                        android:textColor="@color/txt_color"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/symbol_game"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_arc_ram_abvtext"
+                    android:textColor="@color/txt_color" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/add_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:translationZ="@dimen/margin_5"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/add_btn"
+                    android:visibility="invisible"
+                    android:layout_width="@dimen/margin_45"
+                    android:layout_height="@dimen/margin_45"
+                    android:background="@null"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/add_fab" />
+
+                <TextView
+                    android:id="@+id/tvbottomtext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/str_gamespeedup"
+                    android:textColor="@color/txt_color"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:gravity="center"
+                    android:text="@string/str_game_experience"
+                    android:textColor="@color/txt_color"
+                    android:visibility="visible" />
+
+                <!--<com.wang.avi.AVLoadingIndicatorView
+                    style="@style/AVLoadingIndicatorView"
+                    android:layout_width="@dimen/margin_100"
+                    android:layout_height="@dimen/margin_100"
+                    android:visibility="gone"
+                    app:indicatorColor="@color/colorPrimaryDark"
+                    app:indicatorName="LineSpinFadeLoaderIndicator" />-->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_12"
+                    android:text="@string/str_scanning_games"
+                    android:textColor="@color/txt_color"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tv_scan_games_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12"
+                        android:textColor="@color/txt_color"
+                        android:textSize="@dimen/font_40"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/tv_scan_games_percent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textColor="@color/txt_color"
+                        android:textSize="@dimen/font_40"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_32"
+                android:layout_marginEnd="@dimen/margin_30"
+                android:layout_marginRight="@dimen/margin_30"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/fab_margin"
+                android:layout_marginRight="@dimen/fab_margin"
+                android:text="@string/str_addgames"
+                android:textSize="@dimen/font_10"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/game_smoke"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:visibility="gone" />
+
+                <!--<TextView-->
+                <!--android:id="@+id/tvbottomtext"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@color/white"-->
+                <!--android:gravity="center"-->
+                <!--android:text="@string/str_gamespeedup"-->
+                <!--android:textStyle="bold"-->
+                <!--android:visibility="visible" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/tvbottomtextsmall"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@color/white"-->
+                <!--android:gravity="center"-->
+                <!--android:paddingBottom="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginLeft="@dimen/margin_10"-->
+                <!--android:text="@string/str_game_experience"-->
+                <!--android:visibility="visible"-->
+                <!--android:layout_marginStart="@dimen/margin_10" />-->
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layouts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3542a0"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <!--<TextView-->
+        <!--android:id="@+id/gameboost_ramrelese"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="12"-->
+        <!--android:textColor="@color/colorPrimaryDark"-->
+        <!--android:textSize="@dimen/font_22" />-->
+
+        <!--<RelativeLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/margin_4">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/gameboost_ramrelese_unit"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="@dimen/margin_2"-->
+        <!--android:layout_marginStart="@dimen/margin_2"-->
+        <!--android:text="%"-->
+        <!--android:textColor="@color/txt_color" />-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/symbol_game"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/gameboost_ramrelese_unit"-->
+        <!---->
+        <!--android:text="@string/str_slowinggame"-->
+        <!--android:textColor="@color/txt_color" />-->
+        <!--</RelativeLayout>-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/laup"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_below="@id/layouts"
+        android:background="@drawable/divider_shadow"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textview_gamecount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingStart="16dp"
+            android:visibility="gone"
+            android:paddingLeft="16dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="4dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="4dp"
+            android:text="3"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/font_16"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textview_processservies2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:padding="4dp"
+            android:text="@string/str_nogamesfound"
+            android:textColor="@color/txt_color"
+            android:textSize="@dimen/font_16"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/laup"
+        android:layout_marginBottom="@dimen/margin_80">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_6"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.advanced.phone.junk.cache.cleaner.booster.antimalware.customviews.GridExpandableView
+                android:id="@+id/gamebooster_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:isScrollContainer="false"
+                android:numColumns="4"
+                android:stretchMode="columnWidth">
+
+            </com.advanced.phone.junk.cache.cleaner.booster.antimalware.customviews.GridExpandableView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/btm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/gamescan_btn"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="@dimen/btn_45"
+            android:layout_marginLeft="@dimen/margin_8"
+            android:layout_marginRight="@dimen/margin_8"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/str_scan_games"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font_18" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_3" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/gamerocket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_ad"
+        android:layout_width="match_parent"
+        android:paddingLeft="@dimen/margin_8"
+        android:layout_height="0dp"
+        android:background="@color/grayseperator"
+        android:textSize="@dimen/font_10"
+        android:layout_above="@id/ad_view_banner_container"
+        android:textColor="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/ad_view_banner_container"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="@dimen/_4sdp"
+        android:background="@drawable/ad_background"
+        android:layout_above="@id/margin_btm"
+        android:layout_alignParentBottom="true"
+        android:layout_height="@dimen/_110sdp">
+
+        <FrameLayout
+            android:id="@+id/nativeLargeAdGameBoost"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/margin_btm"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

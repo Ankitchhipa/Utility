@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingHorizontal="18dp"
+    android:paddingVertical="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/pop_up_bg"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <View
+            android:layout_width="44dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_round_rect_blue" />
+
+        <FrameLayout
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="18dp"
+            android:elevation="@dimen/_5sdp"
+            android:background="@drawable/round"
+            android:padding="16dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tint="@color/black_text_color"
+                android:src="@drawable/ic_done" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/congratulations"
+            android:textColor="@color/title_success"
+            android:textSize="20sp"
+            app:fontFamily="@font/roboto_bold" />
+
+        <TextView
+            android:id="@+id/tv_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/congrats_pdf_compressed_successfully"
+            android:textColor="@color/black_text_color"
+            android:textSize="15sp"
+            app:fontFamily="@font/roboto_medium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#F7FBFF"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <TextView
+                android:id="@+id/tv_original_pdf_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#5A6A7F"
+                android:textSize="14sp"
+                android:visibility="visible"
+                app:fontFamily="@font/roboto_regular"
+                tools:text="Original PDF size : 0.34 MB" />
+
+            <TextView
+                android:id="@+id/tv_compressed_pdf_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="#5A6A7F"
+                android:textSize="14sp"
+                android:visibility="visible"
+                app:fontFamily="@font/roboto_regular"
+                tools:text="Compressed PDF size : 0.18 MB" />
+
+            <TextView
+                android:id="@+id/tv_difference_in_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="#2176C8"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:fontFamily="@font/roboto_medium"
+                tools:text="Difference : 0.16 MB" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_compressed_percentage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#E8F4FC"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textColor="@color/black_text_color"
+            android:textSize="16sp"
+            app:fontFamily="@font/roboto_medium"
+            tools:text="File is compressed by 80%" />
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_button"
+            android:text="@android:string/ok"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:fontFamily="@font/roboto_medium" />
+    </LinearLayout>
+
+</RelativeLayout>

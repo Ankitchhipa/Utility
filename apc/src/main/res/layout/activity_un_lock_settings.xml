@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_un_lock_settings"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_collapseMode="pin"
+        app:title="Unlock Settings" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/white"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/pattern"
+            android:drawablePadding="@dimen/margin_12"
+            android:fontFamily="sans-serif"
+            android:text="Pattern"
+            android:textSize="@dimen/font_18"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:paddingBottom="@dimen/margin_12"
+        android:paddingLeft="@dimen/margin_16"
+        android:paddingTop="@dimen/margin_12"
+        android:text="@string/option"
+        android:textSize="@dimen/font_16" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/font_10"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/margin_8"
+        android:paddingRight="@dimen/margin_8">
+
+        <LinearLayout
+            android:id="@+id/lay_chang_pattern"
+            android:layout_width="wrap_content"
+            android:layout_height="?actionBarSize"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawablePadding="@dimen/margin_16"
+                android:src="@drawable/unlock" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/chang_unlock_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/margin_8"
+                    android:text="@string/change_unlock"
+                    android:textColor="@color/tab_btn_txt"
+                    android:textSize="@dimen/font_18" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/margin_8"
+                    android:text="@string/click_change_unlock"
+                    android:textSize="@dimen/font_12" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_8"
+            android:background="@color/seprator" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawablePadding="@dimen/margin_16"
+                android:src="@drawable/visible" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/margin_8"
+                    android:text="@string/make_pattern_visble"
+                    android:textColor="@color/tab_btn_txt"
+                    android:textSize="@dimen/font_18" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/margin_8"
+                    android:text="@string/draw_unlock"
+                    android:textSize="@dimen/font_12" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:checked="true"
+                android:gravity="right"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_8"
+            android:background="@color/seprator" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="?actionBarSize"
+            android:drawableLeft="@drawable/unlock"
+            android:drawablePadding="@dimen/margin_16"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="@string/touch_vibrate"
+            android:textSize="@dimen/font_16"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+</LinearLayout>

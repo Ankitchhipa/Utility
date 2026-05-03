@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_refer"
+        android:title="Refer and Earn"
+        android:icon="@drawable/ic_share" /> <!-- Add icons if you have them -->
+    <item
+        android:id="@+id/menu_privacy"
+        android:title="Privacy Policy" />
+    <item
+        android:id="@+id/menu_setting"
+        android:title="Settings" />
+</menu>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- START xml_defaults -->
+<defaultsMap>
+    <entry>
+        <key>show_app_open_ad</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>show_inters_splash</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>show_inters_exit</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>show_inters_creation</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>show_native</key>
+        <value>true</value>
+    </entry>
+
+    <entry>
+        <key>inters_splash_after</key>
+        <value>0</value>
+    </entry>
+
+    <entry>
+        <key>inters_create_freq_in_session</key>
+        <value>4</value>
+    </entry>
+
+    <entry>
+        <key>data</key>
+        <value>{"devices": ["321", "654", "987"]}</value>
+    </entry>
+
+    <entry>
+        <key>package_name</key>
+        <value>com.cam.scanner.scantopdf.android</value>
+    </entry>
+
+    <entry>
+        <key>ocr_rules</key>
+        <value>{"free": 3, "premium_yearly": 500, "ocr_monthly": 1000, "test_free": 1, "test_premium_yearly": 2, "test_ocr_monthly": 4}</value>
+    </entry>
+
+    <entry>
+        <key>android_license_key_pixel_netica</key>
+        <value>GkLkc7DdBMqwA42rI12oX7zPOVcg/rb1l30OVBTq+migrSr1mp4Kb3+gqDGE9yzwoCQD5W5d/t5Qx9PcLdo1WJiNhmOE1xR+0Ec2iwvCHcltZ5pliMA7VxhqIjQ25BDCc7/hSUJpgpnWHMcBJ/kSqBt/FlF12A6xx0Y4eJdLK/EVwO959l5O+O17efDv0hWcovvAIteizdjcWXgMQOfnCFk7XIMZHzxSkD49/aaz9qtC82fVlxI2JL/f0vvJB6sNA/5kcR9Qacs0T0FJTrKsWlafRoGDMVPnnX4+K8rh6Z1wYLwQPc5OBACrIxQr15duUeSRq8AEGMBh6vrfEtRTtg==</value>
+    </entry>
+
+</defaultsMap>
+    <!-- END xml_defaults -->

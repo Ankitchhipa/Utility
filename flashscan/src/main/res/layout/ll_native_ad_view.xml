@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/fl_native_ad"
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:background="@drawable/bg_native_ad"
+            android:paddingLeft="1dp"
+            android:paddingTop="3dp"
+            android:paddingRight="3dp"
+            android:paddingBottom="1dp" />
+
+        <TextView style="@style/AppTheme.AdAttribution" />
+
+    </FrameLayout>
+</LinearLayout>

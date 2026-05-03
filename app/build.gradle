@@ -1,0 +1,166 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'kotlin-android'
+    id 'com.google.devtools.ksp'
+    id 'com.google.dagger.hilt.android'
+}
+
+def TEST_AD_MOB_APP_ID = '\"ca-app-pub-3940256099942544~3347511713\"'
+
+def LIVE_AD_MOB_APP_ID = '\"ca-app-pub-4777648072886747~9099069357\"'
+
+android {
+    namespace 'com.utilify.boost.cleaner'
+
+    signingConfigs {
+        release {
+            storeFile file('/Users/ankitchhipa/AndroidStudioProjects/Toolkit/UtilifyTool.jks')
+            storePassword 'Utilify12349'
+            keyPassword 'Utilify12349'
+            keyAlias 'Utilify'
+        }
+        debug {
+            /*storeFile file('E:\\Prakash\\jks\\dasha\\key.jks')
+            storePassword '9pkx7TTpL7CE2ZUseo3RXLjRXHNAOD7rMIF+XoL4Jvo'
+            keyPassword '9pkx7TTpL7CE2ZUseo3RXLjRXHNAOD7rMIF+XoL4Jvo'
+            keyAlias 'dashaspeaks'*/
+        }
+    }
+
+    compileSdkVersion 36
+
+    defaultConfig {
+        applicationId "com.utilify.boost.cleaner"
+        minSdkVersion 29
+        targetSdkVersion 36
+        versionCode 1
+        versionName "1.0.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.release
+
+        /*ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }*/
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+
+            resValue "string", "AD_MOB_APP_ID", LIVE_AD_MOB_APP_ID
+
+            //interstitial
+            buildConfigField "String", "AD_UNIT_ID_MODULE_INTERSTITIAL_AD", '"ca-app-pub-4777648072886747/5109110033"'
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+
+            resValue "string", "AD_MOB_APP_ID", TEST_AD_MOB_APP_ID
+
+            //interstitial
+            buildConfigField "String", "AD_UNIT_ID_MODULE_INTERSTITIAL_AD", '"ca-app-pub-3940256099942544/1033173712"'
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+        qa {
+            applicationId "com.utilify.boost.cleaner"
+            versionCode 001
+            versionName "0.0.1"
+        }
+
+        live {
+            applicationId "com.utilify.boost.cleaner"
+            versionCode 001
+            versionName "0.0.1"
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+    sourceSets {
+        main {
+            java {
+                srcDirs 'src\\main\\java'
+            }
+        }
+    }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+        buildConfig true
+    }
+
+    packagingOptions {
+        jniLibs {
+            excludes += ['**/libawtcompat-native-components.so']
+        }
+        exclude 'META-INF/DEPENDENCIES'
+    }
+}
+
+dependencies {
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.activity
+    implementation libs.androidx.constraintlayout
+    implementation libs.firebase.messaging
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+    implementation project(':cropper')
+    implementation project(':flashscan')
+    //implementation project(':opencv')
+    //implementation project(':smartcropperlib')
+    implementation project(':apc')
+    implementation project(':commonRes')
+
+    //android
+    implementation("com.ibm.icu:icu4j:77.1")
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //firebase
+    implementation platform('com.google.firebase:firebase-bom:34.2.0')
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-crashlytics")
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-database")
+    implementation("com.google.firebase:firebase-messaging")
+    implementation("com.google.firebase:firebase-config")
+
+    //dagger-hilt
+    implementation 'com.google.dagger:hilt-android:2.57.1'
+    ksp('com.google.dagger:hilt-compiler:2.57.1')
+
+    //google play
+    implementation("com.google.android.gms:play-services-ads:23.5.0")
+
+    //facebook
+    implementation("com.facebook.infer.annotation:infer-annotation:0.18.0")
+
+    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:3.0.3'
+
+}

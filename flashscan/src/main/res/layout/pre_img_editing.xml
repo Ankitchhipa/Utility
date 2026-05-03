@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F8FC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/crop_pager_linear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/ad_view_banner_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/white">
+
+                <include layout="@layout/adaptive_banner_ad_layout" />
+            </FrameLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardCornerRadius="26dp"
+                    app:cardElevation="4dp">
+
+                    <com.cam.scanner.scantopdf.android.ui.PreviewViewPager
+                        android:id="@+id/cropped_views"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/delete"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="28dp"
+                    android:layout_toStartOf="@id/final_save"
+                    app:cardBackgroundColor="#FFF1F1"
+                    app:cardCornerRadius="26dp"
+                    app:cardElevation="8dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="14dp"
+                        android:tint="@color/black_text_color"
+                        app:srcCompat="@drawable/ic_trash" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/final_save"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="28dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="29dp"
+                    app:cardElevation="10dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="16dp"
+                        android:tint="@color/black_text_color"
+                        app:srcCompat="@drawable/ic_done" />
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="8dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/add"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:drawableTop="@drawable/ic_original_image"
+                        android:drawableTint="@color/black_text_color"
+                        android:drawablePadding="6dp"
+                        android:gravity="center"
+                        android:paddingVertical="10dp"
+                        android:text="@string/add"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blue_text_color"
+                        android:textSize="12sp"
+                        app:fontFamily="@font/roboto_medium" />
+
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/add_signature"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@android:color/transparent"
+                            android:drawableTint="@color/black_text_color"
+                            android:drawableTop="@drawable/ic_pen"
+                            android:drawablePadding="6dp"
+                            android:gravity="center"
+                            android:paddingVertical="10dp"
+                            android:text="@string/signature"
+                            android:textAllCaps="false"
+                            android:textColor="@color/blue_text_color"
+                            android:textSize="12sp"
+                            app:fontFamily="@font/roboto_medium" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_sign_crown"
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_gravity="end|top"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="10dp"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_crown_small" />
+                    </FrameLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/rotate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTint="@color/black_text_color"
+                        android:background="@android:color/transparent"
+                        android:drawableTop="@drawable/ic_rotate"
+                        android:drawablePadding="6dp"
+                        android:gravity="center"
+                        android:paddingVertical="10dp"
+                        android:singleLine="true"
+                        android:text="@string/rotate"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blue_text_color"
+                        android:textSize="12sp"
+                        app:fontFamily="@font/roboto_medium" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/crop"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTint="@color/black_text_color"
+                        android:background="@android:color/transparent"
+                        android:drawableTop="@drawable/ic_crop"
+                        android:drawablePadding="6dp"
+                        android:gravity="center"
+                        android:paddingVertical="10dp"
+                        android:singleLine="true"
+                        android:text="@string/crop"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blue_text_color"
+                        android:textSize="12sp"
+                        app:fontFamily="@font/roboto_medium" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/filter"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTint="@color/black_text_color"
+                        android:background="@android:color/transparent"
+                        android:drawableTop="@drawable/ic_magic_color"
+                        android:drawablePadding="6dp"
+                        android:gravity="center"
+                        android:paddingVertical="10dp"
+                        android:singleLine="true"
+                        android:text="@string/filter"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blue_text_color"
+                        android:textSize="12sp"
+                        app:fontFamily="@font/roboto_medium" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/crop_linear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="26dp"
+                app:cardElevation="4dp">
+
+                <com.theartofdev.edmodo.cropper.CropImageView
+                    android:id="@+id/iv_crop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    app:cropBorderCornerColor="@color/colorPrimaryDark"
+                    app:cropBorderLineColor="@color/colorPrimary"
+                    app:cropShowCropOverlay="true" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@android:color/white"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="8dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/save"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:drawableTop="@drawable/ic_crop"
+                        android:drawableTint="@color/black_text_color"
+                        android:drawablePadding="6dp"
+                        android:gravity="center"
+                        android:paddingVertical="10dp"
+                        android:singleLine="true"
+                        android:text="@string/crop"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blue_text_color"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <include layout="@layout/filters" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/tut_image_crop"
+        layout="@layout/tut_image_crop"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/progress_lay"
+        layout="@layout/progress_lay"
+        android:visibility="gone" />
+</FrameLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_275sdp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/round_corner_shape">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/margin_15"
+        android:paddingBottom="@dimen/margin_15">
+
+        <ImageView
+            android:id="@+id/dialog_img"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ad_free_popup"/>
+
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8"
+            android:text="@string/str_congrats"
+            android:paddingHorizontal="@dimen/_4sdp"
+            android:gravity="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/font_18"
+            app:fontFamily="@font/roboto_medium"
+            />
+
+
+        <TextView
+            android:id="@+id/dialog_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:gravity="center"
+            android:text="@string/thank_you_msg"
+            android:textColor="@color/text_color"
+            app:fontFamily="@font/roboto_medium"
+            android:textSize="@dimen/font_14" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_ok"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_45"
+        android:background="@drawable/button_bg_blue_bottom"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_ok"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/str_drawer_clos"
+            app:fontFamily="@font/roboto_medium"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_16" />
+
+    </LinearLayout>
+</LinearLayout>

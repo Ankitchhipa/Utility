@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CircleProgressView="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sidebar_header_color"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".8">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.advanced.phone.junk.cache.cleaner.booster.antimalware.animations.CircleProgressView
+                android:id="@+id/circleView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                CircleProgressView:cpv_barColor="@color/colorPrimaryDark"
+                CircleProgressView:cpv_barWidth="35dp"
+                CircleProgressView:cpv_innerContourColor="#00c4e6"
+                CircleProgressView:cpv_innerContourSize="0dp"
+                CircleProgressView:cpv_maxValue="100"
+                CircleProgressView:cpv_outerContourColor="#00c4e6"
+                CircleProgressView:cpv_outerContourSize="0dp"
+                CircleProgressView:cpv_rimColor="#2000c4e6"
+                CircleProgressView:cpv_rimWidth="35dp"
+                CircleProgressView:cpv_spinBarLength="4"
+                CircleProgressView:cpv_spinColor="@color/colorPrimaryDark"
+                CircleProgressView:cpv_spinSpeed="7"
+                CircleProgressView:cpv_startAngle="265"
+                CircleProgressView:cpv_value="4" />
+
+            <ImageView
+                android:id="@+id/iv_dot_wheel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:src="@drawable/dot_wheel"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/txt_boosting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/str_boosting"
+                android:textColor="@color/text_color"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".2">
+
+    </LinearLayout>
+
+</LinearLayout>

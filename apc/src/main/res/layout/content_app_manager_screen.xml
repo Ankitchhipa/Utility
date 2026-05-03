@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?android:attr/actionBarSize"
+    android:layout_marginBottom="@dimen/margin_2"
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_app_manager_screen">
+
+    <LinearLayout
+        android:id="@+id/appmanager_toplayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sidebar_header_color"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/margin_8">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/app_tvsize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0B"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_4">
+
+                <TextView
+                    android:id="@+id/app_tvsize_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_2"
+                    android:layout_marginLeft="@dimen/margin_2"
+                    android:text=""
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/font_14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/app_tvsize_unit"
+                    android:text=""
+                    android:visibility="gone"
+                    android:textColor="@color/text_color" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/app_manager_tvtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_space_optimized"
+            android:textSize="@dimen/_14ssp"
+            android:includeFontPadding="false"
+            android:textColor="@color/text_color" />
+
+    </LinearLayout>-->
+
+    <LinearLayout
+        android:id="@+id/ad_view_banner_container"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_below="@+id/appmanager_toplayout"
+        android:background="@drawable/ad_background"
+        android:layout_margin="@dimen/margin_8"
+        android:layout_height="@dimen/_55sdp">
+
+        <FrameLayout
+            android:id="@+id/nativeSmallAdAppMngr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/app_manager_tabbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_40"
+        android:layout_below="@id/ad_view_banner_container"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bachuptab"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/str_installed"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_14" />
+
+        <Button
+            android:id="@+id/restoretab"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/str_archivd"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_14" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_14"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listviewapps"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btm_lays"
+        android:layout_below="@id/app_manager_tabbar"
+        android:clipToPadding="false"
+        android:footerDividersEnabled="false"
+        android:overScrollFooter="@android:color/transparent">
+
+    </ListView>
+
+    <TextView
+        android:id="@+id/textview_NOAPPS"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/app_manager_tabbar"
+        android:gravity="center_vertical|center"
+        android:text=""
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/listviewapps"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/togglecvext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="?android:attr/actionBarSize"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="Move to External Storage"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_14"
+                            android:layout_marginEnd="2dp"
+                            android:layout_marginStart="16dp" />
+
+                        <ToggleButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/activity_horizontal_marginsmall"
+                            android:checked="false"
+                            android:textOff=""
+                            android:textOn="" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/activity_horizontal_marginsmall"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="50mb"
+                            android:textSize="@dimen/font_14"
+                            android:visibility="gone" />
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/togglecv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="?android:attr/actionBarSize"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="Move to Internal Storage"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_14"
+                            android:layout_marginEnd="2dp"
+                            android:layout_marginStart="16dp" />
+
+                        <ToggleButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/activity_horizontal_marginsmall"
+                            android:checked="false"
+                            android:textOff=""
+                            android:textOn="" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/activity_horizontal_marginsmall"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:text="50mb"
+                            android:textSize="@dimen/font_14"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btm_lays"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/btnlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/app_btn1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_45"
+                android:layout_margin="@dimen/_8sdp"
+                android:layout_weight="1"
+                android:background="@drawable/round_btn_bg"
+                android:text="@string/str_backup"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_14" />
+
+            <Button
+                android:id="@+id/app_btn2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_45"
+                android:layout_margin="@dimen/_8sdp"
+                android:layout_weight="1"
+                android:background="@drawable/round_btn_bg"
+                android:backgroundTint="#fb791a"
+                android:text="@string/str_unistall"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_14" />
+        </LinearLayout>
+
+        <include layout="@layout/btm_ads" />
+
+    </LinearLayout>
+</RelativeLayout>

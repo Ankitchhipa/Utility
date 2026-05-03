@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/divider_shadow"
+    android:orientation="horizontal"
+    android:padding="@dimen/margin_5">
+
+
+    <ImageView
+        android:id="@+id/app_icon"
+        android:layout_width="@dimen/margin_35"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_gravity="center_vertical"
+        android:layout_height="@dimen/margin_35" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_5"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvapp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fontFamily="@font/roboto_medium"
+            android:text="@string/str_app_name"
+            android:textColor="@color/txt_color" />
+
+        <TextView
+            android:id="@+id/tvappmsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:text="@string/str_app_name"
+            app:fontFamily="@font/roboto_regular"
+            android:textColor="@color/grayseperator"
+            android:textSize="@dimen/font_12" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_10"
+        app:fontFamily="@font/roboto_medium"
+        android:gravity="end"
+        android:text="@string/str_app_name" />
+
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:layout_marginTop="@dimen/margin_4"-->
+    <!--android:layout_marginBottom="@dimen/margin_4"-->
+    <!--android:background="@color/grayseperator" />-->
+
+
+</LinearLayout>

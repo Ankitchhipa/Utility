@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/parent_fragment"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linear_mid_layer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center_vertical"
+            android:background="@drawable/divider_shadow"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/margin_8"
+                android:paddingLeft="@dimen/margin_16"
+                android:paddingRight="@dimen/margin_12"
+                android:paddingTop="@dimen/margin_8"
+                android:paddingStart="@dimen/margin_16"
+                android:paddingEnd="@dimen/margin_12">
+
+                <TextView
+                    android:id="@+id/tv_social_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+
+                    android:textSize="@dimen/font_16"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:id="@+id/tv_social_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="@dimen/margin_8"
+                    android:layout_toLeftOf="@+id/checkAll_aud"
+
+                    android:textSize="@dimen/font_16"
+                    android:layout_marginEnd="@dimen/margin_8"
+                    android:layout_toStartOf="@+id/checkAll_aud" />
+
+                <CheckBox
+                    android:id="@+id/checkAll_aud"
+                    android:layout_width="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:button="@drawable/custom_checkbox"
+                    android:checked="false"
+                    android:layout_alignParentEnd="true" />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <com.advanced.phone.junk.cache.cleaner.booster.antimalware.utility.SocialGridView
+            android:id="@+id/rv_audadapter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/linear_mid_layer"
+            android:adjustViewBounds="true"
+            android:drawSelectorOnTop="true"
+            android:focusable="false"
+            android:gravity="center"
+            android:horizontalSpacing="@dimen/margin_1"
+            android:numColumns="1"
+            android:scrollbarStyle="outsideOverlay"
+            android:verticalSpacing="@dimen/margin_1" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/hidden_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:text="@string/str_no_record" />
+</RelativeLayout>

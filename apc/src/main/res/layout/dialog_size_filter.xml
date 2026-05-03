@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="@dimen/margin_20"
+    android:layout_marginRight="@dimen/margin_20"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabBackground="@drawable/bg_tab_selector"
+        app:tabIndicatorHeight="0dp"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="@color/text_color">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/level"
+            app:fontFamily="@font/roboto_medium" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time_gap"
+            app:fontFamily="@font/roboto_medium" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_gps"
+            app:fontFamily="@font/roboto_medium" />
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <TextView
+        android:id="@+id/lay_matching_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:padding="@dimen/margin_10"
+        android:text="@string/str_matchingleab"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:fontFamily="@font/roboto_regular" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#d2d5e0"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab_selector"
+            android:gravity="center"
+            android:padding="@dimen/margin_10"
+            android:text="Level"
+            android:textColor="@color/filter_tab_text_color"
+            android:textSize="@dimen/font_14"
+            app:fontFamily="@font/roboto_medium" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="@dimen/margin_1"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab_selector"
+            android:gravity="center"
+            android:padding="@dimen/margin_10"
+            android:text="@string/time_gap"
+            android:textColor="@color/filter_tab_text_color"
+            android:textSize="@dimen/font_14"
+            app:fontFamily="@font/roboto_medium" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="@dimen/margin_1"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab_selector"
+            android:gravity="center"
+            android:padding="@dimen/margin_10"
+            android:text="@string/str_gps"
+            android:textColor="@color/filter_tab_text_color"
+            android:textSize="@dimen/font_14"
+            app:fontFamily="@font/roboto_medium" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/margin_15"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:layout_marginRight="@dimen/margin_20"
+        android:textColor="@color/text_color"
+        app:fontFamily="@font/roboto_regular" />
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_15"
+        android:paddingLeft="@dimen/margin_20"
+        android:paddingRight="@dimen/margin_20"
+        android:src="@drawable/scale" />
+
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_5"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_5"
+        android:progress="25" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_20"
+        android:layout_marginRight="@dimen/margin_20"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:text="@string/low"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/font_12"
+            app:fontFamily="@font/roboto_regular" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/default_chkBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:scaleX=".8"
+            android:scaleY=".8"
+            android:text="@string/str_defaults"
+            android:textColor="@color/text_color"
+            android:visibility="invisible" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@string/str_high"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/font_12"
+            app:fontFamily="@font/roboto_regular" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/round_btn_bg"
+            android:padding="@dimen/margin_8"
+            android:text="@string/str_cancel"
+            android:layout_margin="@dimen/_10sdp"
+            android:textColor="@android:color/white"
+            app:fontFamily="@font/roboto_medium" />
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/round_btn_bg"
+            android:padding="@dimen/margin_8"
+            android:layout_margin="@dimen/_10sdp"
+            android:text="@string/str_ok"
+            android:textColor="@android:color/white"
+            app:fontFamily="@font/roboto_medium" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@android:color/white">
+    <!-- NOTE: Cannot use attributes in drawables :( -->
+    <item android:id="@android:id/background">
+        <shape android:shape="oval">
+    <size
+        android:width="@dimen/shutter_size"
+        android:height="@dimen/shutter_size" />
+    <solid android:color="#1F92E1" />
+    <stroke
+        android:width="@dimen/shutter_border_width"
+        android:color="#1F92E1" />
+        </shape>
+    </item>
+</ripple>

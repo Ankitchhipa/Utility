@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/toolbar_color</color>
+    <color name="colorPrimaryDark">#0872BA</color>
+    <color name="colorAccent">@color/splash_end</color>
+    <color name="toolbar_color">@color/dark_blue</color>
+    <color name="offWhite">#99ffffff</color>
+    <color name="title_success">#00BC76</color>
+
+    <color name="splash_start">#0093E9</color>
+    <color name="splash_end">#36C2CF</color>
+    <color name="sky_blue">@color/toolbar_color</color>
+    <color name="yellow">#ff9e1b</color>
+    <color name="blue_text_color">#464A65</color>
+    <color name="text_heading_color">#5C6083</color>
+    <color name="bg_color">#e7f2fd</color>
+    <color name="semi_transparent">#99000000</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#828384</color>
+    <color name="dot_dark_screen2">#828384</color>
+    <color name="dot_dark_screen3">#828384</color>
+    <color name="dot_dark_screen4">#828384</color>
+    <color name="dot_dark_screen5">#828384</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#FFFFFF</color>
+    <color name="dot_light_screen2">#FFFFFF</color>
+    <color name="dot_light_screen3">#FFFFFF</color>
+    <color name="dot_light_screen4">#FFFFFF</color>
+    <color name="dot_light_screen5">#FFFFFF</color>
+    <color name="nav_drawer_divider_color">#dbedfa</color>
+    <color name="transparent_color">#70000000</color>
+    <color name="red">#f85846</color>
+    <color name="grayseperator">#8f8f8f</color>
+    <!--<color name="text_link_color">#1F92E1</color>-->
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+        <item>@color/dot_light_screen5</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+        <item>@color/dot_dark_screen5</item>
+    </array>
+    <color name="grey_color">#616161</color>
+    <color name="grey_color_native">#D3D3D3</color>
+    <color name="et_hint_color">#ededed</color>
+    <color name="black">#000000</color>
+    <color name="txt_color">#202b65</color>
+    <color name="hint_color">#D8D8D8</color>
+
+    <color name="blue">#ff59a9ff</color>
+    <color name="orange">#ffff900d</color>
+    <color name="bottom_background_color">#ffc4c2bc</color>
+
+    <color name="polygonViewCircleStrokeColor">#ff59a9ff</color>
+    <color name="polygonViewCircleBackground">#90e5f8ff</color>
+
+    <color name="accent_indigo_500">#FFFFFF</color>
+
+    <color name="primary_grey_700">#FFFFFF</color>
+
+    <color name="camera_toolbar_background">#7FFFFFFF</color>
+
+    <color name="camera_shooter_text_color">#FFFFFF</color>
+    <color name="camera_message_text_color">#FFFF00</color>
+    <color name="camera_message_text_background">#7F000000</color>
+    <color name="camera_overlay_frame_color">#C000FF00</color>
+    <color name="camera_overlay_alert_color">#C0FF0000</color>
+
+    <color name="primary_grey_300">#E0E0E0</color>
+    <color name="primary_grey_400">#BDBDBD</color>
+
+    <color name="pdf_size_radio_unchecked">#606672</color>
+    <color name="pdf_size_radio_checked">#2089E4</color>
+
+    <color name="crop_thumb">#7f00ddff</color>
+
+    <!-- A light Holo shade of red -->
+    <color name="holo_red_light">#ffff4444</color>
+    <!-- A dark Holo shade of blue -->
+    <color name="holo_blue_dark">#ff0099cc</color>
+    <!-- A dark Holo shade of green -->
+    <color name="holo_green_dark">#ff99cc00</color>
+    <!-- A really bright Holo shade of blue -->
+    <color name="holo_blue_bright">#ff00ddff</color>
+    <!-- A really bright Holo shade of green -->
+    <color name="holo_green_bright">#ffddff00</color>
+
+    <color name="premium_bar">#002948</color>
+    <color name="crown_nav_bg">#fff8ce</color>
+    <color name="ocr_monthly_bg">#f4f9fd</color>
+    <color name="orange_premium_access">#FF8800</color>
+    <color name="blue_ocr_monthly">#1F92E1</color>
+
+    <color name="divider_gray">#c9c5c5</color>
+    <color name="white">#fff</color>
+    <color name="device_not">#e63428</color>
+
+</resources>

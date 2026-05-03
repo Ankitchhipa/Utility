@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/dark_blue</color>
+    <color name="colorPrimaryDark">#014796</color>
+    <color name="toolbar_color">@color/dark_blue</color>
+    <!--<color name="colorPrimary">#2b5aa8</color>
+    <color name="colorPrimaryDark">#2b5aa8</color>-->
+
+    <color name="colorAccent">#303F9F</color>
+    <color name="aboutus_color">#1c9c99</color>
+    <color name="white">#FFFFFF</color>
+    <color name="colorRipple">#d6dbee</color>
+    <color name="txt_blue">#3149a9</color>
+    <color name="black">#000000</color>
+    <color name="card_green">#85AA05</color>
+    <color name="card_purple">#6A1B9A</color>
+    <color name="temp_bg">#0B3A82</color>
+    <color name="redappcolor">#fff</color>
+    <color name="gray">#ebf0ef</color>
+    <color name="list_item_sub_header_color">#535353</color>
+    <color name="grey_hex_de">#ebf0ef</color>
+    <color name="toplayout_color">#fff</color>
+    <color name="grayseperator">#8f8f8f</color>
+    <color name="bg_default">#ECF0EF</color>
+    <color name="grey">#757575</color>
+
+    <color name="green_300">@color/card_green</color>
+    <color name="green_500">@color/card_green</color>
+    <color name="green_600">@color/card_green</color>
+
+    <color name="red_200">@color/btn_red</color>
+    <!--notification condition -->
+
+    <color name="sky_blue">#1f93e1</color>
+
+    <!--Lock Screen -->
+    <!--gradient color locker screen-->
+
+    <color name="txt_hint">#797979</color>
+    <color name="divider">#1fffffff</color>
+    <color name="place_autocomplete_search_hint">#808080</color>
+    <color name="rippelColor">#0099CC</color>
+    <color name="border">#ddd</color>
+    <color name="seprator_color">#C8C7CC</color>
+    <color name="text_color">#202b65</color>
+    <color name="toolbar_txt">#263169</color>
+    <color name="sidebar_header_color">#eaf6ff</color>
+    <color name="txt_color">#202b65</color>
+    <color name="start_dot_color">#81c3f1</color>
+    <color name="ad_border_color">#c7e2f5</color>
+
+    <color name="behindWaveColor">#329ee9</color>
+    <color name="frontWaveColor">#0c8ce3</color>
+    <color name="batteryColor">#006eba</color>
+    <color name="energyColor">#e36703</color>
+
+
+    <color name="gray_list_bg">#0d000000</color>
+
+    <color name="primary_color">#E0E0E0</color>
+    <color name="secondary_color">#66000000</color>
+    <color name="accent_color">#0073EF</color>
+
+
+    <color name="drawer_background">#ffffff</color>
+    <color name="drawer_background_dark">#424242</color>
+
+    <color name="secondary_color_settings">#9C9C9C</color>
+    <color name="grey_50">#fafafa</color>
+
+    <color name="primary_color_dark">#424242</color>
+
+    <color name="divider_dark">#1FFFFFFF</color>
+    <color name="divider_light">#1F000000</color>
+
+
+    <color name="selected_dark">#0FFFFFFF</color>
+    <color name="selected_light">#0F000000</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="long_press_bg">#808080</color>
+
+
+    <color name="window_background">#F9F6F6</color>
+    <color name="tab_btn_txt">#757575</color>
+    <color name="colorbtngreen">#01bb15</color>
+    <color name="card_orange">#F57F17</color>
+    <color name="card_megento">#C2185B</color>
+
+    <color name="transprent_white">#26FFFFFF</color>
+    <color name="md_grey_50">#FAFAFA</color>
+    <color name="blue_toggle">#1949a3</color>
+    <color name="cpu_cooler_bg">#1FC637</color>
+    <color name="large_bg">#D31242</color>
+    <color name="game_bg">#0096FF</color>
+    <color name="browser_bg">#B400FF</color>
+    <color name="txt_notification_pink">#febbbc</color>
+    <color name="seprator_home">#77749c</color>
+    <!--notification condition -->
+    <color name="noti_red_bg">#e44038</color>
+    <color name="noti_orange_bg">#fb8260</color>
+    <color name="noti_red_text">#e44038</color>
+    <color name="noti_orange_text">#fb8260</color>
+    <color name="noti_bottom_text">#797374</color>
+    <color name="green_button">#3F9F3F</color>
+    <color name="trending_bg">#25bdcc</color>
+    <color name="pcvark_install">#5a8a0f</color>
+    <color name="gray_form">#EDEDED</color>
+
+    <color name="seleted_tab">#FFF</color>
+    <color name="seleted_tab_text">#FFF</color>
+
+    <!--Lock Screen -->
+    <color name="line_color_lock">#FFFFFF</color>
+    <color name="btn_red">#e44038</color>
+    <!--gradient color locker screen-->
+    <color name="blue_start_color">#3949ab</color>
+    <color name="blue_end_color">#0d48a3</color>
+    <color name="pro_title_color">#09C9AB</color>
+    <color name="seprator">#D8DADA</color>
+    <color name="dark_txt">#6F6C6C</color>
+
+    <color name="tab_text_color">#000000</color>
+    <color name="tab_text_color_sel">#9fadb9</color>
+    <color name="tab_text_color_selected">#fff</color>
+    <color name="tab_indicator">#FFFFFF</color>
+</resources>

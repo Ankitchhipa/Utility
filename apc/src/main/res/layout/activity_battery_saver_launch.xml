@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".launcher.BatterySaverLaunchActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/sidebar_header_color"
+        android:elevation="0dp"
+        android:theme="@style/ToolbarColoredBackArrow"
+        android:title=""
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/battery_booster"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/font_18" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <RelativeLayout
+            android:id="@+id/layout_one"
+            android:layout_width="@dimen/_180sdp"
+            android:padding="@dimen/_10sdp"
+            android:background="@drawable/battery_blue"
+            android:layout_height="@dimen/_180sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="visible">
+
+
+
+
+            <FrameLayout
+                android:id="@+id/ll_main_frame"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_centerInParent="true">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/battery_solid" />
+
+                <com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout
+                    android:id="@+id/frm_mask_animated"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="@dimen/margin_10"
+                    app:mask="@drawable/ic_battery_black_filled"
+                    app:porterduffxfermode="DST_IN">
+
+                    <com.advanced.phone.junk.cache.cleaner.booster.antimalware.waveview.WaveView
+                        android:id="@+id/wave"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+
+                    <com.advanced.phone.junk.cache.cleaner.booster.antimalware.animations.GravView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom"
+                        app:animationGenerator="com.github.glomadrian.grav.generator.animation.SideToSideAnimator"
+                        app:array_colors="@array/bubble_color"
+                        app:ball_size="2.5dp"
+                        app:ball_size_from_size="1dp"
+                        app:ball_size_to_size="1dp"
+                        app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
+                        app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
+                        app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
+                        app:regular_cell_size="50"
+                        app:regular_variance="25"
+                        app:side_to_side_direction="downToUp"
+                        app:side_to_side_max_duration="5000"
+                        app:side_to_side_min_duration="3000" />
+
+
+                </com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_battery"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_battery" />
+
+                <TextView
+                    android:id="@+id/battery_remaining"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="25%"
+                    android:textColor="#2d376e"
+                    android:textSize="@dimen/font_18"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:indeterminateOnly="false"
+                android:max="100"
+                android:progress="50"
+                android:progressDrawable="@drawable/custom_battery_launch_progressbar"
+                android:secondaryProgress="100" />
+
+            <!-- <FrameLayout
+                 android:id="@+id/lay_battery_completed"
+                 android:layout_width="150dp"
+                 android:layout_height="150dp"
+                 android:layout_centerInParent="true"
+                 android:visibility="gone">
+
+                 <com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:layout_gravity="center"
+                     app:mask="@drawable/ic_battery_black_filled"
+                     app:porterduffxfermode="DST_IN">
+
+                     <androidx.appcompat.widget.AppCompatImageView
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:layout_gravity="center"
+                         android:layout_marginTop="@dimen/margin_8"
+                         android:background="@color/frontWaveColor" />
+
+                     <androidx.appcompat.widget.AppCompatImageView
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:layout_gravity="center"
+                         android:scaleType="fitXY"
+                         app:srcCompat="@drawable/ic_battery" />
+
+                 </com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout>
+
+                 <androidx.appcompat.widget.AppCompatImageView
+                     android:id="@+id/iv_animated_tick"
+                     android:layout_width="80dp"
+                     android:layout_height="80dp"
+                     android:layout_gravity="center"
+                     android:visibility="gone"
+                     app:srcCompat="@drawable/animated_tick" />
+
+             </FrameLayout>
+ -->
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/time_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/time_left"
+                android:textColor="#2d376e"
+                android:textSize="@dimen/font_22" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginVertical="@dimen/_8sdp">
+
+                <LinearLayout
+                    android:id="@+id/ll_power"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:background="@color/sidebar_header_color"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_8sdp">
+
+                    <TextView
+                        android:id="@+id/tv_power"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:text="@string/psm"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/font_18" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvSaverCheck"
+                        android:textSize="@dimen/font_14"
+                        android:textColor="@color/grayseperator"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:text="@string/str_off"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_forward_arrow"
+                        app:tint="@color/text_color" />
+                    <!--<androidx.appcompat.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/sc_power"
+                        android:thumb="@drawable/thumb"
+                        app:track="@drawable/track_select"/>-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ad_view_banner_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:background="@color/sidebar_header_color"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/margin_5">
+
+                    <FrameLayout
+                        android:id="@+id/nativeLargeAdBatteryBoost"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+               <!-- <LinearLayout
+                    android:id="@+id/ad_view_banner_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_75sdp"
+                    android:layout_above="@id/margin_btm"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:id="@+id/nativeLargeAdBatteryBoost"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8sdp" />
+
+                </LinearLayout>-->
+
+                <TextView
+                    android:id="@+id/tv_power_saving_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/power_saving_life"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/font_18"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/save_more_power"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/font_14" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.advanced.phone.junk.cache.cleaner.booster.antimalware.tools.SpaceManagerActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/ad_view_banner_container"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/main_toolbar_apc" />
+
+            <RelativeLayout
+                android:id="@+id/ad_view_banner_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:visibility="visible"
+                android:background="@drawable/ad_background">
+
+                <include layout="@layout/adaptive_banner_ad_layout" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sidebar_header_color"
+                android:gravity="center"
+                android:paddingTop="@dimen/_5sdp"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/margin_15">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/cpucollerfirst_temp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="0"
+                        android:textColor="@color/colorPrimaryDark"
+                        app:fontFamily="@font/roboto_medium" />
+
+                    <TextView
+                        android:id="@+id/symboltext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/margin_2"
+                        android:layout_marginLeft="@dimen/margin_2"
+                        android:layout_marginTop="@dimen/margin_5"
+                        android:text=""
+                        android:textColor="@color/txt_color"
+                        app:fontFamily="@font/roboto_medium" />
+
+                    <!--<RelativeLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content">-->
+
+                    <!---->
+
+                    <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_below="@+id/symboltext"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:text=""&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:textColor="#202b65"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:textStyle="bold" />&ndash;&gt;-->
+                    <!--</RelativeLayout>-->
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/symbol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/space_occupiedd"
+                    app:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/txt_color"
+                    android:textSize="@dimen/_14ssp"
+                    android:includeFontPadding="false" />
+
+            </LinearLayout>
+
+
+            <!--<TextView-->
+            <!--android:layout_width="1dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginBottom="@dimen/margin_12"-->
+            <!--android:layout_marginTop="@dimen/margin_12"-->
+            <!--android:background="#1a2b61" />-->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/cpucoolerfirst_usage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:layout_marginBottom="@dimen/margin_4">
+
+                    <TextView
+                        android:id="@+id/ltext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_2"
+                        android:layout_marginLeft="@dimen/margin_2"
+
+                        android:text="%"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_26"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ltext"
+
+                        android:text="@string/str_cpu_usage"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_14" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+                <!--<FrameLayout
+                    android:id="@+id/nativeSmallAdDuplicatePhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />-->
+
+
+
+            <include layout="@layout/content_space_manager" />
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_suggestion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:background="@android:color/white"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_no_result_found"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text="@string/str_no_result_found"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/font_18"
+            android:visibility="gone" />
+
+
+        <include layout="@layout/junk_bottom_sheet"
+            android:visibility="gone"/>
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

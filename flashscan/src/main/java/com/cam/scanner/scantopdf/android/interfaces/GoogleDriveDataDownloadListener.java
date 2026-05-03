@@ -1,0 +1,5 @@
+package com.cam.scanner.scantopdf.android.interfaces;
+
+public interface GoogleDriveDataDownloadListener {
+    void onFinishDownload();
+}

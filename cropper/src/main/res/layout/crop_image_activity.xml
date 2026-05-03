@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000">
+
+    <RelativeLayout
+        android:id="@+id/rl_crop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_43sdp"
+        android:layout_alignParentTop="true"
+        android:background="@color/toolbar_color">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_back_toolbar"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            android:padding="@dimen/_5sdp"
+            app:srcCompat="@drawable/ic_back_toolbar" />
+
+        <TextView
+            android:id="@+id/tv_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@id/iv_back_toolbar"
+            android:text="@string/add_signature"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_done"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_button_white"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            app:srcCompat="@drawable/ic_save_signature" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_rotate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_toStartOf="@id/img_done"
+            android:layout_toLeftOf="@id/img_done"
+            android:gravity="center"
+            android:padding="8dp"
+            app:srcCompat="@drawable/crop_image_menu_rotate_right" />
+
+
+    </RelativeLayout>
+
+    <com.theartofdev.edmodo.cropper.CropImageView
+        android:id="@+id/cropImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_crop"
+        android:background="@color/white"
+        android:layout_above="@+id/btn_rewarded_ad"/>
+
+    <Button
+        android:id="@+id/btn_rewarded_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/sky_blue"
+        android:layout_margin="8dp"
+        android:textAllCaps="false"
+        android:padding="8dp"
+        android:text="@string/watch_ad_to_scan_ocr"
+        android:textColor="#FFFFFF"
+        android:drawableLeft="@drawable/crop_image_menu_flip"
+        android:drawablePadding="5dp"
+        android:visibility="gone"
+        />
+</RelativeLayout>

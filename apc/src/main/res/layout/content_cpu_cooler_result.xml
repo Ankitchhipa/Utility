@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:showIn="@layout/activity_cpu_cooler_result">
+
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sidebar_header_color"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/main_toolbar_apc" />
+            <!--<android.support.v7.widget.AppCompatImageView-->
+            <!--android:layout_width="@dimen/margin_30"-->
+            <!--android:layout_height="?attr/actionBarSize"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--app:srcCompat="@drawable/ic_hand" />-->
+
+
+            <!--<ImageView-->
+            <!--android:id="@+id/iv_circle_layout"-->
+            <!--android:layout_width="@dimen/margin_70"-->
+            <!--android:layout_height="@dimen/margin_70"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginTop="@dimen/margin_16" />-->
+
+            <RelativeLayout
+                android:id="@+id/circle_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="@dimen/margin_8"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/iv_cirle_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/phone_boosted"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:visibility="visible" />
+
+                <com.advanced.phone.junk.cache.cleaner.booster.antimalware.utility.TimerView
+                    android:id="@+id/tView"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:visibility="gone"
+                    app:circleColor="@color/white" />
+
+                <LinearLayout
+                    android:id="@+id/delete_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/toplayout_color"
+                    android:gravity="center"
+                    android:padding="@dimen/activity_horizontal_marginsmall"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/delete_icon_junkanim"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_anim_junk"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/ok_icon_junkanim"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/cpucollerfirst_toplayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sidebar_header_color">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/ll_up"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/cpucollerfirst_temp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="0"
+                                android:textColor="@color/colorPrimaryDark"
+                                app:fontFamily="@font/roboto_medium" />
+
+
+                            <TextView
+                                android:id="@+id/symboltext"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@+id/cpucollerfirst_temp"
+                                android:includeFontPadding="false"
+                                android:text="\u2103"
+                                android:textColor="@color/txt_color"
+                                android:textSize="@dimen/font_18"
+                                android:textStyle="bold"
+                                app:fontFamily="@font/roboto_regular" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/symbol"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ll_up"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@string/str_normal"
+                        android:textColor="@color/txt_color"
+                        android:textSize="@dimen/font_16"
+                        app:fontFamily="@font/roboto_regular" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!--<TextView-->
+            <!--android:layout_width="1dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginBottom="@dimen/margin_12"-->
+            <!--android:layout_marginTop="@dimen/margin_12"-->
+            <!--android:background="#1a2b61" />-->
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:alpha=".2"
+                android:background="@color/grayseperator" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/ll_uppp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/cpucoolerfirst_usage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="0"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textStyle="bold"
+                                app:fontFamily="@font/roboto_medium" />
+
+
+                            <TextView
+                                android:id="@+id/ltext"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@+id/cpucoolerfirst_usage"
+                                android:includeFontPadding="false"
+                                android:text="%"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/font_18"
+                                app:fontFamily="@font/roboto_regular" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ll_uppp"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@string/str_cpu_usage"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/font_16"
+                        app:fontFamily="@font/roboto_regular" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/upper_layout_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sidebar_header_color"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_resultdata"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="45 \u2103"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/_14ssp"
+                app:fontFamily="@font/roboto_medium" />
+
+            <TextView
+                android:id="@+id/tv_resultmessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:layout_marginVertical="@dimen/_8sdp"
+                android:textSize="@dimen/_14ssp"
+                android:text="@string/str_cool_down_complete"
+                android:textColor="@color/text_color"
+                app:fontFamily="@font/roboto_regular" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_10sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/adsfree_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/_4sdp"
+                android:background="@drawable/result_screen_border"
+                android:orientation="vertical"
+                android:padding="@dimen/_8sdp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/margin_50"
+                        android:layout_height="@dimen/margin_50"
+                        android:background="@drawable/bg_file_count"
+                        android:padding="@dimen/margin_5"
+                        android:src="@drawable/ads_free_new" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/margin_8">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ads_experience_str"
+                            android:textSize="@dimen/font_13"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <Button
+                    android:id="@+id/btn_get_now"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/margin_15"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingRight="@dimen/margin_15"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:text="@string/get_now"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/ad_view_banner_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:background="@color/transparent">
+                <include layout="@layout/medium_banner_ad_layout"/>
+            </RelativeLayout>
+
+            <!--<LinearLayout
+                android:id="@+id/ad_view_banner_container"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_110sdp"
+                android:layout_margin="@dimen/_4sdp"
+                android:background="@drawable/ad_background"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/nativeLargeAdCommonResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>-->
+
+            <LinearLayout
+                android:id="@+id/cooldown_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/_4sdp"
+                android:background="@drawable/result_screen_border"
+                android:orientation="vertical"
+                android:padding="@dimen/_8sdp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/margin_50"
+                        android:layout_height="@dimen/margin_50"
+                        android:background="@drawable/bg_file_count"
+                        android:padding="@dimen/margin_5"
+                        android:src="@drawable/cpu_cooler" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/margin_8">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Device getting all heated up?\nCool it down withing seconds."
+                            android:textSize="@dimen/font_13"
+                            app:fontFamily="@font/roboto_regular" />
+                    </LinearLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <Button
+                    android:id="@+id/btn_cool_down"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/margin_15"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingRight="@dimen/margin_15"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:text="@string/str_cool_down"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:fontFamily="@font/roboto_medium" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/anitvirus_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/_4sdp"
+                android:background="@drawable/result_screen_border"
+                android:orientation="vertical"
+                android:padding="@dimen/_8sdp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/margin_50"
+                        android:layout_height="@dimen/margin_50"
+                        android:background="@drawable/bg_file_count"
+                        android:padding="@dimen/margin_5"
+                        android:src="@drawable/ic_security" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/margin_8">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Keep your device free from malicious malware."
+                            android:textSize="@dimen/font_13"
+                            android:textStyle="bold"
+                            app:fontFamily="@font/roboto_regular" />
+                    </LinearLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <Button
+                    android:id="@+id/btn_scan_now"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/margin_15"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingRight="@dimen/margin_15"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:text="SCAN NOW"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/roboto_medium" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/duplicate_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/_4sdp"
+                android:background="@drawable/result_screen_border"
+                android:orientation="vertical"
+                android:padding="@dimen/_8sdp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/margin_50"
+                        android:layout_height="@dimen/margin_50"
+                        android:background="@drawable/bg_file_count"
+                        android:padding="@dimen/margin_5"
+                        android:src="@drawable/duplicates" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/margin_8">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Many duplicate photos are occupying your device's space!"
+                            android:textSize="@dimen/font_13"
+                            android:textStyle="bold"
+                            app:fontFamily="@font/roboto_regular" />
+                    </LinearLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <Button
+                    android:id="@+id/btn_clean_now"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/margin_15"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingRight="@dimen/margin_15"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:text="@string/str_socialdelete"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:fontFamily="@font/roboto_medium" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/battery_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/_4sdp"
+                android:background="@drawable/result_screen_border"
+                android:orientation="vertical"
+                android:padding="@dimen/_8sdp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/margin_50"
+                        android:layout_height="@dimen/margin_50"
+                        android:background="@drawable/bg_file_count"
+                        android:padding="@dimen/margin_5"
+                        android:src="@drawable/dg_battery_booster" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/margin_8">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Battery getting drained? Enjoy your phone for longer hours!"
+                            android:textSize="@dimen/font_13"
+                            app:fontFamily="@font/roboto_regular" />
+                    </LinearLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <Button
+                    android:id="@+id/btn_battery_boost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/margin_15"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingRight="@dimen/margin_15"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:text="Boost Battery Now"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:fontFamily="@font/roboto_medium" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/speed_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/_4sdp"
+                android:background="@drawable/result_screen_border"
+                android:orientation="vertical"
+                android:padding="@dimen/_8sdp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/margin_50"
+                        android:layout_height="@dimen/margin_50"
+                        android:background="@drawable/bg_file_count"
+                        android:padding="@dimen/margin_5"
+                        android:src="@drawable/dg_phone_boost" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/margin_8">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Phone slowing down? Improve your device's speed in one click!"
+                            android:textSize="@dimen/font_13"
+                            app:fontFamily="@font/roboto_regular" />
+                    </LinearLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <Button
+                    android:id="@+id/btn_speed_boost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/margin_15"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingRight="@dimen/margin_15"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:text="BOOST SPEED NOW"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:fontFamily="@font/roboto_medium" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/junk_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/_4sdp"
+                android:background="@drawable/result_screen_border"
+                android:orientation="vertical"
+                android:padding="@dimen/_8sdp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/margin_50"
+                        android:layout_height="@dimen/margin_50"
+                        android:background="@drawable/bg_file_count"
+                        android:padding="@dimen/margin_5"
+                        android:src="@drawable/junk_cleaning" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/margin_8">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="A lot of junk is affecting your phone's performance"
+                            android:textSize="@dimen/font_13"
+                            app:fontFamily="@font/roboto_regular" />
+                    </LinearLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <Button
+                    android:id="@+id/btn_junk_clean"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/margin_15"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingRight="@dimen/margin_15"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:text="@string/str_delete_junk"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:fontFamily="@font/roboto_medium" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/result_screen_border">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone">
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            ads:adSize="MEDIUM_RECTANGLE" />
+        <!--ads:adUnitId="@string/banner_medium_rect" -->
+
+    </FrameLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

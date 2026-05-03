@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_rate_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="?attr/selectableItemBackground"
+        android:drawableLeft="@drawable/ic_nav_rate_app"
+        android:drawablePadding="12dp"
+        android:gravity="left|center_vertical"
+        android:padding="15dp"
+        android:text="@string/rate_the_app"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/nav_drawer_divider_color" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_about_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:drawableLeft="@drawable/ic_nav_about_app"
+        android:drawablePadding="12dp"
+        android:gravity="left|center_vertical"
+        android:padding="15dp"
+        android:text="@string/about_app"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/nav_drawer_divider_color" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_product_tour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:drawableLeft="@drawable/ic_nav_product_tour"
+        android:drawablePadding="12dp"
+        android:gravity="left|center_vertical"
+        android:padding="15dp"
+        android:text="@string/product_tour"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/nav_drawer_divider_color" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_share_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:drawableLeft="@drawable/ic_nav_share"
+        android:drawablePadding="12dp"
+        android:gravity="left|center_vertical"
+        android:padding="15dp"
+        android:text="@string/share_the_app"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/nav_drawer_divider_color" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_privacy_policy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:drawableLeft="@drawable/ic_nav_privacy_policy"
+        android:drawablePadding="12dp"
+        android:gravity="left|center_vertical"
+        android:padding="15dp"
+        android:text="@string/privacy_policy"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/nav_drawer_divider_color" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:drawableLeft="@drawable/ic_settings"
+        android:drawablePadding="12dp"
+        android:gravity="left|center_vertical"
+        android:padding="15dp"
+        android:text="@string/settings"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/nav_drawer_divider_color" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_g_drive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:drawableLeft="@drawable/ic_download_drive"
+        android:drawablePadding="12dp"
+        android:gravity="left|center_vertical"
+        android:padding="15dp"
+        android:text="@string/get_from_google_drive"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/nav_drawer_divider_color" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/nav_tv_premium_plan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/crown_nav_bg"
+        android:drawableLeft="@drawable/ic_crown_nav"
+        android:drawablePadding="12dp"
+        android:gravity="left|center_vertical"
+        android:padding="15dp"
+        android:text="@string/premium_access"
+        android:textColor="@color/orange_premium_access"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/view_premium_plan"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/nav_drawer_divider_color" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/nav_tv_ocr_monthly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ocr_monthly_bg"
+        android:drawableLeft="@drawable/ic_ocr_monthly_nav"
+        android:drawablePadding="12dp"
+        android:gravity="left|center_vertical"
+        android:padding="15dp"
+        android:text="@string/ocr_monthly_plan"
+        android:textColor="@color/blue_ocr_monthly"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/view_ocr_monthly"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/nav_drawer_divider_color" />
+
+    <!--<androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_ad_free"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:drawableLeft="@drawable/ic_remove_ads"
+        android:drawablePadding="12dp"
+        android:gravity="left|center_vertical"
+        android:padding="15dp"
+        android:text="@string/ad_free"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/nav_drawer_divider_color" />-->
+
+
+</LinearLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_social"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/divider_shadow"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <ImageView
+            android:id="@+id/media_app_icon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="@dimen/left_right_16"
+            android:layout_marginRight="@dimen/left_right_16"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tvsocial_app_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:paddingTop="@dimen/margin_5"
+            android:paddingBottom="@dimen/margin_5"
+            android:text="@string/str_app_cache"
+            android:textColor="@color/txt_color"
+            android:textSize="@dimen/font_16"
+            app:fontFamily="@font/roboto_medium" />
+
+
+        <TextView
+            android:id="@+id/tvsocial_app_size"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:paddingTop="@dimen/margin_5"
+            android:paddingBottom="@dimen/margin_5"
+            android:text=""
+            android:textColor="@color/txt_color"
+            app:fontFamily="@font/roboto_medium" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/right_arrow" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nativeAdListSocialScan"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/divider_shadow"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="@dimen/left_right_16"
+            android:layout_marginRight="@dimen/left_right_16"
+            android:background="@drawable/btn_blue_round"
+            android:gravity="center"
+            android:text="AD"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp" />
+
+        <FrameLayout
+            android:id="@+id/customNativeAdInSocialResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <!--<View-->
+    <!--android:id="@+id/iv_divider_shadow"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/margin_10"-->
+    <!--android:background="@drawable/divider_shadow" />-->
+</LinearLayout>

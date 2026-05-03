@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application>
+        <activity
+            android:name=".purchase.SubscriptionScreen"
+            android:exported="false" />
+
+        <receiver
+            android:name=".utils.InstallationReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.content.pm.PackageInstaller.ACTION_SESSION_COMMITTED" />
+                <action android:name="android.content.pm.PackageInstaller.ACTION_SESSION_DETAILS" />
+            </intent-filter>
+        </receiver>
+
+        <property
+            android:name="android.adservices.AD_SERVICES_CONFIG"
+            android:resource="@xml/gma_ad_services_config"
+            tools:replace="android:resource" />
+    </application>
+
+</manifest>

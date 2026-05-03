@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="@dimen/margin_20"
+    android:layout_marginRight="@dimen/margin_20"
+    android:background="@drawable/round_corner_shape"
+    android:gravity="center">
+    <!--<RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="match_parent">-->
+
+
+    <LinearLayout
+        android:id="@+id/relative_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--<ProgressBar-->
+        <!--android:id="@+id/prgs_app"-->
+        <!--android:layout_width="60dp"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:indeterminate="true"-->
+        <!--android:indeterminateTintMode="src_atop"-->
+        <!--android:indeterminateTint="@color/white"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_margin="5dp" />-->
+      <!--  <com.wang.avi.AVLoadingIndicatorView
+            style="@style/AVLoadingIndicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_20"
+            app:indicatorColor="@color/colorPrimaryDark"
+            app:indicatorName="LineSpinFadeLoaderIndicator" />-->
+
+        <TextView
+            android:id="@+id/please_wait"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            app:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:text="@string/str_please_wait"
+            android:textColor="@color/toolbar_txt"
+            android:textSize="@dimen/font_16" />
+
+        <TextView
+            android:id="@+id/update_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5"
+            app:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:text="@string/str_please_wait_scan"
+            android:textColor="@color/toolbar_txt"
+            android:textSize="@dimen/font_16" />
+
+        <LinearLayout
+            android:id="@+id/ll_no"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_40"
+            android:layout_marginTop="@dimen/margin_20"
+            android:background="@drawable/button_bg_blue_bottom">
+
+            <TextView
+                android:id="@+id/iv_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/str_cancel"
+                app:fontFamily="@font/roboto_medium"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_16" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btm_layss"
+        android:layout_below="@+id/relative_dialog"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- <include layout="@layout/btm_ads_rect_dialog" />-->
+        <FrameLayout
+            android:id="@+id/frame_mid_laysss"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/btm_layss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorAccent"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_40"
+            android:background="@color/colorPrimaryDark"
+            app:fontFamily="@font/roboto_medium"
+            android:text="@string/str_cancel"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_18"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+</RelativeLayout>

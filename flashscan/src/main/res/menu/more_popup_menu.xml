@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_save_as_pdf"
+        android:icon="@drawable/ic_pdf_sky_blue"
+        android:iconTint="@color/black_text_color"
+        android:orderInCategory="1"
+        android:title="@string/save_as_pdf"
+        app:iconTint="@color/black_text_color"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_save_to_gallery"
+        android:icon="@drawable/ic_gallery_sky_blue"
+        android:iconTint="@color/black_text_color"
+        android:orderInCategory="2"
+        android:title="@string/save_to_gallery"
+        android:visible="false"
+        app:iconTint="@color/black_text_color"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_share"
+        android:icon="@drawable/ic_share_sky_blue"
+        android:iconTint="@color/black_text_color"
+        android:orderInCategory="3"
+        android:title="@string/share"
+        app:iconTint="@color/black_text_color"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_rename"
+        android:icon="@drawable/ic_rename_sky_blue"
+        android:iconTint="@color/black_text_color"
+        android:orderInCategory="4"
+        android:title="@string/rename"
+        app:iconTint="@color/black_text_color"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_delete"
+        android:icon="@drawable/ic_delete_sky_blue"
+        android:iconTint="@color/black_text_color"
+        android:orderInCategory="5"
+        android:title="@string/delete"
+        app:iconTint="@color/black_text_color"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_copy"
+        android:icon="@drawable/ic_copy_sky_blue"
+        android:iconTint="@color/black_text_color"
+        android:orderInCategory="6"
+        android:title="@string/copy"
+        android:visible="false"
+        app:iconTint="@color/black_text_color"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_move"
+        android:icon="@drawable/ic_move"
+        android:iconTint="@color/black_text_color"
+        android:orderInCategory="7"
+        android:title="@string/move"
+        android:visible="false"
+        app:iconTint="@color/black_text_color"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_modify_scan"
+        android:icon="@drawable/ic_modify_scan"
+        android:iconTint="@color/black_text_color"
+        android:orderInCategory="8"
+        android:title="@string/modify_scan"
+        android:visible="false"
+        app:iconTint="@color/black_text_color"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_add_signature"
+        android:icon="@drawable/ic_add_signature"
+        android:iconTint="@color/black_text_color"
+        android:orderInCategory="9"
+        android:title="@string/add_signature"
+        android:visible="false"
+        app:iconTint="@color/black_text_color"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_ocr"
+        android:icon="@drawable/ic_ocr_credit"
+        android:iconTint="@color/black_text_color"
+        android:orderInCategory="10"
+        android:title="@string/ocr"
+        android:visible="false"
+        app:iconTint="@color/black_text_color"
+        app:showAsAction="never" />
+</menu>

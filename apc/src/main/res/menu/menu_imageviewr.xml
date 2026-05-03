@@ -1,0 +1,42 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HomeScreen.MainActivity">
+
+    <item
+        android:id="@+id/action_imagedetail"
+        android:icon="@drawable/info"
+        android:title="@string/str_info" />
+
+    <item
+        android:id="@+id/lock"
+        android:orderInCategory="1"
+        android:title="@string/str_lock"
+        android:visible="true"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/un_lock"
+        android:orderInCategory="1"
+        android:title="@string/str_unlock"
+        android:visible="false"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/ignore"
+        android:orderInCategory="1"
+        android:title="@string/str_ignore"
+        android:visible="true"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/delete"
+        android:orderInCategory="1"
+        android:title="@string/str_delete"
+        android:visible="true"
+        app:showAsAction="never" />
+
+    <!--app:showAsAction="always"-->
+
+</menu>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AlertDialogTheme" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowMinWidthMinor">84%</item>
+    </style>
+
+    <style name="CardView.Shadow.RoundCorner" parent="CardView">
+        <item name="android:outlineSpotShadowColor">@color/blue_shadow</item>
+        <item name="android:outlineAmbientShadowColor">@color/blue_shadow</item>
+        <item name="cardCornerRadius">@dimen/_10sdp</item>
+        <item name="cardElevation">@dimen/_3sdp</item>
+        <item name="android:background">@drawable/round_corner_shape</item>
+    </style>
+
+    <style name="roundedImageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+</resources>

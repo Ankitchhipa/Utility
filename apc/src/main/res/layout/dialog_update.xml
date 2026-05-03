@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/linear_space"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_60"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:id="@+id/linear_layer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_space"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/relative_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/linear_upper_layer"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/temp_bg">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/rate_us_cloud" />
+            </RelativeLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linear_upper_layer"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/dialog_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+
+                    android:paddingBottom="@dimen/margin_2"
+                    android:paddingTop="@dimen/margin_6"
+                    android:gravity="center"
+                    android:text="@string/str_update"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_20" />
+
+                <TextView
+                    android:id="@+id/dialog_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/margin_4"
+                    android:paddingLeft="@dimen/margin_8"
+                    android:paddingRight="@dimen/margin_8"
+                    android:text="@string/str_update_avl"
+                    android:textColor="#404040"
+                    android:textSize="@dimen/font_14" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.25dp"
+                    android:layout_marginLeft="@dimen/margin_8"
+                    android:layout_marginRight="@dimen/margin_8"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:background="@color/grayseperator" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_cancel"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_white_left_rounded"
+
+                        android:text="@string/str_notnow"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_14"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="0.25dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/grayseperator" />
+
+                    <Button
+                        android:id="@+id/btn_countinue"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_white_right_rounded"
+
+                        android:text="@string/str_updatebtn"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/font_14"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.25dp"
+                    android:layout_marginLeft="@dimen/margin_8"
+                    android:layout_marginRight="@dimen/margin_8"
+                    android:background="@color/grayseperator" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/main_conteainer_lay1"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_centerHorizontal="true">
+
+                    <TextView
+                        android:id="@+id/tv_close_ad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:visibility="gone"
+                        android:gravity="center_vertical"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:background="@null" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/dialog_img"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/linear_layer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-40dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/circuler_bg"
+        android:padding="@dimen/margin_16"
+        android:src="@drawable/update_notification"></ImageView>
+</RelativeLayout>

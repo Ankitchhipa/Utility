@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- START xml_defaults -->
+<defaultsMap>
+    <entry>
+        <key>immediate_update</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>Splash_ad_show</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>Banner_Ad_show</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>Interstitial_Ad_show</key>
+        <value>false</value>
+    </entry>
+    <entry>
+         <key>Rectangle_Ad_show</key>
+         <value>true</value>
+     </entry>
+    <entry>
+        <key>Ad_Occurences</key>
+        <value>-1</value>
+    </entry>
+    <entry>
+        <key>app_config_ads</key>
+        <value> {
+            "priority": {
+            "banner": "0,4",
+            "interestial": "4,0",
+            "rectangle": "0,4"
+            },
+            "vcode": 30,
+            "show_dialog": true,
+            "remove_ads": false,
+            "immediate_update": true,
+            "adx_ad_type": true,
+            "en_k": "7878787878787878"
+            }</value>
+    </entry>
+    <entry>
+        <key>Splash_Ad_Time</key>
+        <value>7000</value>
+    </entry>
+</defaultsMap>
+    <!-- END xml_defaults -->

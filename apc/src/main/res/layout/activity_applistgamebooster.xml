@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/sidebar_header_color"
+        android:elevation="0dp"
+        android:theme="@style/ToolbarColoredBackArrow"
+        android:title=""
+        app:contentInsetStartWithNavigation="0dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/tvgamelist_title"
+            android:text="@string/str_add_game_boost"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/font_18" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:padding="@dimen/margin_16"
+            android:layout_marginRight="@dimen/margin_10"
+            app:srcCompat="@drawable/ic_tick"
+            android:layout_marginEnd="@dimen/margin_10" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <include layout="@layout/content_applistgamebooster" />
+
+</LinearLayout>
+

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sidebar_header_color"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/layout_one"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+
+     <!--   <ImageView
+            android:id="@+id/iv_outer_circle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:src="@drawable/battery_circle" />
+
+        <ImageView
+            android:id="@+id/iv_inner_circle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:src="@drawable/battery_circle" />-->
+        <com.advanced.phone.junk.cache.cleaner.booster.antimalware.animations.RadarScanView
+            android:id="@+id/iv_radar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_icon_left_center"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_above="@id/ll_main_frame"
+            android:layout_toStartOf="@+id/ll_main_frame"
+            android:visibility="gone"
+            app:srcCompat="@drawable/battery_cpu" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_icon_left_bottom"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/ll_main_frame"
+            android:layout_toStartOf="@+id/ll_main_frame"
+            android:visibility="gone"
+            app:srcCompat="@drawable/battery_bluetooth" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_icon_right_bottom"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/ll_main_frame"
+            android:layout_toEndOf="@id/ll_main_frame"
+            android:visibility="gone"
+            app:srcCompat="@drawable/battery_signal" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_icon_right_top"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_above="@+id/ll_main_frame"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/margin_40"
+            android:visibility="gone"
+            app:srcCompat="@drawable/batttery_brightness" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_icon_right_top_right"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_above="@+id/ll_main_frame"
+            android:layout_toEndOf="@+id/ll_main_frame"
+            android:visibility="gone"
+            app:srcCompat="@drawable/battery_add" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_icon_left_top"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_above="@+id/ll_main_frame"
+            android:layout_toStartOf="@+id/ll_main_frame"
+            android:visibility="gone"
+            app:srcCompat="@drawable/battery_cpu" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_icon_right_center"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_above="@+id/iv_icon_right_bottom"
+            android:layout_marginStart="@dimen/margin_30"
+            android:layout_marginBottom="@dimen/margin_40"
+            android:layout_toEndOf="@+id/ll_main_frame"
+            android:visibility="gone"
+            app:srcCompat="@drawable/battery_wifi" />
+
+        <FrameLayout
+            android:id="@+id/ll_main_frame"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/battery_solid" />
+
+            <com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout
+                android:id="@+id/frm_mask_animated"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="@dimen/margin_10"
+                app:mask="@drawable/ic_battery_black_filled"
+                app:porterduffxfermode="DST_IN">
+
+                <com.advanced.phone.junk.cache.cleaner.booster.antimalware.waveview.WaveView
+                    android:id="@+id/wave"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+                <com.advanced.phone.junk.cache.cleaner.booster.antimalware.animations.GravView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    app:animationGenerator="com.github.glomadrian.grav.generator.animation.SideToSideAnimator"
+                    app:array_colors="@array/bubble_color"
+                    app:ball_size="2.5dp"
+                    app:ball_size_from_size="1dp"
+                    app:ball_size_to_size="1dp"
+                    app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
+                    app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
+                    app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
+                    app:regular_cell_size="50"
+                    app:regular_variance="25"
+                    app:side_to_side_direction="downToUp"
+                    app:side_to_side_max_duration="5000"
+                    app:side_to_side_min_duration="3000" />
+
+
+            </com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_energy"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_energy" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_battery_tick" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_battery"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/ic_battery" />
+
+        </FrameLayout>
+
+
+       <!-- <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/circle_shape"
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/custom_battery_outer_progressbar" />
+-->
+        <FrameLayout
+            android:id="@+id/lay_battery_completed"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone">
+
+            <com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                app:mask="@drawable/ic_battery_black_filled"
+                app:porterduffxfermode="DST_IN">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:background="@color/frontWaveColor" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_battery" />
+
+            </com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_animated_tick"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/animated_tick" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+       <!-- <TextView
+            android:id="@+id/tv_please_wait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_please_wait"
+            android:textColor="#2d376e"
+            android:textSize="22sp"
+            android:textStyle="bold" />-->
+
+        <TextView
+            android:id="@+id/tv_boosting_process"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/battery_boost_processing"
+            android:textColor="#2d376e"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layout_two"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/sidebar_header_color"
+        android:visibility="gone">
+
+        <include layout="@layout/backpress_ads_screen" />
+    </RelativeLayout>
+</LinearLayout>

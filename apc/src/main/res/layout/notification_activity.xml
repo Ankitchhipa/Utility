@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    tools:context=".notificationmanager.NotificationCleanerActivity">
+
+    <LinearLayout
+        android:id="@+id/btncontainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <include layout="@layout/btm_ads" />
+
+        <Button
+            android:id="@+id/btnClearNotify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/BottomButtonStyle"
+            android:text="@string/str_socialdelete"
+            app:fontFamily="@font/roboto_medium"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listnotification"
+        android:layout_above="@id/btncontainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:visibility="gone"
+        android:dividerHeight="@dimen/margin_4">
+
+    </ListView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="?attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/btm_ads_large_banner_two" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/margin_8" />
+
+            <include layout="@layout/btm_ads_large_banner_one" />
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tvnoti_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="@string/str_no_notification" />
+</RelativeLayout>

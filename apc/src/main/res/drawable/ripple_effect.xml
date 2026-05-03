@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <solid android:color="@color/colorRipple"></solid>
+        </shape>
+    </item>
+
+    <item>
+        <shape>
+            <solid android:color="@color/white"></solid>
+        </shape>
+    </item>
+</selector>
+
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <ripple xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:color="@color/colorRipple"
+        tools:targetApi="lollipop"> &lt;!&ndash; ripple effect color &ndash;&gt;
+        <item android:id="@android:id/background">
+            <shape android:shape="oval">
+                <solid android:color="@color/white" /> &lt;!&ndash; background color &ndash;&gt;
+            </shape>
+        </item>
+    </ripple>-->

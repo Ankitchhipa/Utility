@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingHorizontal="18dp"
+    android:paddingVertical="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/pop_up_bg"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <View
+            android:layout_width="44dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_round_rect_blue" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/sort_by"
+            android:textColor="@color/black_text_color"
+            android:textSize="20sp"
+            app:fontFamily="@font/roboto_bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Choose how your files should be arranged."
+            android:textColor="#748196"
+            android:textSize="13sp"
+            app:fontFamily="@font/roboto_regular" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#F7FBFF"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rb_creation_time_ascending"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/black"
+                android:checked="false"
+                android:paddingVertical="6dp"
+                android:text="@string/creation_time_ascending"
+                android:textColor="@color/black_text_color"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:fontFamily="@font/roboto_regular" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rb_creation_time_descending"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:buttonTint="@color/black"
+                android:checked="false"
+                android:paddingVertical="6dp"
+                android:text="@string/creation_time_descending"
+                android:textColor="@color/black_text_color"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:fontFamily="@font/roboto_regular" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rb_modification_time_ascending"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:buttonTint="@color/black"
+                android:checked="false"
+                android:paddingVertical="6dp"
+                android:text="@string/modification_time_ascending"
+                android:textColor="@color/black_text_color"
+                android:textSize="14sp"
+                app:fontFamily="@font/roboto_regular" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rb_modification_time_descending"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:buttonTint="@color/black"
+                android:paddingVertical="6dp"
+                android:text="@string/modification_time_descending"
+                android:textColor="@color/black_text_color"
+                android:textSize="14sp"
+                app:fontFamily="@font/roboto_regular" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rb_name_a_to_z"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:buttonTint="@color/black"
+                android:checked="false"
+                android:paddingVertical="6dp"
+                android:text="@string/name_a_to_z"
+                android:textColor="@color/black_text_color"
+                android:textSize="14sp"
+                app:fontFamily="@font/roboto_regular" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rb_name_z_to_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:buttonTint="@color/black"
+                android:checked="false"
+                android:paddingVertical="6dp"
+                android:text="@string/name_z_to_a"
+                android:textColor="@color/black_text_color"
+                android:textSize="14sp"
+                app:fontFamily="@font/roboto_regular" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="#F7FBFF"
+            android:orientation="vertical"
+            android:padding="14dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sorting_note_txt"
+                android:textColor="#6E7C8F"
+                android:textSize="12sp"
+                app:fontFamily="@font/roboto_regular" />
+
+            <TextView
+                android:id="@+id/tv_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/underlined_settings"
+                android:textColor="@color/text_link_color"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:fontFamily="@font/roboto_medium" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="18dp"
+            android:background="#E7EDF4" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button"
+                android:text="@android:string/cancel"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:fontFamily="@font/roboto_medium" />
+
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="1dp" />
+
+            <Button
+                android:id="@+id/btn_done"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button"
+                android:text="@string/str_done"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                app:fontFamily="@font/roboto_medium" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

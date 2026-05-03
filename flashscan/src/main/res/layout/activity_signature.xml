@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pushtouch="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/signature_toolbar" />
+
+    <RelativeLayout
+        android:id="@+id/relative_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@id/bottom_bar"
+        android:layout_below="@id/toolbar"
+        android:background="#80000000">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_colors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/imageView"
+            android:background="#80000000"
+            android:padding="5dp"
+            android:visibility="gone" />
+
+        <com.cam.scanner.scantopdf.android.signature.SingleFingerView
+            android:id="@+id/iv_signature"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            pushtouch:centerInParent="true"
+            pushtouch:image_height="100dp"
+            pushtouch:image_width="150dp"
+            pushtouch:push_image="@drawable/ic_zoom_projection"
+            pushtouch:push_image_height="20dp"
+            pushtouch:push_image_width="20dp" />
+
+        <com.cam.scanner.scantopdf.android.signature.SingleFingerView2
+            android:id="@+id/iv_signature2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            pushtouch:centerInParent="true"
+            pushtouch:image_height="100dp"
+            pushtouch:image_width="150dp"
+            pushtouch:push_image="@drawable/ic_zoom_projection"
+            pushtouch:push_image_height="20dp"
+            pushtouch:push_image_width="20dp" />
+
+        <com.cam.scanner.scantopdf.android.signature.SingleFingerView3
+            android:id="@+id/iv_signature3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            pushtouch:centerInParent="true"
+            pushtouch:image_height="100dp"
+            pushtouch:image_width="150dp"
+            pushtouch:push_image="@drawable/ic_zoom_projection"
+            pushtouch:push_image_height="20dp"
+            pushtouch:push_image_width="20dp" />
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/bottom_bar"
+        layout="@layout/signature_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true" />
+
+    <include
+        android:id="@+id/tut_add_signature"
+        layout="@layout/tut_add_signature"
+        android:visibility="gone" />
+
+
+    <include
+        android:id="@+id/tut_after_add_signature"
+        layout="@layout/tut_after_add_signature"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:layout_weight="12"
+    >
+    <LinearLayout
+        android:weightSum="12"
+        android:layout_weight="6"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_weight="2"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/dots"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_more_dot_black_24dp"
+                    android:scaleType="centerCrop"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/disable"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_centerInParent="true"
+                    android:layout_toLeftOf="@+id/dots"
+                    android:background="@drawable/btn_blue_round"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="5dp"
+                    android:text="@string/disable_power_saving"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/white"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <AnalogClock
+            android:layout_weight="6"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:textSize="@dimen/_40sdp"/>
+
+        <TextView
+            android:layout_weight="2"
+            android:layout_height="0dp"
+            android:textSize="@dimen/_17sdp"
+            android:textColor="#ffffff"
+            android:text="16h 21m remaining"
+            android:id="@+id/timeremaining"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            />
+
+        <TextView
+            android:layout_weight="2"
+            android:layout_height="0dp"
+            android:textSize="@dimen/_17sdp"
+            android:textColor="#ffffff"
+            android:text="Battery Power 20%"
+            android:id="@+id/batteryremaning"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+    </LinearLayout>
+
+    <LinearLayout
+        android:weightSum="4"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingLeft="@dimen/_15sdp"
+        android:paddingRight="@dimen/_15sdp">
+
+        <ImageView
+            android:id="@+id/phone"
+            android:padding="@dimen/_9sdp"
+            android:src="@drawable/phone"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/messages"
+            android:padding="@dimen/_9sdp"
+            android:src="@drawable/message"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <ImageView
+
+            android:id="@+id/internet"
+            android:padding="@dimen/_9sdp"
+            android:src="@drawable/internet"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/settings"
+            android:padding="@dimen/_9sdp"
+            android:src="@drawable/settings"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:weightSum="4"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingLeft="@dimen/_15sdp"
+        android:paddingRight="@dimen/_15sdp">
+
+        <ImageView
+            android:id="@+id/app1"
+            android:padding="@dimen/_9sdp"
+            android:src="@drawable/add"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/app2"
+            android:padding="@dimen/_9sdp"
+            android:src="@drawable/add"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/app3"
+            android:padding="@dimen/_9sdp"
+            android:src="@drawable/add"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/app4"
+            android:padding="@dimen/_9sdp"
+            android:src="@drawable/add"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</LinearLayout>

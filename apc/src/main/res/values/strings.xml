@@ -1,0 +1,1248 @@
+<!DOCTYPE resources [<!ENTITY appname "Advanced Phone Cleaner"><!ENTITY email "E-mail"><!ENTITY photos "Photo(s)"><!ENTITY videos "Videos"><!ENTITY documents "Documents"><!ENTITY audiofiles "Audio files"><!ENTITY url "https://www.advancedphonecleaner.com">]>
+<resources>
+
+    <string name="str_turbo_cleaner">Social Cleaner</string>
+    <string name="str_game_boost">Game Booster</string>
+    <string name="str_battery_saver">Battery Saver</string>
+    <!-- <string name="str_cpu_cooler">CPU Cooler</string> -->
+    <!--  <string name="str_phone_boost_small">Speed Booster</string> -->
+    <string name="str_protect_now">Manage</string>
+    <string name="str_private_browsing">Secure Browser</string>
+    <string name="str_txt_antivirus">Find all the files stored on your device and organize them to recover huge space.</string>
+    <string name="str_txt_cpu_cooler"> Advanced CPU temperature controller to reduce CPU usage and cool down the device.</string>
+    <string name="str_arc_ram_abvtext">Memory Usage</string>
+    <string name="str_space_available">Available Space</string>
+    <string name="str_large_files">File Manager</string>
+    <string name="str_backup">Backup</string>
+    <string name="str_cpu_cooler_scan">Analyzing CPU Temperature</string>
+    <string name="str_strnodup">No Duplicates Found</string>
+    <string name="str_str_empty_compress">No Photo Selected</string>
+    <string name="str_strtitledupmid">Duplicate photos occupy a lot of space on your device. Remove them to free up storage space &amp; organize gallery.</string>
+    <string name="str_browsing">Any sites or pages you access here will be cleared immediately as you exit. All your search history, browsing history, and cookies will be not be stored here.</string>
+    <string name="str_browser">Although, you cannot hide your browsing activities from your Internet Service Provider or the websites you visit. That means, you are not completely invisible.</string>
+    <string name="str_title_activity_main4">Refer a Friend!</string>
+    <string name="str_textempty">CPU Cooler uses standard temperature controlling technique that detects &amp; terminates processes that are heavy on resources to reduce CPU usage &amp; cool down the device.</string>
+    <string name="str_permission_private">Please Grant External storage permission to continue.</string>
+    <string name="str_gamespeedup">Boost Game Speed</string>
+    <string name="str_game_experience">Add games here and run them faster.</string>
+    <string name="str_cool_down_complete">Cool Down Completed</string>
+    <string name="str_noti_cleaner">Notification Manager</string>
+    <string name="str_freeupspace">Release Space</string>
+    <string name="str_app_manager">Application Manager</string>
+    <string name="str_otherdeali">Information &amp; Tools</string>
+    <string name="str_duplicate">Duplicates Cleaner</string>
+    <string name="str_scannig">Scanning…</string>
+    <string name="scanning">Scanning</string>
+    <string name="str_splashtext">Optimize Speed With Security</string>
+    <string name="str_notfound_files">No Items Found</string>
+    <string name="str_unable_toclean">
+<![CDATA[ System Cache cannot be cleaned as it needs OS permission. <font color=\'#0387e3\'><b><u>Please clean</u></b></font> System Cache manually. ]]>
+</string>
+    <string name="str_delete_large_file">Are you sure you want to delete the selected item(s)? It cannot be recovered later.</string>
+    <string name="str_describe">Feedback</string>
+    <string name="str_note_txt">Please add appropriate screenshots (if any) to help us work on your issue quickly.\n\nNote: Screenshot size should not be more than %1$s.</string>
+    <string name="str_invite_your">Help your friends optimize their device</string>
+    <string name="str_share_your">Share the experience with your contacts &amp; invite them to try the app</string>
+    <string name="str_msg_social">Great! Your device is free from unnecessary social junk.</string>
+    <string name="str_morespacesmall">Space Saver</string>
+    <string name="str_samllsecurity">Security</string>
+    <string name="str_apporgenizer">Manage all the installed apps on your device from a single place.</string>
+    <string name="str_device_detail">Device Information</string>
+    <string name="str_tap_tocleanjunk">Tap to clean junk and recover space.</string>
+    <string name="str_boostnow">Boost Now</string>
+    <string name="str_recover">Free up</string>
+    <string name="str_savenow">Save Now</string>
+    <string name="str_viewandclean">Tap to review and clean.</string>
+    <string name="str_check_dups">View Duplicates</string>
+    <string name="str_check">Check</string>
+    <string name="str_notnow">Not Now</string>
+    <string name="str_download">Downloads</string>
+    <string name="str_camera">Camera Roll</string>
+    <string name="str_update">App Update Available!</string>
+    <string name="str_update_avl">A newer version of TurboClean is available. We recommend to update the app.</string>
+    <string name="str_scantype">Select Area of Scanning</string>
+    <string name="str_camera_include">Find duplicate photos in your Camera Roll.</string>
+    <string name="str_all_photos_include">Scan all photos on your device to find duplicates.</string>
+    <string name="str_select_folder_include">Scan for duplicates in specific folders.</string>
+    <string name="str_clearresult">Are you sure you want to go back? All scan results will be lost.</string>
+    <string name="str_leave_page">Are you sure you want to leave this page? All scan results will be lost.</string>
+    <string name="str_nogamesfound">Tap on a game to boost.</string>
+    <string name="str_nogamesfounds">Tap on a game to boost.</string>
+    <string name="str_nointernet">No Internet Connection Available!</string>
+    <string name="str_ignorefilter">Exclude Apps</string>
+    <string name="str_cpu_scan_txt">This will terminate CPU analyzing process.</string>
+    <string name="str_social_scan_txt"> This will terminate scanning of social apps.</string>
+    <string name="str_boost_scan_txt"> This will terminate phone boosting.</string>
+    <string name="str_battery_scan_txt"> This will terminate battery boosting.</string>
+    <string name="str_junk_scanning_txt"> This will terminate junk scanning.</string>
+    <string name="str_junk_result_txt"> All scan results will be lost.</string>
+    <string name="str_notfound_vidio">No Videos found on your device</string>
+    <string name="str_notfound_photo"> No Photo(s) found on your device</string>
+    <string name="str_notfound_document"> No Documents found on your device</string>
+    <string name="str_notfound_audio"> No Audio files found on your device</string>
+    <string name="str_notfound_data"> No data found on your device</string>
+    <string name="str_noappstores">No apps available to restore.</string>
+    <string name="str_noappsinsall">No downloaded apps available.</string>
+    <string name="str_minimum_space">You\'re running low on storage. Free up at least %1$s to continue.</string>
+    <string name="str_space_recover">Space Reclaimed</string>
+    <string name="str_devies_cool_down">Phone Cooled Down</string>
+    <string name="str_cleanonefolder">Deleted 1 Empty Folder</string>
+    <string name="str_phoneboostsuccesful">Phone Boosted Successfully.</string>
+    <string name="str_junkalreadyclean">Junk Cleaned Already</string>
+    <string name="str_normaltempdevices">CPU temperature is in control.</string>
+    <string name="str_notificationcleansuccessful">Notification(s) Cleared Successfully</string>
+    <string name="str_search_url">Enter your search term</string>
+    <string name="str_scan_for_duplicate">Find Duplicates</string>
+    <string name="str_matchingleab">Matching Criteria</string>
+    <string name="str_lovedit">Invite your friends along!</string>
+    <string name="str_notification_deactivate">Notification Manager Disabled</string>
+    <string name="str_after_upgrade_msg">Clean DO_NOT_TRANSLATE Empty Folders</string>
+    <string name="str_mark">Photo(s) marked for deletion DO_NOT_TRANSLATE </string>
+    <string name="str_storage_card" translatable="false">Memory card</string>
+    <string name="str_runtime_permissions_txt" translatable="false">Please Grant External Storage Permission to Continue.</string>
+    <string name="str_no_notification">There are no notifications</string>
+    <string name="str_digital_footprints">Your browsing history has been cleared.</string>
+    <string name="str_at_leastone">Please select at least one item</string>
+    <string name="str_cant_delete">All photos of a set cannot be marked</string>
+    <string name="str_game_boosted">Game optimized successfully. Launching…</string>
+    <string name="str_nothindelete">No items found in the selected category</string>
+    <string name="str_feedback_successful">Thanks for your valuable feedback</string>
+    <string name="str_scan_games">Scan Games</string>
+    <string name="str_scaning_games">Finding games on this device…</string>
+    <string name="str_boosting">Optimizing…</string>
+    <string name="str_please_wait">Please wait…</string>
+    <string name="str_loading">Loading…</string>
+    <string name="str_loading_apps">Loading apps…</string>
+    <string name="str_backup_done">Backup of Selected App(s)\n Successfully Created</string>
+    <string name="str_reinsatall_app">App is already installed. Do you want to reinstall the app?</string>
+    <string name="str_delete_app_file">Are you sure you want to delete the selected backup file(s)?</string>
+    <string name="str_pls_add_game_boost">Please select game(s) to speed up</string>
+    <string name="str_no_new_game_found">No new games found.</string>
+    <string name="str_searchiing_duplicate">Looking for duplicates…</string>
+    <string name="str_noti_no_longer">Now, you won\'t see any notifications from</string>
+    <string name="str_valid_mail">Please Enter a valid E-mail ID.</string>
+    <string name="str_no_image_found_feedback">No Apps available to fetch Photo(s), kindly mail us at E-mail</string>
+    <string name="str_coolingdown">Controlling temperature…</string>
+    // all social sharing
+    <string name="str_whtsapp_line">Advanced Phone Cleaner is an amazing app to clean and secure your device. Enhance your phone\'s performance with this all-in-one utility. </string>
+    <string name="str_mark_save">Mark Photos &amp; Save Settings</string>
+    <string name="str_img_resolution_description">Choose photos by resolution</string>
+    <string name="str_image_size_description">Choose photos by size</string>
+    <string name="str_create_date_description">Choose photos by modified date</string>
+    <string name="str_earlier_date">Earliest</string>
+    <string name="str_lock">Lock Photo</string>
+    <string name="str_unlock">Unlock Photo</string>
+    <string name="str_ignore">Ignore Photo</string>
+    <string name="str_deletion_err">Error Deleting Photo</string>
+    <string name="str_unlock_first">To delete this photo, please Unlock it</string>
+    <string name="str_ignore_unlock">To ignore this photo, please Unlock it</string>
+    <string name="str_lock_ignore">To Lock the photo, please Unmark it</string>
+    <string name="str_unlock_select">To mark the photo, please Unlock it</string>
+    <string name="str_no_duplicate">No duplicate photos are found within the current matching criteria. Please adjust the parameters or change the scanning area to find duplicates.</string>
+    <string name="str_re_scan">Rescan</string>
+    <string name="str_permisson_notification">To manage notifications, please enable APP_NAME.</string>
+    <string name="str_tap_storage">Tap \'Storage > Clear Cache\' in the next screen</string>
+    <string name="str_game_found">Scan finished. %1$d Game found</string>
+    <string name="str_scan_in_process">Scanning is in progress. Are you sure you want to abort scanning?</string>
+    <string name="str_at_least">Please make your selection</string>
+    <string name="str_av_protected">Your device is safe &amp; secure</string>
+    <string name="str_whitelist_threat">Threat whitelisted successfully</string>
+    <string name="str_update_error">Oops! No Internet Connection</string>
+    <string name="str_update_complete">Database Update Successful!</string>
+    <string name="str_scan_apps">Scanning Apps…</string>
+    <string name="str_safe_apps">Device apps are found safe</string>
+    <string name="str_recommended_scan">Tip: scan files for complete security</string>
+    <string name="str_critical">%1$s Potential Threat(s) Found</string>
+    <string name="str_please_wait_scan">Scanning in progress, Please wait…</string>
+    <string name="str_update_notify_title">Added defence to new virus.</string>
+    <string name="str_result_back">Are you sure you want to go back? All scan results will be lost.</string>
+    <string name="str_infected_apps">Malicious Apps</string>
+    <string name="str_infected_files">Malicious Files</string>
+    <string name="str_cant_ignored">You cannot ignore this photo as all the other photos of this set are marked.</string>
+    <string name="str_cant_deleted">You cannot delete this photo as all the other photos of this set are marked.</string>
+    <string name="str_step_count" translatable="false">Step 1:\</string>
+    <string name="str_gameboost_description">Get a gaming experience like never before by boosting your favorite games in one tap.</string>
+    <string name="str_batterysaver_description">Enjoy a longer battery life and run your phone smoothly even in power saving mode. </string>
+    <string name="str_autoStart">Installation successful. Allow the app to start automatically for optimal benefits.</string>
+    <string name="str_analyze_battery">Optimizing Battery…</string>
+    <string name="str_one_battery_boost">Battery Boosted Successfully.</string>
+    <string name="str_thank_you">Thanks for installing \nAdvanced Phone Cleaner!</string>
+    <string name="str_thanks">Thanks !</string>
+    <string name="str_turbo_cleaner_social">Junk Media Cleaner</string>
+    <string name="str_wait_have">Your device has many photos, mark a group to begin scanning.</string>
+    <string name="str_group_detail">As there are more than 10,000 photos, the scanning might get slowed down. Hence, we have provided you the option of scanning duplicates in groups. Select a group to begin scanning.</string>
+    <string name="str_group_info">Group Details</string>
+    <string name="str_manyphoto">Select a Group to Begin Scanning</string>
+    <string name="str_skiptext">Do you want to go back and skip cleaning?</string>
+    <string name="str_social_new_noti">Free up space by cleaning social media junk!</string>
+    <string name="str_dup_new_noti">Organize gallery, delete duplicates and recover space!</string>
+    <string name="str_junk_new_noti">Recover space and speedup by removing junk!</string>
+    <string name="str_internet_speed_msg">Facing internet speed issues? Boost now to browse and navigate faster.</string>
+    <string name="str_notification_head">Protect &amp; Manage Notifications</string>
+    <string name="str_notification_head_text">Enable Notification Manager to safeguard your notifications.</string>
+    <string name="str_whtsapp_noti">Whatsapp junk detected! Analyze and clean up.</string>
+    <string name="str_whtsapp_noti_text">Tap to get rid of useless WhatsApp media files &amp; reclaim considerable storage space.</string>
+    <string name="str_bat_low_alert">Background apps are eating up your battery. Boost battery now to improve battery time.</string>
+    <string name="str_boost_charging_text">Background processes are reducing the charging speed. Terminate them to fast-charge your device.</string>
+    <string name="str_alert_unin_text">App successfully uninstalled. Remove traces &amp; get space.</string>
+    <string name="str_alert_unin_head">Clean Traces</string>
+    <string name="str_remain_junk_file">Junk files Remaining </string>
+    <string name="str_first_face">Have trouble? Write to us for a solution.</string>
+    <string name="str_second_face">Unhappy! Write to help us improve.</string>
+    <string name="str_fourth_face">I am enjoying it! Good going.</string>
+    <string name="str_fifth_face">Wow it’s amazing! Love to use.</string>
+    <string name="str_drawer_o">Open</string>
+    <string name="str_drawer_clos">Close</string>
+    <string name="str_home">Home</string>
+    <string name="str_add_game_boost">Add Game(s)</string>
+    <string name="str_cool_down">Cool Down</string>
+    <string name="str_system_cache">System Cache</string>
+    <string name="str_app_cache">App Cache</string>
+    <string name="str_temp_file">Temp Files</string>
+    <string name="str_apk_file">APK File</string>
+    <string name="str_unused_folder">Empty Folders</string>
+    <string name="str_memory_boost">Memory Boost</string>
+    <string name="str_action_settings">Settings</string>
+    <string name="str_myaudios">Audio</string>
+    <string name="str_unistall">Uninstall</string>
+    <string name="str_clear">Clear</string>
+    <string name="str_remove">Remove</string>
+    <string name="str_defaults">Default</string>
+    <string name="str_title_activity_aboutus">About Us</string>
+    <string name="str_action_reset">Reset</string>
+    <string name="str_strhintduplicates">This finds similar &amp; duplicate photos on your Android device using standard settings. Highly recommended.</string>
+    <string name="str_addgames">Add Games Here</string>
+    <string name="str_delete">Delete</string>
+    <string name="str_socialdelete">Clean Now</string>
+    <string name="str_junk_title">Junk Cleaner</string>
+    <string name="str_junk_scan">Junk Scanning</string>
+    <string name="str_delete_junk">Clean Junk</string>
+    <string name="str_wifi">Wi-Fi</string>
+    <string name="str_bluetooth">Bluetooth</string>
+    <string name="str_gps">GPS</string>
+    <string name="str_temperature">Temperature</string>
+    <string name="str_app_notification">App Notification</string>
+    <string name="str_cpuheating">CPU Heating Processes</string>
+    <string name="str_cleaning_aborted">Junk Cleaned</string>
+    <string name="str_junk_scanning_title">Junk Scan</string>
+    <string name="str_ram_to_boost">RAM to Boost</string>
+    <string name="str_game_network_issue">Please check your internet connection and try again.</string>
+    <string name="str_btn_feedback">Submit</string>
+    <string name="str_email_id">E-mail ID</string>
+    <string name="str_affected_apps">Affected Apps</string>
+    <string name="str_label_parent_directory">Parent Directory</string>
+    <string name="str_select_your_problem">General</string>
+    <string name="str_no_junk_media">Awesome! No junk media cluttering your device space.</string>
+    <string name="str_path">Path:\</string>
+    <string name="str_clean">Clean</string>
+    <string name="str_junk_found">Junk Found</string>
+    <string name="str_duplicatesfound">Duplicate Photo(s) Found!</string>
+    <string name="str_capture_photos">You just captured photos. Check for duplicates.</string>
+    <string name="str_notifications">Notification(s)</string>
+    <string name="str_file_processed"> Items processed</string>
+    <string name="str_app_storage">App Storage</string>
+    <string name="str_continues">Continue</string>
+    <string name="str_info">Info</string>
+    <string name="str_yes">YES</string>
+    <string name="str_no">NO</string>
+    <string name="str_on">On</string>
+    <string name="str_off">Off</string>
+    <string name="str_OFF">OFF</string>
+    <string name="str_ok">OK</string>
+    <string name="str_high">High</string>
+    <string name="str_normal">Normal</string>
+    <string name="str_sdcard_permission">Please Grant the permission to external SD card according to the following guidance.</string>
+    <string name="str_refer_friend">Share with your friends to let them optimize and secure their android devices.</string>
+    <string name="str_title_rateus">Rate Us</string>
+    <string name="str_choose_button_label">Select</string>
+    <string name="str_select_folder">Select Folder</string>
+    <string name="str_select_item">Select Item(s)</string>
+    <string name="str_all_photos">All Photos</string>
+    <string name="str_updatebtn">Update</string>
+    <string name="str_faq">FAQs</string>
+    <string name="str_cameraroll">Camera Roll</string>
+    <string name="str_ram">RAM</string>
+    <string name="str_scan">Scan</string>
+    <string name="str_junk">Junk</string>
+    <string name="str_recent">Recent</string>
+    <string name="str_smalltools">Info</string>
+    <string name="str_junknotification">Recent Notification(s)</string>
+    <string name="str_pleasetype"> Please type something to search. </string>
+    <string name="str_noappfound">No Apps Found</string>
+    <string name="str_leastsimilar">%1$s similar</string>
+    <string name="str_least">Least</string>
+    <string name="str_almostsimilar">Almost </string>
+    <string name="str_verysimilar">Very </string>
+    <string name="str_exact">Exact</string>
+    <string name="str_silightly">Slightly</string>
+    <string name="str_one_meters">%1$d meter</string>
+    <string name="str_two_meter">%1$d meters</string>
+    <string name="str_onesec">%1$d second</string>
+    <string name="str_fivesec">%1$d seconds</string>
+    <string name="str_onemin">%1$d minute</string>
+    <string name="str_fivemin">%1$d minutes</string>
+    <string name="str_one_hr">%1$d hour</string>
+    <string name="str_tewntyfourhr">%1$d hours</string>
+    <string name="str_title_activity_setting">Notification Settings</string>
+    <string name="str_widget_setting">Search Widget</string>
+    <string name="str_viewmore_image"> Photo(s)</string>
+    <string name="str_viewmore_video"> Videos</string>
+    <string name="str_viewmore_audio"> Audio files</string>
+    <string name="str_viewmore_document"> Documents</string>
+    <string name="str_simple_back_press">Are you sure you want to go back? %1$s</string>
+    <string name="str_after_boost_scan_txt"> All scan results will be lost.</string>
+    <string name="str_notfound">Not Found</string>
+    <string name="str_onthisdevies">on this device</string>
+    <string name="str_cancel_button_label">Cancel</string>
+    <string name="str_selectapp">Select an app for backup</string>
+    <string name="str_phone_boosted">Phone Boosted</string>
+    <string name="str_cleaning">Cleaning…</string>
+    <string name="str_processing">Processing…</string>
+    <string name="str_privacy_policy">Privacy Policy</string>
+    <string name="str_termsuse">Terms of Use</string>
+    <string name="str_cpu_usage">CPU Usage</string>
+    <string name="str_mb">MB</string>
+    <string name="str_kb">KB</string>
+    <string name="str_junkcleansuccesful">Junk Cleaned Successfully</string>
+    <string name="str_charging">Charging</string>
+    <string name="str_installed">installed successfully</string>
+    <string name="str_archivd">Archived</string>
+    <string name="str_battery_capicty">Battery Capacity</string>
+    <string name="str_active_progress">Active processes slowing down your device.</string>
+    <string name="str_duplicatse">Duplicates</string>
+    <string name="str_space">Space</string>
+    <string name="str_morethan">More than</string>
+    <string name="str_boostt">Boost</string>
+    <string name="str_security_privacy">Security &amp; Privacy</string>
+    <string name="str_grant">Grant</string>
+    <string name="str_devloper">Developed By %1$s</string>
+    <!-- DO_NOT_TRANSLATE  please dont translate the key word DO_NOT_TRANSLATE it is used as a marker in code. -->
+    <string name="str_after_upgrade_msg2">Clean DO_NOT_TRANSLATE Junk</string>
+    <string name="str_install">Installed (DO_NOT_TRANSLATE)</string>
+    <string name="str_archived">Archived (DO_NOT_TRANSLATE)</string>
+    <string name="str_analyzing">Boosting your DO_NOT_TRANSLATE device</string>
+    <string name="str_application_file">Application file saved to: DO_NOT_TRANSLATE</string>
+    <string name="str_deletee">DELETE DO_NOT_TRANSLATE</string>
+    <string name="str_currentversion">Version V DO_NOT_TRANSLATE</string>
+    <string name="str_currentdbversion">Database Version</string>
+    <string name="str_deletionmsg_two">Due to Insufficient permission, unable to delete DO_NOT_TRANSLATE file(s)</string>
+    <string name="str_group">Group:\u0020</string>
+    <string name="str_boost">BOOST</string>
+    <!-- TypeFaces Uses -->
+    <!-- NOT TO BE TRANSLATED -->
+    <!-- NOT TO BE TRANSLATED -->
+    <!-- NOT TO BE TRANSLATED -->
+    <!-- NOT TO BE TRANSLATED -->
+    <!-- NOT TO BE TRANSLATED -->
+    <!-- NOT TO BE TRANSLATED -->
+    <!-- NOT TO BE TRANSLATED -->
+    <!-- NOT TO BE TRANSLATED -->
+    <string-array name="junkmodules">
+        <item>@string/str_app_cache</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_system_cache</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_temp_file</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_apk_file</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_unused_folder</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <!--  <item>@string/str_free_memory</item> -->
+        <!-- NOT TO BE TRANSLATED -->
+    </string-array>
+    <string-array name="junkmodulesaboveseven">
+        <item>@string/str_app_cache</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_system_cache</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_temp_file</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_apk_file</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_unused_folder</item>
+        <!-- NOT TO BE TRANSLATED -->
+    </string-array>
+    <string-array name="junkmodulesaboven">
+        <item>@string/str_app_cache</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_temp_file</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_apk_file</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_unused_folder</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <!--  <item>@string/str_free_memory</item> -->
+        <!-- NOT TO BE TRANSLATED -->
+    </string-array>
+    <string-array name="junkmodulesaboveQ">
+        <item>@string/str_temp_file</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_apk_file</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_unused_folder</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <!--  <item>@string/str_free_memory</item> -->
+        <!-- NOT TO BE TRANSLATED -->
+    </string-array>
+    <string-array name="junkmodulesabovenlessboost">
+        <item>@string/str_app_cache</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_temp_file</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_apk_file</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_unused_folder</item>
+        <!-- NOT TO BE TRANSLATED -->
+    </string-array>
+    <string-array name="feedback_array">
+        <item>@string/str_select_your_problem</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_junk_title</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_anti_virus</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_duplicate</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_turbo_cleaner_social</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <!-- <item>@string/str_game_boost</item> -->
+        <!-- NOT TO BE TRANSLATED -->
+        <!--  <item>@string/str_battery_saver</item> -->
+        <!-- NOT TO BE TRANSLATED -->
+        <!-- <item>@string/str_cpu_cooler</item> -->
+        NOT TO BE TRANSLATED
+        <item>@string/str_device_detail </item>
+        <!-- NOT TO BE TRANSLATED -->
+        <!-- <item>@string/str_phone_boost_small</item> -->
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_noti_cleaner </item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_private_browsing</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_app_manager</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_large_files</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>@string/str_turbo_cleaner</item>
+        <!-- NOT TO BE TRANSLATED -->
+        <item>Share Hub</item>
+        <item>Doc Scanner</item>
+        <item>OCR</item>
+        <item>QR/Bar Code</item>
+    </string-array>
+    <string-array name="title">
+        <item>@string/str_img_resolution</item>
+        <item>@string/str_image_size</item>
+        <item>@string/str_create_date</item>
+    </string-array>
+    <string-array name="description">
+        <item>@string/str_img_resolution_description</item>
+        <item>@string/str_image_size_description</item>
+        <item>@string/str_create_date_description</item>
+    </string-array>
+    <string-array name="first_radio">
+        <item>@string/str_low_resolution</item>
+        <item>@string/str_image_size_smaller</item>
+        <item>@string/str_earlier_date</item>
+    </string-array>
+    <string-array name="second_radio">
+        <item>@string/str_high_resolution</item>
+        <item>@string/str_image_size_larger</item>
+        <item>@string/str_latest_date</item>
+    </string-array>
+    <string name="str_link_wh" translatable="false">https://www.advancedphonecleaner.com/apc?</string>
+    <string name="str_url" translatable="false">https://www.advancedphonecleaner.com</string>
+    <string name="str_app_name" translatable="false">TurboClean</string>
+    <string name="str_key_internal_uri_extsdcard_photos" translatable="false">uri_extsdcard</string>
+    <string name="str_key_internal_uri_extsdcard_input" translatable="false">uri_extsdcard_input</string>
+    <!-- <string name="str_small_banner_ad_unit_id">ca-app-pub-3608227621156330/4099414309</string>
+       <string name="str_adapban">ca-app-pub-3608227621156330/7461357047</string>
+       <string name="str_med_banner_ad_unit_id">ca-app-pub-3608227621156330/7532227004</string>
+       <string name="str_result_screen_banner">ca-app-pub-3608227621156330/7532227004</string>
+       <string name="str_small_native_ad_unit_id">ca-app-pub-3608227621156330/5860455633</string>
+       <string name="str_result_native_ad_unit_id">ca-app-pub-3608227621156330/4356681552</string>
+       <string name="full_page_ad">ca-app-pub-3608227621156330/3973538176</string>
+       <string name="full_page_start">ca-app-pub-3608227621156330/6290463374</string>
+       <string name="full_page_exit">ca-app-pub-3608227621156330/2328474549</string>
+       <string name="full_page_scan">ca-app-pub-3608227621156330/3973538176</string> -->
+    <!-- test -->
+    <!--     <string name="str_adapban">ca-app-pub-3940256099942544/6300978111</string> -->
+    <!--     <string name="str_small_banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string> -->
+    <!--     <string name="str_med_banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string> -->
+    <!--     <string name="str_result_screen_banner">ca-app-pub-3940256099942544/6300978111</string> -->
+    <!--     <string name="str_small_native_ad_unit_id">ca-app-pub-3940256099942544/2247696110</string> -->
+    <!--     <string name="str_result_native_ad_unit_id">ca-app-pub-3940256099942544/2247696110</string> -->
+    <!--     <string name="full_page_ad">ca-app-pub-3940256099942544/1033173712</string> -->
+    <!--     <string name="full_page_start">ca-app-pub-3940256099942544/1033173712</string> -->
+    <!--     <string name="full_page_exit">ca-app-pub-3940256099942544/1033173712</string> -->
+    <!--     <string name="full_page_scan">ca-app-pub-3940256099942544/1033173712</string> -->
+    <string name="str_apps">Apps</string>
+    <string name="str_short_succesful">Shortcut created successfully.</string>
+    <string name="str_not_installed">not installed</string>
+    <string name="str_clipboard">Copied to clipboard</string>
+    <string name="str_pleaseselect">Please select an item you want to clean</string>
+    <string name="str_toexit">Tap again to exit</string>
+    <string name="str_atleastone_boost">Select at least one process to boost.</string>
+    <string name="str_uptodate">App is up-to-date</string>
+    <string name="str_myothers">Others</string>
+    <string name="str_title_activity_feedback">Feedback</string>
+    <string name="str_anti_virus">Anti-Malware</string>
+    <string name="str_nogames_added">No Games Available</string>
+    <string name="str_no_img">No duplicates found in the selected area. Please choose another location.</string>
+    <string name="str_progress_cleaning">Cleaning in progress…</string>
+    <string name="str_junk_items_cleaned">Items Cleaned</string>
+    <string name="str_space_optimized">Recoverable Space</string>
+    <string name="str_retry">Retry</string>
+    <string name="str_fetching_images">Fetching photos…</string>
+    <string name="str_stopping_scan">Stopping scan</string>
+    <string name="str_are_u_sure">Are you sure you want to exit?</string>
+    <string name="str_size">Size:\</string>
+    <string name="str_name">Name:\</string>
+    <string name="str_sendingfeedback">Sending feedback…</string>
+    <string name="str_priview">Preview</string>
+    <string name="str_battery">Battery</string>
+    <string name="str_completed">Completed</string>
+    <string name="str_restore">Restore</string>
+    <string name="str_app_backup_deleted">Storage Space Recovered.</string>
+    <string name="str_duplicate_automark">Auto Mark</string>
+    <string name="str_select_app_delete">Select an app to delete</string>
+    <string name="str_select_app_uninsall">Select an app to uninstall.</string>
+    <string name="str_select_app_restore">Select an app to restore.</string>
+    <string name="str_mark_all">Mark All</string>
+    <string name="str_unmark_all">Unmark All</string>
+    <string name="str_noti_enable">notifications enabled.</string>
+    <string name="str_alert">Alert</string>
+    <string name="str_give_suggestion">Please write your feedback</string>
+    <string name="str_select_problem">Please select your problem.</string>
+    <string name="str_screenshot_size">Screenshot size not more then %1$s</string>
+    <string name="str_last_edited">Last edited:\</string>
+    <!-- <string name="str_twitter_line">&appname; is a superb app to boost your device &amp; save battery. A must try for Android users!</string> -->
+    <string name="str_game_scan">Game Scan</string>
+    <string name="str_exits">Exit</string>
+    <string name="str_search">Search</string>
+    <string name="str_used_space">Used</string>
+    <string name="str_oops">Oops!</string>
+    <string name="str_smart_selection">Smart Selection</string>
+    <string name="str_img_resolution">Photo Resolution</string>
+    <string name="str_low_resolution">Low Resolution</string>
+    <string name="str_high_resolution">High Resolution</string>
+    <string name="str_image_size">Photo Size</string>
+    <string name="str_image_size_smaller">Small</string>
+    <string name="str_image_size_larger">Large</string>
+    <string name="str_create_date">Modified Date</string>
+    <string name="str_latest_date">Latest</string>
+    <string name="str_scanned">Scanned</string>
+    <string name="str_height">Height</string>
+    <string name="str_width">Width</string>
+    <string name="str_photos">Photo(s)</string>
+    <string name="str_duplicate_tost">Please change your scan settings to get new results for duplicates</string>
+    <string name="str_no_duplicate_found">No Duplicates Found</string>
+    <string name="str_in_storage">Internal Storage</string>
+    <string name="str_ex_storage">External Storage</string>
+    <string name="str_scan_abort">Scan Aborted</string>
+    <string name="str_agree_testapp" translatable="false">
+I agree to the Privacy Policy and
+<u>
+<a href="https://www.mobibuz.com/termsofuse/"> Terms of Use</a>
+</u>
+</string>
+    <string name="str_tap_fix">Tap to Fix</string>
+    <!-- InApp strings -->
+    <!-- AV Strings -->
+    <string name="str_whitelist">Anti-Malware Whitelist</string>
+    <string name="str_update_progress">Updating database, please wait…</string>
+    <string name="str_scan_files">Scanning Files…</string>
+    <string name="str_scan_file">Scan Files</string>
+    <string name="str_threats">Threat(s)</string>
+    <string name="str_no_record">No Records Found</string>
+    <string name="str_av_noti_down_one"> appears malicious.</string>
+    <string name="str_av_noti_down_two"> is scanned and found safe.</string>
+    <string name="str_update_notify_desc">Added defence to new virus.</string>
+    <string name="str_real_protection">Real-Time Protection</string>
+    <!-- New Strings -->
+    <!-- No need to translate -->
+    <!-- THAI Lang -->
+    <string name="str_congrats">Congratulations!</string>
+    <string name="str_fix_now">Fix Now</string>
+    <string name="str_disabled">Disabled</string>
+    <!-- rebrand -->
+    `
+    <string name="str_summary">Summary</string>
+    <!-- App Lock And HiberNet -->
+    <string name="str_app_lock">App Lock</string>
+    <string name="str_cancel">Cancel</string>
+    <!-- Forget password -->
+    <!-- Tabs Titles -->
+    <!-- Privacy Fragment -->
+    <!-- Protected text  -->
+    <!-- Question and answer -->
+    <string name="str_battery_optimized">Battery Optimized Successfully</string>
+    <string name="str_title_activity_social_scan_result">SocialScanResultActivity</string>
+    <string name="str_dont_show">Don\'t show this again</string>
+    <string name="str_title_activity_app_manager">AppManagerActivity</string>
+    <string name="str_free_memory">Free up Memory</string>
+    <!-- new String 18may2018 anis -->
+    <string name="str_battery_low">Low Battery!</string>
+    <string name="str_splash_privacy">I Agree to the Privacy Policy and Terms of Use.</string>
+    <string name="str_rtp_dialog_text_install"> also delete the install apk file.</string>
+    <string name="str_internet_speed">Internet Speed!</string>
+    <string name="str_boosted">Boosted</string>
+    <string name="str_network">Network</string>
+    <string name="str_alert_screen">Alert Settings</string>
+    <string name="str_title_activity_downloads_screen">DownloadsScreen</string>
+    <string name="str_real_time_protection">Real-Time Protection</string>
+    <string name="str_social_media_cleaning">Social Media Scanning</string>
+    <string name="str_critical_issues">Critical Issue(s) Found!</string>
+    <string name="str_critical_app_issues">%d Critical Apps</string>
+    <string name="str_scanning_games">Scanning Games…</string>
+    <string name="str_third_face">It’s Okay. Need some more!</string>
+    <string name="str_system_info">Info</string>
+    <string name="str_memory">Memory</string>
+    <string name="str_memory_used">Used</string>
+    <string name="str_available">Available</string>
+    <string name="str_smart_cleaner">TurboClean</string>
+    <string name="channel_name">Notification Channel</string>
+    <string name="channel_description">Search Notification Channel</string>
+    <string name="apks">APKs</string>
+    <string name="low">Low</string>
+    <string name="time_gap">Time Gap</string>
+    <string name="level">Level</string>
+    <string name="str_notfound_apk">No Apk files found on this device</string>
+    <string name="game_boosting">Game Boosting…</string>
+    <string name="space_occupied">Space occupied by</string>
+    <string name="space_occupiedd">Space occupied</string>
+    <string name="images_found">photos</string>
+    <string name="images">Photo(s)</string>
+    <string name="videos">Video(s)</string>
+    <string name="audios">Audio(s)</string>
+    <string name="documents">Document(s)</string>
+    <string name="all_files">All Files</string>
+    <string name="battery_boost_processing">Scanning Battery Status</string>
+    <string name="items">Item(s)</string>
+    <string name="battery_boosted">Battery has been Boosted.</string>
+    <string name="rateus_defaulttext">How happy are you?</string>
+    <string name="space_used">Space</string>
+    <string name="battery_info">Battery Info</string>
+    <string name="str_battery_level">Battery Level</string>
+    <string name="str_battery_voltage">Battery Voltage</string>
+    <string name="str_battery_temp">Battery Temp</string>
+    <string name="str_battery_type">Battery Type</string>
+    <string name="str_battery_status">Battery Percentage</string>
+    <string name="str_battery_health">Battery Health</string>
+    <string name="cold">Cold</string>
+    <string name="dead">Dead</string>
+    <string name="good">Good</string>
+    <string name="overheat">Overheat</string>
+    <string name="over_voltage">Over Voltage</string>
+    <string name="unknown">Unknown</string>
+    <string name="unspecified_failure">Unspecified Failure</string>
+    <string name="discharging">Discharging</string>
+    <string name="full">Full</string>
+    <string name="not_charging">Not Charging</string>
+    <string name="str_sort_by_name">Sort By Name</string>
+    <string name="str_sort_by_size">Sort By Size</string>
+    <string name="str_sort_by_date">Sort By Date</string>
+    <string name="str_start">Start</string>
+    <string name="str_show_again">Don\'t Show again</string>
+    <string name="str_software">Copyright © Advanced Phone Cleaner 2023.</string>
+    <string name="stop_scan">Stop Scanning</string>
+    <string name="powered_by">Powered By:\</string>
+    <string name="avira">Avira</string>
+    <string name="str_junk_noti_detail">Remind me for junk cleaning</string>
+    <string name="str_ram_noti_detail">Notify me to free up RAM</string>
+    <string name="str_duplicates_noti_detail">Remind me to clean similar photos in the gallery</string>
+    <string name="str_space_noti_detail">Remind me to free up space</string>
+    <string name="str_cpu_cooler_noti_detail">Remind me to cool down phone temperature</string>
+    <string name="str_turbo_cleaner_noti_detail">Remind me to clean social junk with TurboClean</string>
+    <string name="str_charging_noti_detail">Remind me to boost up phone charging</string>
+    <string name="str_whtsapp_noti_detail">Remind me to manage WhatsApp junk files</string>
+    <string name="str_noti_cleaner_noti_detail">Remind me to manage notifications</string>
+    <string name="str_junk_noti_detail_off">Don’t remind to clean Junk files</string>
+    <string name="str_ram_noti_detail_off">Don’t remind to free up RAM</string>
+    <string name="str_duplicates_noti_detail_off">Don’t remind to clean similar photos in the gallery</string>
+    <string name="str_space_noti_detail_off">Don’t remind to free up memory space</string>
+    <string name="str_turbo_cleaner_noti_detail_off">Don’t remind me to clean social junk with TurboClean</string>
+    <string name="str_cpu_cooler_noti_detail_off">Don’t remind to cool down phone temperature</string>
+    <string name="str_whtsapp_noti_detail_off">Don’t remind to manage WhatsApp junk files</string>
+    <string name="str_noti_cleaner_noti_detail_off">Don’t remind to manage notifications</string>
+    <string name="str_charging_noti_detail_off">Don’t remind to boost up phone charging</string>
+    <string name="str_scanning_interrupted">Scanning Interrupted!</string>
+    <string name="str_scan_interupt_msg">Are you sure you want to cancel? Only scanned Photo(s) will be displayed.</string>
+    <string name="str_total">Total</string>
+    <string name="str_time">Time:\</string>
+    <string name="str_uderline_privacy_policy"><u>Privacy Policy</u></string>
+    <string name="str_addvertisement">Advertisement</string>
+    <string name="str_addapps">Add Apps</string>
+    <string name="str_ad">Ad</string>
+    <string name="str_lets_optimize">Optimize your</string>
+    <string name="device">device</string>
+    <string name="str_enable">Enable</string>
+    <string name="str_disable">Disable</string>
+    <string name="str_realttimeon">Real-time protection is active on your device.</string>
+    <string name="str_effectively_lower_temp">The device seems hot. Lower down the temperature.</string>
+    <string name="str_device_runningslow">Your device is running slow. Optimize the speed.</string>
+    <string name="str_enahance_ram">Tap to enhance device’s RAM.</string>
+    <string name="title_activity_real_time">RealTimeActivity</string>
+    <string name="str_real_time_desc">Dynamic protection automatically safeguards your device rigorously against malicious apps that are freshly installed on the device. This may drain the battery due to continuous running processes. You need to tap ‘ENABLE’ to activate this feature. However, the already existing apps on the device will not be analysed. For those apps, along with the new ones, we recommend you to tap on ‘ENABLE &amp; SCAN’. This will enable Real-Time Protection and begin Anti-Malware scanning simultaneously.</string>
+    <string name="files">Files</string>
+    <string name="str_deny">Deny</string>
+    <string name="str_sdcard_permission_delete">Please Grant the permission to external SD card. Otherwise, files on the SD card might be skipped while cleaning.</string>
+    <string name="str_no_result_found">No Result Found.</string>
+    <string name="unableToOpenFile">Sorry, can\'t find an app to open the file.</string>
+    <string name="settings">Settings</string>
+    <string name="str_subscribe_news_letter">Subscribe now to get latest tech scoops</string>
+    <string name="str_hide">Hide</string>
+    <string name="str_virus_defence">Virus Defence System is Active</string>
+    <string name="str_real_time_on">Real-Time Protection is Active.</string>
+    <string name="str_review">Review</string>
+    <string name="str_optimize">Optimize</string>
+    <string name="str_enable_realtime">Enabled status will allow it to feature in notification tray.</string>
+    <string name="str_launch">Launch</string>
+    <string name="str_view">View</string>
+    <string name="str_manage">Manage</string>
+    <string name="str_apk_files">APK Files</string>
+    <string name="str_size_filter">Size Filter</string>
+    <string name="str_noti_automatic">Automatic</string>
+    <string name="str_noti_manual">Manual</string>
+    <string name="exclude_apps_string">Exclude any of your apps from \'Junk Cleaner\' feature. No action will be performed on the selected app(s). </string>
+    <string name="noti_ignore_info">Automatic- Choosing this will allow you to receive notifications from all apps.\n\nManual- In this, you can select desired apps to receive notifications.</string>
+    <string name="str_location">Location</string>
+    <string name="facebook">Like us on Facebook</string>
+    <string name="str_storage">Storage</string>
+    <string name="str_chngescan">Scan Settings</string>
+    <string name="str_model">Model</string>
+    <string name="str_whatsappcleaner">WhatsApp Cleaner</string>
+    <string name="str_permit_msg">Needs Access to</string>
+    <string name="str_perm_used_link">Check permissions here</string>
+    <string name="str_share">Share</string>
+    <string name="insta">Follow us on Instagram</string>
+    <string name="gamesadded">Game(s) Selected</string>
+    <string name="str_update_error2">Database update failed</string>
+    <string name="sponsered">Sponsored</string>
+    <string name="savechanges">Please tap on the \'tick mark\' to save the settings</string>
+    <string name="str_game_result_txt">selected games will not add up</string>
+    <string name="str_install_noti">App Install</string>
+    <string name="str_enable_scan"><![CDATA[Enable & Scan]]></string>
+    <string-array name="country_list" translatable="false">
+        <item>English</item>
+        <item>Japanese</item>
+        <item>Danish</item>
+        <item>Danish</item>
+        <item>Italian</item>
+        <item>Russian</item>
+        <item>Swedish</item>
+        <item>Spanish</item>
+        <item>Dutch</item>
+        <item>Finnish</item>
+        <item>French</item>
+        <item>German</item>
+        <item>Norwegian</item>
+        <item>Norwegian Bokmål</item>
+        <item>Norwegian Bokmål</item>
+        <item>Portuguese</item>
+        <item>Portuguese</item>
+        <item>Thai</item>
+    </string-array>
+    <string-array name="country_code" translatable="false">
+        <item>en</item>
+        <item>ja</item>
+        <item>da</item>
+        <item>da-rDK</item>
+        <item>it</item>
+        <item>ru</item>
+        <item>sv</item>
+        <item>es</item>
+        <item>nl</item>
+        <item>fi</item>
+        <item>fr</item>
+        <item>de</item>
+        <item>no</item>
+        <item>nb</item>
+        <item>nn</item>
+        <item>pt-rBR</item>
+        <item>pt-rPT</item>
+        <item>th</item>
+    </string-array>
+    <!-- <string-array name="DialingCountryCode">
+            <item>32,BE</item>
+            <item>501,BZ</item>
+            <item>229,BJ</item>
+            <item>975,BT</item>
+            <item>591,BO</item>
+            <item>387,BA</item>
+            <item>267,BW</item>
+            <item>55,BR</item>
+            <item>673,BN</item>
+            <item>359,BG</item>
+            <item>226,BF</item>
+            <item>95,MM</item>
+            <item>257,BI</item>
+            <item>855,KH</item>
+            <item>237,CM</item>
+            <item>1,CA</item>
+            <item>238,CV</item>
+            <item>236,CF</item>
+            <item>235,TD</item>
+            <item>56,CL</item>
+            <item>86,CN</item>
+            <item>61,CX</item>
+            <item>61,CC</item>
+            <item>57,CO</item>
+            <item>269,KM</item>
+            <item>242,CG</item>
+            <item>243,CD</item>
+            <item>682,CK</item>
+            <item>506,CR</item>
+            <item>385,HR</item>
+            <item>53,CU</item>
+            <item>357,CY</item>
+            <item>93,AF</item>
+            <item>355,AL</item>
+            <item>213,DZ</item>
+            <item>376,AD</item>
+            <item>244,AO</item>
+            <item>672,AQ</item>
+            <item>54,AR</item>
+            <item>374,AM</item>
+            <item>297,AW</item>
+            <item>61,AU</item>
+            <item>43,AT</item>
+            <item>994,AZ</item>
+            <item>973,BH</item>
+            <item>880,BD</item>
+            <item>375,BY</item>
+            <item>420,CZ</item>
+            <item>45,DK</item>
+            <item>253,DJ</item>
+            <item>670,TL</item>
+            <item>593,EC</item>
+            <item>20,EG</item>
+            <item>503,SV</item>
+            <item>240,GQ</item>
+            <item>358,FI</item>
+            <item>33,FR</item>
+            <item>291,ER</item>
+            <item>372,EE</item>
+            <item>251,ET</item>
+            <item>500,FK</item>
+            <item>298,FO</item>
+            <item>679,FJ</item>
+            <item>689,PF</item>
+            <item>241,GA</item>
+            <item>220,GM</item>
+            <item>995,GE</item>
+            <item>49,DE</item>
+            <item>233,GH</item>
+            <item>350,GI</item>
+            <item>30,GR</item>
+            <item>299,GL</item>
+            <item>502,GT</item>
+            <item>224,GN</item>
+            <item>245,GW</item>
+            <item>592,GY</item>
+            <item>509,HT</item>
+            <item>504,HN</item>
+            <item>852,HK</item>
+            <item>36,HU</item>
+            <item>91,IN</item>
+            <item>62,ID</item>
+            <item>98,IR</item>
+            <item>964,IQ</item>
+            <item>353,IE</item>
+            <item>44,IM</item>
+            <item>972,IL</item>
+            <item>39,IT</item>
+            <item>225,CI</item>
+            <item>81,JP</item>
+            <item>962,JO</item>
+            <item>7,KZ</item>
+            <item>254,KE</item>
+            <item>686,KI</item>
+            <item>965,KW</item>
+            <item>996,KG</item>
+            <item>856,LA</item>
+            <item>371,LV</item>
+            <item>961,LB</item>
+            <item>266,LS</item>
+            <item>231,LR</item>
+            <item>218,LY</item>
+            <item>423,LI</item>
+            <item>370,LT</item>
+            <item>352,LU</item>
+            <item>853,MO</item>
+            <item>389,MK</item>
+            <item>261,MG</item>
+            <item>265,MW</item>
+            <item>60,MY</item>
+            <item>960,MV</item>
+            <item>223,ML</item>
+            <item>356,MT</item>
+            <item>692,MH</item>
+            <item>222,MR</item>
+            <item>230,MU</item>
+            <item>262,YT</item>
+            <item>52,MX</item>
+            <item>691,FM</item>
+            <item>373,MD</item>
+            <item>377,MC</item>
+            <item>976,MN</item>
+            <item>382,ME</item>
+            <item>212,MA</item>
+            <item>258,MZ</item>
+            <item>264,NA</item>
+            <item>674,NR</item>
+            <item>977,NP</item>
+            <item>31,NL</item>
+            <item>599,AN</item>
+            <item>687,NC</item>
+            <item>64,NZ</item>
+            <item>505,NI</item>
+            <item>227,NE</item>
+            <item>234,NG</item>
+            <item>683,NU</item>
+            <item>850,KP</item>
+            <item>47,NO</item>
+            <item>968,OM</item>
+            <item>92,PK</item>
+            <item>680,PW</item>
+            <item>507,PA</item>
+            <item>675,PG</item>
+            <item>595,PY</item>
+            <item>51,PE</item>
+            <item>63,PH</item>
+            <item>870,PN</item>
+            <item>48,PL</item>
+            <item>351,PT</item>
+            <item>1,PR</item>
+            <item>974,QA</item>
+            <item>40,RO</item>
+            <item>7,RU</item>
+            <item>250,RW</item>
+            <item>590,BL</item>
+            <item>685,WS</item>
+            <item>378,SM</item>
+            <item>239,ST</item>
+            <item>966,SA</item>
+            <item>221,SN</item>
+            <item>381,RS</item>
+            <item>248,SC</item>
+            <item>232,SL</item>
+            <item>65,SG</item>
+            <item>421,SK</item>
+            <item>386,SI</item>
+            <item>677,SB</item>
+            <item>252,SO</item>
+            <item>27,ZA</item>
+            <item>82,KR</item>
+            <item>34,ES</item>
+            <item>94,LK</item>
+            <item>290,SH</item>
+            <item>508,PM</item>
+            <item>249,SD</item>
+            <item>597,SR</item>
+            <item>268,SZ</item>
+            <item>46,SE</item>
+            <item>41,CH</item>
+            <item>963,SY</item>
+            <item>886,TW</item>
+            <item>992,TJ</item>
+            <item>255,TZ</item>
+            <item>66,TH</item>
+            <item>228,TG</item>
+            <item>690,TK</item>
+            <item>676,TO</item>
+            <item>216,TN</item>
+            <item>90,TR</item>
+            <item>993,TM</item>
+            <item>688,TV</item>
+            <item>971,AE</item>
+            <item>256,UG</item>
+            <item>44,GB</item>
+            <item>380,UA</item>
+            <item>598,UY</item>
+            <item>1,US</item>
+            <item>998,UZ</item>
+            <item>678,VU</item>
+            <item>39,VA</item>
+            <item>58,VE</item>
+            <item>84,VN</item>
+            <item>681,WF</item>
+            <item>967,YE</item>
+            <item>260,ZM</item>
+            <item>263,ZW</item>
+        </string-array> -->
+    <string name="title_activity_test_screen">TestScreen</string>
+    <string name="str_loading_settings">Loading settings..</string>
+    <string name="str_exit_app">Are you sure you want to exit?</string>
+    <string name="str_exit_title">Exit Advanced Phone Cleaner</string>
+    <string name="title_activity_purchase_screen">PurchaseScreen</string>
+    <string name="remove_ads">Remove Ads</string>
+    <string name="ads_experience">Get An Ads-Free Experience</string>
+    <string name="ads_experience_tot">Get Unlimited access to all features with complete Ad-Free experience.</string>
+    <string name="title_activity_purchase_ads_free_screen">PurchaseAdsFreeScreen</string>
+    <string name="str_price_prefix">One Time Buy</string>
+    <string name="thanks_msg">A big thank you for your order!</string>
+    // app lock
+    <string name="devloper">Developed By %1$s</string>
+    <string name="menu1">Settings</string>
+    <string name="menu2">Rate</string>
+    <string name="menu3">Share</string>
+    <string name="menu4">Contact us</string>
+    <!-- TypeFaces Uses -->
+    <string name="font_family" translatable="false">sans-serif</string>
+    <!-- NOT TO BE TRANSLATED -->
+    <string name="font_family_medium" translatable="false">sans-serif-medium</string>
+    <!-- NOT TO BE TRANSLATED -->
+    <string name="font_family_regular" translatable="false">sans-serif</string>
+    <!-- NOT TO BE TRANSLATED -->
+    <string name="font_family_condensed" translatable="false">sans-serif-condensed</string>
+    <!-- NOT TO BE TRANSLATED -->
+    <string name="font_family_black" translatable="false">sans-serif-black</string>
+    <!-- NOT TO BE TRANSLATED -->
+    <string name="font_family_thin" translatable="false">sans-serif</string>
+    <!-- NOT TO BE TRANSLATED -->
+    <string name="font_thin" translatable="false">sans-serif-thin</string>
+    <!-- NOT TO BE TRANSLATED -->
+    <string name="font_light" translatable="false">sans-serif-light</string>
+    <!-- NOT TO BE TRANSLATED -->
+    <string-array name="ques_ans_array">
+        <item>@string/unlock_qus</item>
+        <item>@string/unlock_qus_one</item>
+        <item>@string/unlock_qus_two</item>
+        <item>@string/unlock_qus_three</item>
+        <item>@string/unlock_qus_four</item>
+        <item>@string/unlock_qus_five</item>
+        <item>@string/unlock_qus_six </item>
+    </string-array>
+    <string name="draw_pattern">Draw an unlock pattern</string>
+    <string name="wrong_pattern">Wrong Pattern Try Again</string>
+    <string name="redraw_pattern">Re-Draw Pattern</string>
+    <string name="confirm_now">Confirm Now</string>
+    <string name="pattern_not_matched">Pattern not match</string>
+    <string name="enter_answer">Enter your answer</string>
+    <string name="toast_select_question_not_match">Your question and answer did not matches</string>
+    <string name="toast_select_question">Please select a question and write an answer</string>
+    <string name="pattern_length">Pattern minimum length should be 4 circle.</string>
+    <string name="dialog_permision">In Android 5.0 or above, you must permit usage access for AppLocker so that you can use AppLocker feature.</string>
+    <string name="cancel">Cancel</string>
+    <string name="permit">Permit</string>
+    <string name="summary">Summary</string>
+    <!-- Forget password -->
+    <string name="forget_password">Forgot Pattern ?</string>
+    <string name="set_new_password">Set your new Pattern</string>
+    <string name="btn_retry">Retry</string>
+    <string name="btn_reenter">Re-enter Pattern</string>
+    <string name="btn_confirm">Confirm</string>
+    <string name="enter_mail_id">Enter Email ID (Optional)</string>
+    <!-- Tabs Titles -->
+    <string name="privacy">PRIVACY</string>
+    <string name="protect">PROTECT</string>
+    <string name="tab">Tab</string>
+    <string name="page">Page</string>
+    //
+    <string name="magic">Magic</string>
+    <string name="unlock_setting">Unlock Settings</string>
+    <string name="security_setting">Change Security Settings</string>
+    <string name="adv_protect">Advance Protection</string>
+    //
+    <string name="hide_lock">Hide AppLock</string>
+    //
+    <string name="randon_key">Random Keyboard</string>
+    //
+    <string name="cover">Cover</string>
+    //
+    <string name="pettern_draw">Pattern Draw</string>
+    //
+    <string name="touch_vibrate">Touch vibrate</string>
+    <string name="make_pattern_visble">Make pattern visible</string>
+    <string name="change_unlock">Change unlock pattern</string>
+    <!-- Question and answer -->
+    <string name="unlock_qus">Select security question</string>
+    <string name="unlock_qus_one">What is your pet name?</string>
+    <string name="unlock_qus_two">Who is your favorite teacher?</string>
+    <string name="unlock_qus_three">Who is your favorite actor?</string>
+    <string name="unlock_qus_four">Who is your favorite actress?</string>
+    <string name="unlock_qus_five">Who is your favorite cricketer?</string>
+    <string name="unlock_qus_six">Who is your favorite footballer?</string>
+    //
+    <string name="security_mail">Security Email</string>
+    <string name="security_question">Security Question</string>
+    <!--  <string name="app_name">ITL App Lock</string> -->
+    <string name="splash_text"><![CDATA[ APP <font color=\'#24befc\'><b>LOCKER</b></font>]]></string>
+    //
+    <string name="please_wait">Please Wait..</string>
+    <string name="antivirus">Security</string>
+    <string name="note_txt">Strongly recommended you set up a security email to enjoy more function and more security, Without a security mail,there will be more security Hazards.</string>
+    <string name="save">Save</string>
+    <string name="valid_mail">Please enter valid email id.</string>
+    <string name="send_code">Send Code to your secure Email</string>
+    <string name="enter_code">Please Enter Reset Code</string>
+    <string name="btn_reset">Reset Pattern</string>
+    <string name="nointernet">No internet connection !</string>
+    <string name="sendingmail">Sending Mail...</string>
+    <string name="mailsend">Mail sent successfully.</string>
+    <string name="mailnotsend">Failed to send mail.</string>
+    <string name="unsucces_mailsend">Mail Not Send.</string>
+    <string name="succes">Successful.</string>
+    <string name="safeandsecure">Box Your Secrets!</string>
+    <string name="change_unlock_click">Click to change unlock pattern</string>
+    <string name="option">Options</string>
+    <string name="other_option">Other Options</string>
+    <string name="click_change_unlock">Click to change unlock pattern</string>
+    <string name="draw_unlock">Show the pattern when drawing</string>
+    <string name="reset_success">Reset Success</string>
+    <string name="wrong_code">Wrong Code Enter</string>
+    <string name="ok">OK</string>
+    <string name="cancle">Cancel</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="popup_msg">Do you want to lock APP_NAME with Applocker?</string>
+    //
+    <string name="title_activity_change_password">Change Pattern</string>
+    <string name="correct_password">Please enter the valid Pattern.</string>
+    <string name="new_pattern">Please Enter New Pattern.</string>
+    <string name="change_success"> Your Pattern has been changed.</string>
+    <string name="permisson_app_usage">To check app usage, please enable APP_NAME.</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="strabout">About </string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="termsuse">Terms of Use</string>
+    <string name="strrateus">Rate Us</string>
+    <string name="check_update">Check for update</string>
+    <!-- <string name="support_stars">Please Support us with 5 Stars</string> -->
+    <string name="loved_it">Loved it? Spread it!</string>
+    <string name="title_activity_main4">Refer a Friend</string>
+    <string name="islocked"> Is Locked.</string>
+    <string name="not_installed">not installed</string>
+    <string name="sharing_text">Hey, did you know APP_NAME let\'s you secure your privacy by allowing you to lock the apps as per your choice on your Android device? Install the app now from the Play Store &amp; keep yourself safe always:\</string>
+    <string name="twitter_text">Hey, APP_NAME Install the app now from the Play Store &amp; keep yourself safe always: SHARE_LINK!</string>
+    <string name="app_link">http://www.innovanathinklabs.com/android/itl-app-lock/apstr/</string>
+    <string name="uptodate">App is up-to-date</string>
+    <string name="permisson_popup_window">For Enable APP_NAME, please accept display pop-up window</string>
+    <string name="display_popup_window">Display pop-up window</string>
+    <string name="permisson_overlay">For APP_NAME features, please enable drawing over other apps.</string>
+    <string name="set_pin">Password</string>
+    <string name="set_pin_detail">Set pin to unlock password</string>
+    <string name="set_up_pin_txt">Please setup a new pin</string>
+    <string name="re_enter_txt">re-enter pin to confirm password</string>
+    <string name="enter_pin">Enter Pin</string>
+    <string name="forget_pin">Forgot Pin ?</string>
+    <string name="wrong_pin">Wrong Pin try again</string>
+    <string name="pin_success">Pin Success</string>
+    <string name="reset_pin">Reset Pin</string>
+    <string name="change_unlock_pin">Change unlock pin</string>
+    <string name="click_change_unlock_pin">Click to change unlock pin</string>
+    <string name="make_pin_visble">Make pin visible</string>
+    <string name="draw_unlock_pin">Show the pin when entering</string>
+    <string name="accessibility_service_description">Accessbility Service For Applock</string>
+    <string name="unlocked">is unlocked</string>
+    <string name="notification_message">ITL AppLock is running</string>
+    <string name="dont_support">Your device does not support fingerprint authentication</string>
+    <string name="enable_permission">Please enable the fingerprint permission</string>
+    <string name="no_fingereprint_configured">No fingerprint configured. Please register at least one fingerprint in your device Settings</string>
+    <string name="enable_lockscreen_security">Please enable lock screen security in your device Settings</string>
+    <string name="ad_free_version">Enjoy Ads-Free Version</string>
+    <string name="running_premium">You are running an ads free premium version of Advanced Phone Cleaner.</string>
+    <string name="battery_boost_process_wait">Battery Saver is in progress. Please wait!</string>
+    <string name="install_now">Install Now</string>
+    <string name="update_msg">Advanced Phone Cleaner just downloaded an update </string>
+    <string name="appname">Advanced Phone Cleaner</string>
+    <string name="str_restore_purchase">Restore Purchase</string>
+    <string name="no_purchase">No Purchases to restore.</string>
+    <string name="restore_msg">You are running an ad-free premium version of Advanced Phone Cleaner</string>
+    <string name="fingerprint_auth">Fingerprint Authentication</string>
+    <string name="use_fingerprint_unlock">Use fingerprint to unlock</string>
+    <string name="device_not_support_fingerprint">Your device doesn\'t support fingerprint</string>
+    <string name="biometric_login">Biometric Login</string>
+    <string name="login_with_biometric">Login using your fingerprint</string>
+    <string name="device_fingerprint_not_enable">Your device have not setup fingerprint sensor Yet.</string>
+    <string name="enter_pin_fingerprint">Enter Pin or use fingerprint Sensor</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="interstitial_ad_sample">Interstitial Ad Sample</string>
+    <string name="start_level">Level 1</string>
+    <string name="next_level">Next Level</string>
+    <!--  -
+            This is an ad unit ID for an interstitial test ad. Replace with your own interstitial ad unit id.
+            For more information, see https://support.google.com/admob/answer/3052638
+        <!-  -->
+    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="downloading">Downloading</string>
+    <string name="permission_to_access_media_files_photos"><![CDATA[Permission to access media, files & photos is required to use some of our features.]]></string>
+    <string name="go_to_settings">Go to Settings</string>
+    <string name="android">Android</string>
+    <string name="app_updated_successfully">App updated Successfully!</string>
+    <string name="authentication_succeeded">Authentication succeeded!</string>
+    <string name="authentication_failed">Authentication failed</string>
+    <string name="authentication_error">Authentication error:\</string>
+    <string name="error">Error</string>
+    <string name="please_rate_us">\"Please Rate Us \"</string>
+    <string name="copied_text">Copied Text</string>
+    <string name="feedback_failure">Feedback Failure.</string>
+    <string name="sorry_no_activity">Sorry no activity found to open this type of file.</string>
+    <string name="error_occurred">Error occurred please try again</string>
+    <string name="item_already_owned">Item is already owned.</string>
+    <string name="cancelled">cancelled</string>
+    <string name="thank_you_msg">You are now running an Ad Free version of Advanced Phone Cleaner.</string>
+    <!--  TODO: Remove or change this placeholder text  -->
+    <string name="battery_booster">Battery Saving Mode</string>
+    <string name="power_saving_mode_is_on">Choose additional limits to save battery when power saving mode is on.</string>
+    <string name="time_left">
+<b>%1$d h %2$d m </b>
+left
+</string>
+    <string name="battery_remaining">Battery Remaining: %1$d</string>
+    <string name="power_saving_life">Power Saving Battery Life: %1$d h %2$d m</string>
+    <string name="add_applications">Add Applications</string>
+    <string name="remove_app_str">Do you want to remove the shortcut?</string>
+    <string name="disable_power_saving">Disable Power Saving Mode</string>
+    <string name="power_saving_options">Power Saving Options</string>
+    <string name="wifi_blue_off">Turn off Wifi/Bluetooth</string>
+    <string name="reduce_brightness">Reduce Screen Brightness</string>
+    <string name="limit_cpu">Limit CPU Usages</string>
+    <string name="limit_apps">Limit apps and home screen</string>
+    <string name="limit_apps_string">For maximum power saving, allow only selected apps, limit all background activity, turn off edge panels, and change to dark theme.</string>
+    <string name="apply_now">Apply Now</string>
+    <string name="save_more_wifi">Please turn off wireless connection to save more power!</string>
+    <string name="save_more_power">Background network usage, syncing, and location checking wil be limited. You can also set additional limits to save more power.</string>
+    <string name="scanning_completed">Scanning Completed..!!</string>
+    <string name="watch_ads_junk">WATCH AD TO CLEAN JUNK</string>
+    <string name="watch_ad_photo">Watch Ad to Delete Photo(s)</string>
+    <string name="watch_ad_item">Watch Ad to Delete Item(s)</string>
+    <string name="get_now">GET NOW</string>
+    <string name="ads_experience_str">Enjoy a total Ads Free experience with Advanced Phone Cleaner</string>
+    <string name="psm">Power saving mode</string>
+    <string name="left">left</string>
+    <string name="upgrade_to_ad_free">Upgrade to Ad-Free version</string>
+    <string name="device_cool_down">Your device will cool down in a few seconds.</string>
+    <string name="get_total_ad_free_experience">Get Total\nAd-Free Experience</string>
+    <string name="no_ads">No Ads</string>
+    <string name="quick_auto_cleaning">Quick Auto Cleaning</string>
+    <string name="more_storage_better_speed">More Storage</string>
+    <string name="real_time_optimization">Real-Time Optimization</string>
+    <string name="storage_permission_required">Storage Permission Required</string>
+    <string name="storage_permission_app">Please grant external storage permission to continue using Advanced Phone Cleaner.</string>
+    <string name="all_files_access">All files access</string>
+    <string name="dialog_message_storage_permission"> will not work properly without All Files Access permission. Grant permission now!</string>
+    <string name="permission_request">Permission Request</string>
+    <string name="no_files_found">No Files Found</string>
+    <string name="threats_found">Threat(s) Found</string>
+    <string name="delete_successfully">Selected file(s) deleted successfully.</string>
+    <string name="app_in_backup">App(s) already in backup.</string>
+    <string name="some_apps_in_backup">Some of the apps are already in backup.</string>
+    <string name="app_uninstall">Selected App(s) uninstalled successfully</string>
+    <string name="enable_search_widget">Search Widget is enabled in your notification bar!</string>
+    <string name="disable_search_widget">Search Widget is disabled from your notification bar!</string>
+    <string name="enable_norification">Enable Notifications</string>
+    <string name="go_to_app_enable_noti">Notifications are disabled, Go To App Settings and enable Notifications.</string>
+    <string name="fetching_ad_plz_wait">Fetching ad please wait...</string>
+    <string name="no_junk_found">No Junk Found</string>
+    <string name="app_name">Mobibuz</string>
+    <string name="share_via">Share Via\n</string>
+    <string name="refresh">refresh\n</string>
+    <string name="info_icon_txt">This feature allows you to exclude Apps from Mobibuz\'s Anti-Malware scan and whitelist them. All you need to do is turn on the toggle of the apps that you wish to exclude from scanning.</string>
+    <string name="str_result">Result</string>
+
+</resources>

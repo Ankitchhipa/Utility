@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/activity_horizontal_marginsmall"
+    android:layout_marginBottom="@dimen/activity_horizontal_marginsmall"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layout_"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/appitem_image"
+            android:layout_width="?android:attr/actionBarSize"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_marginStart="@dimen/activity_horizontal_marginsmall"
+            android:padding="@dimen/activity_horizontal_marginbig" />
+
+        <TextView
+            android:id="@+id/appitem_name"
+            android:layout_width="0dp"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:ems="20"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text=""
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/black"
+            app:fontFamily="@font/roboto_regular" />
+
+        <TextView
+            android:id="@+id/appitem_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:text=""
+            android:textColor="@color/black"
+            app:fontFamily="@font/roboto_regular" />
+
+        <CheckBox
+            android:id="@+id/appitem_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_marginsmall"
+            android:button="@drawable/custom_checkbox"
+            android:checked="false"
+            android:enabled="false"
+            android:padding="@dimen/activity_horizontal_marginsmall"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_marginsmall"
+            android:button="@drawable/custom_checkbox"
+            android:checked="true"
+            android:padding="@dimen/activity_horizontal_marginsmall"
+            android:visibility="gone" />
+
+        <RadioButton
+            android:id="@+id/radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nativeAdListAppManager"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/left_right_16"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:src="@drawable/ic_ad_icon_list" />
+
+        <FrameLayout
+            android:id="@+id/customNativeAdAppManager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</LinearLayout>

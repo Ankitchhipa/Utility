@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_50sdp"
+    android:background="@color/toolbar_color"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_back_toolbar"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="@dimen/_2sdp"
+        app:srcCompat="@drawable/ic_arrow_new" />
+
+    <TextView
+        android:id="@+id/tv_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:maxLines="2"
+        android:paddingEnd="@dimen/_10sdp"
+        android:textColor="@color/black_text_color"
+        android:textSize="@dimen/_12ssp"
+        app:fontFamily="@font/pop_light"
+        tools:text="@string/suffix_app_name" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_pdf"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:background="?attr/selectableItemBackground"
+        android:padding="@dimen/_4sdp"
+        android:tint="@color/black_text_color"
+        android:visibility="gone"
+        app:srcCompat="@drawable/ic_pdf_new" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_share"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="?attr/selectableItemBackground"
+        android:padding="@dimen/_4sdp"
+        android:tint="@color/black_text_color"
+        android:visibility="gone"
+        app:srcCompat="@drawable/ic_share_new" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_premium"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_gravity="center_vertical"
+        android:padding="@dimen/_1sdp"
+        android:visibility="gone"
+        app:srcCompat="@drawable/ic_crown" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_rename"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="?attr/selectableItemBackground"
+        android:padding="@dimen/_4sdp"
+        android:tint="@color/black_text_color"
+        android:visibility="gone"
+        app:srcCompat="@drawable/ic_rename" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="?attr/selectableItemBackground"
+        android:padding="10dp"
+        android:visibility="gone"
+        android:tint="@color/black_text_color"
+        app:srcCompat="@drawable/ic_more_white" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_done"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:background="?attr/selectableItemBackground"
+        android:visibility="gone"
+        android:tint="@color/black_text_color"
+        app:srcCompat="@drawable/ic_done" />
+
+    <!--<androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_premium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="?attr/selectableItemBackground"
+        android:padding="10dp"
+        android:visibility="gone"
+        app:srcCompat="@drawable/ic_crown" />-->
+
+
+</LinearLayout>

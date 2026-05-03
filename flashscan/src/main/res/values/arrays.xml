@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="feature_val">
+        <item> @string/ocr_credit_ </item>
+        <item> @string/pdf_signature_ </item>
+        <item> @string/watermark_removal_ </item>
+        <item> @string/ads_free </item>
+        <item> @string/anti_counterfeit_2 </item>
+        <item> @string/pdf_password_protect </item>
+        <item> @string/unlimited_scans </item>
+        <item> @string/batch_scan </item>
+    </string-array>
+
+    <string-array name="basic_val">
+        <item> 4 </item>
+        <item>  </item>
+        <item> <!--@string/rewarded_ads--> </item>
+        <item>  </item>
+        <item>  </item>
+        <item>  </item>
+        <item>  </item>
+        <item>  </item>
+    </string-array>
+
+    <integer-array name="basic_icon">
+        <item> 0  </item>
+        <item>@drawable/ic_padlock </item>
+        <item> @drawable/ic_padlock  </item>
+        <item> @drawable/ic_padlock </item>
+        <item> @drawable/ic_padlock </item>
+        <item> @drawable/ic_padlock </item>
+        <item> @drawable/ic_tick </item>
+        <item> @drawable/ic_tick </item>
+    </integer-array>
+
+    <string-array name="premium_val">
+        <item> 500 </item>
+    </string-array>
+
+    <integer-array name="premium_icon">
+        <item>@drawable/ic_tick  </item>
+    </integer-array>
+
+    <string-array name="description_title">
+        <item> @string/signature_ </item>
+        <item> @string/pdf_password_protect </item>
+        <item> @string/anti_counterfeit </item>
+        <item> @string/ads_free </item>
+    </string-array>
+
+    <string-array name="description_detail">
+        <item> @string/signature_desc</item>
+        <item> @string/pdf_password_protect_desc</item>
+        <item> @string/anti_counterfeit_desc</item>
+        <item> @string/ads_free_desc</item>
+    </string-array>
+
+    <integer-array name="desc_icon">
+        <item>@drawable/ic_signature_feature  </item>
+        <item>@drawable/ic_password_protect  </item>
+        <item>@drawable/ic_anticounterfeit_feature  </item>
+        <item>@drawable/ic_ad_block  </item>
+
+    </integer-array>
+
+    <string-array name="premium_features_title">
+        <item> @string/signature_ </item>
+        <item> @string/pdf_password_protect </item>
+        <item> @string/anti_counterfeit_2 </item>
+        <item> @string/ads_free </item>
+        <item> @string/ocr_credit_ </item>
+        <item> @string/watermark_removal_ </item>
+        <item> @string/unlimited_scans </item>
+        <item> @string/batch_scan </item>
+    </string-array>
+
+    <integer-array name="premium_features_icon">
+        <item>@drawable/ic_signature_feature  </item>
+        <item>@drawable/ic_password_plan_feature </item>
+        <item>@drawable/ic_anticounterfeit_feature </item>
+        <item>@drawable/ic_ad_block </item>
+        <item>@drawable/ic_ocr_plan_feature  </item>
+        <item>@drawable/ic_watermark_removal  </item>
+        <item>@drawable/ic_unlimited_scan  </item>
+        <item>@drawable/ic_batch_scan  </item>
+
+    </integer-array>
+
+</resources>

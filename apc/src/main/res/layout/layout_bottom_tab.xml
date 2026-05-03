@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_1"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/linear_home"
+            style="@style/tab_bg_ripple"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_btm_home"
+                android:drawablePadding="@dimen/margin_2"
+                android:gravity="center"
+                android:paddingTop="@dimen/margin_1"
+                android:text="@string/str_home"
+                android:textAllCaps="true"
+                android:textColor="@color/grayseperator"
+                android:textSize="@dimen/font_11"
+                app:fontFamily="@font/roboto_medium" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_security"
+            style="@style/tab_bg_ripple"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tv_security"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_btm_security"
+                android:drawablePadding="@dimen/margin_2"
+                android:gravity="center"
+                android:paddingTop="@dimen/margin_1"
+                android:text="@string/str_samllsecurity"
+                android:textAllCaps="true"
+                android:textColor="@color/grayseperator"
+                android:textSize="@dimen/font_11"
+                app:fontFamily="@font/roboto_medium" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_freeup"
+            style="@style/tab_bg_ripple"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tv_freeup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_btm_freeupspace"
+                android:drawablePadding="@dimen/margin_2"
+                android:gravity="center"
+                android:paddingTop="@dimen/margin_1"
+                android:text="@string/str_morespacesmall"
+                android:textAllCaps="true"
+                android:textColor="@color/grayseperator"
+                android:textSize="@dimen/font_11"
+                app:fontFamily="@font/roboto_medium" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_toolbox"
+            style="@style/tab_bg_ripple"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_toolbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_btm_toolbox"
+                android:drawablePadding="@dimen/margin_2"
+                android:gravity="center"
+                android:paddingTop="@dimen/margin_1"
+                android:text="@string/str_smalltools"
+                android:textAllCaps="true"
+                android:textColor="@color/grayseperator"
+                android:textSize="@dimen/font_11"
+                app:fontFamily="@font/roboto_medium" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--
+
+
+
+
+
+
+
+
+
+
+      </LinearLayout>
+  -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e2e2e2">
+
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.toolbar.MainActivity">
+
+    <item
+        android:id="@+id/action_sortByName"
+        android:orderInCategory="1"
+        android:title="@string/str_sort_by_name"
+        android:visible="true"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_sortBySize"
+        android:orderInCategory="1"
+        android:title="@string/str_sort_by_size"
+        android:visible="true"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_sortByDate"
+        android:orderInCategory="1"
+        android:title="@string/str_sort_by_date"
+        android:visible="true"
+        app:showAsAction="never" />
+
+</menu>

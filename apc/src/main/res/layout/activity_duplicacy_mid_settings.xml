@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F3F3">
+
+    <include android:id="@+id/toolbar"
+        layout="@layout/main_toolbar_apc" />
+
+    <include
+        layout="@layout/junk_bottom_sheet"
+        android:visibility="gone" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_bottom"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/ad_view_banner_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:visibility="visible"
+            android:background="@drawable/ad_background">
+
+            <include layout="@layout/adaptive_banner_ad_layout" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sidebar_header_color"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/margin_10"
+            android:paddingBottom="@dimen/margin_20">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/dupdisplay_sizetv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="0"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="40sp"
+                    app:fontFamily="@font/roboto_medium" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:id="@+id/junkdisplay_sizetv_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_2"
+                        android:layout_marginLeft="@dimen/margin_2"
+                        android:includeFontPadding="false"
+                        android:text="MB"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/font_20"
+                        app:fontFamily="@font/roboto_medium" />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_images_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text=""
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/_14ssp"
+                app:fontFamily="@font/roboto_regular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sidebar_header_color"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/margin_5"
+            android:paddingBottom="@dimen/margin_15"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".45"
+                android:background="@drawable/ll_dupliacte_images_bg"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_5">
+
+                <TextView
+                    android:id="@+id/img_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="25sp"
+                    app:fontFamily="@font/roboto_medium" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_viewmore_image"
+                    android:textColor="@color/txt_color"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/roboto_regular" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".1"
+                android:background="@color/sidebar_header_color" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".45"
+                android:background="@drawable/ll_duplicate_used_bg"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_5">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_2"
+                            android:layout_marginLeft="@dimen/margin_2"
+                            android:text="MB"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/font_14"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_used_space"
+                    android:textColor="@color/txt_color"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/junkdisplay_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@string/str_space_available"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:visibility="gone">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/dg_duplicate_photos" />
+
+            <TextView
+                android:id="@+id/tv_settingtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_marginsmall"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                app:fontFamily="@font/pop_light"/>
+        </LinearLayout>
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0.5dp"-->
+        <!--android:background="@color/gray"-->
+        <!--android:visibility="gone" />-->
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/divider_shadow"
+            android:includeFontPadding="false"
+            android:paddingStart="@dimen/margin_15"
+            android:paddingLeft="@dimen/margin_15"
+            android:paddingTop="@dimen/margin_15"
+            android:paddingEnd="@dimen/margin_15"
+            android:paddingRight="@dimen/margin_15"
+            android:paddingBottom="@dimen/margin_15"
+            android:text="@string/str_strtitledupmid"
+            android:textColor="@color/txt_color"
+            app:fontFamily="@font/roboto_regular" />
+
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/margin_15"-->
+        <!--android:background="@drawable/divider_shadow" />-->
+
+        <ScrollView
+            android:id="@+id/sv"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:paddingStart="@dimen/margin_15"
+                    android:text="@string/str_scantype"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/txt_color"
+                    android:textSize="@dimen/font_18"
+                    app:fontFamily="@font/roboto_medium" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8">
+
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radiobtn_overrite1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_horizontal_marginbig"
+                        android:checked="false"
+                        android:paddingTop="@dimen/activity_horizontal_marginbig"
+                        android:paddingBottom="@dimen/activity_horizontal_marginbig"
+                        android:text="@string/str_camera"
+                        android:textColor="@color/txt_color"
+                        app:buttonTint="@color/colorPrimaryDark"
+                        app:fontFamily="@font/roboto_regular" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.7dp"
+                        android:background="@color/gray" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radiobtn_overrite2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_horizontal_marginbig"
+                        android:checked="true"
+                        android:paddingTop="@dimen/activity_horizontal_marginbig"
+                        android:paddingBottom="@dimen/activity_horizontal_marginbig"
+                        android:text="@string/str_all_photos"
+                        android:textColor="@color/txt_color"
+                        app:buttonTint="@color/colorPrimaryDark"
+                        app:fontFamily="@font/roboto_regular" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.7dp"
+                        android:background="@color/gray" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radiobtn_overrite3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_horizontal_marginbig"
+                        android:checked="false"
+                        android:paddingTop="@dimen/activity_horizontal_marginbig"
+                        android:paddingBottom="@dimen/activity_horizontal_marginbig"
+                        android:text="@string/str_select_folder"
+                        android:textColor="@color/txt_color"
+                        app:buttonTint="@color/colorPrimaryDark"
+                        app:fontFamily="@font/roboto_regular" />
+                </RadioGroup>
+
+                <ImageButton
+                    android:id="@+id/recommended_setting_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_horizontal_marginsmall"
+                    android:layout_marginEnd="@dimen/activity_horizontal_marginsmall"
+                    android:background="@null"
+                    android:padding="@dimen/activity_horizontal_marginsmall"
+                    android:src="@drawable/setting"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0.5dp"-->
+        <!--android:background="@color/gray"-->
+        <!--/>-->
+
+        <TextView
+            android:id="@+id/tvhint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F3F3F3"
+            android:paddingLeft="@dimen/activity_horizontal_marginsmall"
+            android:paddingTop="@dimen/activity_horizontal_marginsmall"
+            android:paddingRight="@dimen/activity_horizontal_marginsmall"
+            android:text="@string/str_strhintduplicates"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:fontFamily="@font/roboto_regular" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+            <!--<FrameLayout
+                android:id="@+id/nativeSmallAdDuplicatePhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />-->
+
+        <Button
+            android:id="@+id/okbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/str_scan_for_duplicate"
+            style="@style/BottomButtonStyle"
+            app:fontFamily="@font/roboto_medium" />
+
+
+        <!-- <View
+             android:id="@+id/margin_btm"
+             android:layout_width="match_parent"
+             android:layout_height="0dp"
+             android:layout_alignParentBottom="true" />-->
+
+    </LinearLayout>
+
+</RelativeLayout>

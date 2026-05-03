@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/hiddenpermissionlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9c000000"
+    android:visibility="visible">
+
+    <RelativeLayout
+        android:id="@+id/linear_bottom_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/linear_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sidebar_header_color"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_16"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/tv_perm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_16"
+                app:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:text="@string/permission_to_access_media_files_photos"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/font_16" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_45"
+                android:layout_margin="@dimen/margin_16">
+
+                <com.advanced.phone.junk.cache.cleaner.booster.antimalware.utility.PanicAnimation xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/btn_ripple"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/round_btn_bg"
+                    app:rb_color="#5b94fc"
+                    app:rb_duration="2000"
+                    app:rb_radius="15dp"
+                    app:rb_rippleAmount="1"
+                    app:rb_scale="14">
+
+                </com.advanced.phone.junk.cache.cleaner.booster.antimalware.utility.PanicAnimation>
+
+                <Button
+                    android:id="@+id/btngrantpermission"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:background="@null"
+                    android:text="@string/go_to_settings"
+                    app:fontFamily="@font/roboto_medium"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/font_18" />
+            </RelativeLayout>
+
+            <!--<Button-->
+            <!--android:id="@+id/btngrantpermission"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="@dimen/margin_16"-->
+            <!--android:background="@color/colorPrimaryDark"-->
+            <!--android:padding="@dimen/activity_horizontal_margin"-->
+            <!--android:text="@string/str_grant"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="@dimen/font_18" />-->
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_permission_close_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/margin_2"
+            android:scaleX=".5"
+            android:scaleY=".5"
+            app:srcCompat="@drawable/ic_cross_grey" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_permission_close_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/linear_bottom_container"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="@dimen/margin_6"
+        android:layout_marginRight="@dimen/margin_6"
+        android:layout_marginBottom="-40dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/permission_circuler_bg"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/permission_close_btn"
+            android:layout_width="@dimen/margin_15"
+            android:layout_height="@dimen/margin_15"
+            android:layout_centerInParent="true"
+            app:srcCompat="@drawable/ic_new_cross" />
+    </RelativeLayout>
+</RelativeLayout>
+

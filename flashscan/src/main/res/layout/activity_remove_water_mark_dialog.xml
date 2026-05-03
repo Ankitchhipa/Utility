@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/fl_remove_water_mark"
+        layout="@layout/activity_remove_water_mark" />
+
+    <include
+        android:id="@+id/fl_no_internet_lay"
+        layout="@layout/no_internet_watermark_free"
+        android:visibility="gone" />
+
+</FrameLayout>

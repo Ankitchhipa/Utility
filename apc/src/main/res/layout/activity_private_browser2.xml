@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="com.advanced.phone.junk.cache.cleaner.booster.antimalware.tools.PrivateBrowser">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_43sdp"
+            android:background="@color/toolbar_color"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_weight="1"
+                android:background="@drawable/search_bar">
+
+                <ImageView
+                    android:id="@+id/imgSea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:paddingStart="@dimen/margin_15"
+                    android:paddingLeft="@dimen/margin_15"
+                    android:paddingTop="@dimen/margin_8"
+                    android:paddingEnd="@dimen/margin_8"
+                    android:paddingRight="@dimen/margin_8"
+                    android:paddingBottom="@dimen/margin_8"
+                    android:src="@drawable/sidebar_icon_2" />
+
+                <EditText
+                    android:id="@+id/edittextSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/imgSea"
+                    android:layout_toRightOf="@+id/imgSea"
+                    android:background="#00000000"
+                    android:ems="10"
+                    android:hint="@string/str_search"
+                    android:imeOptions="actionSearch"
+                    android:inputType="textWebEmailAddress"
+                    android:singleLine="true"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/grayseperator"
+                    android:textSize="@dimen/font_14"
+                    app:fontFamily="@font/pop_light" />
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/iv_close"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:padding="@dimen/_3sdp"
+                android:tint="@color/white"
+                app:srcCompat="@drawable/ic_permission_close" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_hide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_24"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_16"
+                android:src="@drawable/private_browser" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:gravity="center"
+                android:text="@string/str_private_browsing"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16ssp"
+                app:fontFamily="@font/roboto_bold"/>
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/margin_15"
+                android:gravity="center"
+                android:text="@string/str_browsing"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_10ssp"
+                app:fontFamily="@font/roboto_regular" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_15"
+                android:gravity="center"
+                android:text="@string/str_browser"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_10ssp"
+                app:fontFamily="@font/roboto_regular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-7dp"
+                android:background="@color/white"
+                android:indeterminate="true"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+            <LinearLayout
+                android:id="@+id/layout_browser_webview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.advanced.phone.junk.cache.cleaner.booster.antimalware.tools.AdvancedWebView
+                    android:id="@+id/webview_browser"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

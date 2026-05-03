@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".purchase.PurchaseScreen"
+    android:background="@color/white"
+    tools:showIn="@layout/activity_purchase_screen">
+
+    <ImageView
+        android:id="@+id/closebtn"
+        android:layout_width="@dimen/margin_35"
+        android:layout_height="@dimen/margin_35"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/margin_16"
+        android:src="@drawable/close" />
+
+    <TextView
+        android:id="@+id/tv_purc_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/margin_70"
+        android:gravity="center"
+        android:text="@string/remove_ads"
+        android:textSize="@dimen/font_24"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_purc_head2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_purc_head"
+        android:gravity="center"
+        android:text="@string/ads_experience"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+
+    <ImageView
+        android:id="@+id/img_inapp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/hgt_noti"
+        android:layout_below="@+id/tv_purc_head"
+        android:layout_marginTop="@dimen/margin_50"
+        android:layout_marginBottom="@dimen/margin_10"
+        android:src="@drawable/ads_free_new" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_inapp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/margin_50"
+        android:background="@drawable/adfree_bg_gradient">
+
+        <TextView
+            android:id="@+id/tv_free_version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/tv_purc_btm"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:gravity="center"
+            android:paddingLeft="@dimen/margin_16"
+            android:paddingRight="@dimen/margin_16"
+            android:text="@string/ad_free_version"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_26"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_purc_btm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btn_purchase"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:gravity="center"
+            android:paddingLeft="@dimen/margin_16"
+            android:paddingRight="@dimen/margin_16"
+            android:text="@string/ads_experience_tot"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_purchase"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_45"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:background="@color/white"
+            android:text="One-Time Buy $4.99"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/font_18" />
+    </RelativeLayout>
+</RelativeLayout>
