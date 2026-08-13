@@ -95,7 +95,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.opencv.android.OpenCVLoader;
-import org.openpdf.text.Font;
+import com.lowagie.text.Font;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -839,10 +839,10 @@ public class FlashScanUtil {
 
     public WaterMark getWaterMark() {
         WaterMark waterMark = new WaterMark();
-        waterMark.setWaterMarkText(context.getString(R.string.scanned_by_flashscan, context.getString(R.string.app_name)));
+        //waterMark.setWaterMarkText(context.getString(R.string.scanned_by_flashscan, context.getString(R.string.app_name)));
         waterMark.setImage(getLogoByte());
-        int color = Color.parseColor("#000000");
-        waterMark.setTextColor(new BaseColor(color));
+        //int color = Color.parseColor("#000000");
+        //waterMark.setTextColor(new BaseColor(color));
         /*waterMark.setBaseColor(new BaseColor(Color.red(ContextCompat.getColor(context, android.R.color.black)),
                 Color.green(ContextCompat.getColor(context, android.R.color.black)),
                 Color.blue(ContextCompat.getColor(context, android.R.color.black)),
@@ -1281,18 +1281,18 @@ public class FlashScanUtil {
 
     public List<PageSize> getPageSizeList() {
         List<PageSize> pageSizeList = new ArrayList<>();
-        pageSizeList.add(new PageSize(context.getString(R.string.A4), String.valueOf(org.openpdf.text.PageSize.A4)));
-        pageSizeList.add(new PageSize(context.getString(R.string.letter), String.valueOf(org.openpdf.text.PageSize.LETTER)));
-        pageSizeList.add(new PageSize(context.getString(R.string.legal), String.valueOf(org.openpdf.text.PageSize.LEGAL)));
-        pageSizeList.add(new PageSize(context.getString(R.string.executive), String.valueOf(org.openpdf.text.PageSize.EXECUTIVE)));
-        pageSizeList.add(new PageSize(context.getString(R.string.ledger), String.valueOf(org.openpdf.text.PageSize.LEDGER)));
-        pageSizeList.add(new PageSize(context.getString(R.string.tabloid), String.valueOf(org.openpdf.text.PageSize.TABLOID)));
+        pageSizeList.add(new PageSize(context.getString(R.string.A4), String.valueOf(com.lowagie.text.PageSize.A4)));
+        pageSizeList.add(new PageSize(context.getString(R.string.letter), String.valueOf(com.lowagie.text.PageSize.LETTER)));
+        pageSizeList.add(new PageSize(context.getString(R.string.legal), String.valueOf(com.lowagie.text.PageSize.LEGAL)));
+        pageSizeList.add(new PageSize(context.getString(R.string.executive), String.valueOf(com.lowagie.text.PageSize.EXECUTIVE)));
+        pageSizeList.add(new PageSize(context.getString(R.string.ledger), String.valueOf(com.lowagie.text.PageSize.LEDGER)));
+        pageSizeList.add(new PageSize(context.getString(R.string.tabloid), String.valueOf(com.lowagie.text.PageSize.TABLOID)));
       /*  pageSizeList.add(new PageSize(context.getString(R.string.a0_841_1189), context.getString(R.string.A0)));
         pageSizeList.add(new PageSize(context.getString(R.string.a1_594_841), context.getString(R.string.A1)));
         pageSizeList.add(new PageSize(context.getString(R.string.a2_420_594), context.getString(R.string.A2)));*/
-        pageSizeList.add(new PageSize(context.getString(R.string.A3), String.valueOf(org.openpdf.text.PageSize.A3)));
+        pageSizeList.add(new PageSize(context.getString(R.string.A3), String.valueOf(com.lowagie.text.PageSize.A3)));
         /*pageSizeList.add(new PageSize(context.getString(R.string.a4_210_297), context.getString(R.string.A4)));*/
-        pageSizeList.add(new PageSize(context.getString(R.string.A5), String.valueOf(org.openpdf.text.PageSize.A5)));
+        pageSizeList.add(new PageSize(context.getString(R.string.A5), String.valueOf(com.lowagie.text.PageSize.A5)));
        /* pageSizeList.add(new PageSize(context.getString(R.string.a6_105_148), context.getString(R.string.A6)));
         pageSizeList.add(new PageSize(context.getString(R.string.a7_74_105), context.getString(R.string.A7)));
         pageSizeList.add(new PageSize(context.getString(R.string.a8_52_74), context.getString(R.string.A8)));

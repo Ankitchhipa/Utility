@@ -11,20 +11,21 @@ import com.cam.scanner.scantopdf.android.R;
 import com.cam.scanner.scantopdf.android.models.WaterMark;
 import com.cam.scanner.scantopdf.android.util.PdfImageObject;
 import com.cam.scanner.scantopdf.android.util.PrefManager;
-import org.openpdf.text.DocumentException;
-import org.openpdf.text.Element;
-import org.openpdf.text.Font;
-import org.openpdf.text.Phrase;
-import org.openpdf.text.Rectangle;
-import org.openpdf.text.pdf.ColumnText;
-import org.openpdf.text.pdf.PRStream;
-import org.openpdf.text.pdf.PdfContentByte;
-import org.openpdf.text.pdf.PdfName;
-import org.openpdf.text.pdf.PdfNumber;
-import org.openpdf.text.pdf.PdfObject;
-import org.openpdf.text.pdf.PdfReader;
-import org.openpdf.text.pdf.PdfStamper;
-import org.openpdf.text.pdf.PdfWriter;
+import com.lowagie.text.DocumentException;
+import com.lowagie.text.Element;
+import com.lowagie.text.Font;
+import com.lowagie.text.Image;
+import com.lowagie.text.Phrase;
+import com.lowagie.text.Rectangle;
+import com.lowagie.text.pdf.ColumnText;
+import com.lowagie.text.pdf.PRStream;
+import com.lowagie.text.pdf.PdfContentByte;
+import com.lowagie.text.pdf.PdfName;
+import com.lowagie.text.pdf.PdfNumber;
+import com.lowagie.text.pdf.PdfObject;
+import com.lowagie.text.pdf.PdfReader;
+import com.lowagie.text.pdf.PdfStamper;
+import com.lowagie.text.pdf.PdfWriter;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -190,6 +191,18 @@ public class PdfUtils {
                 x = (pageSize.getLeft() + pageSize.getRight()) / 2;
                 y = (pageSize.getTop() + pageSize.getBottom()) / 2;
                 over = stamper.getOverContent(i);
+
+                if (waterMark.getImage() != null) {
+                    try {
+                        Image image = Image.getInstance(waterMark.getImage());
+                        // Scale accordingly
+                        image.scaleToFit(100, 20);
+                        image.setAbsolutePosition(x - (image.getScaledWidth() / 2), y);
+                        over.addImage(image);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
 
                 ColumnText.showTextAligned(over, Element.ALIGN_CENTER, phrase, x, y, waterMark.getRotationAngle());
             }

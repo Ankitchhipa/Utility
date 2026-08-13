@@ -7,13 +7,13 @@ import com.itextpdf.text.pdf.codec.TIFFFaxDecoder;
 import com.itextpdf.text.pdf.codec.TIFFFaxDecompressor;*/
 //import com.itextpdf.text.pdf.codec.TIFFFaxDecompressor;
 
-import org.openpdf.text.exceptions.UnsupportedPdfException;
-import org.openpdf.text.pdf.PdfBoolean;
-import org.openpdf.text.pdf.PdfDictionary;
-import org.openpdf.text.pdf.PdfName;
-import org.openpdf.text.pdf.PdfNumber;
-import org.openpdf.text.pdf.PdfObject;
-import org.openpdf.text.pdf.PdfReader;
+import com.lowagie.text.exceptions.UnsupportedPdfException;
+import com.lowagie.text.pdf.PdfBoolean;
+import com.lowagie.text.pdf.PdfDictionary;
+import com.lowagie.text.pdf.PdfName;
+import com.lowagie.text.pdf.PdfNumber;
+import com.lowagie.text.pdf.PdfObject;
+import com.lowagie.text.pdf.PdfReader;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

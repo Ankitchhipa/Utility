@@ -408,8 +408,12 @@ public class GetFilesTask extends AsyncTask<Void, Void, List<FileModel>> {
 
     private boolean isFav(String parent, String name) {
         boolean isFav = false;
+        File file = new File(parent + "/" + name + "/" + Constants.JSON_FILE_NAME);
+        if (!file.exists()) {
+            return false;
+        }
         try {
-            FileReader fileReader = new FileReader(parent + "/" + name + "/" + Constants.JSON_FILE_NAME);
+            FileReader fileReader = new FileReader(file);
             BufferedReader br = new BufferedReader(fileReader);
 
             StringBuilder sb = new StringBuilder();

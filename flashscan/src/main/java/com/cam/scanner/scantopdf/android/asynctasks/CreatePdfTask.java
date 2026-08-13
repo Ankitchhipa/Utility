@@ -21,13 +21,15 @@ import com.cam.scanner.scantopdf.android.util.Constants;
 import com.cam.scanner.scantopdf.android.util.FlashScanUtil;
 import com.cam.scanner.scantopdf.android.util.PrefManager;
 import com.cam.scanner.scantopdf.android.util.WatermarkPageEvent;
-import org.openpdf.text.Document;
-import org.openpdf.text.Image;
-import org.openpdf.text.PageSize;
-import org.openpdf.text.Rectangle;
-import org.openpdf.text.pdf.PdfReader;
-import org.openpdf.text.pdf.PdfWriter;
+import com.lowagie.text.Document;
+import com.lowagie.text.Image;
+import com.lowagie.text.PageSize;
+import com.lowagie.text.Rectangle;
+import com.lowagie.text.pdf.PdfReader;
+import com.lowagie.text.pdf.PdfWriter;
 
+import java.io.BufferedOutputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -35,7 +37,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class CreatePdfTask extends AsyncTask<Void, Void, String> {
 
@@ -182,7 +188,7 @@ public class CreatePdfTask extends AsyncTask<Void, Void, String> {
                 boolean hasPages = false;
 
                 try {
-                    PdfWriter pdfWriter = PdfWriter.getInstance(document, new FileOutputStream(pdfFilePath));
+                    PdfWriter pdfWriter = PdfWriter.getInstance(document, new BufferedOutputStream(new FileOutputStream(pdfFilePath)));
                     if (isPdfEncrypted && pdfPassword != null) {
                         pdfWriter.setEncryption(pdfPassword, mMasterPwd.getBytes(),
                                 PdfWriter.ALLOW_PRINTING | PdfWriter.ALLOW_COPY,
@@ -204,31 +210,43 @@ public class CreatePdfTask extends AsyncTask<Void, Void, String> {
                     document.open();
 
                     if (selectedImagesList != null && !selectedImagesList.isEmpty()) {
+                        int numThreads = Math.min(Runtime.getRuntime().availableProcessors(), 4);
+                        ExecutorService executor = Executors.newFixedThreadPool(numThreads);
+                        List<Future<Image>> futures = new ArrayList<>();
 
-
-                        for (String imageUri : selectedImagesList) {
+                        for (final String imageUri : selectedImagesList) {
                             File eachFile = new File(imageUri);
                             if (eachFile.isFile() && eachFile.exists()) {
                                 if (!TextUtils.isEmpty(eachFile.getName()) && eachFile.getName().equalsIgnoreCase(Constants.JSON_FILE_NAME)) {
                                     continue;
                                 }
                             }
-                            Image image = getImageForPdf(imageUri);
-                            int qualityMod = (int) (pdfQuality * 0.09);
-                            image.setCompressionLevel(qualityMod); // 2 by calculating default
-                            image.setBorder(Rectangle.BOX);
-                            image.setBorderWidth(borderWidth);
-                            float pageWidth = document.getPageSize().getWidth() - (marginLeft + marginRight);
-                            float pageHeight = document.getPageSize().getHeight() - (marginBottom + marginTop);
-                            image.scaleToFit(pageWidth, pageHeight);
-                            image.setAbsolutePosition(
-                                    (pageSize.getWidth() - image.getScaledWidth()) / 2,
-                                    (pageSize.getHeight() - image.getScaledHeight()) / 2);
-                            /*document.newPage();*/
-                            document.add(image);
-                            hasPages = true;
-                            document.newPage();
+                            futures.add(executor.submit(() -> getImageForPdf(imageUri)));
                         }
+
+                        for (Future<Image> future : futures) {
+                            try {
+                                Image image = future.get();
+                                if (image != null) {
+                                    int qualityMod = (int) (pdfQuality * 0.09);
+                                    image.setCompressionLevel(qualityMod);
+                                    image.setBorder(Rectangle.BOX);
+                                    image.setBorderWidth(borderWidth);
+                                    float pageWidth = document.getPageSize().getWidth() - (marginLeft + marginRight);
+                                    float pageHeight = document.getPageSize().getHeight() - (marginBottom + marginTop);
+                                    image.scaleToFit(pageWidth, pageHeight);
+                                    image.setAbsolutePosition(
+                                            (pageSize.getWidth() - image.getScaledWidth()) / 2,
+                                            (pageSize.getHeight() - image.getScaledHeight()) / 2);
+                                    document.add(image);
+                                    hasPages = true;
+                                    document.newPage();
+                                }
+                            } catch (Exception e) {
+                                Log.e(TAG, "Error adding image to PDF", e);
+                            }
+                        }
+                        executor.shutdown();
                     }
                 } catch (Exception e) {
                     Log.e(TAG, "Failed to create PDF at " + pdfFilePath, e);
@@ -358,25 +376,18 @@ public class CreatePdfTask extends AsyncTask<Void, Void, String> {
         }
 
         try {
-            int width = bitmap.getWidth();
-            int height = bitmap.getHeight();
-            int[] pixels = new int[width * height];
-            bitmap.getPixels(pixels, 0, width, 0, 0, width, height);
-
-            byte[] imageData = new byte[width * height * 3];
-            for (int index = 0; index < pixels.length; index++) {
-                int pixel = pixels[index];
-                int offset = index * 3;
-                imageData[offset] = (byte) Color.red(pixel);
-                imageData[offset + 1] = (byte) Color.green(pixel);
-                imageData[offset + 2] = (byte) Color.blue(pixel);
-            }
-
-            return Image.getInstance(width, height, 3, 8, imageData);
-        } catch (Exception e) {
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            // Use JPEG compression for much faster processing and smaller PDF size
+            bitmap.compress(Bitmap.CompressFormat.JPEG, pdfQuality, stream);
+            byte[] byteArray = stream.toByteArray();
+            stream.close();
+            return Image.getInstance(byteArray);
+        } catch (Throwable e) {
             throw new IOException("Unable to convert bitmap into PDF image: " + imageUri, e);
         } finally {
-            bitmap.recycle();
+            if (bitmap != null && !bitmap.isRecycled()) {
+                bitmap.recycle();
+            }
         }
     }
 
@@ -385,13 +396,43 @@ public class CreatePdfTask extends AsyncTask<Void, Void, String> {
             return null;
         }
 
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+
         if (imageUri.startsWith("content://")) {
             try (InputStream inputStream = context.getContentResolver().openInputStream(Uri.parse(imageUri))) {
-                return BitmapFactory.decodeStream(inputStream);
+                BitmapFactory.decodeStream(inputStream, null, options);
+            }
+        } else {
+            BitmapFactory.decodeFile(imageUri, options);
+        }
+
+        // Optimize for A4 at 300 DPI (~2480x3508)
+        options.inSampleSize = calculateInSampleSize(options, 2480, 3508);
+        options.inJustDecodeBounds = false;
+        options.inPreferredConfig = Bitmap.Config.RGB_565;
+
+        if (imageUri.startsWith("content://")) {
+            try (InputStream inputStream = context.getContentResolver().openInputStream(Uri.parse(imageUri))) {
+                return BitmapFactory.decodeStream(inputStream, null, options);
             }
         }
 
-        return BitmapFactory.decodeFile(imageUri);
+        return BitmapFactory.decodeFile(imageUri, options);
+    }
+
+    private int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+        if (height > reqHeight || width > reqWidth) {
+            final int halfHeight = height / 2;
+            final int halfWidth = width / 2;
+            while ((halfHeight / inSampleSize) >= reqHeight && (halfWidth / inSampleSize) >= reqWidth) {
+                inSampleSize *= 2;
+            }
+        }
+        return inSampleSize;
     }
 
     private java.awt.Color getBaseColor(int color) {

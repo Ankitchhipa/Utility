@@ -11,17 +11,18 @@ import androidx.core.content.ContextCompat;
 
 import com.cam.scanner.scantopdf.android.R;
 import com.cam.scanner.scantopdf.android.models.WaterMark;
-import org.openpdf.text.Chunk;
-import org.openpdf.text.Document;
-import org.openpdf.text.Element;
-import org.openpdf.text.Font;
-import org.openpdf.text.Image;
-import org.openpdf.text.Paragraph;
-import org.openpdf.text.Phrase;
-import org.openpdf.text.pdf.ColumnText;
-import org.openpdf.text.pdf.PdfContentByte;
-import org.openpdf.text.pdf.PdfPageEventHelper;
-import org.openpdf.text.pdf.PdfWriter;
+import com.cam.scanner.scantopdf.android.util.BaseColor;
+import com.lowagie.text.Chunk;
+import com.lowagie.text.Document;
+import com.lowagie.text.Element;
+import com.lowagie.text.Font;
+import com.lowagie.text.Image;
+import com.lowagie.text.Paragraph;
+import com.lowagie.text.Phrase;
+import com.lowagie.text.pdf.ColumnText;
+import com.lowagie.text.pdf.PdfContentByte;
+import com.lowagie.text.pdf.PdfPageEventHelper;
+import com.lowagie.text.pdf.PdfWriter;
 
 import java.awt.Color;
 import java.io.ByteArrayOutputStream;
@@ -43,46 +44,56 @@ public class WatermarkPageEvent extends PdfPageEventHelper {
     public void onEndPage(PdfWriter writer, Document document) {
 
         PdfContentByte canvas = writer.getDirectContent();
-        /*float x = (document.getPageSize().getLeft() + document.getPageSize().getRight()) / 2;
-        float y = (document.getPageSize().getTop() + document.getPageSize().getBottom()) / 2;*/
-        Log.e(TAG, "get left" + document.getPageSize().getLeft());
-        Log.e(TAG, "get right" + document.getPageSize().getRight());
-        Log.e(TAG, "get top" + document.getPageSize().getTop());
-        Log.e(TAG, "get bottom" + document.getPageSize().getBottom());
+        float pageWidth = document.getPageSize().getWidth();
+        float pageHeight = document.getPageSize().getHeight();
+        float x = document.getPageSize().getRight() - (pageWidth * 0.05f);
+        float y = document.getPageSize().getBottom() + (pageHeight * 0.05f);
+
         try {
-            int half = (int) document.getPageSize().getRight() / 2;
-            float x = half + ((float) half / 4);
-            float y = 15;
-            canvas = addBackgroundInWaterMark(canvas, x, y - 7);
-            ColumnText.showTextAligned(canvas, Element.ALIGN_BOTTOM, mPhrase, x, y, waterMark.getRotationAngle());
-        } catch (NoSuchMethodError e) {
-            e.printStackTrace();
+            if (waterMark != null && waterMark.getImage() != null) {
+                try {
+                    mLogoImage = Image.getInstance(waterMark.getImage());
+                    // Adjust scale for corner placement
+                    mLogoImage.scaleToFit(150, 150);
+                    mLogoImage.setAbsolutePosition(x - mLogoImage.getScaledWidth(), y);
+                    canvas.addImage(mLogoImage);
+                    Log.d(TAG, "Image watermark added at bottom right corner");
+                } catch (Exception e) {
+                    Log.e(TAG, "Error adding image watermark", e);
+                }
+            }
+
+            if (mPhrase != null) {
+                ColumnText.showTextAligned(canvas, Element.ALIGN_RIGHT, mPhrase, x, y, waterMark.getRotationAngle());
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Error in onEndPage", e);
         }
     }
 
     public void setWatermark(Context context, WaterMark waterMark, String selectedPdfPageSize) {
         this.waterMark = waterMark;
-        float textSize = 20;
+        float textSize = 30;
         switch (selectedPdfPageSize) {
             case "EXECUTIVE":
-                textSize = 15;
-                break;
-            case "A3":
                 textSize = 25;
                 break;
+            case "A3":
+                textSize = 40;
+                break;
             case "A4":
-                textSize = 20;
+                textSize = 30;
                 break;
             case "A5":
-                textSize = 12;
+                textSize = 20;
                 break;
             default:
-                textSize = 20;
+                textSize = 30;
                 break;
         }
         try {
-            this.mPhrase = new Phrase("",
-                    new Font(waterMark.getFontFamily(), waterMark.getTextSize(),
+            this.mPhrase = new Phrase(waterMark.getWaterMarkText() != null ? waterMark.getWaterMarkText() : "",
+                    new Font(waterMark.getFontFamily(), textSize,
                             waterMark.getFontStyle(), waterMark.getTextColor()));
             /*Font font = new Font(waterMark.getFontFamily(), waterMark.getTextSize(),
                     waterMark.getFontStyle(), waterMark.getTextColor());
@@ -97,7 +108,11 @@ public class WatermarkPageEvent extends PdfPageEventHelper {
         /*this.mPhrase = new Phrase(waterMark.getWaterMarkText(),
                 new Font(waterMark.getFontFamily(), 20,
                         waterMark.getFontStyle(), waterMark.getTextColor()));*/
-        Font font = new Font(waterMark.getFontFamily(), 20,
+        float textSize = 30;
+        this.mPhrase = new Phrase(waterMark.getWaterMarkText() != null ? waterMark.getWaterMarkText() : "",
+                new Font(waterMark.getFontFamily(), textSize,
+                        waterMark.getFontStyle(), waterMark.getTextColor()));
+        Font font = new Font(waterMark.getFontFamily(), textSize,
                 waterMark.getFontStyle(), waterMark.getTextColor());
         mParagraph = createWatermarkParagraph(context, waterMark, font);
     }

@@ -1,6 +1,6 @@
 package com.cam.scanner.scantopdf.android.util;
 
-import org.openpdf.text.DocWriter;
+import com.lowagie.text.DocWriter;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

@@ -3,19 +3,19 @@ package com.cam.scanner.scantopdf.android.util;
 /*import PdfLiteral;
 import PdfNull;*/
 
-import static org.openpdf.text.pdf.PdfReader.getPdfObject;
-import static org.openpdf.text.pdf.PdfReader.getPdfObjectRelease;
+import static com.lowagie.text.pdf.PdfReader.getPdfObject;
+import static com.lowagie.text.pdf.PdfReader.getPdfObjectRelease;
 
-import org.openpdf.text.exceptions.UnsupportedPdfException;
-import org.openpdf.text.pdf.PRStream;
-import org.openpdf.text.pdf.PdfArray;
-import org.openpdf.text.pdf.PdfDictionary;
-import org.openpdf.text.pdf.PdfLiteral;
-import org.openpdf.text.pdf.PdfName;
-import org.openpdf.text.pdf.PdfNull;
-import org.openpdf.text.pdf.PdfObject;
-import org.openpdf.text.pdf.PdfReader;
-import org.openpdf.text.pdf.PdfString;
+import com.lowagie.text.exceptions.UnsupportedPdfException;
+import com.lowagie.text.pdf.PRStream;
+import com.lowagie.text.pdf.PdfArray;
+import com.lowagie.text.pdf.PdfDictionary;
+import com.lowagie.text.pdf.PdfLiteral;
+import com.lowagie.text.pdf.PdfName;
+import com.lowagie.text.pdf.PdfNull;
+import com.lowagie.text.pdf.PdfObject;
+import com.lowagie.text.pdf.PdfReader;
+import com.lowagie.text.pdf.PdfString;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

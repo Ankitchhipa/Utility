@@ -9,7 +9,7 @@ import com.cam.scanner.scantopdf.android.models.GoogleDriveChildFileModel;
 import com.cam.scanner.scantopdf.android.models.GoogleDriveFolderModel;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.openpdf.text.PageSize;
+import com.lowagie.text.PageSize;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

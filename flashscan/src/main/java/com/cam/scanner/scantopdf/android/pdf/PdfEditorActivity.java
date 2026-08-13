@@ -54,8 +54,8 @@ import com.github.barteksc.pdfviewer.listener.OnErrorListener;
 import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
 import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
 import com.itl.commonres.utils.CommonMethods;
-import org.openpdf.text.DocumentException;
-import org.openpdf.text.Font;
+import com.lowagie.text.DocumentException;
+import com.lowagie.text.Font;
 
 import java.io.File;
 import java.io.FileInputStream;
