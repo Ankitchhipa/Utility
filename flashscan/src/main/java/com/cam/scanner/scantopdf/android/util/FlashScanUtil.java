@@ -237,7 +237,7 @@ public class FlashScanUtil {
 
         Snackbar snackbar = Snackbar.make(view, message, Snackbar.LENGTH_LONG);
         View snackbarView = snackbar.getView();
-        snackbarView.setBackgroundColor(context.getResources().getColor(R.color.colorPrimary));
+        snackbarView.setBackgroundColor(context.getResources().getColor(com.itl.commonres.R.color.black_text_color));
         snackbar.show();
     }
 

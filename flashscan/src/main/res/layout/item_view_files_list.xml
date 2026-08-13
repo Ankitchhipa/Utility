@@ -220,14 +220,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|end">
 
-                <androidx.appcompat.widget.AppCompatCheckBox
+                <CheckBox
                     android:id="@+id/checkBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|end"
+                    android:layout_gravity="center"
                     android:checked="false"
                     android:visibility="gone"
-                    app:buttonTint="@color/sky_blue" />
+                    app:buttonTint="@color/black_text_color" />
 
                 <Button
                     android:id="@+id/btnCheckbox"

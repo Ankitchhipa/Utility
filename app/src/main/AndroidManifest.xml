@@ -48,13 +48,10 @@
         </activity>
         <service
             android:name="com.advanced.phone.junk.cache.cleaner.booster.antimalware.notificationmanager.NLService"
-            android:label="@string/str_app_name"
-            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.service.notification.NotificationListenerService" />
-            </intent-filter>
-        </service>
+            tools:node="remove" />
+        <receiver
+            android:name="com.itl.commonres.utils.InstallationReceiver"
+            tools:node="remove" />
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider;${applicationId}.fileprovider"
