@@ -333,7 +333,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     @Override
     protected void onResume() {
         super.onResume();
-
+        if (prefManager.isPremium()) {
+            if (ad_view_banner_container != null) {
+                ad_view_banner_container.setVisibility(View.GONE);
+            }
+        }
     }
 
     private void manageSearchedFolders() {

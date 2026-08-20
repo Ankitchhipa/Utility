@@ -62,11 +62,11 @@ public class Constants {
     public static final int PLAN_FREE = 1;
     public static final int PLAN_OCR_MONTHLY = 3;
     public static final int PLAN_PEMIUM_YEARLY = 2;
-    public static final int PLAN_PEMIUM_QUARTERLY = 7;
+    public static final int PLAN_PEMIUM_MONTHLY = 7;
     public static final int PLAN_FREE_TEST = 4;
     public static final int PLAN_OCR_MONTHLY_TEST = 6;
     public static final int PLAN_PEMIUM_YEARLY_TEST = 5;
-    public static final int PLAN_PEMIUM_QUARTERLY_TEST = 8;
+    public static final int PLAN_PEMIUM_MONTHLY_TEST = 8;
     public static final String FROM_NAV_CHOOSE_PLAN = "from_nav_choose_plan";
     public static final String FROM_NAV = "from_nav";
     public static final int NAV_FROM_OCRACTIVITY = 801;
@@ -221,8 +221,8 @@ public class Constants {
         String FREE_TEST = "free_test";
         String PREMIUM_YEARLY = "premium_yearly";
         String PREMIUM_YEARLY_TEST = "premium_yearly_test";
-        String PREMIUM_QUARTERLY = "premium_quarterly";
-        String PREMIUM_QUARTERLY_TEST = "premium_quarterly_test";
+        String PREMIUM_MONTHLY = "premium_monthly";
+        String PREMIUM_MONTHLY_TEST = "premium_monthly_test";
         String OCR_MONTHLY = "ocr_monthly";
         String OCR_MONTHLY_TEST = "ocr_monthly_test";
         String BOTH_PLANS = "both_plans";
@@ -262,16 +262,16 @@ public class Constants {
     }
 
     public static final String PRODUCT_ID_AD_FREE_TEST = "test.flashscan.adfree";
-    public static final String PRODUCT_ID_AD_FREE = "com.cam.scanner.scantopdf.android.adfree";
+    public static final String PRODUCT_ID_AD_FREE = "com.utilify.boost.cleaner.android.adfree";
     public static final String PRODUCT_ID_WATERMARK_FREE_TEST = "test.flashscan.watermarkfree";
-    public static final String PRODUCT_ID_WATERMARK_FREE = "com.cam.scanner.scantopdf.android.watermarkfreepdf";
+    public static final String PRODUCT_ID_WATERMARK_FREE = "com.utilify.boost.cleaner.android.watermarkfreepdf";
+    public static final String PRODUCT_ID_MONTHLY_TEST = "test.flashscan.premium_monthly";
+    public static final String PRODUCT_ID_MONTHLY = "com.utilify.boost.cleaner.android.premium_monthly";
     public static final String PRODUCT_ID_PREMIUM_TEST = "test.flashscan.premium_yearly";
-    public static final String PRODUCT_ID_PREMIUM = "com.cam.scanner.scantopdf.android.premium_yearly";
-    public static final String PRODUCT_ID_PREMIUM_QUARTELY_TEST = "test.flashscan.premium_quaterly";
-    public static final String PRODUCT_ID_PREMIUM_QUARTELY = PRODUCT_ID_PREMIUM_QUARTELY_TEST;
-//    public static final String PRODUCT_ID_PREMIUM_QUARTELY = "com.cam.scanner.scantopdf.android.premium_yearly";
+    public static final String PRODUCT_ID_PREMIUM = "com.utilify.boost.cleaner.android.premium_yearly";
+//    public static final String PRODUCT_ID_PREMIUM_QUARTELY = "com.utilify.boost.cleaner.android.premium_yearly";
     public static final String PRODUCT_ID_OCR_MONTH_TEST = "test.flashscan.ocr_month";
-    public static final String PRODUCT_ID_OCR_MONTH = "com.cam.scanner.scantopdf.android.ocr_month";
+    public static final String PRODUCT_ID_OCR_MONTH = "com.utilify.boost.cleaner.android.ocr_month";
 
     public static final int REQUEST_CODE_PREMIUM_YEALY = 125;
     public static final int REQUEST_CODE_OCR_MONTHLY = 126;
@@ -358,10 +358,10 @@ public class Constants {
 
     public static final int RESTORE_PREMIUM_NONE = 184;
     public static final int RESTORE_PREMIUM_YEARLY = 185;
-    public static final int RESTORE_PREMIUM_QUARTERLY = 186;
+    public static final int RESTORE_PREMIUM_MONTHLY = 186;
     public static final int RESTORE_PREMIUM_BOTH = 187;
 
-    public static int BUY_NOW_QUARTERLY = 195;
+    public static int BUY_NOW_MONTHLY = 195;
     public static int BUY_NOW_YEARLY = 196;
 
     public static String Storage_and_Camera="Storage_and_Camera";

@@ -132,7 +132,7 @@ public class ImageCropActivity extends BaseActivity implements View.OnClickListe
 
     private FrameLayout flMain;
 
-    private ImageView ivCrownSign;
+    private ImageView ivCrownSign, ivCrownMagic, ivCrownBw2;
     private FrameLayout ad_view_banner_container;
 
     //This variable used for uploading newly added files to drive
@@ -292,6 +292,9 @@ public class ImageCropActivity extends BaseActivity implements View.OnClickListe
         bw2 = findViewById(R.id.BWMode2);
         tut_image_crop = findViewById(R.id.tut_image_crop);
         btn_got_it = findViewById(R.id.btn_got_it);
+        ivCrownSign = findViewById(R.id.iv_sign_crown);
+        ivCrownMagic = findViewById(R.id.iv_magic_crown);
+        ivCrownBw2 = findViewById(R.id.iv_bw2_crown);
         ad_view_banner_container = findViewById(R.id.ad_view_banner_container);
         filter = findViewById(R.id.filter);
         delete = findViewById(R.id.delete);
@@ -382,10 +385,14 @@ public class ImageCropActivity extends BaseActivity implements View.OnClickListe
     }
 
     private void handlePremiumIconVisibility() {
-        if (/*prefManager.isPremiumYearly() || prefManager.isPremiumQuarterly()*/true) {
+        if (prefManager.isPremium()) {
             ivCrownSign.setVisibility(View.GONE);
+            if (ivCrownMagic != null) ivCrownMagic.setVisibility(View.GONE);
+            if (ivCrownBw2 != null) ivCrownBw2.setVisibility(View.GONE);
         } else {
             ivCrownSign.setVisibility(View.VISIBLE);
+            if (ivCrownMagic != null) ivCrownMagic.setVisibility(View.VISIBLE);
+            if (ivCrownBw2 != null) ivCrownBw2.setVisibility(View.VISIBLE);
         }
     }
 
@@ -875,7 +882,10 @@ public class ImageCropActivity extends BaseActivity implements View.OnClickListe
     }
 
     public void magicClick() {
-
+        if (!prefManager.isPremium()) {
+            askToBePremium();
+            return;
+        }
         mFilterType = FilterType.Magic;
 
 
@@ -946,6 +956,10 @@ public class ImageCropActivity extends BaseActivity implements View.OnClickListe
     }
 
     public void bw2Click() {
+        if (!prefManager.isPremium()) {
+            askToBePremium();
+            return;
+        }
         mFilterType = FilterType.BW2;
 
         // black and white invertcolors

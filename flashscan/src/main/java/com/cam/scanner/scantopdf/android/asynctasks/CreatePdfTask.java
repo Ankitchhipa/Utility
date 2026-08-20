@@ -90,11 +90,11 @@ public class CreatePdfTask extends AsyncTask<Void, Void, String> {
         this.marginRight = imageToPdfOptions.getMarginRight();
         this.pdfQuality = imageToPdfOptions.getPdfQuality();
         this.borderWidth = imageToPdfOptions.getBorderWidth();
-        this.isWaterMarkAdded = imageToPdfOptions.isWaterMarkAdded();
+        prefManager = new PrefManager(context);
+        this.isWaterMarkAdded = imageToPdfOptions.isWaterMarkAdded() && !prefManager.isPremium();
         this.waterMark = imageToPdfOptions.getWaterMark();
         pdfUtils = new PdfUtils();
         isPdfEncrypted = false;
-        prefManager = new PrefManager(context);
         mMasterPwd = prefManager.getMasterPassword();
         this.isOriginalPdfImagesSaveToTempDir = isOriginalPdfImagesSaveToTempDir;
         pdfFileName = fileName;
@@ -116,11 +116,11 @@ public class CreatePdfTask extends AsyncTask<Void, Void, String> {
         this.marginRight = imageToPdfOptions.getMarginRight();
         this.pdfQuality = imageToPdfOptions.getPdfQuality();
         this.borderWidth = imageToPdfOptions.getBorderWidth();
-        this.isWaterMarkAdded = imageToPdfOptions.isWaterMarkAdded();
+        prefManager = new PrefManager(context);
+        this.isWaterMarkAdded = imageToPdfOptions.isWaterMarkAdded() && !prefManager.isPremium();
         this.waterMark = imageToPdfOptions.getWaterMark();
         pdfUtils = new PdfUtils();
         isPdfEncrypted = false;
-        prefManager = new PrefManager(context);
         mMasterPwd = prefManager.getMasterPassword();
         this.isOriginalPdfImagesSaveToTempDir = isOriginalPdfImagesSaveToTempDir;
         pdfFileName = fileName;

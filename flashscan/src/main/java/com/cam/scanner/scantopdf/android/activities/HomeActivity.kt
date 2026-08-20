@@ -196,6 +196,9 @@ class HomeActivity : BaseActivity(), View.OnClickListener, OnFetchingCompleted,
         clickListeners()
         setupRecyclerViewLayoutManager()
         initVars()
+        
+        //flashScanUtil?.updatePremiumLaunchCount()
+        showPremium()
 
         if (Constants.IS_OWN_API_IMPLEMENT && deviceIdOfInstallTime == null) {
             registerToApi()
@@ -295,6 +298,8 @@ class HomeActivity : BaseActivity(), View.OnClickListener, OnFetchingCompleted,
         if (successMsg != null) {
             flashScanUtil!!.showSnackBar(findViewById(android.R.id.content), successMsg)
         }
+        showPremium()
+        //flashScanUtil?.updatePremiumLaunchCount()
     }
 
     private fun getIntents() {
@@ -329,7 +334,7 @@ class HomeActivity : BaseActivity(), View.OnClickListener, OnFetchingCompleted,
         super.onResume()
         Log.i(TAG, "onResume")
 
-//        showPremium()
+        showPremium()
 //        showRecentsRv(fetchedFileList)
 //        plansVisibilityInNav()
 
@@ -344,10 +349,12 @@ class HomeActivity : BaseActivity(), View.OnClickListener, OnFetchingCompleted,
     }
 
     private fun showPremium() {
-        if (prefManager!!.isAppAdFree) {
+        if (prefManager!!.isPremium) {
             binding.toolbar.ivPremiumCrown.visibility = View.VISIBLE
+            binding.homeLayout.adViewBannerContainer.visibility = View.GONE
         } else {
             binding.toolbar.ivPremiumCrown.visibility = View.GONE
+            // binding.homeLayout.adViewBannerContainer.visibility = View.VISIBLE
         }
     }
 

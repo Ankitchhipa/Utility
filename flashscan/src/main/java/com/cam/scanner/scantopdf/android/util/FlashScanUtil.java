@@ -72,6 +72,10 @@ import com.cam.scanner.scantopdf.android.interfaces.GetDominantColorListener;
 import com.cam.scanner.scantopdf.android.interfaces.GoogleDriveDataDeleteListener;
 import com.cam.scanner.scantopdf.android.interfaces.GoogleDriveDataDownloadListener;
 import com.cam.scanner.scantopdf.android.interfaces.GoogleDriveDataUploadListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
+import com.cam.scanner.scantopdf.android.activities.PremiumActivity;
 import com.cam.scanner.scantopdf.android.models.FileModel;
 import com.cam.scanner.scantopdf.android.models.GoogleDriveChildFileModel;
 import com.cam.scanner.scantopdf.android.models.GoogleDriveFolderModel;
@@ -147,9 +151,11 @@ public class FlashScanUtil {
     private int dominantColor = 0;
     private GetDominantColorListener getDominantColorListener;
     private static Dialog loadingDialog;
+    private PrefManager prefManager;
 
     public FlashScanUtil(Context context) {
         this.context = context;
+        prefManager = new PrefManager(context);
     }
 
     public FlashScanUtil() {
@@ -1485,7 +1491,10 @@ public class FlashScanUtil {
             try {
                 cursor = context.getContentResolver().query(uri, null, null, null, null);
                 if (cursor != null && cursor.moveToFirst()) {
-                    fileName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
+                    int index = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
+                    if (index != -1) {
+                        fileName = cursor.getString(index);
+                    }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -1987,10 +1996,26 @@ public class FlashScanUtil {
         return mDriveServiceHelper == null;
     }
 
-    public void initDriveServiceHelper(Context context) {
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(context);
-        if (account != null) {
-            mDriveServiceHelper = new DriveServiceHelper(getGoogleDriveService(context, account, context.getString(R.string.app_name)));
+    public void openPremiumActivity(Context context) {
+        Intent intent = new Intent(context, PremiumActivity.class);
+        context.startActivity(intent);
+    }
+
+    public boolean isPremium() {
+        if (prefManager == null && context != null) {
+            prefManager = new PrefManager(context);
+        }
+        return prefManager != null && prefManager.isPremium();
+    }
+
+    public void updatePremiumLaunchCount() {
+        if (isPremium()) {
+            String androidId = prefManager.getSecureAndroidId();
+            if (androidId != null && !androidId.isEmpty()) {
+                DatabaseReference ref = FirebaseDatabase.getInstance().getReference("premium_users").child(androidId);
+                ref.child("launch_count").setValue(ServerValue.increment(1));
+                ref.child("last_launch").setValue(ServerValue.TIMESTAMP);
+            }
         }
     }
 

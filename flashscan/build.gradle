@@ -216,7 +216,8 @@ dependencies {
     //google ads
     implementation 'com.google.android.gms:play-services-ads:23.3.0'
 
-    implementation 'com.android.billingclient:billing:3.0.2'
+    implementation libs.billing
+    implementation libs.billing.ktx
 
     implementation 'com.android.installreferrer:installreferrer:2.2'
 

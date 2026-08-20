@@ -24,14 +24,14 @@
     </string-array>
 
     <integer-array name="basic_icon">
-        <item> 0  </item>
-        <item>@drawable/ic_padlock </item>
-        <item> @drawable/ic_padlock  </item>
-        <item> @drawable/ic_padlock </item>
-        <item> @drawable/ic_padlock </item>
-        <item> @drawable/ic_padlock </item>
-        <item> @drawable/ic_tick </item>
-        <item> @drawable/ic_tick </item>
+        <item>0</item>
+        <item>@drawable/ic_padlock</item>
+        <item>@drawable/ic_padlock</item>
+        <item>@drawable/ic_padlock</item>
+        <item>@drawable/ic_padlock</item>
+        <item>@drawable/ic_padlock</item>
+        <item>@drawable/ic_tick</item>
+        <item>@drawable/ic_tick</item>
     </integer-array>
 
     <string-array name="premium_val">
@@ -39,7 +39,7 @@
     </string-array>
 
     <integer-array name="premium_icon">
-        <item>@drawable/ic_tick  </item>
+        <item>@drawable/ic_tick</item>
     </integer-array>
 
     <string-array name="description_title">
@@ -57,10 +57,10 @@
     </string-array>
 
     <integer-array name="desc_icon">
-        <item>@drawable/ic_signature_feature  </item>
-        <item>@drawable/ic_password_protect  </item>
-        <item>@drawable/ic_anticounterfeit_feature  </item>
-        <item>@drawable/ic_ad_block  </item>
+        <item>@drawable/ic_signature_feature</item>
+        <item>@drawable/ic_password_protect</item>
+        <item>@drawable/ic_anticounterfeit_feature</item>
+        <item>@drawable/ic_ad_block</item>
 
     </integer-array>
 
@@ -76,14 +76,14 @@
     </string-array>
 
     <integer-array name="premium_features_icon">
-        <item>@drawable/ic_signature_feature  </item>
-        <item>@drawable/ic_password_plan_feature </item>
-        <item>@drawable/ic_anticounterfeit_feature </item>
-        <item>@drawable/ic_ad_block </item>
-        <item>@drawable/ic_ocr_plan_feature  </item>
-        <item>@drawable/ic_watermark_removal  </item>
-        <item>@drawable/ic_unlimited_scan  </item>
-        <item>@drawable/ic_batch_scan  </item>
+        <item>@drawable/ic_signature_feature</item>
+        <item>@drawable/ic_password_plan_feature</item>
+        <item>@drawable/ic_anticounterfeit_feature</item>
+        <item>@drawable/ic_ad_block</item>
+        <item>@drawable/ic_ocr_plan_feature</item>
+        <item>@drawable/ic_watermark_removal</item>
+        <item>@drawable/ic_unlimited_scan</item>
+        <item>@drawable/ic_batch_scan</item>
 
     </integer-array>
 

@@ -179,8 +179,7 @@ public class PdfEditorActivity extends BaseActivity implements OnPageChangeListe
     }
 
     private void handlePremiumIconVisibility() {
-//        if (prefManager.isAppWatermarkFree() || prefManager.isPremiumYearly()) {
-        if (/*prefManager.isPremiumYearly() || prefManager.isPremiumQuarterly()*/true) {
+        if (prefManager.isPremium()) {
             ivPremium.setVisibility(View.GONE);
             ivCrownSign.setVisibility(View.GONE);
             ivCrownPwd.setVisibility(View.GONE);
@@ -390,6 +389,10 @@ public class PdfEditorActivity extends BaseActivity implements OnPageChangeListe
                 sharePdfFile(savedPdfPath);
             }
         } else if (id == R.id.tv_pdf_password) {
+            if (!prefManager.isPremium()) {
+                askToBePremium();
+                return;
+            }
             featureClickedType = OnFeatureClicked.Password.getValue();
             CommonMethods.logCustomFireBaseEvents(
                     TAG,
@@ -473,6 +476,10 @@ public class PdfEditorActivity extends BaseActivity implements OnPageChangeListe
                 }*/
             ////
         } else if (id == R.id.tv_anti_counterfeit) {
+            if (!prefManager.isPremium()) {
+                askToBePremium();
+                return;
+            }
             CommonMethods.logCustomFireBaseEvents(
                     TAG,
                     com.itl.commonres.utils.Constants.CLICK_ANTI_COUNTERFEIT
@@ -493,6 +500,10 @@ public class PdfEditorActivity extends BaseActivity implements OnPageChangeListe
                 }
             }
         } else if (id == R.id.tv_pdf_signature) {
+            if (!prefManager.isPremium()) {
+                askToBePremium();
+                return;
+            }
             CommonMethods.logCustomFireBaseEvents(
                     TAG,
                     com.itl.commonres.utils.Constants.CLICK_PDF_SIGNATURE

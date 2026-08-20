@@ -27,26 +27,40 @@
             android:layout_width="@dimen/_36sdp"
             android:layout_height="@dimen/_36sdp"
             android:layout_marginEnd="@dimen/_10sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="@dimen/_10sdp"
             android:src="@drawable/menu"
             android:tint="@color/black_text_color"
             app:layout_constraintBottom_toBottomOf="@+id/utilify"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/utilify"
             app:layout_constraintTop_toTopOf="@+id/utilify" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_premium_crown"
+            android:layout_width="@dimen/_36sdp"
+            android:layout_height="@dimen/_36sdp"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_crown"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/menu"
+            app:layout_constraintEnd_toStartOf="@+id/menu"
+            app:layout_constraintTop_toTopOf="@+id/menu" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/utilify"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8sdp"
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:includeFontPadding="false"
+            android:singleLine="true"
             android:text="@string/app_name"
             android:textColor="@color/black_text_color"
             android:textSize="@dimen/_30ssp"
             app:fontFamily="@font/amaranth_bold"
+            app:layout_constraintEnd_toStartOf="@id/iv_premium_crown"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

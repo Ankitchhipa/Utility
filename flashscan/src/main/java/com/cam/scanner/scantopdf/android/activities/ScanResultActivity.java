@@ -176,7 +176,7 @@ public class ScanResultActivity extends BaseActivity implements View.OnClickList
     private List<String> selectedImagesList = new ArrayList<>();
     private boolean isPdfCreatedForSharing;
     private int screenFrom = 0;
-    private RelativeLayout progress_lay;
+    private View progress_lay;
     private int totalFilesSize;
     private Button btn_progress_lay;
     private PrefManager prefManager;
@@ -495,6 +495,11 @@ public class ScanResultActivity extends BaseActivity implements View.OnClickList
     @Override
     protected void onResume() {
         super.onResume();
+        if (prefManager.isPremium()) {
+            if (nativeAdScanResult != null) {
+                nativeAdScanResult.setVisibility(View.GONE);
+            }
+        }
         FlashScanUtil.newHideLoading();
         if (!flashScanUtil.isConnectingToInternet()) {
             isNetWorking = false;

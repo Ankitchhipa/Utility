@@ -19,6 +19,7 @@ import com.cam.scanner.scantopdf.android.R;
 import com.cam.scanner.scantopdf.android.ads.AdClosed;
 import com.cam.scanner.scantopdf.android.util.Constants;
 import com.cam.scanner.scantopdf.android.util.FlashScanUtil;
+import com.cam.scanner.scantopdf.android.util.PrefManager;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
@@ -38,11 +39,12 @@ public class BaseActivity extends AppCompatActivity implements OnAdDismissInterf
     public static final int REQUEST_CODE_DRIVE_SIGN_IN = 1;
     private static final String TAG = BaseActivity.class.getSimpleName();
 
+    private PrefManager prefManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
+        prefManager = new PrefManager(this);
     }
 
     @Override
@@ -58,6 +60,10 @@ public class BaseActivity extends AppCompatActivity implements OnAdDismissInterf
     }
 
     public void largeNativeAdSet(NativeAd nativeAd, FrameLayout customNativeViewSet) {
+        if (prefManager.isPremium()) {
+            customNativeViewSet.setVisibility(View.GONE);
+            return;
+        }
         if (nativeAd != null) {
             NativeAdView adView = (NativeAdView) this.getLayoutInflater().inflate(R.layout.ad_unified_large, null);
             populateLargeUnifiedNativeAdView(nativeAd, adView);
@@ -69,6 +75,10 @@ public class BaseActivity extends AppCompatActivity implements OnAdDismissInterf
     }
 
     public void smallNativeAdSet(NativeAd nativeAd, FrameLayout customNativeViewSet, boolean showArrow) {
+        if (prefManager.isPremium()) {
+            customNativeViewSet.setVisibility(View.GONE);
+            return;
+        }
         if (nativeAd != null) {
             NativeAdView adView = (NativeAdView) this.getLayoutInflater().inflate(R.layout.ad_unified_small, null);
             populateSmallUnifiedNativeAdView(nativeAd, adView, showArrow);
@@ -80,6 +90,10 @@ public class BaseActivity extends AppCompatActivity implements OnAdDismissInterf
     }
 
     public void smallDocNativeAdSet(NativeAd nativeAd, FrameLayout customNativeViewSet, boolean showArrow) {
+        if (prefManager.isPremium()) {
+            customNativeViewSet.setVisibility(View.GONE);
+            return;
+        }
         if (nativeAd != null) {
             NativeAdView adView = (NativeAdView) this.getLayoutInflater().inflate(R.layout.ad_unified_doc_item, null);
             populateSmallUnifiedNativeAdView(nativeAd, adView, showArrow);
@@ -91,6 +105,10 @@ public class BaseActivity extends AppCompatActivity implements OnAdDismissInterf
     }
 
     public void nativeAdSetInList(NativeAd nativeAd, FrameLayout customNativeViewSet) {
+        if (prefManager.isPremium()) {
+            customNativeViewSet.setVisibility(View.GONE);
+            return;
+        }
         if (nativeAd != null && this != null) {
             NativeAdView adView = (NativeAdView) ((Activity) this).getLayoutInflater().inflate(R.layout.ad_unified_listview, null);
             populateUnifiedNativeAdViewInList(nativeAd, adView);
@@ -319,6 +337,9 @@ public class BaseActivity extends AppCompatActivity implements OnAdDismissInterf
     AdClosed adClosed;
 
     public void loadInterstitialAd(Context context, String adUnitId, AdClosed adClosed) {
+        if (prefManager.isPremium()) {
+            return;
+        }
         /*if (AppController.interstitialAd == null) {
             FlashScanUtil.newShowLoading(context, "");
             AdRequest adRequest = new AdRequest.Builder().build();
@@ -348,6 +369,10 @@ public class BaseActivity extends AppCompatActivity implements OnAdDismissInterf
     }
 
     private void showInterstitialAd(String adUnitId, AdClosed adClosed) {
+        if (prefManager.isPremium()) {
+            if (adClosed != null) adClosed.onAdClosed();
+            return;
+        }
         CommonMethods.onAdDismissInterface = this;
         this.adClosed = adClosed;
         if (com.itl.commonres.utils.Constants.interstitialAd != null) {
@@ -403,6 +428,9 @@ public class BaseActivity extends AppCompatActivity implements OnAdDismissInterf
     }
 
     public void loadRewardedAd(Context context, String adUnitId, AdClosed adClosed) {
+        if (prefManager.isPremium()) {
+            return;
+        }
         if (AppController.rewardedAd == null) {
             AdRequest adRequest = new AdRequest.Builder().build();
             RewardedAd.load(context, adUnitId, adRequest, new RewardedAdLoadCallback() {
@@ -424,6 +452,10 @@ public class BaseActivity extends AppCompatActivity implements OnAdDismissInterf
     }
 
     public void rewardedAdShow(AdClosed adClosed) {
+        if (prefManager.isPremium()) {
+            if (adClosed != null) adClosed.onAdClosed();
+            return;
+        }
         if (AppController.rewardedAd != null) {
             Log.d(TAG, "show_called");
             AppController.rewardedAd.setFullScreenContentCallback(new FullScreenContentCallback() {

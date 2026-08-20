@@ -36,6 +36,7 @@ class AppApplication : Application(), Application.ActivityLifecycleCallbacks,
         //CommonMethods.generateFCMTokenIfEmpty(applicationContext)
 
         //FirebaseDbConfig.initialize()
+        com.itl.commonres.firebaseUtils.FirebaseDbConfig.initialize()
         //CommonMethods.loadAppOpenAd(applicationContext)
         //CommonMethods.loadInterstitialAd(applicationContext)
     }

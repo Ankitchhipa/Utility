@@ -26,7 +26,7 @@ public class PrefManager {
     private static final String APP_SORTING_ORDER = "app_sorting_order";
     private static final String IS_APP_AD_FREE = "is_app_ad_free";
     private static final String IS_PREMIUM_YEARLY = "is_premium_yearly";
-    private static final String IS_PREMIUM_QUARTERLY = "is_premium_quarterly";
+    private static final String IS_PREMIUM_MONTHLY = "is_premium_monthly";
     private static final String IS_OCR_MONTHLY = "is_ocr_monthly";
     private static final String IS_APP_WATERMARK_FREE = "is_app_watermark_free";
     public static final String PREF_TRACKING_DONE = "tracking_done";
@@ -58,7 +58,7 @@ public class PrefManager {
     private static final String PREMIUM_COUNT = "premium_count";
     private static final String OCR_MONTHLY_COUNT = "ocr_monthly_count";
     private static final String ORDER_ID_PREMIUM_YEARLY = "order_id_premium_yearly";
-    private static final String ORDER_ID_PREMIUM_QUARTERLY = "order_id_premium_quarterly";
+    private static final String ORDER_ID_PREMIUM_MONTHLY = "order_id_premium_monthly";
     private static final String ORDER_ID_OCR_MONTHLY = "order_id_ocr_monthly";
     private static final String DEVICE_ID_OF_INSTALL_TIME = "device_id_of_install_time";
     private static final String SECURE_ANDROID_ID = "secure_android_id";
@@ -69,7 +69,7 @@ public class PrefManager {
     public static final String OFFER_URL_SERVER = "offer_url_server";
     public static final String SHOW_APP_OPEN_AD = "show_app_open_ad";
     public static final String SHOW_SPLASH_INETSTITIAL_AD = "show_splash_interstitial_ad";
-    public static final String QUARTERLY_PLAN_PRICE = "quaterly_plan_price";
+    public static final String MONTHLY_PLAN_PRICE = "monthly_plan_price";
     public static final String YEARLY_PLAN_PRICE = "yearly_plan_price";
     public static final String PURCHASED_PLAN_NAME = "purchased_plan_name";
     private Context context;
@@ -151,6 +151,10 @@ public class PrefManager {
         editor.apply();
     }
 
+    public boolean isPremium() {
+        return isPremiumYearly() || isPremiumMonthly();
+    }
+
     public boolean isPremiumYearly() {  // true if payment done - don't show any ad in app
         return sharedPreferences.getBoolean(PrefManager.IS_PREMIUM_YEARLY, false);
     }
@@ -162,15 +166,15 @@ public class PrefManager {
         editor.apply();
     }
 
-    /*public boolean isPremiumQuarterly() {
-        return sharedPreferences.getBoolean(PrefManager.IS_PREMIUM_QUARTERLY, false);
-    }*/
+    public boolean isPremiumMonthly() {
+        return sharedPreferences.getBoolean(PrefManager.IS_PREMIUM_MONTHLY, false);
+    }
 
-   /* public void setPremiumQuarterly(boolean isPremiumQuarterly) {
+    public void setPremiumMonthly(boolean isPremiumMonthly) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean(IS_PREMIUM_QUARTERLY, isPremiumQuarterly).apply();
+        editor.putBoolean(IS_PREMIUM_MONTHLY, isPremiumMonthly).apply();
         editor.apply();
-    }*/
+    }
 
     public boolean isOcrMonthly() {  // true if payment done - don't show any ad in app
         return sharedPreferences.getBoolean(PrefManager.IS_OCR_MONTHLY, false);
@@ -500,9 +504,9 @@ public class PrefManager {
         editor.apply();
     }
 
-    public void setOrderIdPremiumQuarterly(String orderId) {
+    public void setOrderIdPremiumMonthly(String orderId) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(ORDER_ID_PREMIUM_QUARTERLY, orderId);
+        editor.putString(ORDER_ID_PREMIUM_MONTHLY, orderId);
         editor.apply();
     }
 
@@ -510,8 +514,8 @@ public class PrefManager {
         return sharedPreferences.getString(ORDER_ID_PREMIUM_YEARLY, null);
     }
 
-    public String getOrderIdPremiumQuarterly() {
-        return sharedPreferences.getString(ORDER_ID_PREMIUM_QUARTERLY, null);
+    public String getOrderIdPremiumMonthly() {
+        return sharedPreferences.getString(ORDER_ID_PREMIUM_MONTHLY, null);
     }
 
     public void setOrderIdOcrMonthly(String orderId) {
@@ -538,6 +542,10 @@ public class PrefManager {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(SECURE_ANDROID_ID, selfAndroidId);
         editor.apply();
+    }
+
+    public String getSecureAndroidId() {
+        return sharedPreferences.getString(SECURE_ANDROID_ID, null);
     }
 
     public void setPlanIdForApi(int planId) {
@@ -618,15 +626,15 @@ public class PrefManager {
         editor.apply();
     }
 
-    public void setQuarterlyPlanPrice(String quarterlyPlanPrice) {
+    public void setMonthlyPlanPrice(String monthlyPlanPrice) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(QUARTERLY_PLAN_PRICE, quarterlyPlanPrice).apply();
+        editor.putString(MONTHLY_PLAN_PRICE, monthlyPlanPrice).apply();
         editor.apply();
     }
 
-    public String getQuarterlyPlanPrice() {
-        String quarterlyPlanPrice = sharedPreferences.getString(QUARTERLY_PLAN_PRICE, "");
-        return quarterlyPlanPrice;
+    public String getMonthlyPlanPrice() {
+        String monthlyPlanPrice = sharedPreferences.getString(MONTHLY_PLAN_PRICE, "");
+        return monthlyPlanPrice;
     }
 
     public void setYearlyPlanPrice(String yearlyPlanPrice) {

@@ -23,16 +23,32 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_8sdp"
         android:layout_marginStart="@dimen/_4sdp"
         android:includeFontPadding="false"
+        android:singleLine="true"
         android:text=""
         android:textColor="@color/text_primary"
         android:textSize="@dimen/_18ssp"
         app:fontFamily="@font/amaranth_bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/iv_premium_crown"
         app:layout_constraintStart_toEndOf="@id/iv_menu"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_premium_crown"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="@dimen/_6sdp"
+        android:src="@drawable/ic_crown"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -58,7 +74,7 @@
         android:tint="@color/text_primary"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/ads"
+        app:layout_constraintEnd_toStartOf="@id/iv_premium_crown"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

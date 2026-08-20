@@ -14,6 +14,9 @@ import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AlphaAnimation
 import android.view.animation.OvershootInterpolator
 import androidx.appcompat.app.AppCompatActivity
+import com.android.billingclient.api.*
+import com.cam.scanner.scantopdf.android.util.PremiumStatusHelper
+import com.cam.scanner.scantopdf.android.util.PrefManager
 import com.itl.commonres.firebaseUtils.ConfigFilesUpdateHelper
 import com.itl.commonres.firebaseUtils.FirebaseConstants
 import com.itl.commonres.firebaseUtils.FirebaseDbConfig
@@ -24,7 +27,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class SplashActivity : AppCompatActivity() {
+class SplashActivity : AppCompatActivity(), PurchasesUpdatedListener {
 
     private lateinit var binding: ActivitySplashBinding
     private var countDownTimer: CountDownTimer? = null
@@ -32,6 +35,11 @@ class SplashActivity : AppCompatActivity() {
     protected var runnable: Runnable = Runnable { this.startDashboard() }
     private val tagName = SplashActivity::class.java.simpleName
     private var sharedPrefUtil: SharedPrefUtil? = null
+    private var prefManager: PrefManager? = null
+    private var billingClient: BillingClient? = null
+    private var isBillingChecked = false
+    private var isSplashTimerFinished = false
+    private var isDashboardStarted = false
     private var floatingAnimator: AnimatorSet? = null
 
     @Inject
@@ -48,6 +56,9 @@ class SplashActivity : AppCompatActivity() {
         setAllAnimation()
         runCountDownTimer()
         initObjects()
+        
+        checkPremiumStatus()
+        
         if (FirebaseDbConfig.isInitialized) {
             getConfigValuesFromFirebaseSingleValueEventListener()
         }
@@ -55,7 +66,55 @@ class SplashActivity : AppCompatActivity() {
 
     private fun initObjects() {
         sharedPrefUtil = SharedPrefUtil(this)
+        prefManager = PrefManager(this)
         Constants.isFirstLaunch = sharedPrefUtil?.isFirstLaunch() ?: false
+        
+        if (prefManager?.secureAndroidId == null) {
+            val selfAndroidId = android.provider.Settings.Secure.getString(
+                contentResolver,
+                android.provider.Settings.Secure.ANDROID_ID
+            )
+            prefManager?.secureAndroidId = selfAndroidId
+        }
+    }
+
+    private fun checkPremiumStatus() {
+        /*if (!com.cam.scanner.scantopdf.android.util.Constants.IS_ORDER_REAL) {
+            isBillingChecked = true
+            return
+        }*/
+
+        billingClient = BillingClient.newBuilder(this)
+            .enablePendingPurchases(PendingPurchasesParams.newBuilder().enableOneTimeProducts().build())
+            .setListener(this).build()
+
+        billingClient!!.startConnection(object : BillingClientStateListener {
+            override fun onBillingSetupFinished(billingResult: BillingResult) {
+                if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
+                    val params = QueryPurchasesParams.newBuilder()
+                        .setProductType(BillingClient.ProductType.SUBS)
+                        .build()
+
+                    billingClient!!.queryPurchasesAsync(params) { result: BillingResult, purchaseList: List<Purchase> ->
+                        if (result.responseCode == BillingClient.BillingResponseCode.OK) {
+                            PremiumStatusHelper.applySubscriptionPurchases(prefManager, purchaseList)
+                        }
+                        markBillingChecked()
+                    }
+                } else {
+                    markBillingChecked()
+                }
+            }
+
+            override fun onBillingServiceDisconnected() {
+                markBillingChecked()
+            }
+        })
+    }
+
+    private fun markBillingChecked() {
+        isBillingChecked = true
+        openDashboardIfReady()
     }
 
     private fun setAllAnimation() {
@@ -195,29 +254,31 @@ class SplashActivity : AppCompatActivity() {
         }
     }
 
-    private fun loadAnimation(view: View, anim: Int) {
-        // Method kept for backward compatibility if needed.
-    }
-
-    fun loadAlphaAnimation(view: View) {
-        val animation1 = AlphaAnimation(0.0f, 1.0f)
-        animation1.duration = 1000
-        animation1.startOffset = 100
-        animation1.fillAfter = true
-        view.startAnimation(animation1)
-    }
-
     private fun runCountDownTimer() {
         countDownTimer = object : CountDownTimer(3000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
-                // Show the app open ad.
             }
 
             override fun onFinish() {
-                handler?.postDelayed(runnable, 120)
+                isSplashTimerFinished = true
+                openDashboardIfReady()
+                handler?.postDelayed({
+                    if (!isBillingChecked) {
+                        markBillingChecked()
+                    }
+                }, 1500)
             }
         }
         countDownTimer?.start()
+    }
+
+    private fun openDashboardIfReady() {
+        if (!isSplashTimerFinished || !isBillingChecked || isDashboardStarted) {
+            return
+        }
+
+        isDashboardStarted = true
+        handler?.postDelayed(runnable, 120)
     }
 
     private fun startDashboard() {
@@ -248,7 +309,11 @@ class SplashActivity : AppCompatActivity() {
         configFilesUpdateHelper.tutorialScreenShowLaunchEventListener()
     }
 
+    override fun onPurchasesUpdated(billingResult: BillingResult, purchases: MutableList<Purchase>?) {
+    }
+
     override fun onDestroy() {
+        billingClient?.endConnection()
         floatingAnimator?.cancel()
         countDownTimer?.cancel()
         handler?.removeCallbacks(runnable)

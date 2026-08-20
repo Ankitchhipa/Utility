@@ -138,6 +138,10 @@ dependencies {
     implementation project(':apc')
     implementation project(':commonRes')
 
+    //billing
+    implementation 'com.android.billingclient:billing:6.1.0'
+    implementation 'com.android.billingclient:billing-ktx:6.1.0'
+
     //android
     implementation("com.ibm.icu:icu4j:77.1")
     implementation 'androidx.multidex:multidex:2.0.1'

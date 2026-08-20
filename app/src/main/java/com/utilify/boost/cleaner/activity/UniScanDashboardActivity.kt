@@ -46,7 +46,6 @@ class UniScanDashboardActivity : AppCompatActivity(), PermissionInterface, OnAdD
     private var screenName = "UniScanDashboardActivity"
     private var sharedPrefUtil: SharedPrefUtil? = null
     private var prefManager: PrefManager? = null
-    private var commonMethods: CommonMethods? = null
     private var isPauseForPermissions = false
     private var onClickItem = -1
     private var list: ArrayList<Int> =
@@ -86,6 +85,17 @@ class UniScanDashboardActivity : AppCompatActivity(), PermissionInterface, OnAdD
                 showExitDialog()
             }
         })
+
+        updatePremiumUi()
+        checkFirstLaunchPremium()
+    }
+
+    private fun checkFirstLaunchPremium() {
+        val isFirstPremiumScreenShown = sharedPrefUtil?.getBoolean("first_premium_shown") ?: false
+        if (!isFirstPremiumScreenShown && !isUserPremium()) {
+            sharedPrefUtil?.saveBoolean("first_premium_shown", true)
+            startActivity(Intent(this, com.cam.scanner.scantopdf.android.activities.PremiumActivity::class.java))
+        }
     }
 
     override fun onStart() {
@@ -96,51 +106,43 @@ class UniScanDashboardActivity : AppCompatActivity(), PermissionInterface, OnAdD
         binding.dashboard.rvRecommendedApp.adapter = RecommendeAppAdapter(list,this)
     }
 
-    /*private fun loadAds() {
-        if(AppUtils.isNetworkConnected(this@UniScanDashboardActivity)){
-            CommonMethods.loadInterstitialAd(this, false)
-        }
-    }*/
-
-    /*override fun onBackPressed() {
-        if (binding.main.isDrawerOpen(GravityCompat.START)) {
-            binding.main.closeDrawers()
-            return
-        }
-        showExitDialog()
-    }*/
-
-    /*private fun loadView() {
-        if (AppUtils.isNetworkConnected(this@UniScanDashboardActivity) && Constants.isAdShow) {
-            AdUtils.loadBottomNativeAd(
-                this,
-                BuildConfig.AD_UNIT_ID_NATIVE_AD_HOME,
-                binding.dashboard.adPlaceholder.root
-            )
-            binding.dashboard.adPlaceholder.root.visibility = View.VISIBLE
-        } else {
-            binding.dashboard.adPlaceholder.root.visibility = View.GONE
-            Log.e("PhoneMate : ", "Ad Not Showing")
-        }
-    }*/
-
     private fun initObjects() {
         sharedPrefUtil = SharedPrefUtil(this)
         prefManager = PrefManager(this)
-        commonMethods = CommonMethods(this)
+
+        if (prefManager?.secureAndroidId == null) {
+            val selfAndroidId = android.provider.Settings.Secure.getString(
+                contentResolver,
+                android.provider.Settings.Secure.ANDROID_ID
+            )
+            prefManager?.secureAndroidId = selfAndroidId
+        }
 
         if(!Constants.isAdShow){
             binding.dashboard.tvRecommendedApps.visibility = View.GONE
             binding.dashboard.rvRecommendedApp.visibility = View.GONE
         }
-        //binding.dashboard.toolbar.ads.visibility = View.VISIBLE
+    }
+
+    private fun isUserPremium(): Boolean {
+        return prefManager?.isPremium ?: false
+    }
+
+    private fun updatePremiumUi() {
+        val crownVisibility = if (isUserPremium()) View.GONE else View.VISIBLE
+        binding.dashboard.ivPremiumCrown.visibility = crownVisibility
+     /*   binding.dashboard.toolbar.ivPremiumCrown.visibility = crownVisibility
+        binding.dashboard.ivPremiumCrown.bringToFront()
+        binding.dashboard.toolbar.ivPremiumCrown.bringToFront()*/
     }
 
     private fun setScrollingListener() {
-        binding.dashboard.nestedScroll.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
-            if (scrollY > binding.dashboard.cleanShareScanContent.y) { // Scrolling down
+        binding.dashboard.nestedScroll.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { _, _, scrollY, _, _ ->
+            if (scrollY > binding.dashboard.clContainer.height) { // Scrolling down
+                binding.dashboard.toolbar.root.visibility = View.VISIBLE
                 binding.dashboard.toolbar.title.text = getString(R.string.app_name)
             } else {
+                binding.dashboard.toolbar.root.visibility = View.GONE
                 binding.dashboard.toolbar.title.text = ""
             }
         })
@@ -238,16 +240,21 @@ class UniScanDashboardActivity : AppCompatActivity(), PermissionInterface, OnAdD
                     }
                 }
             }
+            
+            ivPremiumCrown.setOnClickListener {
+                if (multipleClicked()) return@setOnClickListener
+                startActivity(Intent(this@UniScanDashboardActivity, com.cam.scanner.scantopdf.android.activities.PremiumActivity::class.java))
+            }
         }
         binding.dashboard.toolbar.apply {
             ivMenu.setOnClickListener {
                 if (multipleClicked()) return@setOnClickListener
                 startActivity(Intent(this@UniScanDashboardActivity, SettingsMainActivity::class.java))
             }
-            /*ads.setOnClickListener {
+            ivPremiumCrown.setOnClickListener {
                 if (multipleClicked()) return@setOnClickListener
-                startActivity(Intent(this@UniScanDashboardActivity, PurchaseScreen::class.java))
-            }*/
+                startActivity(Intent(this@UniScanDashboardActivity, com.cam.scanner.scantopdf.android.activities.PremiumActivity::class.java))
+            }
         }
     }
 
@@ -263,56 +270,13 @@ class UniScanDashboardActivity : AppCompatActivity(), PermissionInterface, OnAdD
 
     override fun onResume() {
         super.onResume()
-        //setStorageSpace()
+        //updatePremiumUi()
     }
 
-    /*private fun setStorageSpace() {
-        object : RamCalculation(this) {
-            override fun onPostExecute(strings: Array<String>) {
-                super.onPostExecute(strings)
-                try {
-                    setProgressView(strings)
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                }
-            }
-        }.execute()
-    }*/
-
-    /* private fun setProgressView(strings: Array<String>) {
-         val memPerExternal = strings[1].toInt()
-         val totRam = strings[4]
-         val availableRAMSize = strings[5]
-
-         val ramSize = availableRAMSize.replace(" GB", "").toFloat().roundToInt()
-         val totalRamSize = totRam.replace(" GB", "").toFloat().roundToInt()
-
-         binding.dashboard.availableSpacePercentage.text = "$memPerExternal%"
-         binding.dashboard.availableSpace.text =
-             "$ramSize GB/$totalRamSize GB"
-
-         binding.dashboard.progress.progress = memPerExternal
-
-         var progressSpace = 0
-         val handler = Handler()
-
-         handler.post(object : Runnable {
-             override fun run() {
-                 progressSpace += 1
-                 if (progressSpace <= memPerExternal) {
-                     binding.dashboard.progress.progress = progressSpace
-                     handler.postDelayed(this, 30)
-                     binding.dashboard.availableSpacePercentage.text = "$progressSpace%"
-                 }
-             }
-         })
-     }
- */
     private fun isStoragePermissionGranted(): Boolean {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             if (Environment.isExternalStorageManager()) {
                 isPauseForPermissions = false
-                //onClickItem = -1
                 return true
             } else {
                 CommonMethods(this).showPermissionDialog(
@@ -324,7 +288,6 @@ class UniScanDashboardActivity : AppCompatActivity(), PermissionInterface, OnAdD
             }
         } else {
             isPauseForPermissions = false
-            //onClickItem = -1
             return true
         }
     }

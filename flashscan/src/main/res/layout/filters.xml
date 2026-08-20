@@ -92,22 +92,37 @@
                     android:textSize="12sp"
                     app:fontFamily="@font/roboto_medium" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/magicColor"
+                <FrameLayout
                     android:layout_width="72dp"
-                    android:layout_height="wrap_content"
-                    android:drawableTint="@color/black_text_color"
-                    android:background="@android:color/transparent"
-                    android:drawableTop="@drawable/ic_magic_color"
-                    android:drawablePadding="6dp"
-                    android:gravity="center"
-                    android:paddingVertical="10dp"
-                    android:singleLine="true"
-                    android:text="@string/magic_color"
-                    android:textAllCaps="false"
-                    android:textColor="@color/black_text_color"
-                    android:textSize="12sp"
-                    app:fontFamily="@font/roboto_medium" />
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/magicColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableTint="@color/black_text_color"
+                        android:background="@android:color/transparent"
+                        android:drawableTop="@drawable/ic_magic_color"
+                        android:drawablePadding="6dp"
+                        android:gravity="center"
+                        android:paddingVertical="10dp"
+                        android:singleLine="true"
+                        android:text="@string/magic_color"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black_text_color"
+                        android:textSize="12sp"
+                        app:fontFamily="@font/roboto_medium" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_magic_crown"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_gravity="end|top"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_crown_small" />
+                </FrameLayout>
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/grayMode"
@@ -143,22 +158,37 @@
                     android:textSize="12sp"
                     app:fontFamily="@font/roboto_medium" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/BWMode2"
+                <FrameLayout
                     android:layout_width="72dp"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:drawableTop="@drawable/ic_b_w_1"
-                    android:drawableTint="@color/black_text_color"
-                    android:drawablePadding="6dp"
-                    android:gravity="center"
-                    android:paddingVertical="10dp"
-                    android:singleLine="true"
-                    android:text="@string/b_w_2"
-                    android:textAllCaps="false"
-                    android:textColor="@color/black_text_color"
-                    android:textSize="12sp"
-                    app:fontFamily="@font/roboto_medium" />
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/BWMode2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:drawableTop="@drawable/ic_b_w_1"
+                        android:drawableTint="@color/black_text_color"
+                        android:drawablePadding="6dp"
+                        android:gravity="center"
+                        android:paddingVertical="10dp"
+                        android:singleLine="true"
+                        android:text="@string/b_w_2"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black_text_color"
+                        android:textSize="12sp"
+                        app:fontFamily="@font/roboto_medium" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_bw2_crown"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_gravity="end|top"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_crown_small" />
+                </FrameLayout>
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/btn_bw3"
