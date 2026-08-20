@@ -9,7 +9,7 @@ plugins {
 
 def TEST_AD_MOB_APP_ID = '\"ca-app-pub-3940256099942544~3347511713\"'
 
-def LIVE_AD_MOB_APP_ID = '\"ca-app-pub-4777648072886747~9099069357\"'
+def LIVE_AD_MOB_APP_ID = '\"ca-app-pub-2284020157459331~7753595373\"'
 
 android {
     namespace 'com.utilify.boost.cleaner'

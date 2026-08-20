@@ -61,9 +61,9 @@ android {
             buildConfigField 'String', "APPLICATION_NAME", '"Utilify"'
             buildConfigField 'String', "MODULE_NAME", '"ScanHub"'
 
-            buildConfigField 'String', "INTERSTITIAL_SPLASH", '"ca-app-pub-4777648072886747/3911419337"'
-            buildConfigField 'String', "INTERSTITIAL_OCR", '"ca-app-pub-4777648072886747/3911419337"'
-            buildConfigField 'String', "INTERSTITIAL_PDF", '"ca-app-pub-4777648072886747/3911419337"'
+            buildConfigField 'String', "INTERSTITIAL_SPLASH", '"ca-app-pub-2284020157459331/7489921828"'
+            buildConfigField 'String', "INTERSTITIAL_OCR", '"ca-app-pub-2284020157459331/7489921828"'
+            buildConfigField 'String', "INTERSTITIAL_PDF", '"ca-app-pub-2284020157459331/7489921828"'
 
             buildConfigField 'String', "NATIVE_DOC", '"ca-app-pub-4777648072886747/5191613936"'
             buildConfigField 'String', "NATIVE_OCR", '"ca-app-pub-4777648072886747/5191613936"'
@@ -72,24 +72,24 @@ android {
             buildConfigField 'String', "NATIVE_EXIT", '"ca-app-pub-4777648072886747/5191613936"'
             buildConfigField 'String', "NATIVE_THUMBNAIL", '"ca-app-pub-4777648072886747/5191613936"'
 
-            buildConfigField 'String', "BANNER_AD_ID", '"ca-app-pub-4777648072886747/6457691628"'
-            buildConfigField 'String', "REWARD_AD_ID", '"ca-app-pub-4777648072886747/9130858940"'
+            buildConfigField 'String', "BANNER_AD_ID", '"ca-app-pub-2284020157459331/6440513704"'
+            buildConfigField 'String', "REWARD_AD_ID", '"ca-app-pub-2284020157459331/5602803706"'
 
 //            buildConfigField "String", "URL_BASE", '"http://192.168.1.19/wcfFlashScanner/Service1.svc/"'
             buildConfigField "String", "URL_BASE", '"http://srv.theflashscan.com/Service1.svc/"'
             //interstitial
-            buildConfigField 'String', "AD_UNIT_ID_PDF_ICON_INTERSTITIAL_AD", '"ca-app-pub-4777648072886747/4710488936"'
-            buildConfigField 'String', "AD_UNIT_ID_DOC_SCREEN_PDF_ICON_INTERSTITIAL_AD", '"ca-app-pub-4777648072886747/4710488936"'
+            buildConfigField 'String', "AD_UNIT_ID_PDF_ICON_INTERSTITIAL_AD", '"ca-app-pub-2284020157459331/1855130382"'
+            buildConfigField 'String', "AD_UNIT_ID_DOC_SCREEN_PDF_ICON_INTERSTITIAL_AD", '"ca-app-pub-2284020157459331/9829094372"'
             //native
-            buildConfigField 'String', "AD_UNIT_ID_DOC_SCREEN_EMPTY_LIST_NATIVE_AD", '"ca-app-pub-4777648072886747/9485407117"'
-            buildConfigField 'String', "AD_UNIT_ID_DOC_SCREEN_NATIVE_AD", '"ca-app-pub-4777648072886747/9485407117"'
-            buildConfigField 'String', "AD_UNIT_ID_DOC_BLACK_SCREEN_NATIVE_AD", '"ca-app-pub-4777648072886747/9485407117"'
+            buildConfigField 'String', "AD_UNIT_ID_DOC_SCREEN_EMPTY_LIST_NATIVE_AD", '"ca-app-pub-2284020157459331/5127432038"'
+            buildConfigField 'String', "AD_UNIT_ID_DOC_SCREEN_NATIVE_AD", '"ca-app-pub-2284020157459331/7202931039"'
+            buildConfigField 'String', "AD_UNIT_ID_DOC_BLACK_SCREEN_NATIVE_AD", '"ca-app-pub-2284020157459331/9542048712"'
             buildConfigField 'String', "AD_UNIT_ID_OCR_RESULT_NATIVE_AD", '"ca-app-pub-4777648072886747/2084325596"'
             buildConfigField 'String', "AD_UNIT_ID_OCR_LIST_SCREEN_NATIVE_AD", '"ca-app-pub-4777648072886747/1895821001"'
             buildConfigField 'String', "AD_UNIT_ID_OCR_EMPTY_LIST_SCREEN_NATIVE_AD", '"ca-app-pub-4777648072886747/1895821001"'
             //adaptive
             buildConfigField 'String', "AD_UNIT_ID_NEW_DOC_IMAGE_EDIT_SCREEN_ADAPTIVE_AD", '"ca-app-pub-4777648072886747/9771243925"'
-            buildConfigField 'String', "AD_UNIT_ID_QR_RESULT_SCREEN_ADAPTIVE_AD", '"ca-app-pub-4777648072886747/9771243925"'
+            buildConfigField 'String', "AD_UNIT_ID_QR_RESULT_SCREEN_ADAPTIVE_AD", '"ca-app-pub-2284020157459331/2768756801"'
 
         }
     }
