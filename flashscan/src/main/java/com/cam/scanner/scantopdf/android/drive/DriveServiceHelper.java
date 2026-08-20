@@ -655,28 +655,39 @@ public class DriveServiceHelper {
         });
     }
 
-    public File updateFile(String fileId, String newMimeType, String newFilename) {
-        try {
-// First create a new File.
-            File file = new File();
+    public Task<GoogleDriveFileHolder> updateFile(final String fileId, final java.io.File localFile, final String mimeType) {
+        return Tasks.call(mExecutor, new Callable<GoogleDriveFileHolder>() {
+            @Override
+            public GoogleDriveFileHolder call() throws Exception {
+                File metadata = new File(); // Empty metadata implies no name change
+                FileContent mediaContent = new FileContent(mimeType, localFile);
 
-// File's new metadata.
-            // file.setTitle(newTitle);
-            //file.setDescription(newDescription);
-            // file.setMimeType(newMimeType);
+                File updatedFile = mDriveService.files().update(fileId, metadata, mediaContent).execute();
+                if (updatedFile == null) {
+                    throw new IOException("Null result when requesting file update.");
+                }
 
-// File's new content.
-            java.io.File fileContent = new java.io.File(newFilename);
-            FileContent mediaContent = new FileContent(newMimeType, fileContent);
+                GoogleDriveFileHolder googleDriveFileHolder = new GoogleDriveFileHolder();
+                googleDriveFileHolder.setId(updatedFile.getId());
+                googleDriveFileHolder.setName(updatedFile.getName());
+                return googleDriveFileHolder;
+            }
+        });
+    }
 
-// Send the request to the API.
-            File updatedFile = mDriveService.files().update(fileId, file, mediaContent).execute();
-
-            return updatedFile;
-        } catch (IOException e) {
-            System.out.println("An error occurred: " + e);
-            return null;
-        }
+    public Task<GoogleDriveFileHolder> updateFileMetadata(final String fileId, final String newName) {
+        return Tasks.call(mExecutor, new Callable<GoogleDriveFileHolder>() {
+            @Override
+            public GoogleDriveFileHolder call() throws Exception {
+                File metadata = new File().setName(newName);
+                File updatedFile = mDriveService.files().update(fileId, metadata).execute();
+                
+                GoogleDriveFileHolder googleDriveFileHolder = new GoogleDriveFileHolder();
+                googleDriveFileHolder.setId(updatedFile.getId());
+                googleDriveFileHolder.setName(updatedFile.getName());
+                return googleDriveFileHolder;
+            }
+        });
     }
 
     /*private static File renameFile(Drive service, String fileId, String newTitle) {

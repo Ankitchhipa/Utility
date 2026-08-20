@@ -1620,33 +1620,8 @@ public class FavoriteDocumentsActivity extends AppCompatActivity implements View
     }
 
     private void shareMultiple(ArrayList<Uri> uriList) {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_SEND_MULTIPLE);
-        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.here_are_some_files, getString(R.string.app_name)));
-        intent.setType("*/*");
-        intent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, uriList);
-
-        String shareMessage = context.getString(R.string.app_share_msg);
-        shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
-        intent.putExtra(Intent.EXTRA_TEXT, shareMessage);
-        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-
-        List<ResolveInfo> resInfoList = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
-        for (ResolveInfo resolveInfo : resInfoList) {
-            String packageName = resolveInfo.activityInfo.packageName;
-            for (Uri uri : uriList) {
-                context.grantUriPermission(packageName, uri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            }
-        }
-        startActivity(Intent.createChooser(intent, getString(R.string.share)));
-
-        /*intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.app_name));
-        *//*String shareMessage = "\nLet me recommend you this application\n\n";*//*
-        String shareMessage = context.getString(R.string.app_share_msg);
-        shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
-        intent.putExtra(Intent.EXTRA_TEXT, shareMessage);
-        context.startActivity(Intent.createChooser(intent, getString(R.string.share));*/
+        if (uriList == null || uriList.isEmpty()) return;
+        flashScanUtil.shareMultiple(uriList, context);
     }
 
     @Override

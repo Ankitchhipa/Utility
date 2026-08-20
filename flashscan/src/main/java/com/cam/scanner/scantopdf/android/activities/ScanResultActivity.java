@@ -1947,6 +1947,8 @@ public class ScanResultActivity extends BaseActivity implements View.OnClickList
         }
         popupMenu.getMenuInflater().inflate(R.menu.more_popup_menu, popupMenu.getMenu());
         popupMenu.getMenu().findItem(R.id.menu_copy).setVisible(true);
+        //TODO ENABLE SHARE MENU
+        popupMenu.getMenu().findItem(R.id.menu_share).setVisible(false);
         popupMenu.getMenu().findItem(R.id.menu_move).setVisible(true);
         popupMenu.getMenu().findItem(R.id.menu_ocr).setVisible(false);
         popupMenu.getMenu().findItem(R.id.menu_modify_scan).setVisible(false);
@@ -2932,25 +2934,8 @@ public class ScanResultActivity extends BaseActivity implements View.OnClickList
     }
 
     private void shareMultiple(ArrayList<Uri> uris) {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_SEND_MULTIPLE);
-        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.here_are_some_files, getString(R.string.app_name)));
-        intent.setType("*/*");
-        intent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, uris);
-
-        String shareMessage = context.getString(R.string.app_share_msg);
-        shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
-        intent.putExtra(Intent.EXTRA_TEXT, shareMessage);
-        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-
-        List<ResolveInfo> resInfoList = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
-        for (ResolveInfo resolveInfo : resInfoList) {
-            String packageName = resolveInfo.activityInfo.packageName;
-            for (Uri uri : uris) {
-                context.grantUriPermission(packageName, uri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            }
-        }
-        startActivity(Intent.createChooser(intent, getString(R.string.share)));
+        if (uris == null || uris.isEmpty()) return;
+        flashScanUtil.shareMultiple(uris, this);
     }
 
     private void showPdfPathDialog(String savedPdfPath) {

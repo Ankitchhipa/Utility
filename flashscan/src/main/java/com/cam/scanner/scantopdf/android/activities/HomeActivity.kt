@@ -5,6 +5,7 @@ package com.cam.scanner.scantopdf.android.activities
 //import com.pixelnetica.imagesdk.ImageSdkLibrary
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.ClipData
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
@@ -36,6 +37,7 @@ import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.ShareCompat
 import androidx.core.content.FileProvider
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -2219,34 +2221,8 @@ class HomeActivity : BaseActivity(), View.OnClickListener, OnFetchingCompleted,
     }
 
     private fun shareMultiple(uriList: ArrayList<Uri>) {
-        val intent = Intent()
-        intent.setAction(Intent.ACTION_SEND_MULTIPLE)
-        intent.putExtra(
-            Intent.EXTRA_SUBJECT,
-            getString(R.string.here_are_some_files, getString(R.string.app_name))
-        )
-        intent.setType("*/*")
-        intent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, uriList)
-
-        var shareMessage = this.getString(R.string.app_share_msg)
-        shareMessage =
-            shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n"
-        intent.putExtra(Intent.EXTRA_TEXT, shareMessage)
-        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-
-        val resInfoList: List<ResolveInfo> =
-            packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY)
-        for (resolveInfo in resInfoList) {
-            val packageName = resolveInfo.activityInfo.packageName
-            for (uri in uriList) {
-                grantUriPermission(
-                    packageName,
-                    uri,
-                    Intent.FLAG_GRANT_WRITE_URI_PERMISSION or Intent.FLAG_GRANT_READ_URI_PERMISSION
-                )
-            }
-        }
-        startActivity(Intent.createChooser(intent, getString(R.string.share)))
+        if (uriList.isEmpty()) return
+        flashScanUtil?.shareMultiple(uriList, this)
     }
 
     override fun onPdfCreated(savedPdfPath: String) {

@@ -55,6 +55,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.core.app.ShareCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 import androidx.palette.graphics.Palette;
@@ -592,24 +593,75 @@ public class FlashScanUtil {
         return folderName;
     }
 
-    public void shareMultiple(Uri uris, Context context) {
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.here_are_some_files, context.getString(R.string.app_name)));
-        String shareMessage = context.getString(R.string.app_share_msg);
-        shareMessage =
-                shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
-        intent.putExtra(Intent.EXTRA_TEXT, shareMessage);
-        intent.setType("application/pdf");
-        intent.putExtra(Intent.EXTRA_STREAM, uris);
-        intent.setClipData(ClipData.newRawUri("", uris)); // Use setClipData
-        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+    public void shareMultiple(ArrayList<Uri> uriList, Context context) {
+        if (uriList == null || uriList.isEmpty()) return;
 
-        List<ResolveInfo> resInfoList = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+        Intent intent = new Intent();
+        String mimeType = null;
+
+        if (uriList.size() == 1) {
+            intent.setAction(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_STREAM, uriList.get(0));
+            mimeType = context.getContentResolver().getType(uriList.get(0));
+        } else {
+            intent.setAction(Intent.ACTION_SEND_MULTIPLE);
+            intent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, uriList);
+            
+            String firstType = context.getContentResolver().getType(uriList.get(0));
+            if (firstType != null) {
+                boolean allSame = true;
+                for (int i = 1; i < uriList.size(); i++) {
+                    String currentType = context.getContentResolver().getType(uriList.get(i));
+                    if (currentType == null || !currentType.equals(firstType)) {
+                        allSame = false;
+                        break;
+                    }
+                }
+                if (allSame) {
+                    mimeType = firstType;
+                } else if (firstType.contains("/")) {
+                    mimeType = firstType.substring(0, firstType.indexOf("/")) + "/*";
+                }
+            }
+        }
+
+        if (mimeType == null || mimeType.isEmpty()) {
+            mimeType = "*/*";
+        }
+
+        String shareMessage = context.getString(R.string.app_share_msg) + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
+        
+        intent.putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.here_are_some_files, context.getString(R.string.app_name)));
+        intent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+        intent.setType(mimeType);
+        
+        // Grant permissions via ClipData
+        ClipData clipData = ClipData.newRawUri("", uriList.get(0));
+        for (int i = 1; i < uriList.size(); i++) {
+            clipData.addItem(new ClipData.Item(uriList.get(i)));
+        }
+        intent.setClipData(clipData);
+        
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+
+        PackageManager pm = context.getPackageManager();
+        List<ResolveInfo> resInfoList = pm.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
         for (ResolveInfo resolveInfo : resInfoList) {
             String packageName = resolveInfo.activityInfo.packageName;
-            context.grantUriPermission(packageName, uris, Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            for (Uri uri : uriList) {
+                context.grantUriPermission(packageName, uri, Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+            }
         }
-        context.startActivity(Intent.createChooser(intent, context.getString(R.string.share)));
+
+        Intent chooser = Intent.createChooser(intent, context.getString(R.string.share));
+        chooser.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+        context.startActivity(chooser);
+    }
+
+    public void shareMultiple(Uri uris, Context context) {
+        ArrayList<Uri> uriList = new ArrayList<>();
+        uriList.add(uris);
+        shareMultiple(uriList, context);
     }
 
     public void intentToBrowser(String url) {
@@ -1781,7 +1833,7 @@ public class FlashScanUtil {
             if (account == null) {
                 return;
             }
-            mDriveServiceHelper = new DriveServiceHelper(getGoogleDriveService(context, account, "appName"));
+            mDriveServiceHelper = new DriveServiceHelper(getGoogleDriveService(context, account, context.getString(R.string.app_name)));
         }
 
         // you can provide  folder id in case you want to save this file inside some folder.
@@ -1852,7 +1904,7 @@ public class FlashScanUtil {
             if (account == null) {
                 return;
             }
-            mDriveServiceHelper = new DriveServiceHelper(getGoogleDriveService(context, account, "appName"));
+            mDriveServiceHelper = new DriveServiceHelper(getGoogleDriveService(context, account, context.getString(R.string.app_name)));
         }
 
         mDriveServiceHelper.uploadFile(file, mimeType, folderId)
@@ -1897,6 +1949,51 @@ public class FlashScanUtil {
                 .build();
     }
 
+    public void updateFileOnDrive(Context context, String fileId, File localFile, String dialogMsg, GoogleDriveDataUploadListener listener) {
+        Dialog progressDialog = new Dialog(context);
+        progressDialog.setContentView(R.layout.progress_dialog_centered);
+        progressDialog.setCancelable(false);
+
+        TextView tvMsg = progressDialog.findViewById(R.id.tv_msg);
+        tvMsg.setText(dialogMsg);
+        progressDialog.show();
+
+        if (mDriveServiceHelper == null) {
+            GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(context);
+            if (account == null) {
+                progressDialog.dismiss();
+                return;
+            }
+            mDriveServiceHelper = new DriveServiceHelper(getGoogleDriveService(context, account, context.getString(R.string.app_name)));
+        }
+
+        mDriveServiceHelper.updateFile(fileId, localFile, getMimeType(localFile.getAbsolutePath()))
+                .addOnSuccessListener(googleDriveFileHolder -> {
+                    Log.d(TAG, "onSuccess update: " + googleDriveFileHolder.getId());
+                    Toast.makeText(context, context.getResources().getString(R.string.file_updated), Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+                    if (listener != null) {
+                        listener.onUploadFinish(fileId);
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    Log.d(TAG, "onFailure update: " + e.getMessage());
+                    Toast.makeText(context, context.getResources().getString(R.string.something_went_wrong), Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+                });
+    }
+
+    public boolean isDriveHelperNull() {
+        return mDriveServiceHelper == null;
+    }
+
+    public void initDriveServiceHelper(Context context) {
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(context);
+        if (account != null) {
+            mDriveServiceHelper = new DriveServiceHelper(getGoogleDriveService(context, account, context.getString(R.string.app_name)));
+        }
+    }
+
     public void queryFolderOnGoogleDrive(Context context, String msg, String folderName, File parent, GoogleDriveDataDownloadListener listener) {
 
         //Show progress loader dialog
@@ -1914,7 +2011,7 @@ public class FlashScanUtil {
             if (account == null) {
                 return;
             }
-            mDriveServiceHelper = new DriveServiceHelper(getGoogleDriveService(context, account, "appName"));
+            mDriveServiceHelper = new DriveServiceHelper(getGoogleDriveService(context, account, context.getString(R.string.app_name)));
         }
 
         //It search folder in google drive
@@ -2078,7 +2175,7 @@ public class FlashScanUtil {
             if (account == null) {
                 return;
             }
-            mDriveServiceHelper = new DriveServiceHelper(getGoogleDriveService(context, account, "appName"));
+            mDriveServiceHelper = new DriveServiceHelper(getGoogleDriveService(context, account, context.getString(R.string.app_name)));
         }
 
         //It search folder in google drive
@@ -2123,7 +2220,7 @@ public class FlashScanUtil {
             if (account == null) {
                 return;
             }
-            mDriveServiceHelper = new DriveServiceHelper(getGoogleDriveService(context, account, "appName"));
+            mDriveServiceHelper = new DriveServiceHelper(getGoogleDriveService(context, account, context.getString(R.string.app_name)));
         }
 
         //Delete folder from google drive
@@ -2174,7 +2271,7 @@ public class FlashScanUtil {
         if (account == null) {
             return;
         }
-        Drive service = getGoogleDriveService(context, account, "appName");
+        Drive service = getGoogleDriveService(context, account, context.getString(R.string.app_name));
         com.google.api.services.drive.model.File file = new com.google.api.services.drive.model.File();
         file.setName(newTitle);
         try {
