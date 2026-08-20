@@ -88,7 +88,7 @@ public class Constants {
     public static AppOpenAd appOpenAd = null;
 
     public static RewardedAd rewardedAd = null;
-    public static Boolean isAdShow = false;
+    public static Boolean isAdShow = true;
 
     public static String playStoreUrl = "https://play.google.com/store/apps/details?id=com.utilify.boost.cleaner";
 

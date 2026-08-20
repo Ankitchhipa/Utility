@@ -66,6 +66,7 @@
         android:layout_height="@dimen/_25sdp"
         android:layout_gravity="center_vertical"
         android:padding="@dimen/_1sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
         android:visibility="gone"
         app:srcCompat="@drawable/ic_crown" />
 

@@ -22,7 +22,7 @@ public final class PremiumStatusHelper {
         boolean yearlyPremium = false;
         boolean monthlyPremium = false;
 
-        if (purchases != null) {
+        if (purchases != null && !purchases.isEmpty()) {
             for (Purchase purchase : purchases) {
                 if (purchase.getPurchaseState() != Purchase.PurchaseState.PURCHASED) {
                     continue;

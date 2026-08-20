@@ -25,6 +25,7 @@ import com.advanced.phone.junk.cache.cleaner.booster.antimalware.utility.SharedP
 import com.cam.scanner.scantopdf.android.activities.WebViewActivity
 import com.cam.scanner.scantopdf.android.util.PrefManager
 import com.itl.commonres.appinterface.OnAdDismissInterface
+import com.itl.commonres.setSafeClickListener
 import com.itl.commonres.utils.AdsPlacementsEnum
 import com.itl.commonres.utils.CommonMethods
 import com.itl.commonres.utils.CommonMethods.multipleClicked
@@ -80,14 +81,14 @@ class UniScanDashboardActivity : AppCompatActivity(), PermissionInterface, OnAdD
 
         requestNotificationPermission()
 
+        updatePremiumUi()
+        checkFirstLaunchPremium()
+
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 showExitDialog()
             }
         })
-
-        updatePremiumUi()
-        checkFirstLaunchPremium()
     }
 
     private fun checkFirstLaunchPremium() {
@@ -129,11 +130,7 @@ class UniScanDashboardActivity : AppCompatActivity(), PermissionInterface, OnAdD
     }
 
     private fun updatePremiumUi() {
-        val crownVisibility = if (isUserPremium()) View.GONE else View.VISIBLE
-        binding.dashboard.ivPremiumCrown.visibility = crownVisibility
-     /*   binding.dashboard.toolbar.ivPremiumCrown.visibility = crownVisibility
-        binding.dashboard.ivPremiumCrown.bringToFront()
-        binding.dashboard.toolbar.ivPremiumCrown.bringToFront()*/
+        binding.dashboard.dashboardCrownIc.visibility = if (isUserPremium()) View.GONE else View.VISIBLE
     }
 
     private fun setScrollingListener() {
@@ -156,7 +153,7 @@ class UniScanDashboardActivity : AppCompatActivity(), PermissionInterface, OnAdD
 
     private fun clickListener() {
         binding.dashboard.apply {
-            menu.setOnClickListener {
+            menu.setSafeClickListener {
                 val popup = PopupMenu(this@UniScanDashboardActivity, it)
                 popup.menuInflater.inflate(R.menu.dashboard_menu, popup.menu)
 
@@ -166,7 +163,9 @@ class UniScanDashboardActivity : AppCompatActivity(), PermissionInterface, OnAdD
                             // Handle Refer and Earn
                             val shareIntent = Intent(Intent.ACTION_SEND)
                             shareIntent.type = "text/plain"
-                            shareIntent.putExtra(Intent.EXTRA_TEXT, "Check out this awesome app: https://play.google.com/store/apps/details?id=$packageName")
+                            shareIntent.putExtra(Intent.EXTRA_TEXT, "Check out this awesome app! \uD83D\uDE80\n" +
+                                    "Download it here: https://play.google.com/store/apps/details?id=$packageName\n" +
+                                    "Give it a try and let me know what you think! \uD83D\uDE0A")
                             startActivity(Intent.createChooser(shareIntent, "Refer via"))
                             true
                         }
@@ -187,8 +186,7 @@ class UniScanDashboardActivity : AppCompatActivity(), PermissionInterface, OnAdD
                 popup.show()
             }
 
-            boost.setOnClickListener {
-                if (multipleClicked()) return@setOnClickListener
+            boost.setSafeClickListener {
                 onClickItem = OnClickEnum.BoostX.value
                 if (isStoragePermissionGranted()) {
 
@@ -215,8 +213,7 @@ class UniScanDashboardActivity : AppCompatActivity(), PermissionInterface, OnAdD
                 }
             }
 
-            docScan.setOnClickListener {
-                if (multipleClicked()) return@setOnClickListener
+            docScan.setSafeClickListener {
                 onClickItem = OnClickEnum.ScanHub.value
                 if (isStoragePermissionGranted()) {
                     //log event
@@ -241,19 +238,13 @@ class UniScanDashboardActivity : AppCompatActivity(), PermissionInterface, OnAdD
                 }
             }
             
-            ivPremiumCrown.setOnClickListener {
-                if (multipleClicked()) return@setOnClickListener
+            dashboardCrownIc.setSafeClickListener {
                 startActivity(Intent(this@UniScanDashboardActivity, com.cam.scanner.scantopdf.android.activities.PremiumActivity::class.java))
             }
         }
         binding.dashboard.toolbar.apply {
-            ivMenu.setOnClickListener {
-                if (multipleClicked()) return@setOnClickListener
+            ivMenu.setSafeClickListener {
                 startActivity(Intent(this@UniScanDashboardActivity, SettingsMainActivity::class.java))
-            }
-            ivPremiumCrown.setOnClickListener {
-                if (multipleClicked()) return@setOnClickListener
-                startActivity(Intent(this@UniScanDashboardActivity, com.cam.scanner.scantopdf.android.activities.PremiumActivity::class.java))
             }
         }
     }

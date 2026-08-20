@@ -2005,19 +2005,17 @@ public class ScanResultActivity extends BaseActivity implements View.OnClickList
             } else if (itemId == R.id.menu_modify_scan) {/*Toast.makeText(context, "Modify Scan", Toast.LENGTH_SHORT).show();*/
                 modifyScan(fileModel);
             } else if (itemId == R.id.menu_add_signature) {
-                /*if (prefManager.isPremiumYearly() || prefManager.isPremiumQuarterly()) {
+                if (prefManager.isPremium()) {
                     goToSignatureActivity(fileModel.getPath(), fileModel.getName());
                 } else {
-                    askToBePremium();
-                }*/
-
-                if (!prefManager.isAppAdFree() && flashScanUtil.isConnectingToInternet() && com.itl.commonres.utils.Constants.isAdShow) {
-                    Constants.isAppInBackground = false;
-                    isPDForOCR = getString(R.string.add_signature);
-                    loadInterstitialAd(context, BuildConfig.INTERSTITIAL_PDF, this);
-                } else {
-                    Log.e(TAG, "Mobibuz : Ad Not Showing");
-                    goToSignatureActivity(fileModel.getPath(), fileModel.getName());
+                    if (flashScanUtil.isConnectingToInternet() && com.itl.commonres.utils.Constants.isAdShow) {
+                        Constants.isAppInBackground = false;
+                        isPDForOCR = getString(R.string.add_signature);
+                        loadInterstitialAd(context, BuildConfig.INTERSTITIAL_PDF, this);
+                    } else {
+                        Log.e(TAG, "Mobibuz : Ad Not Showing");
+                        goToSignatureActivity(fileModel.getPath(), fileModel.getName());
+                    }
                 }
 
             } else if (itemId == R.id.menu_ocr) {
@@ -3973,7 +3971,7 @@ public class ScanResultActivity extends BaseActivity implements View.OnClickList
                 moveToOcrResult(createdFolderPath);
             }
         } else if (isPDForOCR.equals(getString(R.string.add_signature))) {
-            goToSignatureActivity(fileModel.getPath(), fileModel.getName());
+            askToBePremium();
         } else {
             createPDF();
         }

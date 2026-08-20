@@ -328,32 +328,19 @@ public class ImageCropActivity extends BaseActivity implements View.OnClickListe
     private boolean isAdShowedForSignature = false;
 
     public void addSignatureClick() {
-        if (CommonMethods.isConnectingToInternet(this) && com.itl.commonres.utils.Constants.isAdShow && isAdShowedForSignature) {
-            Constants.isAppInBackground = false;
-            loadInterstitialAd(context, BuildConfig.INTERSTITIAL_PDF, this);
-        } else {
+        if (prefManager.isPremium()) {
             isAdShowedForSignature = false;
             showSignatureWarningDialog();
-        }
-        /*if (*//*prefManager.isPremiumYearly() || prefManager.isPremiumQuarterly()*//**//*isAdShowedForSignature*//* !com.itl.commonres.utils.Constants.isAdShow) {
-            isAdShowedForSignature = false;
-            new AlertDialog.Builder(this).setTitle(getString(R.string.warning))
-                    .setMessage(getString(R.string.sign_save_warning))
-                    .setPositiveButton(android.R.string.ok, (dialogInterface, i) -> {
-                        pageSelectPosition = imagesCropViewPager.getCurrentItem();
-
-                        Intent intent = new Intent(context, SignatureActivity.class);
-                        intent.putExtra(Constants.PutExtraConstants.FOLDER_NAME, folderName);
-                        intent.putExtra(Constants.PutExtraConstants.FILE_PATH, selectedImagesPathList.get(pageSelectPosition));
-                        intent.putExtra(Constants.PutExtraConstants.FILE_NAME, cropArr.get(pageSelectPosition).fileName);
-                        intent.putExtra(ScanConstants.PutExtraConstants.FROM_SCREEN, ScanConstants.ScreenConstants.FROM_EDIT_SCREEN);
-                        startActivityForResult(intent, SIGNATURE_CODE);
-                    }).setNegativeButton(android.R.string.cancel, null).show();
         } else {
-            Constants.isAppInBackground = false;
-            loadInterstitialAd(context, BuildConfig.INTERSTITIAL_PDF, this);
-//            askToBePremium();
-        }*/
+            isAdShowedForSignature = true;
+            if(CommonMethods.isConnectingToInternet(this) && com.itl.commonres.utils.Constants.isAdShow && isAdShowedForSignature) {
+                Constants.isAppInBackground = false;
+                loadInterstitialAd(context, BuildConfig.INTERSTITIAL_PDF, this);
+            } else  {
+                isAdShowedForSignature = true;
+                openPremiumActivity();
+            }
+        }
     }
 
     private void showSignatureWarningDialog() {
@@ -1330,14 +1317,12 @@ public class ImageCropActivity extends BaseActivity implements View.OnClickListe
 
     @Override
     public void onAdClosed() {
-        isAdShowedForSignature = true;
-        findViewById(R.id.add_signature).performClick();
+        openPremiumActivity();
     }
 
     @Override
     public void onAdLoadedOrFailed(boolean isLoaded) {
-        isAdShowedForSignature = true;
-        findViewById(R.id.add_signature).performClick();
+        openPremiumActivity();
     }
 
     public class SaveBMP extends AsyncTask<Void, Void, Void> {
