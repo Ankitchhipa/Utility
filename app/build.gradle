@@ -113,6 +113,9 @@ android {
     }
 
     packagingOptions {
+        jniLibs {
+            excludes += ['**/libawtcompat-native-components.so']
+        }
         exclude 'META-INF/DEPENDENCIES'
     }
 }

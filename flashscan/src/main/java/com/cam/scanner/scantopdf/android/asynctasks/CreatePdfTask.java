@@ -46,6 +46,8 @@ import java.util.concurrent.Future;
 public class CreatePdfTask extends AsyncTask<Void, Void, String> {
 
     private static final String TAG = CreatePdfTask.class.getSimpleName();
+    private static final int PDF_TARGET_WIDTH = 1600;
+    private static final int PDF_TARGET_HEIGHT = 2260;
     private PDFCreationCallback pdfCreationCallback;
     private FlashScanUtil flashScanUtil;
     private String fileName;
@@ -376,12 +378,7 @@ public class CreatePdfTask extends AsyncTask<Void, Void, String> {
         }
 
         try {
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            // Use JPEG compression for much faster processing and smaller PDF size
-            bitmap.compress(Bitmap.CompressFormat.JPEG, pdfQuality, stream);
-            byte[] byteArray = stream.toByteArray();
-            stream.close();
-            return Image.getInstance(byteArray);
+            return createRawPdfImage(bitmap);
         } catch (Throwable e) {
             throw new IOException("Unable to convert bitmap into PDF image: " + imageUri, e);
         } finally {
@@ -389,6 +386,23 @@ public class CreatePdfTask extends AsyncTask<Void, Void, String> {
                 bitmap.recycle();
             }
         }
+    }
+
+    private Image createRawPdfImage(Bitmap bitmap) throws IOException {
+        int width = bitmap.getWidth();
+        int height = bitmap.getHeight();
+        int[] pixels = new int[width * height];
+        bitmap.getPixels(pixels, 0, width, 0, 0, width, height);
+
+        byte[] rgb = new byte[width * height * 3];
+        int rgbIndex = 0;
+        for (int pixel : pixels) {
+            rgb[rgbIndex++] = (byte) ((pixel >> 16) & 0xFF);
+            rgb[rgbIndex++] = (byte) ((pixel >> 8) & 0xFF);
+            rgb[rgbIndex++] = (byte) (pixel & 0xFF);
+        }
+
+        return Image.getInstance(width, height, 3, 8, rgb);
     }
 
     private Bitmap decodeBitmap(String imageUri) throws IOException {
@@ -407,8 +421,8 @@ public class CreatePdfTask extends AsyncTask<Void, Void, String> {
             BitmapFactory.decodeFile(imageUri, options);
         }
 
-        // Optimize for A4 at 300 DPI (~2480x3508)
-        options.inSampleSize = calculateInSampleSize(options, 2480, 3508);
+        // Downsample for faster PDF generation while keeping the output sharp on mobile screens.
+        options.inSampleSize = calculateInSampleSize(options, PDF_TARGET_WIDTH, PDF_TARGET_HEIGHT);
         options.inJustDecodeBounds = false;
         options.inPreferredConfig = Bitmap.Config.RGB_565;
 

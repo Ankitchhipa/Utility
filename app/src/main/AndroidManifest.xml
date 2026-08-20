@@ -8,38 +8,39 @@
         tools:ignore="ScopedStorage" />
 
     <application
-        android:name="com.utilify.boost.cleaner.AppApplication"
         android:allowBackup="true"
+        android:extractNativeLibs="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:name=".AppApplication">
         <activity
-            android:name="com.utilify.boost.cleaner.activity.SettingsMainActivity"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:name=".activity.SettingsMainActivity" />
         <activity
-            android:name="com.utilify.boost.cleaner.activity.ReferFriendActivity"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:name=".activity.ReferFriendActivity" />
         <activity
-            android:name="com.utilify.boost.cleaner.activity.UsefullScreenActivity"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:name=".activity.UsefullScreenActivity" />
         <activity
-            android:name="com.utilify.boost.cleaner.activity.AboutUsScreenActivity"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:name=".activity.AboutUsScreenActivity" />
         <activity
-            android:name="com.utilify.boost.cleaner.activity.UniScanDashboardActivity"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:name=".activity.UniScanDashboardActivity" />
         <activity
-            android:name="com.utilify.boost.cleaner.activity.SplashActivity"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -86,8 +87,8 @@
             android:resource="@color/colorAccent" />
 
         <activity
-            android:name="com.utilify.boost.cleaner.activity.TutorialActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:name=".activity.TutorialActivity" />
 
     </application>
 

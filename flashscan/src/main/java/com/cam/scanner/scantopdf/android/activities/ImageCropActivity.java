@@ -1155,7 +1155,7 @@ public class ImageCropActivity extends BaseActivity implements View.OnClickListe
     }
 
     public void delClick() {
-        new AlertDialog.Builder(this).setMessage(getString(R.string.sure_you_want_delete)).setPositiveButton(android.R.string.yes, (dialogInterface, i) -> {
+        AlertDialog deleteDialog = new AlertDialog.Builder(this).setMessage(getString(R.string.sure_you_want_delete)).setPositiveButton(android.R.string.yes, (dialogInterface, i) -> {
             pageSelectPosition = imagesCropViewPager.getCurrentItem();
 
             File dstFolderName = new File(flashScanUtil.getDocProcessingPath(context), folderName);
@@ -1177,7 +1177,13 @@ public class ImageCropActivity extends BaseActivity implements View.OnClickListe
             }
 
             cropAdapter.notifyDataSetChanged();
-        }).setNegativeButton(android.R.string.no, null).show();
+        }).setNegativeButton(android.R.string.no, null).create();
+
+        deleteDialog.setOnShowListener(dialog -> {
+            deleteDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+            deleteDialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+        });
+        deleteDialog.show();
     }
 
     static Bitmap createBW1(Bitmap src, double value) {
